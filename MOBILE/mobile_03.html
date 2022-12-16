@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=no">
+  <title>Mobile</title>
+  <style>
+    * {margin:0; padding: 0;}
+    li {list-style: none;}
+
+    #gnb_chk {display: none;}
+    /* 나중에 트랜지션 걸어서 옆이나 아래로 나오게 */
+    #gnb_chk:checked ~ .gnb {display: block;}
+    #gnb_chk ~ .gnb {display: none;}
+
+
+    /* 반응형은 width를 %단위로 잡는다. */
+    .header {
+      width: 100%; height: 45px;
+      background-image: url(./images/header_bg.png);
+      position: relative;
+    }
+
+    .header .home {
+      width: 62px; height: 32px;
+      /* 가장 예쁜 버튼 사이즈 */
+      background-image: url(./images/left_btn.png);
+      position: absolute;
+      top: 7px; left: 7px;
+      text-indent: -9999px;
+    }
+
+    .header h1 {
+      text-align: center;
+      line-height: 45px;
+      color: white;
+    }
+
+    .header .btn_gnb {
+      width: 32px; height: 32px;
+      background-image: url(./images/right_btn.png);
+      /* 이미지는 따로 줄여줘야 하니까 백그라운드 이미지 활용. 백그라운드 이미지를 깔때는 위치를 확인할 수 없기 때문에 text를 먼저 깔아 두고 시작한다. */
+      position: absolute;
+      top: 7px; right: 7px;
+      text-indent: -9999px;
+      /* 버튼 위치를 확인하기 위해 임시로 준 텍스트를 화면에 보이지 않게 끔 밀어버린다. */
+    }
+
+    .gnb {
+      position: absolute;
+      top: 45px; right: 0;
+    }
+
+    .gnb li {
+      width: 150px; height: 32px;
+      text-align: center;
+      line-height: 32px;
+      background-color: blueviolet;
+      /* opacity: 30%; */
+      color: white;
+    }
+
+    .lnb {
+      width: 100%;
+      overflow: hidden;
+    }
+
+
+    .lnb li {
+      width: 20%; height: 32px;
+      text-align: center;
+      line-height: 32px;
+      background-color: #ccc;
+      font-weight: bold;
+      float: left;
+    }
+
+    .footer {
+      width: 100%; height: 45px;
+      background-color: black;
+      color: white;
+      position: fixed;
+      /* device에 100%가 자동으로 되기 때문에 대부분 w=100%가 생략가능하나 fixed는 부모가 viewport이기 때문에 width: 100%;가 안되기 때문에 꼭 써줘야 한다.
+        div나 img도 width: 100%를 생략해주면 안된다. 자신의 부모 100%가 되어야 하기 때문에. */
+      left: 0; bottom: 0;
+      /* fixed는 항상 부모가 viewport. */
+    }
+
+  </style>
+</head>
+<body>
+
+  <input type="checkbox" id="gnb_chk">
+  <header class="header">
+    <div class="home">home</div>
+    <!-- 이미지로 버튼을 넣을때 임시적으로 버튼 텍스트를 써줌. text-indent: -9999px; 를 써줘서 없애준다. -->
+    <h1>Mobile</h1>
+    <label for="gnb_chk" class="btn_gnb">gnb</label>
+  </header>
+
+  <ul class="gnb">
+    <li>gnb01</li>
+    <li>gnb02</li>
+    <li>gnb03</li>
+    <li>gnb04</li>
+    <li>gnb05</li>
+  </ul>
+  <!-- hover을 시켜줄 피룡가 없기 때문에 굳이 header안에 들어갈 필요가 없다. -->
+  
+  <ul class="lnb">
+    <li>lnb01</li>
+    <li>lnb02</li>
+    <li>lnb03</li>
+    <li>lnb04</li>
+    <li>lnb05</li>
+  </ul>
+  <!-- 반응형에서는 box를 이중삼중으로 써줄필요 없다. 장치에 크기를 맞추기 때문에. 그래서 nav가 잘 안들어간다. -->
+  
+  <footer class="footer">copyright</footer>
+</body>
+</html>

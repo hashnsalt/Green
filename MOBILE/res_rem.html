@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=no">
+  <title>Document</title>
+
+  <style>
+    * {margin: 0; padding: 0;}
+
+    html {
+      font-size: 14px;
+      /* rem의 r은 root이기 때문에 루트를 html으로 정해줘야한다. 그래서 html에 기본 폰트 사이즈를 설정해준다. em은 부모에 사용해야하는 것이다. html에 넣어봐야 적용x */
+    }
+
+    .title {font-size: 3rem;}
+    .txt01 {font-size: 2rem;}
+    .txt02 {font-size: 1rem;}
+    .txt03 {font-size: 16px;}
+
+  </style>
+
+</head>
+<body>
+
+  
+  <!-- <div class="wrap">
+    <h1 class="title">3rem 폰트입니다.</h1>
+    <p class="txt01">2rem 폰트입니다.</p>
+    <p class="txt02">1rem 폰트입니다.</p>
+    <p class="txt03">16px 폰트입니다.</p>
+  </div> -->
+
+  <div class="wrap">
+    <div class="title">3rem 폰트입니다.
+      <div class="title">3rem 폰트입니다.
+        <div class="title">3rem 폰트입니다.</div>
+      </div>
+    </div>
+
+    <!-- rem은 자신이 정해준 대로 사용된다. em의 문제점을 해결해서 만들어 놓은 것이다. -->
+  </div>
+
+</body>
+</html>

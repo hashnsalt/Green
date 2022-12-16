@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=no">
+  <title>flex</title>
+  <style>
+    * {margin:0; padding:0;}
+
+    section {
+      width: 1070px; 
+      height: 800px;
+      background-color: #ccc;
+      display: flex;
+      /* 1.부모에 flex. flex는 자식이 가진 block속성 무시. 자식의 속성을 정해주지 않았을 때, 높이는 100% */
+      flex-wrap: wrap;
+      /* 3.부모의 속성을 wrap으로 풀어줘야함. 그럼 나란히 정렬 되던 것이 사이즈를 가지고 줄바꿈을 가진다. 하지만, flex-grow가 있을 시 남은 여백 사이즈를 나눠 가져서 자식의 위드를 무시한다. */
+      align-content: flex-start; 
+      /* 세로 정렬. top정렬. flex-start: flex의 화면이 시작된 것에 정렬을 위로 모우겠다는 것. flex-end: flex가 끝나는 점에 맞춰서 정렬을 하겠다.*/
+    }
+
+    section div {
+      width: 260px; height: 200px;
+      border: 1px solid black; box-sizing: border-box;
+      /* flex-grow: 1;  */
+      /* 2.flex-grow: 반응형에 좋음. 균일하게 사이즈를 가지는 것. but, 자식의 가로 길이를 넣고 싶을 땐 그로우를 빼야한다. 아니면 부모 위주로 flex를 진행하므로 자식의 사이즈를 무시하고 균일하게 사이즈가 들어가기 때문에.  */
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+
+    section div:nth-child(4n) {
+      margin: 0;
+    }
+    /* 4n: 4번째 8번째, 4의 배수 자식들에 마진을 0로 주어라. */
+  </style>
+</head>
+<body>
+  
+  <section>
+    <div class="box01">box01</div>
+    <div class="box02">box02</div>
+    <div class="box03">box03</div>
+    <div class="box04">box04</div>
+    <div class="box05">box05</div>
+    <div class="box06">box06</div>
+    <div class="box07">box07</div>
+    <div class="box08">box08</div>
+    <div class="box09">box09</div>
+    <div class="box10">box10</div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=no">
+  <title>flex_04_layout</title>
+  <style>
+    * {margin: 0; padding: 0;}
+
+    .login_box {
+      width: 100%; height: 100vh;
+      /* full_page 공식 */
+      background-color: #eee;
+      display: flex;
+      justify-content: center;
+      /* 수평 정렬. */
+      align-items: center;
+      /* 수직 정렬. align : 줄이 여러개 있든, 컨텐츠가 여러개 있든. 부모 안에 자식이 많을 때 자식들 그룹. item은 컨텐츠 하나하나 설정할때. 그룹 안에 컨텐츠들 개별로 설정. */
+    }
+
+    .login_box .login {
+      width: 500px; height: 300px;
+      background-color: yellow;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="login_box">
+    <div class="login">login</div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+/* ------ defualt setting ------- */
+
+* {margin: 0; padding: 0;}
+
+
+/* ------ header ------- */
+
+.header {
+  height: 50px;
+  background-color: black;
+  margin-bottom: 10px;
+}
+
+.header h2 {
+  color: #fff;
+}
+
+
+/* ------ contents ------ */
+
+.side_menu {
+  height: 200px;
+  background-color: purple;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.contents12 div {
+  height: 500px;
+  background-color: black;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.contents12 div:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ------ media query setting ------ */
+
+@media all and (min-width:769px) {
+
+  .layout_shifter {
+    height: 100vw;
+    display: flex;
+    overflow: hidden;
+  }
+
+  .layout_shifter .side_menu {
+    width: 200px;
+    height: 100vw;
+    margin-right: 10px;
+  }
+
+  .layout_shifter .contents12 {
+    width: 100%;
+  }
+
+  .layout_shifter .contents12 div {
+    height: 50%;
+  }
+
+}
+
+@media all and (min-width:1025px) {
+
+  .header h2, .layout_shifter {
+    width: 1070px;
+    margin: 0 auto;
+  }
+}

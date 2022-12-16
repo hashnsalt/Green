@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=no">
+  <title>flex_02</title>
+  <style>
+    * {margin: 0; padding: 0;}
+
+    section {
+      width: 1070px; height: 800px;
+      background-color: #eee;
+      display: flex; /* flex 속성은 float와 같이 옆으로 콘텐츠 배치 */
+      flex-wrap: wrap; /* flex_box줄바꿈. */
+      justify-content: space-between; 
+      /* 사이사이 여백을 줌. margin-right 대신에 쓰는 속성. */
+      /* justify-content: space-around; */
+      /* 양쪽에 여백을 줌. 잘 안씀 between을 기본으로 줌*/
+      /* justify-content: space-evenly; */
+      /* 여백을 똑같이 줌. */
+      align-content: flex-start;
+      /* align-content에도 justify-content와 같이 space-btween space-around 기능이 있지만, 잘쓰지 않는다. 그냥 자식에 margin-bottom이 들어가서 정렬해 주는 것이 깔끔하다. */
+      
+    }
+
+    section div {
+      width: 260px; height: 200px;
+      border: 1px solid black; box-sizing: border-box;
+      /* flex-grow: 1; */
+      /* margin-right: 10px; box-sizing: border-box; */
+      margin-bottom: 10px;
+    }
+
+  </style>
+</head>
+<body>
+  
+  <section>
+    <div class="box01">box01</div>
+    <div class="box02">box02</div>
+    <div class="box03">box03</div>
+    <div class="box04">box04</div>
+    <div class="box05">box05</div>
+    <div class="box06">box06</div>
+    <div class="box07">box07</div>
+    <div class="box08">box08</div>
+    <div class="box09">box09</div>
+    <div class="box10">box10</div>
+  </section>
+
+</body>
+</html>

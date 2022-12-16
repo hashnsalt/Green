@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=no">
+  <title>Responsive_web</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+  <style>
+    /* ------ default setting ------ */
+
+    * {margin: 0; padding: 0;}
+    li {list-style: none;}
+    
+
+    /* ------ header ------ */
+
+    /* ------ event_box ------ */
+
+    /* .event_box div {
+      width: 100%; height: 100px;
+      border: 1px solid black; box-sizing: border-box;
+    } */
+
+
+    .event_box .event_top, .event_box .event_bottom {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .event_box .event_top div, .event_box .event_bottom div {
+      width: 100%; height: 100px;
+      border: 1px solid black; box-sizing: border-box;
+    }
+
+    @media all and (min-width:601px) {
+      .event_box .event_top div, .event_box .event_bottom div {
+        width: 48%;
+        flex-grow: 1;
+      }
+
+      .event_box .event_top div:first-child, 
+      .event_box .event_bottom div:first-child {
+        margin-right: 10px;
+      }
+
+    }
+
+    @media all and (min-width:769px) {
+      .event_box, .visual_main {
+        width: 1024px;
+        margin: 0 auto;
+        display: flex;
+      }
+
+      .event_box .event_top, .event_box .event_bottom {
+        /* width: 48%; */
+        flex-grow: 1;
+      }
+
+      .event_box .event_top {
+        margin-right: 10px;
+      }
+      
+    }
+
+    /* ------ visual_main ------ */
+
+    
+
+  </style>
+</head>
+<body>
+  <!-- flex로 레이아웃 -->
+  <div class="header_ex">
+    <!-- 날개 -->
+    <header class="header">
+
+      <div class="lnb_ham_box">
+        <input type="checkbox" id="btn_menu">
+        <div class="lnb_label">
+          <label for="btn_menu" class="open"></label>
+          <label for="btn_menu" class="close"></i></label>
+        </div>
+        <ul class="lnb_ham_menu">
+          <li>lnb01</li>
+          <li>lnb01</li>
+          <li>lnb01</li>
+          <li>lnb01</li>
+          <li>lnb01</li>
+        </ul>
+      </div><!-- lnb_ham_box -->
+
+      <h1>header</h1>
+
+    </header><!-- header -->
+  </div><!-- header_ex -->
+
+  <div class="nav_box">
+    <nav class="lnb">
+      <ul>
+        <li>lnb01</li>
+        <li>lnb02</li>
+        <li>lnb03</li>
+        <li>lnb04</li>
+        <li>lnb05</li>
+        <!-- float쓰기 -->
+      </ul>
+    </nav>
+  </div>
+
+    <div class="visual_main">
+      <!-- picture 태그는 가장 큰 디바이스 조건 부터 적용하게 해준다. 가장 작은 것부터 짜야하는 미디어 쿼리랑은 반대. 차례대로 첫번째 소스가 만족하지 않으면 두번째 소스, 두번째 소스가 만족하지 않으면 세번째 소스 다 안맞으면 맨마지막의 img태그가 나옴. 만족했을 때는 위에거 올리기.-->
+      <picture>
+        <source media="(min-width: 769px)" srcset="./images/res_img_1024.jpg">
+        <source media="(min-width: 601px)" srcset="./images/res_img_768.jpg">
+        <source media="(min-width: 320px)" srcset="./images/res_img_600.jpg">
+        <img src="./images/res_img_source.jpg" alt="모든 장치 이미지" style="width: 100%;" />
+        <!-- 맨마지막 스타일 100%는 꼭 넣어줘야 한다. 안그러면 들썩거림. -->
+      </picture>
+    </div>
+  
+    <section class="event_box">
+      <!-- flex사용 -->
+      <!-- 태블릿에서 flex 사용한 것을 웹에서도 사용할 수 있게 끔. -->
+      <div class="event_top">
+        <div class="event01">event01</div>
+        <div class="event02">event02</div>
+      </div>
+      <div class="event_bottom">
+        <div class="event03">event03</div>
+        <div class="event04">event04</div>
+      </div>
+    </section>
+
+  <div class="footer_ex"><!-- 날개 -->
+    <footer class="footer">
+      <h2>footer</h2>
+    </footer>
+  </div>
+
+</body>
+</html>

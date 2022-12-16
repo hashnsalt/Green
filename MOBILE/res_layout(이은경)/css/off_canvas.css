@@ -1,0 +1,67 @@
+/* ------ defualt setting ------- */
+
+* {margin: 0; padding: 0;}
+
+
+/* ------ header ------- */
+
+body {
+  overflow: hidden;
+}
+
+.header {
+  background-color: black;
+  margin-bottom: 10px;
+}
+
+.header h2 {
+  color: #fff;
+}
+
+/* ------ contents ------ */
+
+.frame_box {
+  overflow-y: hidden;
+}
+
+.frame {
+  width: 980px;
+  height: 100vh;
+  display: flex;
+}
+.frame div {
+  width: 100%;
+  background-color: black;
+  margin-right: 10px;
+  color: #fff;
+  flex-wrap: nowrap;
+}
+
+.frame div:last-child {
+  margin-right: 0;
+}
+
+/* ------ media query setting ------ */
+
+@media all and (min-width:601px) {
+  .frame {
+    width: 1170px;
+  }
+}
+
+@media all and (min-width:769px) {
+  .frame {
+    width: 1024px;
+  }  
+}
+
+@media all and (min-width:1025px) {
+  .header h2 {
+    width: 1070px;
+    margin: 0 auto;
+  }
+  .frame {
+    width: 1070px;
+    margin: 0 auto;
+  }
+}

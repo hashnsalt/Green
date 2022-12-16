@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=no">
+  <title>Document</title>
+
+  <style>
+    * {margin: 0; padding: 0;}
+    li {list-style: none;}
+
+    .wrap {
+      font-size: 14px;
+    }
+
+    .title {font-size: 3em;}
+    .txt01 {font-size: 2em;}
+    .txt02 {font-size: 1em;}
+    .txt03 {font-size: 16px;}
+
+  </style>
+
+</head>
+<body>
+    <!-- 1em은 저절로 부모의 사이즈를 상속 받는다. em은 부모가 14px 인것을 상속 받는다. 2em은 두배. 기본 폰트 사이즈를 선정. -->
+  
+  <!-- <div class="wrap">
+    <h1 class="title">3em 폰트입니다.</h1>
+    <p class="txt01">2em 폰트입니다.</p>
+    <p class="txt02">1em 폰트입니다.</p>
+    <p class="txt03">16px 폰트입니다.</p>
+  </div> -->
+
+  <div class="wrap">
+    <div class="title">.wrap 부모를 가진 3em 폰트입니다.
+      <div class="title">.wrap .title 부모를 가진 3em 폰트입니다.
+        <div class="title">.wrap .title .title의 부모를 가진 3em 폰트입니다.</div>
+      </div>
+    </div>
+
+    <!-- em을 가진 부모의 자식은 부모의 em배를 가지기 때문에 폰트 사이즈가 배로 간다. -->
+  </div>
+
+</body>
+</html>

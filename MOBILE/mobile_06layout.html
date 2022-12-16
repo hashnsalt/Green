@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=no">
+  <title>mobile_layout_landscape</title>
+  <style>
+    * {margin: 0; padding: 0;}
+    li {list-style: none;}
+
+    /* ------ header ------ */
+    
+    .header {
+      height: 50px;
+      background-color: brown;
+      color: white;
+      text-align: center;
+      line-height: 50px;
+    }
+
+    .lnb li {
+      width: 20%; height: 30px;
+      background-color: burlywood;
+      font-weight: bold;
+      text-align: center;
+      line-height: 30px;
+      float: left;
+    }
+
+    .visual_main {
+      height: 300px;
+      background-color: coral;
+      text-align: center;
+      line-height: 300px;
+    }
+
+    .event .eve {
+      width: 100%; height: 100px;
+      border: 1px solid black; box-sizing: border-box;
+    }
+
+
+    .notice .not {
+      overflow: hidden;
+    }
+
+    .notice .not div {
+      width: 50%; height: 150px;
+      border: 1px solid black; box-sizing: border-box;
+      float: left;
+    }
+
+
+    @media all and (min-width:321px) and (orientation:landscape) {
+      .event {overflow: hidden;}
+      .event .eve {
+        width: 50%;
+        float: left;
+      }
+
+      .notice {overflow: hidden;}
+      .notice .not {
+        width: 50%;
+        float: left;
+      }
+
+      /* .notice .not div {
+        width: 50%;
+      } 자기 부모(.not)의 50%라서 변한게 없다.*/
+    }
+
+    .footer {
+      background-color: bisque;
+    }
+
+  </style>
+</head>
+<body>
+  
+  <header class="header">
+    <h2>header</h2>
+  </header>
+
+  <ul class="lnb">
+    <li>lnb01</li>
+    <li>lnb02</li>
+    <li>lnb03</li>
+    <li>lnb04</li>
+    <li>lnb05</li>
+  </ul>
+
+  <section class="visual_main">
+    <h2>visual_main</h2>
+  </section>
+
+  <section class="event">
+    <div class="eve01 eve">event01</div>
+    <div class="eve02 eve">event02</div>
+  </section>
+
+  <section class="notice">
+    <div class="notice12 not">
+      <div class="not01">notice01</div>
+      <div class="not02">notice02</div>
+    </div>
+
+    <div class="notice34 not">
+      <div class="not03">notice01</div>
+      <div class="not04">notice02</div>
+    </div>
+  </section>
+
+  <footer class="footer">footer</footer>
+</body>
+</html>

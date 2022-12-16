@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=no">
+  <title>Document</title>
+  <style>
+    * {margin: 0; padding: 0;}
+
+    /* 모바일. 기준. 미디어 커리는 모바일은 안들어간다. 가장 작은 디바이스부터 기준을 잡아야한다. */
+
+    .box { 
+      width: 100%; height: 100px;
+      border: 1px solid black; box-sizing: border-box;
+      text-align: center;
+      line-height: 100px;
+    }
+
+    /* @media all and (min-width:601px) and (max-width:768px) {} tablet에서 유일하게 사용하는 속성. 더 커지거나 더작은 디바이스에서는 적용 안됨. */
+    /* @media all and (min-width:601px) {} 테블릿과 pc에서 공통적으로 사용해야하는 속성. 계속해서 유지해야 하는 속성이다. 601px 이상의 디바이스는 전부 적용. */
+
+    @media all and (min-width:601px) {
+      .boxA {
+        width: 100%;
+        /* overflow: hidden; */
+        display: flex;
+      }
+
+      .boxA .box02 {
+        width: 70%; 
+        /* float: left; */
+      }
+
+      .boxA .box03 {
+        width: 30%; 
+        /* float: left; */
+      }
+
+    }
+
+    /* @media 쿼리는 범위를 잡으면 그 안에서만 속성이 적용 된다.
+     위의 중복 코드를 제거하기 위해서는 max-width를 제거하면 된다.
+     그럼 min-width 601px 이상의 디바이스는 전부 적용 된다. */
+
+    @media all and (min-width:769px) and (max-width:1024px) {
+      .boxAA {
+        width: 100%;
+        /* overflow: hidden; */
+        display: flex;
+      }
+
+      .boxAA .boxA {
+        width: 60%;
+        /* overflow: hidden; */
+        /* float: left; */
+      }
+
+      .boxAA .boxA div {
+        width: 50%;
+        /* float: left; */
+      }
+
+      .box04 {
+        width: 40%;
+        /* float: left; */
+      }
+    }
+
+    @media all and (min-width: 1025px) {
+      .header {
+        width: 100%;
+        background-color: #ccc;
+      }
+
+      .box01, .boxAA {
+        width: 1024px;
+        margin: 0 auto;
+        background-color: #fff;
+      }
+      
+    }
+
+  </style>
+</head>
+<body>
+  
+  <header class="header">
+    <div class="box01 box">box01</div>
+  </header>
+  <div class="boxAA">
+    <div class="boxA">
+      <div class="box02 box">box02</div>
+      <div class="box03 box">box03</div>
+    </div><!-- boxA -->
+    <div class="box04 box">box04</div>
+  </div><!-- boxAA -->
+
+</body>
+</html>

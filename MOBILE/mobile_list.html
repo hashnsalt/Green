@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=no">
+  <title>Mobile_app_list</title>
+  <link rel="stylesheet" href="./fontawesome-free-6.2.0-web/css/all.css">
+  <style>
+    * {margin:0; padding:0;}
+    li {list-style: none;}
+    a {text-decoration: none; color: black;}
+
+    /* ------ header ------ */
+
+    .header {
+      height: 50px;
+      background-color: #8fc320;
+      position: relative;
+    }
+
+    .header .back {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: white;
+      font-size: 20px;
+    }
+
+    .header h3 {
+      color: white;
+      text-align: center;
+      line-height: 50px; 
+    }
+
+    /* ------ Search_bar ------ */
+
+    .search {
+      height: 50px;
+      background-color: #ccc;
+      padding: 10px 0 10px 0; box-sizing: border-box;
+    }
+
+    .search .search_bar_box {
+      height: 30px;
+      margin: 0 10px;
+      border-radius: 10px 10px 10px 10px;
+      background-color: white;
+      color: #999;
+      padding: 3px 5px; box-sizing: border-box;
+    }
+
+    .search .search_bar {
+      width: calc(100% - (20px + 20px));
+      border: none;
+      font-size: 15px;
+      outline: none;
+    }
+
+    /* ------ avarta_list ------ */
+
+    .list_box {
+      background-color: #f3f4ef;
+    }
+
+    .list_box a li {
+      height: 80px;
+      border-bottom: 1px solid #999;
+      overflow: hidden;
+      padding: 5px 5px 5px 0; box-sizing: border-box;
+    }
+
+    .list_box a li>p {
+      font-size: 11px;
+      color:#999;
+      float: right;
+      
+    }
+
+    .list_box a>li div {
+      width: 50px; height: 50px;
+      margin: 10px 10px;
+      float: left;
+    }
+
+    .list_box a li div img {
+      width: 100%; height: 100%;
+    }
+
+    .list_box a li .text {
+      width: calc(100% - (50px + 70px));
+      float: left;
+      margin: 10px 0;
+      line-height: 25px;
+    }
+
+    .list_box a li .text p:last-child {
+      color: #999;
+    }
+
+    .list_box a li .text_right {
+      margin: 0;
+      float: right;
+      color: #999;
+      font-size: 11px;
+    }
+
+    .list_box a li .text_right p {
+      margin-left: 20px;
+    }
+
+    .list_box a li .text_right .talk_count {
+      width: 35px; height: 20px;
+      background-color: #8fc320;
+      color: #fff;
+      border-radius: 10px;
+      font-size: 11px;
+      text-align: center;
+      line-height: 20px;
+      margin-top: 30px;
+      margin-left: 15px;
+    }
+
+
+    
+    /* ------ bottom_lnb ------ */
+
+    .bottom_lnb {
+      width: 100%; height: 50px;
+      background-color: #d6e0c5;
+      border-top: 1px solid #999;
+      position: fixed;
+      left: 0; bottom: 0;
+      overflow: hidden;
+      padding-top: 10px;
+    }
+
+    .bottom_lnb li {
+      width: 25%;
+      float: left;
+      text-align: center;
+      line-height: 10px;
+    }
+
+    .bottom_lnb li i {
+      font-size: 30px;
+      color: #666;
+    }
+
+    .bottom_lnb li p {
+      color: #999;
+    }
+
+  </style>
+</head>
+
+<body>
+  
+  <header class="header">
+    <div class="back"><i class="fa-solid fa-chevron-left"></i>Back</div>
+    <h3>Friend</h3>
+  </header>
+
+  <div class="search">
+    <div class="search_bar_box">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" class="search_bar" placeholder="Search">
+      <i class="fa-solid fa-microphone"></i>
+    </div>
+  </div><!-- header -->
+
+
+
+  <ul class="list_box">
+  
+    <a href="#!">
+      <li>
+        <div><img src="./images/avatar1.png" alt="아바타1"></div>
+        <div class="text">
+          <p>Elis Normard</p>
+          <p>Hi! there~~</p>
+        </div>
+  
+        <div class="text_right">
+          <p>17:45</p>
+          <div class="talk_count">12</div>
+        </div>
+      </li>
+    </a>
+  
+    <a href="#!">
+      <li>
+        <div><img src="./images/avatar2.png" alt="아바타2"></div>
+        <div class="text">
+          <p>Dr.Karl</p>
+          <p>Was it fun in English?</p>
+        </div>
+        <p>14:20</p>
+      </li>
+    </a>
+  
+    <a href="#!">
+      <li>
+        <div><img src="./images/avatar3.png" alt="아바타3"></div>
+        <div class="text">
+          <p>Jay</p>
+          <p>Mom.. I love you so much</p>
+        </div>
+        <p>08:30</p>
+      </li>
+    </a>
+  
+    <a href="#!">
+      <li>
+        <div><img src="./images/avatar4.png" alt="아바타4"></div>
+        <div class="text">
+          <p>Andrew</p>
+          <p>Enjoy it!</p>
+        </div>
+        <p>04/10/17</p>
+      </li>
+    </a>
+  
+    <a href="#!">
+      <li>
+        <div><img src="./images/avatar5.png" alt="아바타5"></div>
+        <div class="text">
+          <p>Kevin</p>
+          <p>OK.</p>
+        </div>
+        <p>04/10/17</p>
+      </li>
+    </a>
+  
+    <a href="#!">
+      <li>
+        <div><img src="./images/avatar6.png" alt="아바타6"></div>
+        <div class="text">
+          <p>Cristina Love</p>
+          <p>Have fun.</p>
+        </div>
+        <p>04/10/17</p>
+      </li>
+    </a>
+  
+    <a href="#!">
+      <li>
+        <div><img src="./images/avatar7.png" alt="아바타7"></div>
+        <div class="text">
+          <p>Ryan Young</p>
+          <p>See you tommorrow.</p>
+        </div>
+        <p>04/10/17</p>
+      </li>
+    </a>
+  
+    <a href="#!">
+      <li>
+        <div><img src="./images/avatar8.png" alt="아바타8"></div>
+        <div class="text">
+          <p>Noah</p>
+          <p>ASAP.</p>
+        </div>
+        <p>04/10/17</p>
+      </li>
+    </a>
+  
+    <a href="#!">
+      <li>
+        <div><img src="./images/avatar9.png" alt="아바타9"></div>
+        <div class="text">
+          <p>Yuri</p>
+          <p>winter is comming.</p>
+        </div>
+        <p>04/10/16</p>
+      </li>
+    </a>
+  
+    <a href="#!">
+      <li>
+        <div><img src="./images/avatar10.png" alt="아바타10"></div>
+        <div class="text">
+          <p>Alex</p>
+          <p>:)</p>
+        </div>
+        <p>04/10/16</p>
+      </li>
+    </a>
+  
+    <a href="#!">
+      <li>
+        <div><img src="./images/avatar11.png" alt="아바타11"></div>
+        <div class="text">
+          <p>Su</p>
+          <p>haha</p>
+        </div>
+        <p>04/10/16</p>
+      </li>
+    </a>
+  
+    <a href="#!">
+      <li>
+        <div><img src="./images/avatar12.png" alt="아바타12"></div>
+        <div class="text">
+          <p>bee</p>
+          <p>lol</p>
+        </div>
+        <p>04/10/16</p>
+      </li>
+    </a>
+  
+    <a href="#!">
+      <li>
+        <div><img src="./images/avatar13.png" alt="아바타13"></div>
+        <div class="text">
+          <p>Ann</p>
+          <p>go back home</p>
+        </div>
+        <p>04/10/16</p>
+      </li>
+    </a>
+  
+  </ul><!-- avatar_list -->
+
+
+  <ul class="bottom_lnb">
+    <li><i class="fa-solid fa-user-tie"></i><p>friend</p></li>
+    <li><i class="fa-regular fa-comment"></i><p>talk</p></li>
+    <li><i class="fa-regular fa-star"></i><p>Favorite</p></li>
+    <li><i class="fa-solid fa-ellipsis"></i><p>menu</p></li>
+  </ul><!-- bottom_lnb -->
+
+</body>
+</html>

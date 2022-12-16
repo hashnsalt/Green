@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0">
+  <title>flex_05_flex_box</title>
+  <style>
+    * {margin: 0; padding: 0;}
+    li {list-style: none;}
+
+    .header, .footer {
+      width: 1070px; height: 200px;
+      background-color: #eee;
+      margin: 0 auto;
+    }
+
+    .wrap {
+      width: 1070px; height: 800px;
+      background-color: #eee;
+      margin: 10px auto;
+      display: flex;
+    }
+
+    .contents {
+      border: 1px solid black; box-sizing: border-box;
+      flex-grow: 1;
+      /* margin-right: 10px; */
+    }
+
+    .aside {
+      width: 200px;
+      border: 1px solid black; box-sizing: border-box;
+      /* flex-grow: 1; */
+      margin-right: 10px;
+      order: -1;
+      /* flex에서 자식들의 순서를 바꾸는 것 기본적으로 0을 가짐. 0보다 숫자가 작아지면 왼쪽, 커지면 오른쪽. */
+      display: flex;
+      flex-wrap: wrap;
+      align-content: space-between;
+    }
+
+    .aside .lnb {
+      display: flex;
+      flex-direction: column;
+      /* 기본이 가로로 정렬인데 세로로 내려오게 하고 싶으면 column을 준다. 가로정렬 세로정렬이 바뀌어서 align을 사용해서 정렬.*/
+      align-items: flex-end;
+    }
+    .aside .lnb li {
+      width: 100px; height: 50px;
+      background-color: yellow;
+      border-radius: 10px;
+      margin: 5px;
+    }
+
+    .aside .cs_center {
+      width: 100%; height: 200px;
+      background-color: #999;
+    }
+
+  </style>
+</head>
+<body>
+  
+  <header class="header">
+    <h1>header</h1>
+  </header>
+
+  <div class="wrap">
+    <div class="contents">contents</div>
+    <aside class="aside">
+      <ul class="lnb">
+        <li>lnb01</li>
+        <li>lnb02</li>
+        <li>lnb03</li>
+        <li>lnb04</li>
+      </ul>
+      <div class="cs_center">
+        custom_center
+      </div>
+    </aside>
+  </div>
+
+  <footer class="footer">
+    <h2>footer</h2>
+  </footer>
+
+</body>
+</html>

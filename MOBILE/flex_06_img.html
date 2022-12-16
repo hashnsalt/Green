@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=no">
+  <title>flex_06_img</title>
+  <style>
+    * {margin: 0; padding: 0;}
+    img {display: block;}
+
+    section {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    section div {
+      flex-basis: 300px;
+      /* 기본적인 flex 사이즈를 잡아줌. width를 써도 된다.*/
+      /* height: 200px; */
+      flex-grow: 1;
+      /* 여백을 주고 싶으면 flex-grow를 써라. 찔끔 남는 여백을 없애줌 */
+    }
+
+    section div img {
+      width: 100%; height: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <section>
+    <div class="box01"><img src="./images/flex_01.jpg" alt=""></div>
+    <div class="box02"><img src="./images/flex_02.jpg" alt=""></div>
+    <div class="box03"><img src="./images/flex_03.jpg" alt=""></div>
+    <div class="box04"><img src="./images/flex_04.jpg" alt=""></div>
+    <div class="box05"><img src="./images/flex_05.jpg" alt=""></div>
+    <div class="box06"><img src="./images/flex_06.jpg" alt=""></div>
+    <div class="box07"><img src="./images/flex_07.jpg" alt=""></div>
+    <div class="box08"><img src="./images/flex_08.jpg" alt=""></div>
+    <div class="box09"><img src="./images/flex_09.jpg" alt=""></div>
+    <div class="box10"><img src="./images/flex_10.jpg" alt=""></div>
+  </section>
+  
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=no">
+  <title>Mobile_02</title>
+  <style>
+    * {margin: 0; padding: 0;}
+
+    img {display: block;}
+    /* 흰줄 한줄 없애기 */
+
+    /* .visual_pc {
+      width: 100%;
+    } */
+    /* div를 장치에 맞춰주는 것. 생략 가능 meta_tag에 width를 width=device-width로 맞춰놨기 때문에*/
+
+    .visual_pc img {
+      width: 100%; height: auto;
+    }
+
+    /* .visual_mobile {
+      width: 100%;
+    } */
+    /* div width를 100%를 맞추었기 때문에 아직 옆으로 들썩 거림. 생략 가능. */
+
+    .visual_mobile img {
+      width: 100%; height: auto;
+    }
+    /* img를 장치에 맞추었기 때문에 이제 옆으로 들썩거리지 않음. */
+    
+  </style>
+</head>
+<body>
+
+  <div class="visual_pc">
+    <img src="./images/bg_01.jpg" alt="데스크탑 PC 비주얼">
+  </div>
+
+  <div class="visual_mobile">
+    <img src="./images/bg_02.jpg" alt="모바일 PC 비주얼">
+  </div>
+  
+</body>
+</html>

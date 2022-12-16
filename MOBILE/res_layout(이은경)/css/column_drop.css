@@ -1,0 +1,88 @@
+    /* ------ defualt setting ------ */
+    
+    * {margin: 0; padding: 0;}
+
+    
+    /* ------ header ------- */
+
+
+    .header {
+      height: 50px;
+      background-color: black;
+    }
+
+    .header h2 {
+      color: #fff;
+    }
+
+    /* ------ visual_main ------ */
+
+    .visual_main {
+      height: 600px;
+      background-color: black;
+      margin-top: 10px;
+      color: #fff;
+    }
+
+    /* ------ contents ------ */
+    
+    .contents01 {
+      height: 400px;
+      background-color: purple;
+      margin-top: 10px;
+      color: #fff;
+    }
+
+    .contents02 {
+      height: 400px;
+      background-color: black;
+      margin-top: 10px;
+      color: #fff;
+    }
+
+    /* ------ media query setting ------ */
+
+    @media all and (min-width:601px) {
+      .visual_main {
+        height: 800px;
+      }
+      .contents01,
+      .contents02 {
+        height: 200px;
+      }
+    }
+
+    @media all and (min-width:769px) {
+
+      .vs_main_contents {
+        display: flex;
+      }
+
+      .vs_main_contents .contents01 {
+        width: 200px;
+        height: 800px;
+        order: -1;
+      }
+
+      .vs_main_contents .visual_main {
+        width: 100%;
+        margin-left: 10px;
+      }
+
+    }
+    
+    @media all and (min-width:1025px) {
+      .wrap {
+        display: flex;
+      }
+
+      .vs_main_contents {
+        width: 100%;
+        margin-right: 10px;
+      }
+
+      .contents02 {
+        width: 200px;
+        height: 800px;
+      }
+    }

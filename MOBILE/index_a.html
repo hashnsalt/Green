@@ -1,0 +1,3145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>READER_E-books site</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+
+  <div class="popup">
+    <input type="checkbox" id="popup_chk">
+    <label for="popup_chk">open</label>
+    <div class="popup_sheet">
+      <div><p style="color: #fff;"><span style="color:red;">신간 할인!</span> + <span>한달 구독료 무료 이벤트 진행중</span></p></div>
+    </div>
+  </div>
+  <header class="header">
+
+    <div class="gnb">
+      <ul>
+        <li><a href="#!">로그인</a></li>
+        <li><a href="#!">회원가입</a></li>
+      </ul>
+    </div><!-- gnb -->
+
+    <div class="main_nav">
+      <ul>
+        <li><a href="./index.html">일반 도서</a></li>
+        <li><a href="#!">웹 소설</a></li>
+      </ul>
+
+      <div class="logo"><a href="./index.html">READER</a></div>
+
+      <div class="search">
+        <input type="text" class="search_bar" placeholder="도서 검색">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+    </div><!-- .main_lnb .logo .search -->
+
+    <div class="lnb_nav">
+      <nav class="lnb">
+        
+        <div class="ham_menu">
+          <input type="checkbox" id="ham_chk">
+         
+          <label for="ham_chk" class="ham_btn"><img src="./images/hambtn.png" alt="open"></label>
+
+          <ul class="lnb_menu">
+            <li><a href="#!">홈</a></li>
+            <li><a href="./sub_page/sub_page.html">카테고리</a></li>
+          </ul>
+
+          <div class="ham_list">
+
+            <ul class="category">
+              <li><a href="#!">소설</a></li>
+              <li><a href="#!">에세이/시</a>
+                <div class="sub_list">
+                  <i class="fa-regular fa-square-plus"></i>
+                  <ul class="list">
+                    <li><a href="#!">에세이</a></li>
+                    <li><a href="#!">시</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li><a href="#!">경영/경제</a></li>
+            </ul>
+
+            <ul class="category">
+              <li><a href="#!">자기계발</a></li>
+              <li><a href="#!">인문/사회/역사</a></li>
+              <li><a href="#!">건강/다이어트</a>
+                <div class="sub_list">
+                  <i class="fa-regular fa-square-plus"></i>
+                  <ul class="list">
+                    <li><a href="#!">다이어트/운동/스포츠</a></li>
+                    <li><a href="#!">스타일/뷰티</a></li>
+                    <li><a href="#!">건강/다이어트</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+
+            <ul class="category">
+              <li><a href="#!">가정/생활</a>
+                <div class="sub_list">
+                  <i class="fa-regular fa-square-plus"></i>
+                  <ul class="list">
+                    <li><a href="#!">결혼/임신/출산</a></li>
+                    <li><a href="#!">육아/자녀교육</a></li>
+                    <li><a href="#!">취미/요리/기타</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li><a href="#!">종교</a></li>
+              <li><a href="#!">여행</a></li>
+            </ul>
+
+            <ul class="category">
+              <li><a href="#!">외국어</a></li>
+              <li><a href="#!">과학</a>
+                <div class="sub_list">
+                  <i class="fa-regular fa-square-plus"></i>
+                  <ul class="list">
+                    <li><a href="#!">과학일반</a></li>
+                    <li><a href="#!">수학</a></li>
+                    <li><a href="#!">자연과학</a></li>
+                    <li><a href="#!">응용과학</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li><a href="#!">어린이/청소년</a></li>
+            </ul>
+
+            <ul class="category">
+              <li><a href="#!">진로/교육/교재</a></li>
+              <li><a href="#!">잡지</a></li>
+              <li><a href="#!">컴퓨터/IT</a>
+                <div class="sub_list">
+                  <i class="fa-regular fa-square-plus"></i>
+                  <ul class="list">
+                    <li><a href="#!">IT 비즈니스</a></li>
+                    <li><a href="#!">개발/프로그래밍</a></li>
+                    <li><a href="#!">컴퓨터/앱 활용</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div> <!-- ham_btn_menu -->
+
+        </div>
+      </nav>
+    </div><!-- lnb -->
+  </header><!-- header -->
+
+  <!-- <div class="visual_main_background"> -->
+  <section class="visual_main">
+    <input type="radio" id="vs_rad01" name="vs_rad" checked>
+    <input type="radio" id="vs_rad02" name="vs_rad">
+    <input type="radio" id="vs_rad03" name="vs_rad">
+    <ul class="vs_main_img">
+      <li><img src="./images/vs_main01.jpg" alt="vs_img01"></li>
+      <li><img src="./images/vs_main02.jpg" alt="vs_img02"></li>
+      <li><img src="./images/vs_main03.jpg" alt="vs_img03"></li>
+    </ul>
+  
+    <div class="lab">
+      <div class="vs_controller01">
+        <label for="vs_rad02" class="left controller"><img src="./images/vs_left.png" alt="vs_left"></label>
+        <label for="vs_rad03" class="right controller"><img src="./images/vs_right.png" alt="vs_right"></label>
+      </div>
+      <div class="vs_controller02">
+        <label for="vs_rad03" class="left controller"><img src="./images/vs_left.png" alt="vs_left"></label>
+        <label for="vs_rad01" class="right controller"><img src="./images/vs_right.png" alt="vs_right"></label>
+      </div>
+      <div class="vs_controller03">
+        <label for="vs_rad01" class="left controller"><img src="./images/vs_left.png" alt="vs_left"></label>
+        <label for="vs_rad02" class="right controller"><img src="./images/vs_right.png" alt="vs_right"></label>
+      </div>
+    </div>
+  
+  </section><!-- visual_main -->
+  <!-- </div> -->
+
+
+  <section class="metaphor">
+    <div class="meta_icon_best float">
+      <div><img src="./images/meta_icon_01.png" alt="best"></div>
+      <div class="meta_txt_box">B E S T</div>
+    </div>
+  
+    <div class="meta_icon_event float">
+      <div><img src="./images/meta_icon_02.png" alt="event"></div>
+      <div class="meta_txt_box">E V E N T</div>
+    </div>
+    <div class="meta_icon_mybook float">
+      <div><img src="./images/meta_icon_03.png" alt="mybook"></div>
+      <div class="meta_txt_box">MY BOOKS</div>
+    </div>
+  </section><!-- metaphor -->
+
+
+  <div class="today_books_background">
+  
+    <section class="today_books">
+      <div class="contents_title">
+        <h2>오늘의 책</h2>
+        <a href="#!">전체 보기<i class="fa-solid fa-chevron-right"></i></a>
+      </div>
+  
+      <ul class="books_list">
+  
+        <li>
+          <div class="books_thumbnail">
+            <div class="books_img"><a href="#!"><img src="./images/today_book_01.jpg" alt="today_book_01"></a></div>
+            <div class="books_pick_btn">
+              <a href="#!">
+                <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+              </a>
+              <a href="#!">
+                <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+              </a>
+            </div>
+          </div>
+          <div class="books_info"><a href="#!">빨간 머리 앤이 하는 말<p>백영옥 저</p></a></div>
+        </li>
+  
+        <li>
+          <div class="books_thumbnail">
+            <div class="books_img"><a href="#!"><img src="./images/today_book_02.jpg" alt="today_book_02"></a></div>
+            <div class="books_pick_btn">
+              <a href="#!">
+                <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+              </a>
+              <a href="#!">
+                <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+              </a>
+            </div>
+          </div>
+          <div class="books_info"><a href="#!">평균의 종말<p>토드 로드 저/정미나 역</p></a></div>
+        </li>
+  
+        <li>
+          <div class="books_thumbnail">
+            <div class="books_img"><a href="#!"><img src="./images/today_book_03.jpg" alt="today_book_03"></a></div>
+            <div class="books_pick_btn">
+              <a href="#!">
+                <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+              </a>
+              <a href="#!">
+                <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+              </a>
+            </div>
+          </div>
+          <div class="books_info"><a href="#!">오늘 같은 날 청바지를 입다니 경솔했다!<p>김재인 저</p></a></div>
+        </li>
+  
+        <li>
+          <div class="books_thumbnail">
+            <div class="books_img"><a href="#!"><img src="./images/today_book_04.jpg" alt="today_book_04"></a></div>
+            <div class="books_pick_btn">
+              <a href="#!">
+                <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+              </a>
+              <a href="#!">
+                <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+              </a>
+            </div>
+          </div>
+          <div class="books_info"><a href="#!">혼자 잘해주고 상처받지마라<p>유은정 저</p></a></div>
+        </li>
+  
+        <li>
+          <div class="books_thumbnail">
+            <div class="books_img"><a href="#!"><img src="./images/today_book_05.jpg" alt="today_book_05"></a></div>
+            <div class="books_pick_btn">
+              <a href="#!">
+                <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+              </a>
+              <a href="#!">
+                <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+              </a>
+            </div>
+          </div>
+          <div class="books_info"><a href="#!">법의 이유<p>홍성수 저</p></a></div>
+        </li>
+  
+        <li>
+          <div class="books_thumbnail">
+            <div class="books_img"><a href="#!"><img src="./images/today_book_06.jpg" alt="나는 누구인가"></a></div>
+            <div class="books_pick_btn">
+              <a href="#!">
+                <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+              </a>
+              <a href="#!">
+                <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+              </a>
+            </div>
+          </div>
+          <div class="books_info"><a href="#!">나는 누구인가<p>강신주 저</p></a></div>
+        </li>
+  
+      </ul>
+    </section>
+  
+  </div><!-- today_books -->
+
+  <div class="wrap">
+
+    <section class="best_books">
+      <div class="contents_title">
+        <h2>인기 목록</h2>
+        <div class="current_date">2022-10-11</div>
+        <a href="#!">전체 보기<i class="fa-solid fa-chevron-right"></i></a>
+      </div>
+
+      <input type="radio" id="best_rad01" name="best" checked>
+      <input type="radio" id="best_rad02" name="best">
+      <input type="radio" id="best_rad03" name="best">
+    
+      <div class="best_label">
+        <label for="best_rad01">일간</label>
+        <label for="best_rad02">주간</label>
+        <label for="best_rad03">월간</label>
+      </div>
+
+      <div class="best_books_items_sheet">
+        <section class="best_books_items items">
+          <ul>
+            <input type="radio" id="items_rad01" name="best_items_01" checked>
+            <input type="radio" id="items_rad02" name="best_items_01">
+            <input type="radio" id="items_rad03" name="best_items_01">
+      
+            <li>
+              <label for="items_rad01">
+                <div class="best_menu">
+                  <div class="best_thumnail"><img src="./images/best_books_01.jpg" alt="best_books01"></div>
+                  <p>1</p>
+                  <div class="best_books_info">
+                    <a href="#!">
+                      역행자
+                      <p style="font-size: 12px; margin-top: 2px; color: #999;">자청</p>
+                    </a>
+                  </div>
+                  <div class="rad_btn"><img src="./images/down-arr.png" alt=""></div>
+      
+                </div>
+              </label>
+              <div class="best_books_view">
+                <div class="best_view_detail">
+                  <p style="font-size: 14px; font-weight: bold; color: #242424;">인생 역주행 공식서</p>
+                  <p style="font-size: 12px; color: #707070;">무자본 연쇄 창업마 '자청'이 말하는 인생의 순리</p>
+                  <a href="#!">
+                    <img src="./images/best_books_01.jpg" alt="best_books01">
+                  </a>
+                </div>
+              </div>
+            </li>
+      
+            <li>
+              <label for="items_rad02">
+                <div class="best_menu">
+                  <div class="best_thumnail"><img src="./images/best_books_02.png" alt="best_books02"></div>
+                  <p>2</p>
+                  <div class="best_books_info">
+                    <a href="#!">
+                      이상한 변호사 우영우
+                      <p style="font-size: 12px; margin-top: 2px; color: #999;">문지원</p>
+                    </a>
+                  </div>
+                  <div class="rad_btn"><img src="./images/down-arr.png" alt=""></div>
+      
+                </div>
+              </label>
+              <div class="best_books_view">
+                <div class="best_view_detail">
+                  <p style="font-size: 14px; font-weight: bold; color: #242424;">TV 방영!</p>
+                  <p style="font-size: 12px; color: #707070;">이상한 변호사 우영우가 보는 세상</p>
+                  <a href="#!">
+                    <img src="./images/best_books_02.png" alt="best_books01">
+                  </a>
+                </div>
+              </div>
+            </li>
+      
+            <li>
+              <label for="items_rad03">
+                <div class="best_menu">
+                  <div class="best_thumnail"><img src="./images/best_books_03.png" alt="best_books03"></div>
+                  <p>3</p>
+                  <div class="best_books_info">
+                    <a href="#!">
+                      부의 추월 차선
+                      <p style="font-size: 12px; margin-top: 2px; color: #999;">엠제이 드미코 저/신소영 역</p>
+                    </a>
+                  </div>
+                  <div class="rad_btn"><img src="./images/down-arr.png" alt=""></div>
+      
+                </div>
+              </label>
+              <div class="best_books_view">
+                <div class="best_view_detail">
+                  <p style="font-size: 14px; font-weight: bold; color: #242424;">부로 향하는 길</p>
+                  <p style="font-size: 12px; color: #707070;">'부자가 되는 길에 지름길이 있다.'</p>
+                  <a href="#!">
+                    <img src="./images/best_books_03.png" alt="best_books03">
+                  </a>
+                </div>
+              </div>
+            </li>
+      
+          </ul>
+      
+          <ul>
+            <input type="radio" id="items_rad04" name="best_items_02">
+            <input type="radio" id="items_rad05" name="best_items_02" checked>
+            <input type="radio" id="items_rad06" name="best_items_02">
+      
+            <li>
+              <label for="items_rad04">
+                <div class="best_menu">
+                  <div class="best_thumnail"><img src="./images/best_books_04.jpg" alt="best_books_04"></div>
+                  <p>4</p>
+                  <div class="best_books_info">
+                    <a href="#!">
+                      불편한 편의점2
+                      <p style="font-size: 12px; margin-top: 2px; color: #999;">김호연</p>
+                    </a>
+                  </div>
+                  <div class="rad_btn"><img src="./images/down-arr.png" alt=""></div>
+      
+                </div>
+              </label>
+              <div class="best_books_view">
+                <div class="best_view_detail">
+                  <p style="font-size: 14px; font-weight: bold; color: #242424;">불편한 편의점의 누군가</p>
+                  <p style="font-size: 12px; color: #707070;">'편의점에서 인생 공식을 찾다.'</p>
+                  <a href="#!">
+                    <img src="./images/best_books_04.jpg" alt="best_books01">
+                  </a>
+                </div>
+              </div>
+            </li>
+      
+            <li>
+              <label for="items_rad05">
+                <div class="best_menu">
+                  <div class="best_thumnail"><img src="./images/best_books_05.jpg" alt="best_books05"></div>
+                  <p>5</p>
+                  <div class="best_books_info">
+                    <a href="#!">
+                      잘될 수밖에 없는 너에게
+                      <p style="font-size: 12px; margin-top: 2px; color: #999;">최서영</p>
+                    </a>
+                  </div>
+                  <div class="rad_btn"><img src="./images/down-arr.png" alt=""></div>
+      
+                </div>
+              </label>
+              <div class="best_books_view">
+                <div class="best_view_detail">
+                  <p style="font-size: 14px; font-weight: bold; color: #242424;">인생을 설계하게 만드는 책</p>
+                  <p style="font-size: 12px; color: #707070;">'넌 잘될 수밖에 없어!'</p>
+                  <a href="#!">
+                    <img src="./images/best_books_05.jpg" alt="best_books_05">
+                  </a>
+                </div>
+              </div>
+            </li>
+      
+            <li>
+              <label for="items_rad06">
+                <div class="best_menu">
+                  <div class="best_thumnail"><img src="./images/best_books_06.jpg" alt="best_books_06"></div>
+                  <p>6</p>
+                  <div class="best_books_info">
+                    <a href="#!">
+                      엄마의 말연습
+                      <p style="font-size: 12px; margin-top: 2px; color: #999;">윤지영</p>
+                    </a>
+                  </div>
+                  <div class="rad_btn"><img src="./images/down-arr.png" alt=""></div>
+      
+                </div>
+              </label>
+              <div class="best_books_view">
+                <div class="best_view_detail">
+                  <p style="font-size: 14px; font-weight: bold; color: #242424;">따뜻한 감동서</p>
+                  <p style="font-size: 12px; color: #707070;">따뜻한 감동이 전해지는 책</p>
+                  <a href="#!">
+                    <img src="./images/best_books_01.jpg" alt="best_books01">
+                  </a>
+                </div>
+              </div>
+            </li>
+      
+          </ul>
+      
+          <ul>
+            <input type="radio" id="items_rad07" name="best_items_03">
+            <input type="radio" id="items_rad08" name="best_items_03">
+            <input type="radio" id="items_rad09" name="best_items_03" checked>
+      
+            <li>
+              <label for="items_rad07">
+                <div class="best_menu">
+                  <div class="best_thumnail"><img src="./images/best_books_07.jpg" alt="best_books_07"></div>
+                  <p>7</p>
+                  <div class="best_books_info">
+                    <a href="#!">
+                      최소한의 이웃
+                      <p style="font-size: 12px; margin-top: 2px; color: #999;">허지웅</p>
+                    </a>
+                  </div>
+                  <div class="rad_btn"><img src="./images/down-arr.png" alt=""></div>
+      
+                </div>
+              </label>
+              <div class="best_books_view">
+                <div class="best_view_detail">
+                  <p style="font-size: 14px; font-weight: bold; color: #242424;">우리는 어떤 이웃인가</p>
+                  <p style="font-size: 12px; color: #707070;">'애정, 상식, 공존, 반추, 성찰, 사유'</p>
+                  <a href="#!">
+                    <img src="./images/best_books_07.jpg" alt="best_books_07">
+                  </a>
+                </div>
+              </div>
+            </li>
+      
+            <li>
+              <label for="items_rad08">
+                <div class="best_menu">
+                  <div class="best_thumnail"><img src="./images/best_books_08.jpg" alt="best_books01"></div>
+                  <p>8</p>
+                  <div class="best_books_info">
+                    <a href="#!">
+                      달러구트 꿈 백화점
+                      <p style="font-size: 12px; margin-top: 2px; color: #999;">이미예</p>
+                    </a>
+                  </div>
+                  <div class="rad_btn"><img src="./images/down-arr.png" alt=""></div>
+      
+                </div>
+              </label>
+              <div class="best_books_view">
+                <div class="best_view_detail">
+                  <p style="font-size: 14px; font-weight: bold; color: #242424;">꿈을 파는 백화점</p>
+                  <p style="font-size: 12px; color: #707070;">'꿈을 파는 백화점에 어서오세요'</p>
+                  <a href="#!">
+                    <img src="./images/best_books_08.jpg" alt="best_books_08">
+                  </a>
+                </div>
+              </div>
+            </li>
+      
+            <li>
+              <label for="items_rad09">
+                <div class="best_menu">
+                  <div class="best_thumnail"><img src="./images/best_books_09.jpg" alt="best_books_09"></div>
+                  <p>9</p>
+                  <div class="best_books_info">
+                    <a href="#!">
+                      마흔에 읽는 니체
+                      <p style="font-size: 12px; margin-top: 2px; color: #999;">장재형</p>
+                    </a>
+                  </div>
+                  <div class="rad_btn"><img src="./images/down-arr.png" alt=""></div>
+      
+                </div>
+              </label>
+              <div class="best_books_view">
+                <div class="best_view_detail">
+                  <p style="font-size: 14px; font-weight: bold; color: #242424;">니체를 다시 읽어보다.</p>
+                  <p style="font-size: 12px; color: #707070;">마흔에 다시 읽어보는 니체는...</p>
+                  <a href="#!">
+                    <img src="./images/best_books_09.jpg" alt="best_books_09">
+                  </a>
+                </div>
+              </div>
+            </li>
+      
+          </ul>
+        </section><!-- day_books_tabs -->
+        
+        <section class="best_books_items02 items">
+          <ul>
+            <input type="radio" id="items_rad10" name="best_items_01">
+            <input type="radio" id="items_rad11" name="best_items_01">
+            <input type="radio" id="items_rad12" name="best_items_01">
+      
+            <li>
+              <label for="items_rad10">
+                <div class="best_menu">
+                  <div class="best_thumnail"><img src="./images/best_books_10.png" alt="best_books_10"></div>
+                  <p>1</p>
+                  <div class="best_books_info">
+                    <a href="#!">
+                      구의 증명
+                      <p style="font-size: 12px; margin-top: 2px; color: #999;">최진영</p>
+                    </a>
+                  </div>
+                  <div class="rad_btn"><img src="./images/down-arr.png" alt=""></div>
+      
+                </div>
+              </label>
+              <div class="best_books_view">
+                <div class="best_view_detail">
+                  <p style="font-size: 14px; font-weight: bold; color: #242424;">삶과 죽음의 경계는 어디일까?</p>
+                  <p style="font-size: 12px; color: #707070;">진정한 사랑이란 무엇인가를 생각해보게 하는 책</p>
+                  <a href="#!">
+                    <img src="./images/best_books_10.png" alt="best_books01">
+                  </a>
+                </div>
+              </div>
+            </li>
+      
+            <li>
+              <label for="items_rad11">
+                <div class="best_menu">
+                  <div class="best_thumnail"><img src="./images/best_books_11.png" alt="best_books01"></div>
+                  <p>2</p>
+                  <div class="best_books_info">
+                    <a href="#!">
+                      이어령의 마지막 수업
+                      <p style="font-size: 12px; margin-top: 2px; color: #999;">김지수</p>
+                    </a>
+                  </div>
+                  <div class="rad_btn"><img src="./images/down-arr.png" alt=""></div>
+      
+                </div>
+              </label>
+              <div class="best_books_view">
+                <div class="best_view_detail">
+                  <p style="font-size: 14px; font-weight: bold; color: #242424;">인생 마지막 수업.</p>
+                  <p style="font-size: 12px; color: #707070;">"나는 죽을 거라네. 그것도 오래지 않아."</p>
+                  <a href="#!">
+                    <img src="./images/best_books_11.png" alt="best_books01">
+                  </a>
+                </div>
+              </div>
+            </li>
+      
+            <li>
+              <label for="items_rad12">
+                <div class="best_menu">
+                  <div class="best_thumnail"><img src="./images/best_books_12.png" alt="best_books_12"></div>
+                  <p>2</p>
+                  <div class="best_books_info">
+                    <a href="#!">
+                      최재천의 공부
+                      <p style="font-size: 12px; margin-top: 2px; color: #999;">안희경, 최재천 저</p>
+                    </a>
+                  </div>
+                  <div class="rad_btn"><img src="./images/down-arr.png" alt=""></div>
+      
+                </div>
+              </label>
+              <div class="best_books_view">
+                <div class="best_view_detail">
+                  <p style="font-size: 14px; font-weight: bold; color: #242424;">공부도 시대에 맞춰 하는 것.</p>
+                  <p style="font-size: 12px; color: #707070;">지금 이 시대에 필요한 공부에 대한 생각을 총망라!</p>
+                  <a href="#!">
+                    <img src="./images/best_books_12.png" alt="best_books_1">
+                  </a>
+                </div>
+              </div>
+            </li>
+      
+          </ul>
+      
+          <ul>
+            <input type="radio" id="items_rad13" name="best_items_02">
+            <input type="radio" id="items_rad14" name="best_items_02">
+            <input type="radio" id="items_rad15" name="best_items_02">
+      
+            <li>
+              <label for="items_rad13">
+                <div class="best_menu">
+                  <div class="best_thumnail"><img src="./images/best_books_13.png" alt="best_books01"></div>
+                  <p>4</p>
+                  <div class="best_books_info">
+                    <a href="#!">
+                      그대만 모르는 비밀 하나
+                      <p style="font-size: 12px; margin-top: 2px; color: #999;">후이 저/최인애 역</p>
+                    </a>
+                  </div>
+                  <div class="rad_btn"><img src="./images/down-arr.png" alt=""></div>
+      
+                </div>
+              </label>
+              <div class="best_books_view">
+                <div class="best_view_detail">
+                  <p style="font-size: 14px; font-weight: bold; color: #242424;">나를 둘러싼 세상의 사랑.</p>
+                  <p style="font-size: 12px; color: #707070;">각박한 세상에 느낄 수 있는 정이 있다.</p>
+                  <a href="#!">
+                    <img src="./images/best_books_13.png" alt="best_books01">
+                  </a>
+                </div>
+              </div>
+            </li>
+      
+            <li>
+              <label for="items_rad14">
+                <div class="best_menu">
+                  <div class="best_thumnail"><img src="./images/best_books_14.png" alt="best_books_14"></div>
+                  <p>5</p>
+                  <div class="best_books_info">
+                    <a href="#!">
+                      보테로 가족의 사랑 약국
+                      <p style="font-size: 12px; margin-top: 2px; color: #999;">이선영</p>
+                    </a>
+                  </div>
+                  <div class="rad_btn"><img src="./images/down-arr.png" alt=""></div>
+      
+                </div>
+              </label>
+              <div class="best_books_view">
+                <div class="best_view_detail">
+                  <p style="font-size: 14px; font-weight: bold; color: #242424;">기묘하게 아름다운 사랑이야기</p>
+                  <p style="font-size: 12px; color: #707070;">마음이 따뜻해지는 보테로 가족의 사랑 약국</p>
+                  <a href="#!">
+                    <img src="./images/best_books_14.png" alt="best_books_14">
+                  </a>
+                </div>
+              </div>
+            </li>
+      
+            <li>
+              <label for="items_rad15">
+                <div class="best_menu">
+                  <div class="best_thumnail"><img src="./images/best_books_15.png" alt="best_books_15"></div>
+                  <p>6</p>
+                  <div class="best_books_info">
+                    <a href="#!">
+                      부자의 그릇
+                      <p style="font-size: 12px; margin-top: 2px; color: #999;">이즈미 마사토</p>
+                    </a>
+                  </div>
+                  <div class="rad_btn"><img src="./images/down-arr.png" alt=""></div>
+      
+                </div>
+              </label>
+              <div class="best_books_view">
+                <div class="best_view_detail">
+                  <p style="font-size: 14px; font-weight: bold; color: #242424;">"당신이 다룰 수 있는 돈의 크기는?"</p>
+                  <p style="font-size: 12px; color: #707070;">부자들은 돈을 어떻게 다룰까?</p>
+                  <a href="#!">
+                    <img src="./images/best_books_15.png" alt="best_books_15">
+                  </a>
+                </div>
+              </div>
+            </li>
+      
+          </ul>
+      
+          <ul>
+            <input type="radio" id="items_rad16" name="best_items_03">
+            <input type="radio" id="items_rad17" name="best_items_03">
+            <input type="radio" id="items_rad18" name="best_items_03">
+      
+            <li>
+              <label for="items_rad16">
+                <div class="best_menu">
+                  <div class="best_thumnail"><img src="./images/best_books_16.png" alt="best_books_16"></div>
+                  <p>7</p>
+                  <div class="best_books_info">
+                    <a href="#!">
+                      <p style ="font-size: 12px;">여기는 커스터드, 특별한 도시락을 팝니다.</p>
+                      <p style="font-size: 12px; margin-top: 2px; color: #999;">가토 겐 저/양지윤 역</p>
+                    </a>
+                  </div>
+                  <div class="rad_btn"><img src="./images/down-arr.png" alt=""></div>
+      
+                </div>
+              </label>
+              <div class="best_books_view">
+                <div class="best_view_detail">
+                  <p style="font-size: 14px; font-weight: bold; color: #242424;">인생에 길을 잃을 때면 이곳으로 오세요.</p>
+                  <p style="font-size: 12px; color: #707070;">방황하는 이들에게 전하는 따뜻한 도시락 같은 글</p>
+                  <a href="#!">
+                    <img src="./images/best_books_16.png" alt="best_books_15">
+                  </a>
+                </div>
+              </div>
+            </li>
+      
+            <li>
+              <label for="items_rad17">
+                <div class="best_menu">
+                  <div class="best_thumnail"><img src="./images/best_books_17.png" alt="best_books_17"></div>
+                  <p>8</p>
+                  <div class="best_books_info">
+                    <a href="#!">
+                      물고기는 존재하지 않는다.
+                      <p style="font-size: 12px; margin-top: 2px; color: #999;">룰루 밀러 저/정지인 역</p>
+                    </a>
+                  </div>
+                  <div class="rad_btn"><img src="./images/down-arr.png" alt=""></div>
+      
+                </div>
+              </label>
+              <div class="best_books_view">
+                <div class="best_view_detail">
+                  <p style="font-size: 14px; font-weight: bold; color: #242424;">우리가 살아가는 삶에 대해</p>
+                  <p style="font-size: 12px; color: #707070;">숨어있는 삶의 질서에 관한 이야기</p>
+                  <a href="#!">
+                    <img src="./images/best_books_17.png" alt="best_books01">
+                  </a>
+                </div>
+              </div>
+            </li>
+      
+            <li>
+              <label for="items_rad18">
+                <div class="best_menu">
+                  <div class="best_thumnail"><img src="./images/best_books_18.png" alt="best_books_18"></div>
+                  <p>9</p>
+                  <div class="best_books_info">
+                    <a href="#!">
+                      빠르게 실패하기
+                      <p style="font-size: 11px; margin-top: 2px; color: #999;">존 크럼볼츠, 라이언 바비노 저/도연 역</p>
+                    </a>
+                  </div>
+                  <div class="rad_btn"><img src="./images/down-arr.png" alt=""></div>
+      
+                </div>
+              </label>
+              <div class="best_books_view">
+                <div class="best_view_detail">
+                  <p style="font-size: 14px; font-weight: bold; color: #242424;">인생은 시간이다.</p>
+                  <p style="font-size: 12px; color: #707070;">가능한 더 빠르게 시작하고 최대한 더 많이 실패하세요.</p>
+                  <a href="#!">
+                    <img src="./images/best_books_18.png" alt="best_books_18">
+                  </a>
+                </div>
+              </div>
+            </li>
+      
+          </ul>
+        </section><!-- weeks_books_tab -->
+
+        <section class="best_books_items03 items">
+          <ul>
+            <input type="radio" id="items_rad19" name="best_items_01">
+            <input type="radio" id="items_rad20" name="best_items_01">
+            <input type="radio" id="items_rad21" name="best_items_01">
+      
+            <li>
+              <label for="items_rad19">
+                <div class="best_menu">
+                  <div class="best_thumnail"><img src="./images/best_books_20.png" alt="best_books_20"></div>
+                  <p>1</p>
+                  <div class="best_books_info">
+                    <a href="#!">
+                      미래의 부를 위한 투자공부
+                      <p style="font-size: 12px; margin-top: 2px; color: #999;">신진상</p>
+                    </a>
+                  </div>
+                  <div class="rad_btn"><img src="./images/down-arr.png" alt=""></div>
+      
+                </div>
+              </label>
+              <div class="best_books_view">
+                <div class="best_view_detail">
+                  <p style="font-size: 14px; font-weight: bold; color: #242424;">"투자는 이제 디지털이다!"</p>
+                  <p style="font-size: 12px; color: #707070;">디지털 미래 문화를 모른 채 투자를 논하지 마라!</p>
+                  <a href="#!">
+                    <img src="./images/best_books_20.png" alt="best_books_21">
+                  </a>
+                </div>
+              </div>
+            </li>
+      
+            <li>
+              <label for="items_rad20">
+                <div class="best_menu">
+                  <div class="best_thumnail"><img src="./images/best_books_21.png" alt="best_books_21"></div>
+                  <p>2</p>
+                  <div class="best_books_info">
+                    <a href="#!">
+                      나는 나를 바꾸기로 했다.
+                      <p style="font-size: 12px; margin-top: 2px; color: #999;">우즈훙 저/이에스더 역</p>
+                    </a>
+                  </div>
+                  <div class="rad_btn"><img src="./images/down-arr.png" alt=""></div>
+      
+                </div>
+              </label>
+              <div class="best_books_view">
+                <div class="best_view_detail">
+                  <p style="font-size: 14px; font-weight: bold; color: #242424;">천재 심리학자가 말하는 우리들.</p>
+                  <p style="font-size: 12px; color: #707070;">많은 공감과 감동을 불러 일으킨 베스트 셀러 작</p>
+                  <a href="#!">
+                    <img src="./images/best_books_21.png" alt="best_books_21">
+                  </a>
+                </div>
+              </div>
+            </li>
+      
+            <li>
+              <label for="items_rad21">
+                <div class="best_menu">
+                  <div class="best_thumnail"><img src="./images/best_books_22.png" alt="best_books01"></div>
+                  <p>3</p>
+                  <div class="best_books_info">
+                    <a href="#!">
+                      지극히 사적인 네팔
+                      <p style="font-size: 12px; margin-top: 2px; color: #999;">수잔 샤키야 저/홍성광 역</p>
+                    </a>
+                  </div>
+                  <div class="rad_btn"><img src="./images/down-arr.png" alt=""></div>
+      
+                </div>
+              </label>
+              <div class="best_books_view">
+                <div class="best_view_detail">
+                  <p style="font-size: 14px; font-weight: bold; color: #242424;">비정상 회담의 수잔 샤키야가 말하는 네팔</p>
+                  <p style="font-size: 12px; color: #707070;">섞이지 않지만 밀어내지도 않는 사람들</p>
+                  <a href="#!">
+                    <img src="./images/best_books_22.png" alt="best_books_22">
+                  </a>
+                </div>
+              </div>
+            </li>
+      
+          </ul>
+      
+          <ul>
+            <input type="radio" id="items_rad22" name="best_items_02">
+            <input type="radio" id="items_rad23" name="best_items_02">
+            <input type="radio" id="items_rad24" name="best_items_02">
+      
+            <li>
+              <label for="items_rad22">
+                <div class="best_menu">
+                  <div class="best_thumnail"><img src="./images/best_books_23.png" alt="best_books_23"></div>
+                  <p>4</p>
+                  <div class="best_books_info">
+                    <a href="#!">
+                      자소서 바이블
+                      <p style="font-size: 12px; margin-top: 2px; color: #999;">이준희 저</p>
+                    </a>
+                  </div>
+                  <div class="rad_btn"><img src="./images/down-arr.png" alt=""></div>
+      
+                </div>
+              </label>
+              <div class="best_books_view">
+                <div class="best_view_detail">
+                  <p style="font-size: 14px; font-weight: bold; color: #242424;">자소서의 기본 공식서</p>
+                  <p style="font-size: 12px; color: #707070;">한 줄만 읽어도 자소서 마스터가 된다.</p>
+                  <a href="#!">
+                    <img src="./images/best_books_23.png" alt="best_books_23">
+                  </a>
+                </div>
+              </div>
+            </li>
+      
+            <li>
+              <label for="items_rad23">
+                <div class="best_menu">
+                  <div class="best_thumnail"><img src="./images/best_books_24.png" alt="best_books_24"></div>
+                  <p>5</p>
+                  <div class="best_books_info">
+                    <a href="#!">
+                      <p style="font-size: 12px;">보이지 않는 곳에서 애쓰고 있는 너에게</p>
+                      <p style="font-size: 12px; margin-top: 2px; color: #999;">최대호</p>
+                    </a>
+                  </div>
+                  <div class="rad_btn"><img src="./images/down-arr.png" alt=""></div>
+      
+                </div>
+              </label>
+              <div class="best_books_view">
+                <div class="best_view_detail">
+                  <p style="font-size: 14px; font-weight: bold; color: #242424;">지친 삶을 달래주는 글귀들</p>
+                  <p style="font-size: 12px; color: #707070;">조각난 마음을 따뜻하게 감싸주는 책</p>
+                  <a href="#!">
+                    <img src="./images/best_books_24.png" alt="best_books_24">
+                  </a>
+                </div>
+              </div>
+            </li>
+      
+            <li>
+              <label for="items_rad24">
+                <div class="best_menu">
+                  <div class="best_thumnail"><img src="./images/best_books_25.png" alt="best_books_25"></div>
+                  <p>6</p>
+                  <div class="best_books_info">
+                    <a href="#!">
+                      <p style="font-size: 12px;">세상을 바꾼 엉뚱한 세금 이야기</p>
+                      <p style="font-size: 12px; margin-top: 2px; color: #999;">오무라오지로</p>
+                    </a>
+                  </div>
+                  <div class="rad_btn"><img src="./images/down-arr.png" alt=""></div>
+      
+                </div>
+              </label>
+              <div class="best_books_view">
+                <div class="best_view_detail">
+                  <p style="font-size: 14px; font-weight: bold; color: #242424;">국가의 미래를 좌우하는 것은 세금이었다.</p>
+                  <p style="font-size: 12px; color: #707070;">세금에 관한 설명서</p>
+                  <a href="#!">
+                    <img src="./images/best_books_25.png" alt="best_books_25">
+                  </a>
+                </div>
+              </div>
+            </li>
+      
+          </ul>
+      
+          <ul>
+            <input type="radio" id="items_rad25" name="best_items_03">
+            <input type="radio" id="items_rad26" name="best_items_03">
+            <input type="radio" id="items_rad27" name="best_items_03">
+      
+            <li>
+              <label for="items_rad25">
+                <div class="best_menu">
+                  <div class="best_thumnail"><img src="./images/best_books_26.png" alt="best_books01"></div>
+                  <p>7</p>
+                  <div class="best_books_info">
+                    <a href="#!">
+                      <p style="font-size: 12px;">내가 알고 있는 걸 당신도 알게 된다면</p>
+                      <p style="font-size: 12px; margin-top: 2px; color: #999;">칼 필레머</p>
+                    </a>
+                  </div>
+                  <div class="rad_btn"><img src="./images/down-arr.png" alt=""></div>
+      
+                </div>
+              </label>
+              <div class="best_books_view">
+                <div class="best_view_detail">
+                  <p style="font-size: 14px; font-weight: bold; color: #242424;">현자가 전하는 30가지 삶의 지혜</p>
+                  <p style="font-size: 12px; color: #707070;">누구도 말해주지 않는 지혜들</p>
+                  <a href="#!">
+                    <img src="./images/best_books_26.png" alt="best_books_26">
+                  </a>
+                </div>
+              </div>
+            </li>
+      
+            <li>
+              <label for="items_rad26">
+                <div class="best_menu">
+                  <div class="best_thumnail"><img src="./images/best_books_27.png" alt="best_books01"></div>
+                  <p>8</p>
+                  <div class="best_books_info">
+                    <a href="#!">
+                      계속 가보겠습니다
+                      <p style="font-size: 12px; margin-top: 2px; color: #999;">임은정</p>
+                    </a>
+                  </div>
+                  <div class="rad_btn"><img src="./images/down-arr.png" alt=""></div>
+      
+                </div>
+              </label>
+              <div class="best_books_view">
+                <div class="best_view_detail">
+                  <p style="font-size: 14px; font-weight: bold; color: #242424;">현직 검사가 전하는 고발과 다짐</p>
+                  <p style="font-size: 12px; color: #707070;">멈추지 않고 채찍질 하겠다는 다짐</p>
+                  <a href="#!">
+                    <img src="./images/best_books_27.png" alt="best_books_27">
+                  </a>
+                </div>
+              </div>
+            </li>
+      
+            <li>
+              <label for="items_rad27">
+                <div class="best_menu">
+                  <div class="best_thumnail"><img src="./images/best_books_28.png" alt="best_books_28"></div>
+                  <p>9</p>
+                  <div class="best_books_info">
+                    <a href="#!">
+                      대출의 마법
+                      <p style="font-size: 12px; margin-top: 2px; color: #999;">김은진</p>
+                    </a>
+                  </div>
+                  <div class="rad_btn"><img src="./images/down-arr.png" alt=""></div>
+      
+                </div>
+              </label>
+              <div class="best_books_view">
+                <div class="best_view_detail">
+                  <p style="font-size: 14px; font-weight: bold; color: #242424;">대출, 알고 받으면 약이다!</p>
+                  <p style="font-size: 12px; color: #707070;">제대로 알고 받는 대출은 가장 안전한 부의 사다리다!</p>
+                  <a href="#!">
+                    <img src="./images/best_books_28.png" alt="best_books_28">
+                  </a>
+                </div>
+              </div>
+            </li>
+      
+          </ul>
+        </section><!-- month_books_tab -->
+      
+      </div><!-- best_tab_sheet -->
+    </section><!-- best_books -->
+
+    <section class="age_recommend">
+      <div class="contents_title">
+        <h2>연령별 추천</h2>
+        <a href="#!">전체 보기<i class="fa-solid fa-chevron-right"></i></a>
+      </div>
+
+      <input type="radio" id="age_rad01" name="age_rad" checked>
+      <input type="radio" id="age_rad02" name="age_rad">
+      <input type="radio" id="age_rad03" name="age_rad">
+      <input type="radio" id="age_rad04" name="age_rad">
+      <input type="radio" id="age_rad05" name="age_rad">
+      <input type="radio" id="age_rad06" name="age_rad">
+
+      <input type="radio" id="gender_rad" name="gender_rad">
+      <input type="radio" id="gender_rad_male" name="gender_rad">
+      <input type="radio" id="gender_rad_female" name="gender_rad">
+
+      <div class="age_label">
+        <label for="age_rad01" class="age_lab01">전체</label>
+        <label for="age_rad02">10대</label>
+        <label for="age_rad03">20대</label>
+        <label for="age_rad04">30대</label>
+        <label for="age_rad05">40대</label>
+        <label for="age_rad06">50대 이상</label>
+      </div>
+
+      <div class="gender_label">
+        <label for="gender_rad">성별</label>
+        <label for="gender_rad_male">남자</label>
+        <label for="gender_rad_female">여자</label>
+      </div>
+
+      <div class="age_recommend_sheet">
+        
+        <div class="age_all">
+          <ul class="books_list">
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_01.jpg" alt="age_recommend_01"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">1등은 당신처럼 SNS를 하지않는다.<p>정진수 저</p></a></div>
+            </li>
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_02.png" alt="age_recommend_02"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">웹 3.0 사용설명서<p>백훈종 저</p></a></div>
+            </li>
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_03.jpg" alt="age_recommend_03"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">2030 반도체 지정학<p>오타 야스히코 저/임재덕 역</p></a></div>
+            </li>
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_04.png" alt="age_recommend_04"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">인권의 최전선<p>조효재 저</p></a></div>
+            </li>
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_05.jpg" alt="age_recommend_05"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">2040 미래 예측<p>나루케 미코토 저/아리프 역</p></a></div>
+            </li>
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_07.jpg" alt="age_recommend_07"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">AI는 양심이 없다<p>김명주 저</p></a></div>
+            </li>
+          </ul>
+        </div>
+        <div class="age_ten">
+          <ul class="books_list">
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_08.png" alt="age_recommend_08"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">빨간 머리 앤이 하는 말<p>백영옥 저</p></a></div>
+            </li>
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_09.jpg" alt="age_recommend_09"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">빨간 머리 앤이 하는 말<p>백영옥 저</p></a></div>
+            </li>
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_10.png" alt="age_recommend_10"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">빨간 머리 앤이 하는 말<p>백영옥 저</p></a></div>
+            </li>
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_11.png" alt="age_recommend_11"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">빨간 머리 앤이 하는 말<p>백영옥 저</p></a></div>
+            </li>
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_12.png" alt="age_recommend_12"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">빨간 머리 앤이 하는 말<p>백영옥 저</p></a></div>
+            </li>
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_13.png" alt="age_recommend_13"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">빨간 머리 앤이 하는 말<p>백영옥 저</p></a></div>
+            </li>
+          </ul>
+        </div>
+        <div class="age_twenty">
+          <ul class="books_list">
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_14.png" alt="age_recommend_14"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">빨간 머리 앤이 하는 말<p>백영옥 저</p></a></div>
+            </li>
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_15.png" alt="age_recommend_15"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">빨간 머리 앤이 하는 말<p>백영옥 저</p></a></div>
+            </li>
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_16.png" alt="age_recommend_16"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">빨간 머리 앤이 하는 말<p>백영옥 저</p></a></div>
+            </li>
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_17.png" alt="age_recommend_17"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">빨간 머리 앤이 하는 말<p>백영옥 저</p></a></div>
+            </li>
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_18.png" alt="age_recommend_18"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">빨간 머리 앤이 하는 말<p>백영옥 저</p></a></div>
+            </li>
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_19.png" alt="age_recommend_19"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">빨간 머리 앤이 하는 말<p>백영옥 저</p></a></div>
+            </li>
+          </ul>
+        </div>
+        <div class="age_thirty">
+          <ul class="books_list">
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_20.png" alt="age_recommend_20"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">빨간 머리 앤이 하는 말<p>백영옥 저</p></a></div>
+            </li>
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_21.png" alt="age_recommend_21"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">빨간 머리 앤이 하는 말<p>백영옥 저</p></a></div>
+            </li>
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_22.png" alt="age_recommend_22"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">빨간 머리 앤이 하는 말<p>백영옥 저</p></a></div>
+            </li>
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_23.png" alt="age_recommend_23"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">빨간 머리 앤이 하는 말<p>백영옥 저</p></a></div>
+            </li>
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_24.png" alt="age_recommend_24"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">빨간 머리 앤이 하는 말<p>백영옥 저</p></a></div>
+            </li>
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_25.png" alt="age_recommend_25"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">빨간 머리 앤이 하는 말<p>백영옥 저</p></a></div>
+            </li>
+          </ul>
+        </div>
+        <div class="age_forty">
+          <ul class="books_list">
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_26.png" alt="age_recommend_26"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">빨간 머리 앤이 하는 말<p>백영옥 저</p></a></div>
+            </li>
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_27.png" alt="age_recommend_27"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">빨간 머리 앤이 하는 말<p>백영옥 저</p></a></div>
+            </li>
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_28.jpg" alt="age_recommend_28"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">빨간 머리 앤이 하는 말<p>백영옥 저</p></a></div>
+            </li>
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_29.png" alt="age_recommend_29"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">빨간 머리 앤이 하는 말<p>백영옥 저</p></a></div>
+            </li>
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_30.jpg" alt="age_recommend_30"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">빨간 머리 앤이 하는 말<p>백영옥 저</p></a></div>
+            </li>
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_31.png" alt="age_recommend_31"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">빨간 머리 앤이 하는 말<p>백영옥 저</p></a></div>
+            </li>
+          </ul>
+        </div>
+        <div class="age_fifty_more">
+          <ul class="books_list">
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_32.jpg" alt="age_recommend_32"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">빨간 머리 앤이 하는 말<p>백영옥 저</p></a></div>
+            </li>
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_33.jpg" alt="age_recommend_33"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">빨간 머리 앤이 하는 말<p>백영옥 저</p></a></div>
+            </li>
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_34.jpg" alt="age_recommend_34"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">빨간 머리 앤이 하는 말<p>백영옥 저</p></a></div>
+            </li>
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_35.jpg" alt="age_recommend_35"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">빨간 머리 앤이 하는 말<p>백영옥 저</p></a></div>
+            </li>
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_36.jpg" alt="age_recommend_36"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">빨간 머리 앤이 하는 말<p>백영옥 저</p></a></div>
+            </li>
+        
+            <li>
+              <div class="books_thumbnail">
+                <div class="books_img"><a href="#!"><img src="./images/age_recommend_37.jpg" alt="age_recommend_37"></a></div>
+                <div class="books_pick_btn">
+                  <a href="#!">
+                    <div class="favorite_pick"><img src="./images/favorite_pick.png" alt="찜하기"></div>
+                  </a>
+                  <a href="#!">
+                    <div class="mybook_plus"><img src="./images/mybooks_plus.png" alt="내 서재"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="books_info"><a href="#!">빨간 머리 앤이 하는 말<p>백영옥 저</p></a></div>
+            </li>
+          </ul>
+        </div>
+        
+      </div>
+
+    </section><!-- age_recommend -->
+
+
+
+    <section class="video_contents">
+    
+      <div class="contents_title">
+        <h2>움직이는 책갈피</h2>
+        <a href="#!">전체 보기<i class="fa-solid fa-chevron-right"></i></a>
+      </div>
+    
+      <input type="radio" id="video01" name="video" checked>
+      <input type="radio" id="video02" name="video">
+      <input type="radio" id="video03" name="video">
+    
+      <div class="video_sheet">
+        <div class="video_list">
+          
+          <ul class="video_media">
+            
+            <li>
+              <iframe width="1280" height="720" src="https://www.youtube.com/embed/uz4VFlwBuwE"
+                title="공부 머리 없어도 반드시 합격하는 시험 공부법 : 나는 무조건 한 번에 합격한다" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+                <p style="font-weight: bold; font-size: 14px;">무슨 시험이든 반드시 합격하는 시험 공부법</p><p style="color: #707070; font-size: 12px;">이형재 『나는 무조건 합격한다』</p>
+              </li>
+
+            <li>
+              <iframe width="640" height="360" src="https://www.youtube.com/embed/fTf-KrprLW4"
+                title="서울역 노숙자에게 편의점을 통째로 맡겼더니.. I책, 책추천, 소설추천" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+                <p style="font-weight: bold; font-size: 14px;">편의점에서 인생을 배우다</p><p style="color: #707070; font-size: 12px;">김호연 『불편한 편의점』</p>
+              </li>
+
+            <li>
+              <iframe width="640" height="360" src="https://www.youtube.com/embed/VjB266HrFAE"
+                title="달러구트 꿈 백화점 4분 만에 알아보기 (줄거리/요약)" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+                <p style="font-weight: bold; font-size: 14px;">꿈을 파는 백화점</p><p style="color: #707070; font-size: 12px;">이미예 『달러구트 꿈 백화점』</p>
+              </li>
+    
+            <li>
+              <iframe width="1280" height="720" src="https://www.youtube.com/embed/uz4VFlwBuwE"
+                title="공부 머리 없어도 반드시 합격하는 시험 공부법 : 나는 무조건 한 번에 합격한다" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+                <p style="font-weight: bold; font-size: 14px;">무슨 시험이든 반드시 합격하는 시험 공부법</p><p style="color: #707070; font-size: 12px;">이형재 『나는 무조건 합격한다』</p>
+              </li>
+
+            <li>
+              <iframe width="640" height="360" src="https://www.youtube.com/embed/fTf-KrprLW4"
+                title="서울역 노숙자에게 편의점을 통째로 맡겼더니.. I책, 책추천, 소설추천" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+                <p style="font-weight: bold; font-size: 14px;">무슨 시험이든 반드시 합격하는 시험 공부법</p><p style="color: #707070; font-size: 12px;">이형재 『나는 무조건 합격한다』</p>
+              </li>
+
+            <li>
+              <iframe width="640" height="360" src="https://www.youtube.com/embed/VjB266HrFAE"
+                title="달러구트 꿈 백화점 4분 만에 알아보기 (줄거리/요약)" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+                <p style="font-weight: bold; font-size: 14px;">무슨 시험이든 반드시 합격하는 시험 공부법</p><p style="color: #707070; font-size: 12px;">이형재 『나는 무조건 합격한다』</p>
+              </li>
+    
+            <li>
+              <iframe width="1280" height="720" src="https://www.youtube.com/embed/uz4VFlwBuwE"
+                title="공부 머리 없어도 반드시 합격하는 시험 공부법 : 나는 무조건 한 번에 합격한다" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+                <p style="font-weight: bold; font-size: 14px;">무슨 시험이든 반드시 합격하는 시험 공부법</p><p style="color: #707070; font-size: 12px;">이형재 『나는 무조건 합격한다』</p>
+              </li>
+
+            <li>
+              <iframe width="640" height="360" src="https://www.youtube.com/embed/fTf-KrprLW4"
+                title="서울역 노숙자에게 편의점을 통째로 맡겼더니.. I책, 책추천, 소설추천" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+                <p style="font-weight: bold; font-size: 14px;">무슨 시험이든 반드시 합격하는 시험 공부법</p><p style="color: #707070; font-size: 12px;">이형재 『나는 무조건 합격한다』</p>
+              </li>
+
+            <!-- <li>
+              <iframe width="640" height="360" src="https://www.youtube.com/embed/VjB266HrFAE"
+                title="달러구트 꿈 백화점 4분 만에 알아보기 (줄거리/요약)" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+                <p style="font-weight: bold; font-size: 14px;">무슨 시험이든 반드시 합격하는 시험 공부법</p><p style="color: #707070; font-size: 12px;">이형재 『나는 무조건 합격한다』</p>
+              </li> -->
+    
+          </ul>
+
+        </div>
+      </div>
+    
+      <div class="video_arrow_label">
+        <div class="video_label_01">
+          <label for="video02" class="tab_right"></label>
+        </div>
+        <div class="video_label_02">
+          <label for="video01" class="tab_left"></label>
+          <label for="video03" class="tab_right"></label>
+        </div>
+        <div class="video_label_03">
+          <label for="video02" class="tab_left"></label>
+        </div>
+      </div>
+    </section><!-- video_contents  -->
+
+    <section class="mbti_recommend">
+      <div class="contents_title">
+        <h2>나의 MBTI는? 취향별 추천!</h2>
+        <a href="#!">전체 보기<i class="fa-solid fa-chevron-right"></i></a>
+      </div>
+
+      <input type="radio" id="mbti_rad01" name="mbti_rad" checked>
+      <input type="radio" id="mbti_rad02" name="mbti_rad">
+
+      <div class="mbti_label">
+        <label for="mbti_rad01">E: 외향적</label>
+        <label for="mbti_rad02">I: 내향적</label>
+      </div>
+      
+      <div class="mbti_tab_sheet">
+        <div class="mbti_extrovert">
+          <input type="radio" id="ext_rad01" name="ext_rad" checked>
+          <input type="radio" id="ext_rad02" name="ext_rad">
+          <input type="radio" id="ext_rad03" name="ext_rad">
+          <input type="radio" id="ext_rad04" name="ext_rad">
+          <input type="radio" id="ext_rad05" name="ext_rad">
+          <input type="radio" id="ext_rad06" name="ext_rad">
+          <input type="radio" id="ext_rad07" name="ext_rad">
+          <input type="radio" id="ext_rad08" name="ext_rad">
+
+          <div class="ext_label">
+            <label for="ext_rad01">ESTJ</label>
+            <label for="ext_rad02">ESTP</label>
+            <label for="ext_rad03">ESFJ</label>
+            <label for="ext_rad04">ESFP</label>
+            <label for="ext_rad05">ENTP</label>
+            <label for="ext_rad06">ENFP</label>
+            <label for="ext_rad07">ENTJ</label>
+            <label for="ext_rad08">ENFJ</label>
+          </div>
+
+          <div class="ext_sheet">
+
+            <ul class="estj">
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>역행자</p>
+                    <p>자청</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_03.png" alt=""></div>
+                  <div>
+                    <p>부의 추월 차선</p>
+                    <p>엠제이 드미코 저/신소영 역</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_02.png" alt=""></div>
+                  <div>
+                    <p>이상한 변호사 우영우</p>
+                    <p>문지원</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_04.jpg" alt=""></div>
+                  <div>
+                    <p>불편한 편의점2</p>
+                    <p>김호연</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_07.jpg" alt=""></div>
+                  <div>
+                    <p>최소한의 이웃</p>
+                    <p>허지웅</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_06.jpg" alt=""></div>
+                  <div>
+                    <p>엄마의 말연습</p>
+                    <p>윤지영</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+
+            <ul class="estp">
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_08.jpg" alt=""></div>
+                  <div>
+                    <p>달라구트의 꿈 백화점</p>
+                    <p>이미예</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+
+            <ul class="esfj">
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+
+            <ul class="esfp">
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+
+            <ul class="entp">
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+
+            <ul class="enfp">
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+
+            <ul class="entj">
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+
+            <ul class="enfj">
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+
+          </div>
+
+        </div><!-- extrovert_tab -->
+
+        <div class="mbti_introvert">
+          <input type="radio" id="int_rad01" name="int_rad" checked>
+          <input type="radio" id="int_rad02" name="int_rad">
+          <input type="radio" id="int_rad03" name="int_rad">
+          <input type="radio" id="int_rad04" name="int_rad">
+          <input type="radio" id="int_rad05" name="int_rad">
+          <input type="radio" id="int_rad06" name="int_rad">
+          <input type="radio" id="int_rad07" name="int_rad">
+          <input type="radio" id="int_rad08" name="int_rad">
+
+          <div class="int_label">
+            <label for="int_rad01">ISTJ</label>
+            <label for="int_rad02">ISTP</label>
+            <label for="int_rad03">ISFJ</label>
+            <label for="int_rad04">ISFP</label>
+            <label for="int_rad05">INTP</label>
+            <label for="int_rad06">INFP</label>
+            <label for="int_rad07">INTJ</label>
+            <label for="int_rad08">INFJ</label>
+          </div>
+
+          <div class="int_sheet">
+
+            <ul class="istj">
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+
+            <ul class="istp">
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+
+            <ul class="isfj">
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+
+            <ul class="isfp">
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+
+            <ul class="intp">
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+
+            <ul class="infp">
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+
+            <ul class="intj">
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+
+            <ul class="infj">
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <div><img src="./images/best_books_01.jpg" alt=""></div>
+                  <div>
+                    <p>왜 그들은 우리를 파괴하는가</p>
+                    <p>이창무, 박미랑</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+
+          </div>
+
+
+        </div><!-- introvert_tab -->
+      </div><!-- mbti_tab_sheet -->
+
+    </section><!-- mbti_recommend -->
+
+    <section class="month_magazine">
+      <div class="contents_title">
+        <h2>이달의 매거진</h2>
+        <a href="#!">전체 보기<i class="fa-solid fa-chevron-right"></i></a>
+      </div>
+
+      <input type="radio" id="mon_magazine_rad01" name="magazine" checked>
+      <input type="radio" id="mon_magazine_rad02" name="magazine">
+      <input type="radio" id="mon_magazine_rad03" name="magazine">
+
+      <div class="mon_magazine_label">
+        <label for="mon_magazine_rad01"></label>
+        <label for="mon_magazine_rad02"></label>
+        <label for="mon_magazine_rad03"></label>
+      </div>
+
+      <div class="mon_magazine_sheet">
+        <ul>
+          <li>
+            <div><a href="#!"><img src="./images/magazine_220_01.jpg" alt="magazine_01"></a></div>
+            <div class="books_info"><a href="#!"><p style="font-size: 16px; font-weight: bold;">계간 미스터리</p><p style="font-size: 14px;">더 매거진</p></a></div>
+          </li>
+          <li>
+            <div><a href="#!"><img src="./images/magazine_220_02.png" alt="magazine_01"></a></div>
+            <div class="books_info"><a href="#!"><p style="font-size: 16px; font-weight: bold;">행복이 가득한 집 2022.10</p><p style="font-size: 14px;">『행복이 가득한 집』편집부</p></a></div>
+          </li>
+          <li>
+            <div><a href="#!"><img src="./images/magazine_220_03.jpg" alt="magazine_03"></a></div>
+            <div class="books_info"><a href="#!"><p style="font-size: 16px; font-weight: bold;">내셔널 지오그래픽 트래블러 National Traveler</p><p style="font-size: 14px;">내셔널 지오그래픽</p></a></div>
+          </li>
+          <li>
+            <div><a href="#!"><img src="./images/magazine_220_04.png" alt="magazine_04"></a></div>
+            <div class="books_info"><a href="#!"><p style="font-size: 16px; font-weight: bold;">마리끌레르 Marie Claire 2022.09</p><p style="font-size: 14px;">마리끌레르 편집부</p></a></div>
+          </li>
+          <li>
+            <div><a href="#!"><img src="./images/magazine_220_05.jpg" alt="magazine_05"></a></div>
+            <div class="books_info"><a href="#!"><p style="font-size: 16px; font-weight: bold;">내셔널 지오그래픽 트래블러 National Traveler</p><p style="font-size: 14px;">내셔널 지오그래픽</p></a></div>
+          </li>
+          <li>
+            <div><a href="#!"><img src="./images/magazine_220_06.png" alt="magazine_06"></a></div>
+            <div class="books_info"><a href="#!"><p style="font-size: 16px; font-weight: bold;">이코노미 조선 460호:2022.09.21</p><p style="font-size: 14px;">이코노미 편집부</p></a></div>
+          </li>
+
+
+          <li>
+            <div><a href="#!"><img src="./images/magazine_220_07.jpg" alt="magazine_07"></a></div>
+            <div class="books_info"><a href="#!"><p style="font-size: 16px; font-weight: bold;">내셔널 지오그래픽 트래블러 National Traveler</p><p style="font-size: 14px;">내셔널 지오그래픽</p></a></div>
+          </li>
+          <li>
+            <div><a href="#!"><img src="./images/magazine_220_08.png" alt="magazine_08"></a></div>
+            <div class="books_info"><a href="#!"><p style="font-size: 16px; font-weight: bold;">어라운드 AROUND Vol.83</p><p style="font-size: 14px;">어라운드 편집부</p></a></div>
+          </li>
+          <li>
+            <div><a href="#!"><img src="./images/magazine_220_09.jpg" alt="magazine_09"></a></div>
+            <div class="books_info"><a href="#!"><p style="font-size: 16px; font-weight: bold;">더그아웃 매거진</p><p style="font-size: 14px;">대단한미디어 편집부</p></a></div>
+          </li>
+          <li>
+            <div><a href="#!"><img src="./images/magazine_220_10.png" alt="magazine_10"></a></div>
+            <div class="books_info"><a href="#!"><p style="font-size: 16px; font-weight: bold;">빅 이슈 코리아 The Big Issue No.282</p><p style="font-size: 14px;">빅이슈 코리아</p></a></div>
+          </li>
+          <li>
+            <div><a href="#!"><img src="./images/magazine_220_11.jpg" alt="magazine_11"></a></div>
+            <div class="books_info"><a href="#!"><p style="font-size: 16px; font-weight: bold;">더서울 라이브 The Seoul Live 2021.02</p><p style="font-size: 14px;">더 서울 편집부</p></a></div>
+          </li>
+          <li>
+            <div><a href="#!"><img src="./images/magazine_220_12.jpg" alt="magazine_12"></a></div>
+            <div class="books_info"><a href="#!"><p style="font-size: 16px; font-weight: bold;">더스쿠프 The SCOOP Vol.511</p><p style="font-size: 14px;">더스쿠프 편집부</p></a></div>
+          </li>
+
+
+
+          <li>
+            <div><a href="#!"><img src="./images/magazine_220_01.jpg" alt="magazine_01"></a></div>
+            <div class="books_info"><a href="#!"><p style="font-size: 16px; font-weight: bold;">빨간 머리 앤이 하는 말</p><p style="font-size: 14px;">백영옥 저</p></a></div>
+          </li>
+          <li>
+            <div><a href="#!"><img src="./images/magazine_220_01.jpg" alt="magazine_01"></a></div>
+            <div class="books_info"><a href="#!"><p style="font-size: 16px; font-weight: bold;">빨간 머리 앤이 하는 말</p><p style="font-size: 14px;">백영옥 저</p></a></div>
+          </li>
+          <li>
+            <div><a href="#!"><img src="./images/magazine_220_01.jpg" alt="magazine_01"></a></div>
+            <div class="books_info"><a href="#!"><p style="font-size: 16px; font-weight: bold;">빨간 머리 앤이 하는 말</p><p style="font-size: 14px;">백영옥 저</p></a></div>
+          </li>
+          <li>
+            <div><a href="#!"><img src="./images/magazine_220_01.jpg" alt="magazine_01"></a></div>
+            <div class="books_info"><a href="#!"><p style="font-size: 16px; font-weight: bold;">빨간 머리 앤이 하는 말</p><p style="font-size: 14px;">백영옥 저</p></a></div>
+          </li>
+          <li>
+            <div><a href="#!"><img src="./images/magazine_220_01.jpg" alt="magazine_01"></a></div>
+            <div class="books_info"><a href="#!"><p style="font-size: 16px; font-weight: bold;">빨간 머리 앤이 하는 말</p><p style="font-size: 14px;">백영옥 저</p></a></div>
+          </li>
+          <li>
+            <div><a href="#!"><img src="./images/magazine_220_01.jpg" alt="magazine_01"></a></div>
+            <div class="books_info"><a href="#!"><p style="font-size: 16px; font-weight: bold;">빨간 머리 앤이 하는 말</p><p style="font-size: 14px;">백영옥 저</p></a></div>
+          </li>
+
+        </ul>
+      </div>
+
+    </section><!-- month_magazine -->
+
+    <section class="edit_recommend">
+      <div class="contents_title">
+        <h2>에디터 추천</h2>
+        <a href="#!">전체 보기<i class="fa-solid fa-chevron-right"></i></a>
+      </div>
+    
+      <div class="edit_recommend_items">
+    
+        <div class="edit_reco_item01 float">
+
+          <a href="#!">
+            <div class="edit_reco_bg">
+              <div class="edit_reco_thumbnail"><img src="./images/edit_pick_01.png" alt="edit_pick_01"></div>
+            </div>
+          </a>
+          <div><a href="#!">
+              <p style="font-size: 16px; font-weight: bold;">"어떤 순간에도 사람을 수단으로 대하지 말길..."</p>
+              <p style="font-size: 14px;">박지헌 『참 괜찮은 태도』</p>
+            </a></div>
+    
+        </div>
+    
+        <div class="edit_reco_item02 float">
+          <a href="#!">
+            <div class="edit_reco_bg">
+              <div class="edit_reco_thumbnail"><img src="./images/edit_pick_02.png" alt="edit_pick_01"></div>
+            </div>
+          </a>
+          <div><a href="#!">
+              <p style="font-size: 16px; font-weight: bold;">"가장 중요한 것은 눈에는 보이지 않는 법이야."</p>
+              <p style="font-size: 14px;">앙투안 드 생텍쥐페리 『어린 왕자』</p>
+            </a></div>
+        </div>
+    
+        <div class="edit_reco_item03 float">
+          <a href="#!">
+            <div class="edit_reco_bg">
+              <div class="edit_reco_thumbnail"><img src="./images/edit_pick_03.png" alt="edit_pick_01"></div>
+            </div>
+          </a>
+          <div><a href="#!">
+              <p style="font-size: 16px; font-weight: bold;">"오늘 시작하지 않는 것을 후회하게 된다."</p>
+              <p style="font-size: 14px;">앨런 피즈, 바바라 피즈『결국 해내는 사람들의 원칙』</p>
+            </a></div>
+        </div>
+      </div>
+
+    </section><!-- edit_recommend -->
+
+    <section class="maind_bookmark">
+      <div class="contents_title">
+        <h2>마음 속 책갈피</h2>
+        <a href="#!">전체 보기<i class="fa-solid fa-chevron-right"></i></a>
+      </div>
+
+      <div class="mark_bg01 mark"><p style="color: #fff; font-size: 12px;">1. 기록하고, 기록을 안전하게 보관하고,<br />그리고 끝까지 생존할 것.<br />2. 가용한 지식과 정보를 이용해서 지구를 냉각시키고 <br />인류를 재생시킬 것.<br />3. 지구 냉각을 위해 AuTX-3463과 협력할 것.<br />.<br />.<br />9. 지구 생명체 진화를 위해 <br />ScPA 생체형 인공지능과 협력할 것.<br />10. 초기 인류가 탄생하면 그들에게<br />인간의 공간 능력을 가르칠 것.</p><p style="color: #fff; font-size: 11px;">최이수 『두번째 달』</p>
+      </div>
+
+      <div class="mark_bg02 mark"><p style="color: #707070; font-size: 12px;">강은 빠지는 곳이 아니라 건너가는 곳임을.<br />다리는 건너는 곳이지 뛰어내리는 곳이 아님을.</p><p style="color: #707070; font-size: 11px;">김호연 『불편한 편의점』</p>
+        </div>
+
+      <div class="mark_bg03 mark"><p style="color: #fff; font-size: 12px;">나 가진 것 탄식밖에 없어<br />저녁 거리마다 물끄러미 청춘을 세워두고<br/>살아온 날들을 신기하게 세어보았으니<br/>그 누구도 나를 두려워하지 않았으니<br/>내 희망의 내용은 질투뿐이었구나<br/><br/>그리하여 나는 우선 여기에 짧은 글을 남겨둔다<br/><br/>나의 생은 미친 듯이 사랑을 찾아 해매었으나<br/>단 한번도 스스로를 사랑하지 않았노라</p><p style="color: #fff; font-size: 11px;">기형도 『질투는 나의 힘』</p>
+          </div>
+    </section><!-- maind_bookmark -->
+  </div>
+
+  <footer class="footer">
+    <div class="foot_notice">
+      <div class="notice_slide">
+        <h4 style="color: #555;">공지사항<i class="fa-solid fa-bullhorn"></i></h4>
+        <ul class="notice">
+          <li>서버 정기정검 시간 안내 am05:00 ~ am07:00</li>
+          <li>이벤트 현황 안내</li>
+          <li>[업데이트] 오디오 플레이어 및 서비스 업데이트 안내</li>
+          <li>서버 정기정검 시간 안내 am05:00 ~ am07:00</li>
+          <li>이벤트 현황 안내</li>
+        </ul>
+      </div>
+    </div><!-- foot_notice -->
+
+    <div class="foot_banner">
+      <div><a href="#!"><img src="./images/foot_ban_01.png" alt="banner01"></a></div>
+      <div><a href="#!"><img src="./images/foot_ban_02.png" alt="banner02"></a></div>
+      <div><a href="#!"><img src="./images/foot_ban_03.png" alt="banner03"></a></div>
+    </div><!-- foot_banner -->
+
+    <div class="foot_mid">
+      <ul class="customer_center">
+        <li><p style="color: #555; font-size: 18px; font-weight: bold;">고객센터</p></li>
+        <li><p>대표번호</p><span style="color:#242424; font-weight: bold; font-size: 20px;">1588-1234</span></li>
+        <li><p>운영시간</p><span style="font-size: 11px;">월~금 09:00 - 18:00 (점심시간 12:00 - 13:00)</span></li>
+      </ul><!-- customer_center -->
+
+      <div class="follow">
+        <h4>FOLLOW</h4>
+        <div class="follow_icon">
+          <div><a href="#!"><img src="./images/band_follow_icon.png" alt="band_icon"></a></div>
+          <div><a href="#!"><img src="./images/insta_follow_icon.png" alt="insta_icon"></a></div>
+          <div><a href="#!"><img src="./images/face_follow_icon.png" alt="facebook_ico"></a></div>
+          <div><a href="#!"><img src="./images/twitter_follow_icon.png" alt="twitter_icon"></a></div>
+        </div>
+      </div><!-- follow -->
+
+      <div class="family_site">
+        <button class="family_dropup">Family site&nbsp;<i class="fa-solid fa-chevron-up"></i></button>
+        <div class="family_menu">
+          <ul>
+            <li><a href="#!">북클럽</a></li>
+            <li><a href="#!">리디북스</a></li>
+            <li><a href="#!">밀리의 서재</a></li>
+            <li><a href="#!">교보 문고</a></li>
+        </div>
+      </div><!-- family_site  -->
+
+      <div class="nav_all">
+        <input type="checkbox" id="menu_all_btn">
+
+        <label for="menu_all_btn" class="all_lab_open">메뉴 전체보기&nbsp;<i class="fa-solid fa-chevron-up"></i></label>
+        
+        <div class="sheet">
+          <input type="checkbox" id="menu_all_btn">
+          <label for="menu_all_btn" class="all_lab_close"><i class="fa-regular fa-rectangle-xmark"></i></label>
+
+          <div>
+            <ul class="nav_all_main">
+              <li><a href="#!">홈</a></li>
+              <li><a href="#!">카테고리</a></li>
+            </ul>
+            <ul>
+              <li><a href="#!">소설</a></li>
+              <li><a href="#!">한국 소설</a></li>
+              <li><a href="#!">영미 소설</a></li>
+              <li><a href="#!">일본 소설</a></li>
+              <li><a href="#!">독일 소설</a></li>
+              <li><a href="#!">프랑스 소설</a></li>
+            </ul>
+            <ul>
+              <li><a href="#!">에세이/시</a></li>
+              <li><a href="#!">에세이</a></li>
+              <li><a href="#!">시</a></li>
+            </ul>
+            <ul>
+              <li><a href="#!">경영/경제</a></li>
+              <li><a href="#!">경영일반</a></li>
+              <li><a href="#!">마케팅/세일즈</a></li>
+              <li><a href="#!">경제일반</a></li>
+              <li><a href="#!">제테크/금융/부동산</a></li>
+              <li><a href="#!">CEO/리더십</a></li>
+            </ul>
+            <ul>
+              <li><a href="#!">인문/사회/역사</a></li>
+              <li><a href="#!">인문</a></li>
+              <li><a href="#!">정치/사회</a></li>
+              <li><a href="#!">예술/문화</a></li>
+              <li><a href="#!">역사</a></li>
+            </ul>
+            <ul>
+              <li><a href="#!">건강/다이어트</a></li>
+              <li><a href="#!">다이어트/운동/스포츠</a></li>
+              <li><a href="#!">스타일/뷰티</a></li>
+            </ul>
+            <ul>
+              <li><a href="#!">가정/생활</a></li>
+              <li><a href="#!">결혼/임신/출산</a></li>
+              <li><a href="#!">육아/자녀교육</a></li>
+              <li><a href="#!">취미/요리/기타</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <ul>
+              <li><a href="#!">종교</a></li>
+              <li><a href="#!">종교일반</a></li>
+              <li><a href="#!">기독교(개신교)</a></li>
+              <li><a href="#!">불교</a></li>
+            </ul>
+            <ul>
+              <li><a href="#!">여행</a></li>
+              <li><a href="#!">국내여행</a></li>
+              <li><a href="#!">해외여행</a></li>
+            </ul>
+            <ul>
+              <li><a href="#!">외국어</a></li>
+              <li><a href="#!">비즈니스영어</a></li>
+              <li><a href="#!">일반영어</a></li>
+              <li><a href="#!">제2외국어</a></li>
+              <li><a href="#!">어학시험</a></li>
+            </ul>
+            <ul>
+              <li><a href="#!">과학</a></li>
+              <li><a href="#!">과학일반</a></li>
+              <li><a href="#!">수학</a></li>
+              <li><a href="#!">자연과학</a></li>
+              <li><a href="#!">응용과학</a></li>
+            </ul>
+            <ul>
+              <li><a href="#!">어린이/청소년</a></li>
+              <li><a href="#!">유아</a></li>
+              <li><a href="#!">어린이</a></li>
+              <li><a href="#!">청소년</a></li>
+            </ul>
+            <ul>
+              <li><a href="#!">진로/교육/교재</a></li>
+              <li><a href="#!">공부법</a></li>
+            </ul>
+            <ul>
+              <li><a href="#!">잡지</a></li>
+              <li><a href="#!">문학/교양</a></li>
+              <li><a href="#!">여성/패션/뷰티</a></li>
+              <li><a href="#!">디자인/예술</a></li>
+              <li><a href="#!">건강/스포츠</a></li>
+              <li><a href="#!">취미/여행/요리</a></li>
+            </ul>
+            <ul>
+              <li><a href="#!">컴퓨터/IT</a></li>
+              <li><a href="#!">IT 비즈니스</a></li>
+              <li><a href="#!">개발/프로그래밍</a></li>
+              <li><a href="#!">컴퓨터/앱 활용</a></li>
+            </ul>
+          </div>
+        </div>
+      </div><!-- nav_all -->
+    </div><!-- foot_mid -->
+
+    <div class="foot_bottom_menu">
+      <!-- <div class="foot_company_info"> -->
+        <div class="company_info">
+          <input type="checkbox" id="co_info_chk">
+
+          <div class="co_info_label">
+            <label for="co_info_chk" class="chk_open">사업자 정보 펼쳐보기&nbsp;<i class="fa-solid fa-chevron-down"></i></label>
+            <label for="co_info_chk" class="chk_close">사업자 정보 접기&nbsp;<i class="fa-solid fa-chevron-up"></i></label>
+          </div>
+    
+          <div class="company_info_sheet">
+            <p>대표이사:서영택&nbsp;&nbsp;사업자등록정보:423-80-00371</br>통신판매업 신고번호:2016-서울마포-2012호 &nbsp;&nbsp;주소:서울특별시 마포구 양화로
+              45<br /><br />고객정보보호 책임자:김태형(info@gmail.com)&nbsp;&nbsp; 마케팅제휴문의:business@gmail.com</p>
+          </div>
+    
+        </div>
+      <!-- </div> -->
+
+      <ul>
+        <li><a href="#!">이용약관 <i class="fa-solid fa-chevron-right"></i></a></li>
+        <li><a href="#!">개인정보처리방침 <i class="fa-solid fa-chevron-right"></i></a></li>
+        <li><a href="#!">청소년 보호 정책 <i class="fa-solid fa-chevron-right"></i></a></li>
+        <li><a href="#!">고객센터 <i class="fa-solid fa-chevron-right"></i></a></li>
+        <li><a href="#!">환불신청 <i class="fa-solid fa-chevron-right"></i></a></li>
+        <li><a href="#!">B2B문의 <i class="fa-solid fa-chevron-right"></i></a></li>
+        <li><a href="#!">콘텐츠 제휴 문의 <i class="fa-solid fa-chevron-right"></i></a></li>
+        <li><a href="#!">저작권/도서오류 신고 <i class="fa-solid fa-chevron-right"></i></a></li>
+        <li><a href="#!">뷰어 다운로드 <i class="fa-solid fa-chevron-right"></i></a></li>
+        <li><a href="#!">종료예정 도서 <i class="fa-solid fa-chevron-right"></i></a></li>
+        <li><a href="#!">회사 소개 <i class="fa-solid fa-chevron-right"></i></a></li>
+      </ul>
+      <div class="copyright">
+        <p style="font-size:11px; color:#707070;">Copyright ⓒ 2022 Reader All Rights Reserved.</p>
+      </div>
+    </div><!-- foot_bottom_menu -->
+
+  </footer><!-- footer -->
+</body>
+</html>

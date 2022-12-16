@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=no">
+  <title>flex_03</title>
+  <style>
+    * {margin: 0; padding: 0;}
+
+    section {
+      width: 100%;
+      background-color: #eee;
+      display: flex;
+      flex-wrap: wrap;
+      /* justify-content: space-between; */
+    }
+
+    section div {
+      width: 48%; height: 200px;
+      border: 1px solid black; box-sizing: border-box;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      flex-grow: 1;
+      /* flex-grow가 들어가면 가장 작아도 자식이 잡아 놓은 base 사이즈 보다 작아지지 않는다. 가로 길이를 정해서 화면에 보일 갯수를 정해주고, 그후 여백을 균일하게 주려면 margin을 설정후 flex-grow를 주면 균일하게 여백을 준다. */
+    }
+
+    section div:nth-child(2n) {margin: 0;}
+
+    @media all and (min-width:321px) and (orientation:landscape) {
+      section div {
+        width: 23%;
+
+      } 
+      section div:nth-child(2n) {margin-right: 10px;}
+      section div:nth-child(4n) {margin: 0;}
+    }
+  </style>
+</head>
+<body>
+
+  <section>
+    <div class="box01">box01</div>
+    <div class="box02">box02</div>
+    <div class="box03">box03</div>
+    <div class="box04">box04</div>
+    <div class="box05">box05</div>
+    <div class="box06">box06</div>
+    <div class="box07">box07</div>
+    <div class="box08">box08</div>
+    <div class="box09">box09</div>
+    <div class="box10">box10</div>
+  </section>
+</body>
+</html>

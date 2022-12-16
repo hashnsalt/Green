@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=no">
+  <title>Responsive_web</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+  <style>
+    /* ------ default setting ------ */
+
+    * {margin: 0; padding: 0;}
+    li {list-style: none;}
+    
+
+    /* ------ header ------ */
+
+    .header {
+      height: 70px;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+    }
+
+    .header h1 {
+      line-height: 70px;
+    }
+
+    .lnb_ham_box {
+      position: relative;
+    }
+
+    .lnb_ham_menu {
+      width: 100%;
+      display: none;
+      position: absolute;
+      top: 70px;
+    }
+
+    .lnb_ham_menu li{
+      /* background-color: black; */
+      border: 1px solid black;
+      background-color: yellow;
+      height: 35px;
+      color: black;
+      font-size: 15px;
+      line-height: 35px;
+    }
+
+    #btn_menu:checked ~ .lnb_ham_menu {
+      display: block;
+    }
+
+    .lnb_label {
+      color: #fff;
+      font-size: 30px;
+      padding-left: 10px;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+    
+    #btn_menu {display: none;}
+    #btn_menu:checked ~ .lnb_label .close {display: block;}
+    #btn_menu:checked ~ .lnb_label .open {display: none;}
+    #btn_menu ~ .lnb_label .close {display: none;}
+    #btn_menu ~ .lnb_label .open {display: block;}
+    
+
+    /* ------ lnb ------ */
+
+    .lnb ul {
+      height: 25px;
+      overflow: hidden;
+      background-color: #ccc;
+    }
+
+    .lnb ul li {
+      width: 20%;
+      float: left;
+      text-align: center;
+      line-height: 25px;
+    }
+    
+    /* ------ visual_main ------ */
+
+    .visual_main {
+      height: 300px;
+      background-color: yellow;
+      text-align: center;
+      line-height: 300px;
+      font-size: 50px;
+      font-weight: bold;
+    }
+
+    /* ------ event_content ------ */  
+
+    .event_box {
+      height: calc(100% - (95px + 50px));
+    }
+
+    .event_box div>div {
+      height: auto;
+      border: 1px solid black; box-sizing: border-box;
+      text-align: center;
+      line-height: 100px;
+    }
+
+
+    /* ------ footer ------ */
+
+    .footer {
+      height: 50px;
+      background-color: black;
+      color: #fff;
+    }
+
+    /* ------ media_setting ------ */
+
+    @media all and (min-width:320px) {
+      .lnb {display: none;}
+    }
+
+    @media all and (min-width:1024px) {
+      .lnb {display: block;}
+      .lnb_ham_box {display: none;}
+    }
+
+
+    
+    @media all and (min-width:768px) {
+      .event12 {
+        display: flex;
+      }
+      .event12 div {
+        width: 50%;
+      }
+      .event34 {
+        display: flex;
+      }
+
+      .event34 div {
+        width: 50%;
+      }
+    }
+
+  
+    @media all and (min-width:1024px) {
+      .event_box {
+        display: flex;
+        /* height: 150px; */
+      }
+      .event_box div {
+        width: 50%;
+        height: auto;
+        /* line-height: 150px; */
+      }
+    }
+
+    @media all and (min-width:1280px) {
+      .header_ex {
+        width: 100%;
+        background-color: #ccc;
+      }
+
+      .header_ex .header {
+        width: 1024px;
+        margin: 0 auto;
+      }
+
+      .nav_box {
+        width: 100%;
+        background-color: black;
+      }
+
+      .nav_box .lnb {
+        width: 1024px;
+        margin: 0 auto; 
+      }
+
+
+      .wrap {
+        width: 1024px;
+        margin: 0 auto;
+      }
+
+      .footer_ex {
+        background-color: #ccc;
+      }
+
+      .footer_ex .footer {
+        width: 1024px;
+        margin: 0 auto;
+      }
+    }
+    
+
+    
+
+  </style>
+</head>
+<body>
+  <!-- flex로 레이아웃 -->
+  <div class="header_ex">
+    <!-- 날개 -->
+    <header class="header">
+
+      <div class="lnb_ham_box">
+        <input type="checkbox" id="btn_menu">
+        <div class="lnb_label">
+          <label for="btn_menu" class="open"><i class="fa-solid fa-bars"></i></label>
+          <label for="btn_menu" class="close"><i class="fa-solid fa-xmark"></i></label>
+        </div>
+        <ul class="lnb_ham_menu">
+          <li>lnb01</li>
+          <li>lnb01</li>
+          <li>lnb01</li>
+          <li>lnb01</li>
+          <li>lnb01</li>
+        </ul>
+      </div><!-- lnb_ham_box -->
+
+      <h1>header</h1>
+
+    </header><!-- header -->
+  </div><!-- header_ex -->
+
+  <div class="nav_box">
+    <nav class="lnb">
+      <ul>
+        <li>lnb01</li>
+        <li>lnb02</li>
+        <li>lnb03</li>
+        <li>lnb04</li>
+        <li>lnb05</li>
+        <!-- float쓰기 -->
+      </ul>
+    </nav>
+  </div>
+
+  <div class="wrap">
+    <div class="visual_main">
+      visual_main
+    </div>
+  
+    <section class="event_box">
+      <!-- flex사용 -->
+      <!-- 태블릿에서 flex 사용한 것을 웹에서도 사용할 수 있게 끔. -->
+      <div class="event12">
+        <div class="event01">event01</div>
+        <div class="event02">event02</div>
+      </div>
+      <div class="event34">
+        <div class="event03">event03</div>
+        <div class="event04">event04</div>
+      </div>
+    </section>
+  </div>
+
+  <div class="footer_ex"><!-- 날개 -->
+    <footer class="footer">
+      <h2>footer</h2>
+    </footer>
+  </div>
+
+</body>
+</html>
