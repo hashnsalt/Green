@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    /*--- default setting ---*/
+    * {
+      margin: 0; padding: 0;
+    }
+    a {
+      color: black; text-decoration: none;
+    }
+    li {
+      list-style: none;
+    }
+
+    /*--- popup_icon ---*/
+    #chk {display: none;}
+    #chk:checked ~ .popup_icon {display: block;}
+    #chk ~ .popup_icon {display: none;}
+
+    .popup_icon {
+      width: 300px; height: 300px;
+      border: 1px solid black;
+      /* padding-top: 100px; box-sizing: border-box; */
+      left:100px;
+    }
+
+    .popup_icon .popup_box {
+      /* width: 300px; 생략가능 == width: 100%; */
+      height: 250px;
+      text-align: center;
+      line-height: 250px;
+    }
+
+    .popup_icon .chk_lab {
+      display: block;
+      width: 300px; height: 50px;
+      text-align: right;
+      line-height: 50px;
+      padding-right: 10px; box-sizing: border-box;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+  
+  <input type="checkbox" id="chk" checked>
+  <aside class="popup_icon">
+    <div class="popup_box">
+      popup_icon
+    </div>
+    <label for="chk" class="chk_lab">X</label>
+  </aside>
+
+</body>
+</html>

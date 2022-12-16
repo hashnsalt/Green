@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    /*--- default setting ---*/
+    * {
+      margin: 0; padding: 0;
+    }
+    a {
+      color: black; text-decoration: none;
+    }
+    li {
+      list-style: none;
+    }
+
+    /*--- header ---*/
+    .header {
+      width: 1032px; height: 200px;
+      background-color: #ccc;
+      margin: 0 auto;
+    }
+    /*--- popup ---*/
+    #chk {
+      display: none;
+    }
+    #chk:checked ~ .popup {
+      display: block;
+    }
+    /* #chk가 checked가 됬다면
+     '~': chk와 레벨이 같고, 아래에 위치한 tag. == .popup / 단, 부모가 같아야 한다. */
+    #chk ~ .popup {
+      display: none;
+    }
+
+    .popup_box {
+      position: absolute;
+      top: 100px;
+      left: 300px;
+      z-index: 9999;
+      /* 절대적으로 밑에 깔려서는 안된다. */
+    }
+    .popup {
+      width: 200px; height: 220px;
+      border: 1px solid black;
+      padding: 20px;
+    }
+    
+    .popup label {
+      display: block;
+      text-align: right;
+    }
+
+    /*--- lnb_ham_btn ---*/
+    #chk_menu {
+      display: none;
+    }
+    #chk_menu:checked ~ .menu_box li { display: block;}
+    #chk_menu ~ .menu_box li {display: none;}
+
+    /* wing_banner_hint
+     #chk_menu:checked ~ .menu .close {display: block;}
+    #chk_menu:checked ~ .menu .open {display: block;}
+    #chk_menu ~ .menu .close {display: none;}
+    #chk_menu ~ .menu .open {display: block;} */
+
+    .lnb {
+      width: 1032px;
+      margin: 0 auto;
+      position: sticky;
+      top: 0px;
+    }
+
+    .lnb .menu label {
+      float: left;
+    }
+    /* label은 inline_tag. 인라인태그는 width와 height를 먹지 않는다. */
+
+    .lnb .menu ul {
+      float: left;
+    }
+
+    .lnb .menu li {
+      width: 200px; height: 32px;
+      background-color: #8b0000;
+      color: white;
+      text-align: center;
+      line-height: 32px;
+      float: left;
+    }
+    
+    .lnb .menu_box ul{
+      float: left;
+    }
+    .lnb .menu_box {
+      width: 0px;
+    }
+
+    .lnb .menu_box li {
+      width: 200px; height: 32px;
+      background-color: #8b0000;
+      color: white;
+      text-align: center;
+      line-height: 32px;
+    }
+
+    /*--- lnb_ham_btn ---*/
+
+    .wrap {
+      width: 1032px; height: 2000px;
+      background-color: #ccc;
+      margin: 0 auto;
+    }
+
+    /*--- top_btn ---*/
+
+    .top {
+      display: block;
+      width: 50px;
+      height: 50px;
+      background-color: red;
+      position: fixed;
+      text-align: center;
+      line-height: 50px;
+      bottom: 200px;
+      right: 200px;
+      
+    }
+
+  </style>
+</head>
+<body>
+  <!-- popup은 자주 바뀌기 때문에 body의 제일 위에 설치해준다. -->
+  <!--- popup --->
+  <div class="popup_box">
+    <input type="checkbox" id="chk" checked>
+    <div class="popup">
+      <label for="chk"><img src="./images/img03.jpg" alt="한가위 팝업">닫기</label>
+      <!-- for="id" div.popup 안에 들어와야 닫기 버튼을 누르면 같이 사라진다. 제어할때는 원기능 :input #chk로 꼭 제어해야한다. label은 긎 꾸미기 기능-->
+    </div>
+  </div>
+  <header class="header" id="header">
+    <h1>Header</h1>
+  </header>
+  <nav class="lnb">
+    <input type="checkbox" id="chk_menu">
+    <div class="menu">
+      <label for="chk_menu" class="open">
+        <img src="./images/ham_btn.png" alt="풀다운메뉴 버튼">
+      </label>
+          <!-- check했을때 label -->
+    <!-- 체크 안됬을때 라벨 2가지를 줘야한다. -->
+      <!-- wing_banner_btn <label for="chk_menu" class="close"></label> -->
+      <ul>
+        <li>menu01</li>
+        <li>menu02</li>
+        <li>menu03</li>
+        <li>menu04</li>
+        <li>menu05</li>
+      </ul>
+    </div>
+    <li class="menu_box">
+      <ul>
+        <li>menu01-1</li>
+        <li>menu01-2</li>
+        <li>menu01-3</li>
+        <li>menu01-4</li>
+      </ul>
+      <ul>
+        <li>menu02-1</li>
+        <li>menu02-2</li>
+        <li>menu02-3</li>
+        <li>menu02-4</li>
+      </ul>
+      <ul>
+        <li>menu03-1</li>
+        <li>menu03-2</li>
+        <li>menu03-3</li>
+        <li>menu03-4</li>
+      </ul>
+      <ul>
+        <li>menu04-1</li>
+        <li>menu04-2</li>
+        <li>menu04-3</li>
+        <li>menu04-4</li>
+      </ul>
+      <ul>
+        <li>menu04-1</li>
+        <li>menu04-2</li>
+        <li>menu04-3</li>
+        <li>menu04-4</li>
+      </ul>
+    </li>
+  </nav>
+  <div class="wrap">
+    content
+  </div>
+  <a href="#header" class="top">Top</a>
+</body>
+</html>

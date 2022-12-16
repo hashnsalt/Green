@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    /*--- default setting ---*/
+    * {
+      margin: 0; padding: 0;
+    }
+    a {
+      color: black; text-decoration: none;
+    }
+    li {
+      list-style: none;
+    }
+
+    /*--- Test ---*/
+    .lnb01 {
+      width: 1000px; height: 50px;
+      margin: 0 auto;
+      /* 부모는 float 속성이 없기 때문에 margin이 적용된다. 반드시 width가 정의 되어있어야 한다. */
+    }
+    .lnb01 li {
+      width: 200px; height: 50px;
+      /* float은 부유하는 속성을 가지고 있어서 둥둥 떠다닌다. 그러므로 margin과 같은 속성을 사용할 수 없다. => 부모에 margin속성을 넣어준다. */
+      float: left;
+    }
+    
+    .lnb01 li a {
+      display: block;
+      background-color: cornflowerblue;
+      color: white;
+      text-align: center;
+      line-height: 50px;
+    }
+
+
+    .lnb01 a:hover {
+      background-color: aliceblue;
+      color: skyblue;
+    }
+
+    .main {
+      width: 1000px; height: 100px;
+    }
+    
+    .main .box01 a {
+      width: 100px;
+      border-radius: 50px;
+      background-color: beige;
+      /*border: 0px solid black;*/
+      box-sizing: border-box;
+      text-align: center;
+      line-height: 100px;
+      margin: 10px auto;
+      float: left;
+     }
+     
+    .main a:hover {
+      border-radius: 50px;
+      background-image: url(./images/img01.jpg);
+      background-repeat: no-repeat;
+      cursor: pointer;
+      filter: blur(2px);
+      /*-webkit-filter: blur(2px);*/
+     }
+
+    .box02 {
+      width: 100px;
+      border-radius: 50px;
+      background-color: beige;
+      float: left;
+      margin: 0 0 0 10px;
+    }
+
+    .box03 {
+      width: 100px;
+      border-radius: 50px;
+      background-color: beige;
+      float: left; 
+      margin: 0 0 0 10px;
+    }
+
+    .box04 {
+      width: 100px;
+      border-radius: 50px;
+      background-color: beige;
+      float: left; 
+      margin: 0 0 0 10px;
+    }
+  </style>
+</head>
+<body>
+  <ul class="lnb01">
+    <li><a href="http://hashnsalt.github.io">menu01</a></li>
+    <li><a href="css_background_box.html">menu02</a></li>
+    <li><a href="training_test.html">menu03</a></li>
+    <li><a href="icon_font.html">menu04</a></li>
+  </ul>
+  <div class="main">
+  <div class="box01"><a href="http://hashnsalt.github.io">Click!</a></div>  <div class="box02">Click2</div>
+  <div class="box03">Click3</div>
+  <div class="box04">Click4</div>
+  </div>
+  <!--<section>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </section> 이렇게 사용가능하나 보통 메뉴_list는 ul li를 사용한다.-->
+</body>
+</html>

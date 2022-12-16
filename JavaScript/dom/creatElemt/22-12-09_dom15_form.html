@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>form 다루는 방법</title>
+  <script>
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+    
+      //console에 쳐보기
+
+      // document.querySelector('#user_id')
+      // document.querySelector('#user_id').value
+      
+      // document.forms
+      // document.forms[0].elements
+      // document.forms[0].elements[0]
+      // document.forms[0].elements[0].value
+
+
+      // document.forms['login'].elements['user_id'].value
+
+      //console창에 form_name을 빼고 바로 div의 class명을 넣고 user_id의 값을 찾으면 에러가 나면서 나오지 않음.
+
+      // document.lgoin.user_id
+      // document.lgoin.user_id.value
+
+
+      const infoChk = document.getElementById('info_chk'); //id는 항상 getElement로 받겠다.
+
+      infoChk.addEventListener('click',function() {
+        if(infoChk.checked) { //체크가 됬다면 == true를 쓰지 않아도 됨.(생략 가능)
+          document.getElementById('deli_name').value = document.getElementById('user_name').value
+          document.getElementById('deli_tel').value = document.getElementById('user_tel').value
+          document.getElementById('deli_addr').value = document.getElementById('user_addr').value
+
+        } else {
+          document.getElementById('deli_name').value = '';
+          document.getElementById('deli_tel').value = '';
+          document.getElementById('deli_addr').value = '';
+        }
+
+      });
+    });
+
+   
+
+  </script>
+  <style>
+
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>로그인</h2>
+
+    <form action="" name="login">
+      <!-- action="form태그를 처리하는 파일" name=""//자바 스크립트를 처리하기 위한 값-->
+      <div class="login_input">
+        <input type="text" name="user_id" id="user_id" class="user_id" placeholder="아이디 입력" autofocus>
+        <!-- id는 구조를 잡을 때 사용(이젠 클래스로 구조를 잡음. href처럼 기능을 받을때, 보통 처리를 할땐 (구조/기능) id, 디자인을 입힐땐 class를 쓴다.) -->
+        <input type="password" name="user_pw" id="user_pw" class="user_pw" placeholder="비밀번호 입력">
+        <div class="login_btn">
+          <button type="submit" class="log_btn">로그인</button>
+        </div>
+      </div>
+    </form>
+
+
+    <br />
+    <hr />
+    <br />
+
+    <form action="" name="order">
+
+      <fieldset>
+
+        <legend>주문정보</legend>
+        <ul>
+          <li>
+            <label for="user_name">이름: </label>
+            <input type="text" nmae="user_name" id="user_name">
+          </li>
+
+          <li>
+            <label for="user_tel">전화번호: </label>
+            <input type="text" nmae="user_tel" id="user_tel">
+          </li>
+
+          <li>
+            <label for="user_addr">주소: </label>
+            <input type="text" nmae="user_addr" id="user_addr">
+          </li>
+        </ul>
+
+      </fieldset>
+
+
+
+
+      <fieldset>
+        <legend>배송정보</legend>
+        <ul>
+          <li>
+            <input type="checkbox" name="info_chk" id="info_chk">
+            <label for="info_chk">주문정보와 배송정보가 같습니다.</label>
+          </li>
+          <li>
+            <label for="deli_name">이름: </label>
+            <input type="text" nmae="deli_name" id="deli_name">
+          </li>
+
+          <li>
+            <label for="deli_tel">전화번호: </label>
+            <input type="text" nmae="deli_tel" id="deli_tel">
+          </li>
+
+          <li>
+            <label for="deli_addr">주소: </label>
+            <input type="text" nmae="deli_addr" id="deli_addr">
+          </li>
+        </ul>
+      </fieldset>
+
+
+    </form>
+  
+  </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>animation</title>
+  <style>
+
+    .box01 {
+      width: 40px; height: 50px;
+      background-image: url(./images/book.jpg);
+
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      opacity: 1;
+      animation-name: ani01;
+      animation-duration: 10s;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes ani01 {
+      0% {left: 30px; opacity: 1;}
+      /* 10% {left: 50px;} */
+      /* 30% {left: 70px;} */
+      /* 50% {left: 100px;} */
+      /* 70% {left: 150px;} */
+      100% {left: 1000px; opacity: 0;}
+    }
+
+    .box02 {
+      width: 200px; height: 200px;
+      overflow: hidden;
+      border-radius: 100px;
+
+      position: absolute;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="box01"></div>
+  <div class="box02"><img src="./images/img04.jpg" alt="이미지01"></div>
+</body>
+</html>

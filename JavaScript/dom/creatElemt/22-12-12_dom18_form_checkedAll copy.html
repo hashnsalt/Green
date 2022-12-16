@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>약관박스</title>
+  <script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+      const totalTerms = document.getElementById('total_terms')
+      const termsEls = document.querySelectorAll('.terms_el');
+      // let termschk = document.querySelectorAll('.terms_el:checked');
+      const terms01 = document.getElementById('terms_01');
+      const terms02 = document.getElementById('terms_02');
+      const terms03 = document.getElementById('terms_03');
+      // const checked = document.querySelectorAll('.terms_el:');
+
+      totalTerms.addEventListener('click', totalCheck);
+      terms01.addEventListener('click', termsCheck);
+      terms02.addEventListener('click', termsCheck);
+      terms03.addEventListener('click', termsCheck);
+
+
+      function totalCheck() {
+        if(totalTerms.checked == true) {
+          // terms01.checked = true;
+          // terms02.checked = true;
+          // terms03.checked = true;
+          termsEls.forEach((termsEl) => {
+            termsEl.checked = true; //foreach가 가지고 있는 value값
+          })
+        } else {
+
+          termsEls.forEach((termsEl) => {
+            termsEl.checked = false; //foreach가 가지고 있는 value값
+          })
+          // terms01.checked = false;
+          // terms02.checked = false;
+          // terms03.checked = false;
+        }
+      }
+
+
+      function termsCheck() {
+        if(terms01.checked && terms02.checked && terms03.checked) {
+          totalTerms.checked = true;
+        } else {
+          totalTerms.checked = false;
+        }
+        // termsEls.forEach((termsEE) => {
+        //   if(termsEls.length === termschk) {
+        //     totalTerms.checked = true;
+        //   } else {
+        //     totalTerms.checked = false;
+        //   }
+        // })
+      }
+
+    });
+
+
+
+  </script>
+  <style>
+
+    li{list-style: none;}
+
+   
+  </style>
+</head>
+<body>
+
+  <form action="">
+    <fieldset>
+      <legend>약관 동의</legend>
+      <ul>
+        <li>
+          <!-- <input type="checkbox" name="" id="total_terms"> -->
+          <label for="total_terms"><input type="checkbox" name="" id="total_terms">전체 약관 동의</label>
+          <!-- 요즘 쓰는 트랜드 라벨안에 인풋을 집어 넣어서 사용함. -->
+        </li>
+        <li>
+          <input type="checkbox" name="" id="terms_01" class="terms_el">
+          <span>첫번쨰 약관</span>
+        </li>
+        <li>
+          <input type="checkbox" name="" id="terms_02" class="terms_el">
+          <span>두번쨰 약관</span>
+        </li>
+        <li>
+          <input type="checkbox" name="" id="terms_03" class="terms_el">
+          <span>세번쨰 약관</span>
+        </li>
+      </ul>
+    </fieldset>
+  </form>
+
+</body>
+</html>

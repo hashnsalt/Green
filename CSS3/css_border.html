@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Border</title>
+  <style>
+    /* default setting */
+    * {margin: 0; padding: 0;}
+
+    /* body setting */
+    div {
+      width: 200px; height: 200px;
+      background-color: #ccc;
+      font-size: 20px;
+      text-align: center;
+      line-height: 200px;
+      margin: 10px;
+    }
+
+    .box01 {
+      border-top-style: solid;
+      border-right-style: dotted;
+      border-bottom-style: dashed;
+      border-left-style: double;
+      border-color: red;
+    }
+
+    .box02 {
+      border-style: solid;
+      /* border-top-width: 2px; */
+      /* border-right-width: 10px; */
+      border-bottom-width: 20px;
+      /* border-left-width: 10px; */
+    }
+
+    .box03 {
+      border: 1px solid #999; box-sizing: border-box;
+    }
+
+    .box03:hover {
+      border: 3px solid black;
+    }
+    /* 과하지 않은 잔잔한 느낌의 디자인으로*/
+  </style>
+</head>
+<body>
+  <div class="box01">border-box01</div>
+  <div class="box02">border-box02</div>
+  <div class="box03">border-box03</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>input_tag</title>
+</head>
+<br> 
+  I D : <input type="text" size="16" maxlength="14" autofocus><br />
+  <!-- autofocus : 자동커서 입력 -->
+  PW : <input type="password" size="16" maxlength="14"><br />
+  <br />
+  <textarea rows="2" cols="88"></textarea>
+  <br />
+  성별 : <input type="radio" name="gender" checked>남
+          <input type="radio" name="gender">여</br><!-- radio button : 1. 두개 중에 꼭 하나를 선택 해야할 때 사용. 2.활용하여 탭버튼 만들기/cecked 초기상태 선택. 단, name이 같아야 처리 가능-->
+  취미 :<br />
+  <input type="checkbox" checked>음악감상<br />
+  <input type="checkbox">독서<br />
+  <input type="checkbox">등산<br />
+  <!--checkbox는 선택 다 할수도 안할 수도 있음. wingbanner 등에 응용-->
+  <select>
+    <option>-- 도시 --</option>
+    <option>서울시</option>
+    <option selected>부산시</option>
+    <option>대구시</option>
+  </select><!--combo box: dropdown_tag / selected select_tag를 사용할때 init값 설정 cf)checkbox_tag에서는 checked-->
+
+  <select size="3" multiple> <!--다중 선택 가능-->
+    <option>서울시</option>
+    <option selected>부산시</option>
+    <option>대구시</option>
+    <option>서울시</option>
+    <option>부산시</option>
+    <option>대구시</option>
+  </select>
+  <br />
+  <br />
+  <input type="button" value="입력">
+  <input type="submit" value="확인">
+  <input type="reset" value="취소">
+  <br />
+  <button type="button">입력</button>
+  <button type="submit">확인</button>
+  <button type="reset">취소</button>
+  <!--framwork에 따라서 input_tag와 button_tag가 먹히는 것이 다름-->
+  <br />
+  <input type="date"><!--달력 시스템-->
+  <br />
+  <fieldset>
+    <legend>필수 입력</legend>
+    아이디 : <input type="text" required><br />
+    패스워드 : <input type="password"><br />
+    이메일 : <input type="email" placeholder="123@naver.com">
+  </fieldset><!--그룹tag/required : 필수 입력이 안되면 오류를 띄워줌/ placehoder : smaple을 미리 보여줌-->
+
+  <input type="number" min="0" max="10" step="2"><!--ex) 쇼핑몰 구매 갯수 같은거 설정할 시  -->
+  <input type="range" min="0" max="10">
+  <input type="color">
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>toggle_button</title>
+  <script>
+
+  document.addEventListener('DOMContentLoaded', () => {
+
+    const clickBtn = document.querySelector('.btn');
+    const textDetail = document.querySelector('.detail');
+    let isOpen = false; //let으로 상태 선언 하는거 잊지 말기 const로 하면 바뀌지 않으니까.
+    
+    clickBtn.addEventListener('click', () => {
+      if(!isOpen) { // isOpne == false
+        textDetail.style.display = 'block';
+        clickBtn.innerHTML = '상세설명 닫기';
+        isOpen = true;
+      } else if(isOpen) {
+        textDetail.style.display = 'none';
+        clickBtn.innerHTML = '상세설명 열기';
+        isOpen = false;
+      }
+    });
+
+  });
+
+  </script>
+  <style>
+
+    .btn {
+      width: 200px; height: 50px;
+      background-color: blueviolet;
+      color: #ffffff;
+      font-size: 24px;
+      text-align: center;
+      line-height: 50px;
+      cursor: pointer;
+      border-radius: 20px;
+    }
+
+    .detail {
+      display: none;
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <button class="btn">상세설명 열기</button>
+  <hr />
+  <div class="detail">
+    <h1>상세 설명 정보</h1>
+    <br />
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+</body>
+</html>

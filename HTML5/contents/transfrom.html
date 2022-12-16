@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    * { margin: 0; padding: 0; }
+    a { color: black; text-decoration: none;}
+    li { list-style: none;}
+
+    /*--- Test ---*/
+
+    section {
+      width: 1000px; height: 200px;
+      overflow: hidden;
+      padding: 10px;
+    }
+
+    div {
+      width: 200px; height: 200px;
+      float: left;
+      margin-right: 20px;
+      background-color: blueviolet;
+      overflow: hidden; /* 삐져나가있는 모델을 히든 쳐줘라 */
+    }
+
+    /* .tr01:hover img {
+      transform: translatey(-30px);
+    } */
+    .tr01:hover {
+      transform: translateY(-30px);
+    }
+    /* 꼭 부모에다가 마우스 hover을 시켜라 */
+    .tr02 img {transform: translate(10px, 10px);}
+    /* translate(x축 y축(중력방향이 +) 위쪽으로 움직이고 싶으면 y에 -를 줘라.) */
+
+
+    .tr03 img {transform: translateX(-10px);}
+    .tr04 img {transform: translatey(-10px);}
+
+
+    .ro01:hover {transform: rotateY(180deg);}
+    .ro02 img {transform: rotate(30deg);}
+    .ro03 img {transform: rotatex(30deg);}
+    .ro04 img {transform: rotatey(30deg);}
+
+    .sc02 img {transform: scale(1.5);}
+    /* 확대하고 싶을 때 사용 보통 1.2~1.3배 정도 확대해준다. */
+    .sc03 img {transform: scaleX(0.5);}
+    .sc04 img {transform: scaley(1.5);}
+    /* 중심에서 키우려면 사용 */
+
+    .sk02 img {transform: skew(30deg, 30deg);}
+    /* skew(x축, y축) 이건 잘 안씀*/
+    .sk03 img {transform: skewx(-30deg);}
+    .sk04 img {transform: skewy(-30deg);}
+    /* x축은 잘 씀. */
+  </style>
+</head>
+<body>
+  
+  <section class="translate">
+    <div class="tr01"><img src="./images/img02.jpg" alt="기본이미지"></div>
+    <div class="tr02"><img src="./images/img02.jpg" alt="기본이미지"></div>
+    <div class="tr03"><img src="./images/img02.jpg" alt="기본이미지"></div>
+    <div class="tr04"><img src="./images/img02.jpg" alt="기본이미지"></div>
+  </section>
+
+  <section class="rotate">
+    <div class="ro01"><img src="./images/img03.jpg" alt="로테이트이미지"></div>
+    <div class="ro02"><img src="./images/img03.jpg" alt="로테이트이미지"></div>
+    <div class="ro03"><img src="./images/img03.jpg" alt="로테이트이미지"></div>
+    <div class="ro04"><img src="./images/img03.jpg" alt="로테이트이미지"></div>
+  </section>
+
+  <section class="scale">
+    <div class="sc01"><img src="./images/img04.jpg" alt="스케일이미지"></div>
+    <div class="sc02"><img src="./images/img04.jpg" alt="스케일이미지"></div>
+    <div class="sc03"><img src="./images/img04.jpg" alt="스케일이미지"></div>
+    <div class="sc04"><img src="./images/img04.jpg" alt="스케일이미지"></div>
+  </section>
+
+  <section class="skew">
+    <div class="sk01"><img src="./images/img02.jpg" alt="스큐이미지"></div>
+    <div class="sk02"><img src="./images/img02.jpg" alt="스큐이미지"></div>
+    <div class="sk03"><img src="./images/img02.jpg" alt="스큐이미지"></div>
+    <div class="sk04"><img src="./images/img02.jpg" alt="스큐이미지"></div>
+  </section>
+
+</body>
+</html>

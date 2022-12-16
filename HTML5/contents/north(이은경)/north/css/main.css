@@ -1,0 +1,482 @@
+/* ------ default setting ------ */
+
+* {margin: 0; padding: 0;}
+a {color: white; text-decoration: none;}
+li {list-style: none;}
+img {display: block;}
+
+/* ------ header .gnb ------ */
+  
+  .header {
+  width: 100%;
+  }
+
+
+  .gnb_box {
+    width: 100%; height: 25px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .gnb_box .gnb {
+    width: 1060px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .gnb_box .gnb ul {
+    float: right;
+    cursor: pointer;
+  }
+
+  .gnb_box .gnb ul li {
+    display: inline-block;
+    font-size: 11px;
+    text-align: center;
+    border-right: 1px solid #ccc;
+    line-height: 10px;
+    padding-right: 6px;
+  }
+
+  .gnb_box .gnb ul li:last-child {
+    border-right: none;
+  }
+
+
+/* ------ header_mid_menu ------ */
+
+  .gnb_sub_box {
+    background-color: #eee;
+  }
+
+  .gnb_sub_box .gnb_menu_box {
+    width: 1060px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 25px 0; box-sizing: border-box;
+  }
+
+  .gnb_sub_box .gnb_menu_box ul {
+    height: 30px;
+    float: right;
+    cursor: pointer;
+  }
+
+  .gnb_sub_box .gnb_menu_box ul li {
+    width: 100px;
+    float: left;
+    font-weight: bold;
+  }
+
+  .gnb_sub_box .gnb_menu_box .search {
+    float:left;
+    width: 250px;
+    border: 1px solid #ccc; box-sizing: border-box;
+    background-color: #fff;
+    font-weight: bold;
+  }
+
+
+  /* ------ header .lnb ------ */
+
+  .lnb_box {
+    width: 100%;
+    background-color: black;
+    padding: 10px; box-sizing: border-box;
+  }
+
+  .lnb_box .lnb_menu_box {
+    width: 1060px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .lnb_box .lnb_menu_box ul {
+    float: right;
+    cursor: pointer;
+  }
+
+  .lnb_box .lnb_menu_box ul li {
+    display: inline-block;
+    padding: 0 30px;
+    color: #fff;
+  }
+  
+  .lnb_box .logo img{
+    width: 82px; height: 82px;  
+    position: absolute;
+    top: 50px;
+    left: 485.666666px;
+  }
+  
+
+    /* ------ wrap ------ */
+
+    .wrap {
+      width: 100%;
+      background-image: url(./images/bg_img.jpg);
+      background-repeat: repeat-x;
+      margin-bottom: 50px;
+    }
+
+    /* ------ visual_main ------ */
+  
+    .visual_main {
+      width: 1060px;
+      margin: 0 auto;
+    }
+  
+    #rad01, #rad02, #rad03, #rad04, #rad05 {display: none;}
+  
+    #rad01:checked~.vs_sheet .vs_img01 {display: block;}
+    #rad02:checked~.vs_sheet .vs_img02 {display: block;}
+  
+    #rad03:checked~.vs_sheet .vs_img03 {display: block;}
+  
+    #rad04:checked~.vs_sheet .vs_img04 {display: block;}
+  
+    #rad05:checked~.vs_sheet .vs_img05 {display: block;}
+  
+    .visual_main .vs_sheet div {
+      display: none;
+    }
+  
+    .visual_main .vs_sheet div img {
+      display: block;
+    }
+  
+    #rad01:checked~.vs_label .vs_lab01,
+    #rad02:checked~.vs_label .vs_lab02,
+    #rad03:checked~.vs_label .vs_lab03,
+    #rad04:checked~.vs_label .vs_lab04,
+    #rad05:checked~.vs_label .vs_lab05 {
+      background-color: red;
+      color: white;
+    }
+  
+    .vs_label {
+      overflow: hidden;
+    }
+  
+    .vs_label label {
+      width: 212px;
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+      float: left;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      color: #666;
+      cursor: pointer;
+    }
+  
+
+
+    /* ------ issue_title ------ */
+
+    .title01 {
+      width: 1060px;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+
+    .title01 h2 {
+      padding-left: 10px;
+      float: left;
+    }
+
+    .title01 div {
+      float: right;
+      padding-top: 10px; box-sizing: border-box;
+    }
+
+    #iss_rad01, #iss_rad02, #iss_rad03, #iss_rad04, #iss_rad05, #iss_rad06 {
+      display: none;
+    }
+
+    #iss_rad01:checked ~ .issue_label label:nth-child(1),
+    #iss_rad02:checked ~ .issue_label label:nth-child(2),
+    #iss_rad03:checked ~ .issue_label label:nth-child(3),
+    #iss_rad04:checked ~ .issue_label label:nth-child(4),
+    #iss_rad05:checked ~ .issue_label label:nth-child(5),
+    #iss_rad06:checked ~ .issue_label label:nth-child(6) {
+      background-color: red;
+    }
+
+    .issue_indi .issue_label label {
+      width: 15px; height: 15px;
+      background-color: #666;
+      border-radius: 10px;
+      float: left;
+      margin: 0 3px;
+    }
+
+  
+
+    /* ------ ISSUE ITEM ------ */
+
+    .container01 {
+      width: 1250px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .container01 .float {
+      float: left;
+    }
+
+    .container01 .left_btn,
+    .container01 .right_btn {
+      padding-top: 520px;
+    }
+
+    .container01 .iss_event_box {
+      width: 1060px;
+    }
+
+    .iss_event_box .iss_top_box .float,
+    .iss_bottom .float {
+      float: left;
+    }
+
+
+    .iss_event_box .iss_top_box .iss_main01_event,
+    .iss_bottom_box .iss_main02_event {
+      width: 530px;
+    }
+
+    .iss_event_box .iss_top_box .iss_main01_event div,
+    .iss_bottom_box .iss_main02_event div {
+      float: left;
+    }
+
+
+    /* ------ acti_title ------ */
+
+    .title02 {
+      width: 1060px;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+
+    .title02 h2 {
+      float: left;
+    }
+
+    .title02 div {
+      padding-top: 10px;
+      float: right;
+    }
+
+    #act_rad01, #act_rad02, #act_rad03, #act_rad04, #act_rad05, #act_rad06 {
+      display: none;
+    }
+    
+    #act_rad01:checked ~ .acti_label label:nth-child(1),
+    #act_rad02:checked ~ .acti_label label:nth-child(2),
+    #act_rad03:checked ~ .acti_label label:nth-child(3),
+    #act_rad04:checked ~ .acti_label label:nth-child(4),
+    #act_rad05:checked ~ .acti_label label:nth-child(5),
+    #act_rad06:checked ~ .acti_label label:nth-child(6) {
+      background-color: red;
+    }
+
+    .title02 .acti_label label {
+      width: 15px; height: 15px;
+      background-color: #666;
+      border-radius: 10px;
+      float: left;
+      margin: 0 3px;
+    }
+
+    /* ------ ACTIVITY ------ */
+
+    .container02 {
+      width: 1250px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .container02 .float {
+      float: left;
+    }
+
+    .container02 .left_btn,
+    .container02 .right_btn {
+      padding-top: 140px; box-sizing: border-box;
+    }
+
+
+    /* ------ new_arrival------ */
+
+    .new_arrival {
+      width: 1060px;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+
+    .new_arrival h2 {
+      padding-bottom: 10px;
+      float: left;
+    }
+
+    #chk01 {display: none;}
+    #chk01:checked ~ .product .product_chk {display: block;}
+    #chk01 ~ .product .product_chk {display: none;}
+
+    #chk01:checked ~ .product_label .open {display: none;}
+    #chk01:checked ~ .product_label .close {display: block;}
+
+    #chk01 ~ .product_label .open {display: block;}
+    #chk01 ~ .product_label .close {display: none;}
+    
+
+    .new_arrival .new_arr_chkbox .product_label label {
+      float: right;
+      padding: 5px; box-sizing: border-box;
+      font-size: 20px;
+      color: #999;
+    }
+
+    .new_arrival .new_arr_chkbox .product {
+      float: left;
+    }
+    /* div_box 빼고 해보기 */
+
+    .new_arrival .new_arr_chkbox .product .product_view div,
+    .new_arrival .new_arr_chkbox .product .product_chk div {
+      float: left;
+    }
+
+    /* ------ footer ------ */
+
+    .footer {
+      width: 100%;
+      background-color: #1a1a1a;
+    }
+
+    .footer .info01 {
+      width: 1060px;
+      margin: 0 auto;
+      overflow: hidden;
+      padding: 30px 0;
+    }
+
+    .footer .info01 ul {
+      float: left;
+      margin-right: 135px;
+    }
+
+    .footer .info01 ul li {
+      margin: 10px 0;
+      color: #999;
+      font-size: 10px;
+    }
+
+    .footer .info01 ul li:first-child {
+      color: white;
+      font-size: 15px;
+      margin: 15px 0;
+    }
+
+    .footer .info01 ul:last-child,
+    .footer .info01 .info_tel li,
+    .footer .info01 .info_tel li:first-child {
+      margin: 0;
+    }
+
+    .footer .info01 .info_tel {
+      padding-top: 10px; box-sizing: border-box;
+    }
+
+    .footer .info01 .info_tel ul{
+      margin-top: 20px;
+    }
+
+    .footer .info01 .info_tel li:nth-child(2) {
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+
+    .footer .info02 {
+      width: 1060px;
+      margin: 0 auto;
+      padding: 20px 0;
+      overflow: hidden;
+    }
+
+    .footer .info02 div {
+      width: 530px;
+      float: left;
+      text-align: center;
+    }
+
+    .footer .info02 div p {
+      margin: 15px 0;
+      color: white;
+    }
+
+    .footer .info02 .locate .shop_search {
+      background-color: red;
+      color: white;
+      font-size: 15px;
+      margin-top: 5px;
+      padding : 5px 40px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .footer .info02 .follow .sns_img_box {
+      width: 300px; height: 50px;
+      overflow: hidden;
+      margin-left: 120px;
+    }
+
+    .footer .info02 .follow .sns_img_box div{
+      width: 50px; height: 50px;
+      float: left;
+      margin-right: 10px;
+    }
+
+
+    .footer .info03 {
+      width: 1060px;
+      margin: 0 auto;
+      overflow: hidden;
+      padding: 20px 0;
+    }
+
+    .footer .info03 p {
+      width: 530px;
+      color: #999;
+      font-size: 10px;
+      float: left;
+    }
+
+    .footer .info03 p:last-child {
+      padding-left: 100px; box-sizing: border-box;
+    }
+
+    .footer .info04 {
+      width: 1060px;
+      margin: 0 auto;
+      padding: 20px 0;
+      overflow: hidden;
+    }
+
+    .footer .info04 .foot_logo div,
+    .footer .info04 .foot_logo p{
+      float: left;
+      margin-right: 10px;
+      color: #999;
+      font-size: 10px;
+      line-height: 15px;
+    }
+    /* ------ quick_menu_top ------ */
+
+    .top_btn {
+      position: fixed;
+      top: 500px;
+      right: 120px;
+    }

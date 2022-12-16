@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>contents_radio</title>
+  <style>
+    /* ------ default-setting ------ */
+
+    * {margin: 0; padding: 0;}
+    
+    /* ------ radio_tab ------ */
+
+    /* ------ 이렇게 걸어주면 코드가 더 깔끔해진다. 기본 값은 sheet div{dispaly:none;}으로 하였기 때문에 시트가 안보이게끔 하고 checked 된것만 보이게 하겠다는 의미. */
+
+    /* #rad01:checked ~ .sheet .sheet02 {display: none;}
+    #rad01:checked ~ .sheet .sheet03 {display: none;}
+    #rad01:checked ~ .sheet .sheet04 {display: none;}
+    #rad01:checked ~ .sheet .sheet05 {display: none;} */
+    #rad01, #rad02, #rad03, #rad04, #rad05 {display: none;}
+    #rad01:checked ~ .sheet .sheet01 {display: block;}
+    #rad02:checked ~ .sheet .sheet02 {display: block;}
+    #rad03:checked ~ .sheet .sheet03 {display: block;}
+    #rad04:checked ~ .sheet .sheet04 {display: block;}
+    #rad05:checked ~ .sheet .sheet05 {display: block;}
+    /* 클릭이벤트가 일어났을때 보여주는 속성 */
+
+    .sheet div {
+      display: none;
+      width: 500px; height: 300px;
+      border: 1px solid black;
+    } /* 기본 속성 */
+
+    .label label {
+      display: block;
+      width: 50px; height: 50px;
+      background-color: #ccc;
+      float: left;
+      margin: 5px 0;
+      border-radius: 25px;
+    } /* 기본 속성 */
+
+    .label {
+      width: 50px;
+      float: left;
+    }
+    
+    
+    #rad01:checked ~ .label label:nth-child(1),
+    #rad02:checked ~ .label label:nth-child(2),
+    #rad03:checked ~ .label label:nth-child(3),
+    #rad04:checked ~ .label label:nth-child(4),
+    #rad05:checked ~ .label label:nth-child(5) {
+      background-color: black;
+    }  /* 클릭이벤트가 일어났을때 보여주는 속성 */
+
+    .sheet {
+      float: left;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+  
+  <input type="radio" id="rad01" name="tab" checked>
+  <input type="radio" id="rad02" name="tab">
+  <input type="radio" id="rad03" name="tab">
+  <input type="radio" id="rad04" name="tab">
+  <input type="radio" id="rad05" name="tab">
+
+
+  <div class="sheet">
+    <div class="sheet01">sheet01</div>
+    <div class="sheet02">sheet02</div>
+    <div class="sheet03">sheet03</div>
+    <div class="sheet04">sheet04</div>
+    <div class="sheet05">sheet05</div>
+  </div>
+
+  <div class="label">
+    <label for="rad01" class="tab01"></label>
+    <label for="rad02" class="tab02"></label>
+    <label for="rad03" class="tab03"></label>
+    <label for="rad04" class="tab04"></label>
+    <label for="rad05" class="tab05"></label>
+  </div>
+
+  
+
+</body>
+</html>

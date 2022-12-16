@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Img_tag</title>
+  <style>
+    img {
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+  <h1>이미지 삽입</h1>
+  <img src="./images/bg01.jpg" alt="아침 햇살을 품은 숲속" title="배경이미지1"><!--'./'는 상대경로/alt: 1. 이미지를 띄우지 못할 시 보이는 주석 2.로딩 속도가 느릴때 안내멘트/title:마우스 올릴 시 풍선멘트-->
+  <img src="./images/bg02.jpg" alt="호숫가의 별장">
+  <img src="./images/bg03.jpg" alt="백조의 호수">
+  <!-- <img src="http://placehold.it/300x300" alt=""> -->
+  <figure>
+    <img src="./images/bg01.jpg" alt="">
+    <figcaption><그림1-1>배경이미지1</figcaption>
+    <img src="./images/bg02.jpg" alt="">
+    <figcaption><그림1-2>배경이미지2</figcaption>
+  </figure>
+  <!--figure: 묶음 이미지+figcaption-->
+</body>
+</html>

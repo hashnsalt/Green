@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    * { margin: 0; padding: 0; }
+    a { color: black; text-decoration: none;}
+    li { list-style: none;}
+
+    /*--- header ---*/
+
+    .header {
+      width: 1280px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    /* --- gnb --- */
+
+    .gnb {
+      height: 30px;
+      line-height: 30px;
+      overflow: hidden;
+      padding: 10px;
+    }
+
+    .gnb ul {
+      font-size: 0;
+      margin: 0 10px;
+      float: right;
+    }
+
+    .gnb ul li {
+      display: inline-block;
+      font-size: 11px;
+      border: 1px solid black; box-sizing: border;
+      padding: 0 10px;
+    }
+
+    .gnb ul li:first-child {
+      border-radius: 10px 0 0 10px;
+    }
+
+    .gnb ul li:last-child {
+      border-radius: 0 10px 10px 0;
+    }
+
+    .gnb ul li:hover {
+      color: white;
+      background-color: black;
+      cursor: pointer;
+    }
+
+    /* --- logo --- */
+
+    .logo {
+      height: 100px;
+    }
+    
+    .logo_box {
+      float: left;
+    }
+
+    /* --- lnb --- */
+
+    .lnb {
+      height: 30px;
+      line-height: 30px;
+      margin: 10px auto;
+      overflow: hidden;
+      padding-bottom: 10px;
+    }
+
+    .lnb ul {
+      float: right;
+    }
+
+    .lnb ul li {
+      border: 1px solid black; box-sizing: border-box;
+      float: left;
+      padding: 0 10px;
+    }
+
+    .lnb ul li:first-child {
+      border-radius: 10px 0 0 10px;
+    }
+
+    .lnb ul li:last-child {
+      border-radius: 0 10px 10px 0;
+    }
+
+    .lnb ul li:hover {
+      color: white;
+      background-color: black;
+      cursor: pointer;
+    }
+
+    /* --- wrap --- */
+
+    .wrap {
+      width: 1280px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .contents {
+      width: 800px;
+      /* border: 1px solid black; box-sizing: border-box; */
+      /* background-color: beige; */
+      float: left;
+    }
+
+    .contents .contents_all {
+      margin-bottom: 10px;
+      border: 1px solid black; box-sizing: border-box;
+      padding: 10px 10px; box-sizing: border-box;
+    }
+
+    /* --- aside --- */
+
+    .aside {
+      width: calc(100% - 800px - 24px);
+      float: right;
+      overflow: hidden;
+    }
+
+    .aside>div {
+      border: 1px solid black; box-sizing: border-box;
+      margin-bottom: 12px;
+      float: left;
+    }
+
+    .aside div img {
+      display: block;
+      width: 100px; height: 100px;
+      float: left;
+      background-color: brown;
+    }
+
+    .aside div .article01,
+    .aside div .article02,
+    .aside div .article03,
+    .aside div .article04 {
+      width: calc(100% - 100px - 10px);
+      padding: 10px 10px 10px 0px; box-sizing: border-box;
+      float: right;
+      text-align: justify;
+      text-indent: 8px;
+      margin-top: 10px;
+    }
+
+    .aside div .article05 {
+      width: calc(100% - 100px - 10px);
+      float: right;
+      padding: 5px 10px; box-sizing: border-box;
+    }
+
+    /* --- footer --- */
+
+    .footer {
+      width: 1280px; height: 200px;
+      background-color: #ccc;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+
+
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <nav class="gnb">
+      <ul>
+        <li>Web</li>
+        <li>Mobile</li>
+        <li>Game</li>
+        <li>Simulation</li>
+        <li>Data</li>
+      </ul>
+    </nav>
+    <div class="logo">
+      <div class="logo_box">
+        <h1>Rint Developmark</h1>
+        <h2>HTML + CSS3 Basic</h2>
+      </div>
+    </div>
+    <nav class="lnb">
+      <ul>
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript</li>
+        <li>jQuery</li>
+        <li>Node.js</li>
+      </ul>
+    </nav>
+  </header><!-- header -->
+
+  <div class="wrap">
+    
+    <div class="contents">
+      <div class="contents_all">
+        <h2>Main Article</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      </div>
+      <div class="contents_all">
+        <h2>Where can I get some?</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      </div>
+      <div class="contents_all">
+        <h2>Where does it come from?</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      </div>
+    </div>
+
+    <aside class="aside">
+
+      <div class="aside_contents">
+        <div class="img"><img src="./images/img01.jpg" alt="이미지01"></div>
+        <article class="article01">
+          <h4>Main Article</h4>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </article>
+      </div>
+      
+      <div class="aside_contents_02">
+        <div class="img"><img src="./images/img02.jpg" alt="이미지02"></div>
+        <article class="article02">
+          <h4>Where can I get some?</h4>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </article>
+      </div>
+      
+      <div class="aside_contents_03">
+        <div class="img"><img src="./images/img03.jpg" alt="이미지03"></div>
+        <article class="article03">
+          <h4>Where does it come from?</h4>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </article>
+      </div>
+      
+      <div class="aside_contents_04">
+        <div class="img"><img src="./images/img04.jpg" alt="이미지03"></div>
+        <article class="article04">
+          <h4>tree</h4>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </article>
+      </div>
+      
+      <div class="aside_contents_05">
+        <div class="img"><img src="./images/img01.jpg" alt="이미지03"></div>
+        <article class="article05">
+          <h3>Best</h3>
+          <h4>Best_Article</h4>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </article>
+      </div>
+    
+    </div>
+    </aside>
+
+  </div><!-- wrap -->
+  
+
+  <footer class="footer">footer</footer>
+
+</body>
+</html>

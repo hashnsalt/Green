@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>layout_test_02(이은경)</title>
+  <style>
+    /*--- font ---*/
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+    /*--- default setting ---*/
+    * {
+      margin: 0; padding: 0;
+    }
+    
+    a {
+      color: black; text-decoration: none;
+    }
+
+    li {
+      list-style: none;
+    }
+  
+    .header {
+      width: 1280px;
+      margin: 0 auto;
+      background-color: #ccc;
+      margin-bottom: 10px;
+    }
+
+     /*--- gnb ---*/
+    
+    .header .gnb {
+      overflow: hidden;
+    }
+
+    .header .gnb ul {
+      font-size: 0;
+      float: right;
+    }
+  
+    .header .gnb ul li {
+      width: 50px; height: 10px;
+      font-size: 11px;
+      display: block;
+      display: inline-block;
+      padding: 0px 10px;
+      margin: 10px 0;
+      border-right: 1px solid #999;
+      text-align: center;
+      line-height: 10px;
+      color: #999;
+    }
+
+    .gnb li:hover {
+      color: black;
+    }
+
+    .header .gnb li:last-child {
+      border: none;
+    }
+
+
+    /*--- header ---*/
+
+
+    .header .logo {
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+      background-color: #ccc;
+      margin: 0 auto;
+      margin-bottom: 10px;
+    }
+
+    .header .logo a {
+      height: 100px;
+      background-color: #ccc;
+      display: block;
+      font-size: 10px;
+    }
+
+    /* --- lnb --- */
+
+    .lnb {
+      width: 1280px; height: 30px;
+      border: 1px solid black; box-sizing: border-box;
+      padding: 0px;
+      /* position: relative; */
+    }
+
+    .lnb li {
+      width: 255.6px;
+      height: 30px;
+      float: left;
+    }
+
+    .lnb li a {
+      display: block;
+      line-height: 30px;
+      color: black;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .lnb li li {
+      display: none;
+    }
+
+    .lnb:hover li li {
+      display: block;
+      background-color: lightslategray;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* --- Visual_main --- */
+   
+    .visual_main_bg {
+      width: 100%; height: 200px;
+      background-color: #ccc;
+      margin-bottom: 10px;
+    }
+
+    .visual_main {
+      width: 1280px;
+      height: 200px;
+      background-color: #999;
+      text-align: center;
+      line-height: 200px;
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 0;
+    }
+
+    /* --- event --- */
+    .contents01 {
+      width: 1280px;
+      margin: 0 auto;
+      margin-bottom: 10px;
+    }
+
+    .event {
+      height: 610px;
+      background-color: #999;
+      margin-bottom: 10px;
+    }
+
+    .event .event01,
+    .event .event02 {
+      float: left;
+    }
+
+    .event .event01 {
+      width: 635px; height: 610px;
+      border: 1px solid black; box-sizing: border-box;
+      margin-right: 10px;
+    }
+
+    .event .event02 div:first-child {
+      margin-bottom: 10px;
+    }
+
+    .event .event02 div {
+      width: 635px; height: 300px;
+      border: 1px solid black; box-sizing: border-box;
+    }
+
+    
+    /* --- product --- */
+
+    .product{
+      height: 610px;
+      background-color: #999;
+    }
+
+    .product .product_left,
+    .product .product05 {
+      width: 635px; height: 610px;
+      float: left;
+    }
+
+    .product .product_left {
+      background-color: green;
+      margin-right: 10px;
+    }
+
+    .product .product_left .product_top div,
+    .product .product_left .product_bottom div {
+      width: 312.5px; height: 300px;
+      border: 1px solid black; box-sizing: border-box;
+      background-color: yellow;
+      float: left;
+    }
+
+    .product .product_top div {
+      margin-bottom: 10px;
+    }
+
+    .product .product_left .product_top div:first-child,
+    .product .product_left .product_bottom div:first-child {
+      margin-right: 10px;
+    }
+
+    .product .product05 {
+      border: 1px solid black; box-sizing: border-box;
+    }
+
+
+    /* --- wide_banner --- */
+
+    .wide_banner {
+      width: 100%; height: 200px;
+      background-color: #ccc;
+      text-align: center;
+      line-height: 200px;
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    /* --- contents02 --- */
+
+    .contents02 {
+      width: 1280px; height: 789.6px;
+      background-color: #ccc;
+      margin: 0 auto;
+      margin-bottom: 10px;
+    }
+
+    .best {
+      background-color: #999;
+      width: 950px;
+      height: 370px;
+      margin-bottom: 10px;
+      float: right;
+    }
+
+    .best .best_top,
+    .best .best_bottom {
+      float: right;
+    }
+
+    .best .best_top li,
+    .best .best_bottom li {
+      width: 230px; height: 180px;
+      border: 1px solid black; box-sizing: border-box;
+      float: left;
+    }
+
+    .best .best_top {
+      margin-bottom: 10px;
+    }
+
+    .best .best_top .best_li,
+    .best .best_bottom .best_li {
+      margin-right: 10px;
+    }
+
+
+    /*--- insta ---*/
+
+    .insta_section {
+      float: left;
+    }
+    
+    .insta ul li{
+      width: 256px; height: 204.8px;
+      background-color: #999;
+      border: 1px solid black; box-sizing: border-box;
+      float: left;
+    }
+
+    /* --- Footer --- */
+
+    .footer_bg {
+      width: 100%; height: 150px;
+      background-color: #999;
+    }
+
+    .footer_bg .footer {
+      width: 1280px; height: 150px;
+      background-color: #ccc;
+      margin: 0 auto;
+    }
+
+    .footer_bg .footer p:nth-child(1) {
+      width: 150px; height: 150px;
+      border: 1px solid black; box-sizing: border-box;
+      float: left;
+      margin-right: 10px;
+    }
+
+    .footer_bg .footer p:nth-child(2) {
+      width: 1120px; height: 150px;
+      border: 1px solid black; box-sizing: border-box;
+      float: left;
+    }
+
+  </style>
+</head>
+<body>
+  <header class="header">
+  <nav class="gnb">
+    <ul>
+      <li><a href="#">Login</a></li>
+      <li><a href="#">Join</a></li>
+      <li><a href="#">Site_map</a></li>
+      <li><a href="#">Search</a></li>
+    </ul>
+  </nav>
+  <div class="logo"><a href="#">logo</a></div>
+
+  <!-- lnb -->
+  <ul class="lnb">
+    <li><a href="#">menu01</a>
+      <ul>
+        <li><a href="#">menu01-1</a></li>
+        <li><a href="#">menu01-2</a></li>
+        <li><a href="#">menu01-3</a></li>
+        <li><a href="#">menu01-4</a></li>
+      </ul>
+    </li><!-- menu01 -->
+    <li><a href="#">menu02</a>
+      <ul>
+        <li><a href="#">menu02-1</a></li>
+        <li><a href="#">menu02-2</a></li>
+        <li><a href="#">menu02-3</a></li>
+        <li><a href="#">menu02-4</a></li>
+      </ul>
+    </li><!-- menu02 -->
+    <li><a href="#">menu03</a>
+      <ul>
+        <li><a href="#">menu03-1</a></li>
+        <li><a href="#">menu03-2</a></li>
+        <li><a href="#">menu03-3</a></li>
+        <li><a href="#">menu03-4</a></li>
+      </ul>
+    </li><!-- menu03 -->
+    <li><a href="#">menu04</a>
+      <ul>
+        <li><a href="#">menu04-1</a></li>
+        <li><a href="#">menu04-2</a></li>
+        <li><a href="#">menu04-3</a></li>
+        <li><a href="#">menu04-4</a></li>
+      </ul>
+    </li><!-- menu04 -->
+    <li><a href="#">menu05</a>
+      <ul>
+        <li><a href="#">menu05-1</a></li>
+        <li><a href="#">menu05-2</a></li>
+        <li><a href="#">menu05-3</a></li>
+        <li><a href="#">menu05-4</a></li>
+      </ul>
+    </li><!-- menu05 -->
+  </ul><!-- header -->
+</header>
+
+
+<div class="visual_main_bg">
+  <section class="visual_main">
+    visual_main
+  </section>
+</div> <!-- visual_main -->
+
+<div class="contents01">
+
+  <section class="event">
+    <div class="event01">event01</div>
+    <div class="event02">
+      <div class="event02-1">event02</div>
+      <div class="event02-2">event03</div>
+    </div>
+  </section><!-- event -->
+  
+  <section class="product">
+    <div class="product_left">
+      <div class="product_top">
+        <div class="product01">product01</div>
+        <div class="product02">product02</div>
+      </div>
+      <div class="product_bottom">
+        <div class="product03">product03</div>
+        <div class="product04">product04</div>
+      </div>
+    </div>
+    <div class="product05">product03</div>
+  </section>
+
+</div>
+
+
+<div class="wide_banner">wide_banner</div>
+
+<div class="contents02">
+  <section class="best">
+    <ul class="best_top">
+      <li class="best_li">best01</li>
+      <li class="best_li">best02</li>
+      <li class="best_li">best03</li>
+      <li>best04</li>
+    </ul>
+    <ul class="best_bottom">
+      <li class="best_li">best05</li>
+      <li class="best_li">best06</li>
+      <li class="best_li">best07</li>
+      <li>best08</li>
+    </ul>
+  </section>
+  <div class="insta_section">
+    <section class="insta">
+      <ul>
+        <li>in01</li>
+        <li>in02</li>
+        <li>in03</li>
+        <li>in04</li>
+        <li>in05</li>
+        <li>in06</li>
+        <li>in07</li>
+        <li>in08</li>
+        <li>in09</li>
+        <li>in010</li>
+      </ul>
+    </section>
+  </div>
+</div>
+<div class="footer_bg">
+  <footer class="footer">
+    <p>logo</p>
+    <p>copyright</p>
+  </footer>
+</div>
+</body>
+</html>

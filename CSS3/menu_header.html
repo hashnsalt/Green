@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>menu_header</title>
+  <style>
+    /*--- default setting ---*/
+    * {
+      margin: 0; padding: 0;
+    }
+    a {
+      color: black; text-decoration: none;
+    }
+    li {
+      list-style: none;
+    }
+
+    /*--- header ---*/
+    .header {
+      width: 1000px; 
+      /* height: 200px; */
+      background-color: yellow;
+      /* bg를 넣으려면 height를 가져야 함. height를 가지지 않으면 bg-color가 들어가지 않음. */
+      margin: 0 auto;
+    }
+
+    .header .gnb_nav {
+      overflow: hidden;
+    }
+    /* <nav></nav> navigation: overflow:hidden이 gnb 메뉴에 먹히게 하고 싶다면 float와 함께 쓸수 없고, 부모의 overflow_set값을 같이 쓰고 싶으면 자식 class에 굳이 써줄 필요가 없다.
+    float 문제 overflow해결
+    문제해결: 1. float를 가진 자식 부모에 width, height를 반드시 정해준다.
+     2. float를 가진 자식의 부모에 overflow:hidden 속성을 부여한다.
+      **float를 사용할 시엔 부모에 width와 height를 생략하지 않아야 한다. 생략하면 float는 자동으로 layout을 무너 뜨린다.
+      해결방안: 부모에 overflow: hidden을 적용해준다.
+      overflow의 문제점.
+    overflow:hidden을 사용했을 때 자식의 list의 down이 안될 때.
+     cnetent: '';
+     display: block;
+     clear: both; 위아래 문제 해결 */
+    
+    .header .gnb {
+      float: right;
+    }
+    /* 실질적인 layout을 잡아 줌. */
+
+    .header .gnb li {
+      width: 100px; height: 20px;
+      background-color: #ccc;
+      float: left;
+      font-size: 11px;
+      /* gnb 글자 크기는 9, 10, 11을 주로 쓴다. */
+      text-align: center;
+      line-height: 20px;
+    }
+
+    .header .logo {
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+      text-align: center;
+      line-height: 100px;
+      margin: 10px auto;
+    }
+
+    .header .lnb::after {
+      /* ::after 가상 요소 내용 끝에 새 컨텐츠를 추가 */
+      /* overflow: hidden; */
+      content: ''; 
+      /* list_요소 맨 뒤에 빈칸(content) 삽입. 가상 요소에만 사용할 수 있음. */
+      display: block;
+      /* ::after가 가상요소, 즉 inline_tag이므로 특정영역을 갖기 위해서는 보이지 않은 자식 list의 blcok을 잡아줌. 줄을 잡아줌. */
+      clear: both;
+      /* float 속성을 clear 해줌 */
+    }
+   /* overflow의 문제점.
+    overflow:hidden을 사용했을 때 자식의 list의 down이 안될 때.
+     cnetent: '';
+     display: block;
+     clear: both; 위아래 문제 해결 */
+    
+    .header .lnb li {
+      width: 200px; height: 50px;
+      background-color: black;
+      color: white;
+      text-align: center;
+      line-height: 50px;
+      float: left;
+    }
+
+    .header .lnb li li {
+      display: none;
+    }
+
+    .header .lnb li:hover li {
+      display: block;
+    }
+
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="gnb_nav">
+      <ul class="gnb">
+        <li>Login</li>
+        <li>Join</li>
+        <li>Site_map</li>
+        <li>Search</li>
+      </ul>
+    </nav><!--gnb-->
+    <div class="logo">logo</div>
+
+    <ul class="lnb">
+      <li>menu01
+        <ul>
+          <li>menu01-1</li>
+          <li>menu01-2</li>
+          <li>menu01-3</li>
+          <li>menu01-4</li>
+        </ul>
+      </li><!--menu01-->
+      <li>menu02
+        <ul>
+          <li>menu02-1</li>
+          <li>menu02-2</li>
+          <li>menu02-3</li>
+          <li>menu02-4></li>
+        </ul>
+      </li><!--menu02-->
+      <li>menu03
+        <ul>
+          <li>menu03-1</li>
+          <li>menu03-2</li>
+          <li>menu03-3</li>
+          <li>menu03-4</li>
+        </ul>
+      </li><!--menu03-->
+      <li>menu04
+        <ul>
+          <li>menu04-1</li>
+          <li>menu04-2</li>
+          <li>menu04-3</li>
+          <li>menu04-4</li>
+        </ul>
+      </li><!--menu04-->
+      <li>menu05
+        <ul>
+          <li>menu05-1</li>
+          <li>menu05-2</li>
+          <li>menu05-3</li>
+          <li>menu05-4</li>
+        </ul>
+      </li><!--menu05-->
+    </ul>
+
+  </header>
+</body>
+</html>

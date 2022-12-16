@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    * { margin: 0; padding: 0; }
+    a { color: black; text-decoration: none;}
+    li { list-style: none;}
+
+    /*--- Test ---*/
+    div {
+      margin: 10px;
+      float: left;
+    }
+
+    .box01 {
+      width: 200px; height: 200px;
+      border: 1px solid black;
+      background-color: violet; transition-property: background-color;
+      /* 트랜지션을 넣어줄 속성. */
+      transition-duration: 0.5s;
+      /* 0.2초동안 변하겠다. */
+    }
+
+    .box01:hover {background-color: red;}
+
+    .box02 {
+      width: 200px; height: 200px;
+      border: 1px solid black;
+      transition-property: height;
+      transition-duration: 0.3s;
+      transition-delay: 0.2s;
+      /* 한번더 주목성을 주기 위해 딜레이를 사용. */
+    }
+
+    .box02:hover {height: 400px;}
+
+
+    .box03 {
+      width: 200px; height: 200px;
+      text-align: center;
+      line-height: 200px;
+      background-image: url(./images/img03.jpg);
+      border: 1px solid black;
+      margin: 10px;
+      overflow: hidden;
+      transition: border-radius 0.2s, background-color 0.3s 0.2s;
+    }
+
+    .box03:hover {
+      background-image: url(./images/img02.jpg);
+      border-radius: 100px;
+    }
+
+
+    .box04 {
+      overflow: hidden;
+      text-align: center;
+      line-height: 200px;
+      position: relative;
+    }
+
+    .box04 .box04_off {
+      width: 200px; height: 200px;
+      margin: 0;
+    }
+
+    .box04 .box04_on {
+      width: 200px; height: 200px;
+      background-color: rgba(0, 0, 0, 0);
+      margin: 0;
+      position: absolute;
+      top: 0; left: 0;
+      transition: all 0.2s;
+    }
+
+    .box04:hover .box04_on {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .box06 {
+      width: 200px; height: 200px;
+      border: 1px solid black;
+      position: relative;
+      text-align: center;
+      line-height: 200px;
+    }
+
+    .box06 .box06_on {
+      width: 200px; height: 200px;
+      background-color: rgba(0, 0, 0, 0.5);
+      margin: 0; 
+      /* 처음 설정을 할때 박스들에 10px 마진을 다 줬으므로  */
+      position: absolute;
+      top: 0; left: 0;
+    }
+
+    .box06 img {
+      display: block;
+      width: 100%; height: auto;
+    }
+
+    .box07 {
+      width: 200px; height: 200px;
+      border: 1px solid black;
+      position: relative;
+      text-align: center;
+      line-height: 200px;
+    }
+
+
+    .box07 .box07_on {
+      width: 200px; height: 200px;
+      background-color: rgba(0, 0, 0, 0);
+      margin: 0; 
+      /* 처음 설정을 할때 박스들에 10px 마진을 다 줬으므로  */
+      text-align: center;
+      line-height: 200px;
+      position: absolute;
+      top: 0; left: 0;
+      transition: all 0.2s;
+    }
+    
+    .box07:hover .box07_on {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .box08 {
+      width: 200px; height: 200px;
+      border: 1px solid black;
+      text-align: center;
+      line-height: 200px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .box08 .box08_on {
+      width: 200px; height: 200px;
+      background-color: rgb(0, 0, 0, 0.5);
+      margin: 0;
+      text-align: center;
+      line-height: 200px;
+      position: absolute;
+      bottom: -200px; left: 0;
+      transition: all 0.2s;
+    }
+
+    .box08:hover .box08_on {
+      bottom: 0;
+    }
+
+    .box09 {
+      width: 200px; height: 200px;
+      border: 1px solid black;
+      background-image: url(./images/img02.jpg);
+      transition: all 0.2s;
+    }
+
+    .box09:hover {
+      background-image: url(./images/img04.jpg);
+      transform: rotateY(360deg);
+    }
+    /* 이미지 버튼을 누르면 돌아감. 마우스 hover은 반드시 부모에게*/
+
+    .box10 {
+      width: 200px; height: 200px;
+      border: 1px solid black;
+      background-image: url(./images/img02.jpg);
+      position: relative;
+      transition: all 0.2s;
+      }
+
+    .box10_box {
+      width: 0; height: 200px;
+      position: absolute;
+      margin: 0;
+      background-color: blue;
+      top: 0; left: 0;
+      transition: all 0.2s;
+      /* 시작 기준점이 된다. */
+    }
+    
+    .box10_txt {
+      width: 200px; height: 200px;
+      margin: 0;
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+      line-height: 200px;
+      transition: all 0.2s 0.2s;
+      position: absolute;
+      top: 0; left: 0;
+      opacity: 0;
+    }
+
+    .box10:hover .box10_box {
+      width: 200px;
+    }
+
+    .box10:hover .box10_txt {
+      opacity: 1;
+    }
+
+    
+  </style>
+</head>
+<body>
+  
+  <div class="box01">color</div>
+  <div class="box02">height</div>
+  <div class="box03">이미지주고싶음</div>
+  <div cla  ss="box04">
+    <div class="box04_off"><img src="./images/img02.jpg" alt="박스 이미지"></div>
+    <div class="box04_on">mouse_on04</div>
+  </div>
+  <div class="box06">
+    <img src="./images/img02.jpg" alt="마우스off 이미지">
+    <div class="box06_on">mouse_on06</div>
+  </div>
+  <div class="box07">
+    <img src="./images/img02.jpg" alt="">
+    <div class="box07_on">mouse_on07</div>
+  </div>
+  <div class="box08">
+    <img src="./images/img02.jpg" alt="마우스off이미지">
+    <div class="box08_on">mouse_on08</div>
+  </div>
+
+  <div class="box09">뒤집기</div>
+  <!-- 백그라운드 이미지로 넣어야 교체가 가능하다. -->
+
+  <div class="box10">
+    <div class="box10_box"></div>
+    <div class="box10_txt">아아악</div>
+  </div>
+</body>
+</html>

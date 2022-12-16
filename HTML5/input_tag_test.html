@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>설문지</title>
+</head>
+<body>
+  <h2>설 문 지</h2>
+  <hr noshade>
+  이름 : <input type="text" size="15" maxlength="16">
+  성별 : <input type="radio" name="gender" value="male" checked>남
+  <input type="radio" nmae="gender" value="female">여
+  <br />
+  생년월일 : <input type="date"> 주소 : <input type="text" size="40">
+
+  <ol>
+    <li>당신의 취미는?<br />
+      <input type="checkbox">등산<br />
+      <input type="checkbox">여행<br />
+      <input type="checkbox">낚시
+    </li>
+    <br />
+    <li>당신의 주량은?<br />
+      <input type="radio" name="alcohol" value="zero" checked>근처도 못간다.<br />
+      <input type="radio" name="alcohol" value="one">한 병<br />
+      <input type="radio" name="alcohol" value="two">두 병
+    </li>
+    <br />
+    <li>당신이 좋아하는 과일은?
+      <select>
+        <option>딸기</option>
+        <option selected>바나나</option>
+        <option>포도</option>
+        <option>멜론</option>
+        <option>블루베리</option>
+      </select>
+    </li>
+    <br />
+    <li>당신이 관심있는 언어는?(다중선택가능)<br />
+      <select size="5" multiple>
+        <option>HTML5</option>
+        <option>CSS3</option>
+        <option>JavaScript</option>
+        <option selected>jQeury</option>
+        <option>jQuery Mobile</option>
+      </select>
+    </li>
+    <br />
+    <li>자기소개<br />
+      <textarea name="content" cols="80" rows="5"></textarea>
+    </li>
+  </ol>
+  <input type="button" value="완료">
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="button" value="다시">
+</body>
+</html>

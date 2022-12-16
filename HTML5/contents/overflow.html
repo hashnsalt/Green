@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>overflow</title>
+  <style>
+    /*--- default setting ---*/
+    * {
+      margin: 0; padding: 0;
+    }
+    a {
+      color: black; text-decoration: none;
+    }
+    li {
+      list-style: none;
+    }
+
+    /*--- Test ---*/
+
+    .main a {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .main a:hover {
+      background-image: url(./images/img01.jpg);
+    }
+
+    div {
+      width: 200px; height: 300px;
+      border: 1px solid black;
+      margin: 10px;
+      float: left;
+      /* 들여쓰기 영문: 8px 한글 16px */
+    }
+
+    .box01 {
+      border: 1px solid black;
+      text-align: justify;
+      overflow: hidden;
+      /* text-align: justify; 양쪽 정렬 */
+      text-indent: 8px;
+    }
+    
+    .box02 {
+      border: 1px solid black;
+      text-align: justify;
+      /* text-align: justify; 양쪽 정렬 */
+      text-indent: 8px;
+      overflow: auto;
+    }
+
+    .box03 {
+      /* overflow-x: scroll; */
+      /* scroll이나 auto를 주면 가로 스크롤도 생긴다. */
+      border: 1px solid black;
+      width: 300px; height: 300px;
+      border-radius: 150px;
+      overflow: hidden;
+    }
+
+    .box04 {
+      text-indent: 8px;
+      white-space: nowrap;
+      /* 디자이너가 일부러 남기는 여백 wrap: 줄바꿈 */
+      overflow: hidden;
+      text-overflow: ellipsis;
+      /* 뒤에 내용이 더 있을 시 '...' 이라는 뉘앙스를 준다.
+      필수, text-overflow를 쓰기 전에 nowrap을 써서 줄바꿈을 없애준다. */
+    }
+  </style>
+</head>
+<body>
+  <li class="main"><a href="menu03_test_main.html">HOME</a></li>
+  <div class="box01">What is Lorem Ipsum?
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+  <div class="box02">What is Lorem Ipsum?
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+  <div class="box03">What is Lorem Ipsum?
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+
+    <div class="box04">What is Lorem Ipsum?
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+</body>
+</html>

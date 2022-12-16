@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>포토리뷰</title>
+  <script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+      let fileTag = document.getElementById('input_img');
+      fileTag.addEventListener('change', previewImg);
+
+      function previewImg () {
+        let imgBox = document.querySelector('.img_box');
+        if(fileTag.files.length > 0) { //공식 이미지가 들어왔다면. 파일의 길이가 0보다 크다면
+          let reader = new FileReader() //FileReader()라는 객체 생성자 함수를 통해 받아온 파일:reader => src 생성자 속성을 사용할 수 있음.
+
+          reader.onload = function(data) {
+            imgBox.src = data.target.result //공식
+            // imgBox.width = auto
+            // imgBox.height = auto
+          }
+          reader.readAsDataURL(fileTag.files[0])
+        } else {
+          imgBox.src = ''
+        } //if-else
+      } //perViewImg 이벤트
+   
+    });
+
+
+
+  </script>
+  <style>
+
+    li{list-style: none;}
+
+   
+  </style>
+</head>
+<body>
+
+  <input type="file" name="" id="input_img" accept=".jpg, .png">
+  <!-- accept: 내가 허용하는 파일 유형들 // accept에 html 파일을 올리면 보안 오류가 뜸. 압축 없이 올릴 수 없음. -->
+  <img src="" alt="" class="img_box" />
+
+</body>
+</html>

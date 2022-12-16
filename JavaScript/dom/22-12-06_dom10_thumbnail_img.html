@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>thumnail</title>
+  <script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+      let mainImg = document.querySelector('.main_img > img');
+      let thumImg = document.querySelectorAll('.thum_img > li');
+      // let thumImg = document.querySelector('.thum_img > li');//이렇게 쓰면 안나온다. selectorAll로 잡아야 배열로 인식하기 때문에 잡힌다.
+      // let thumImg = document.querySelector('.thum_img img');
+      // let thumImg = document.querySelector('img') //안됨 배열로 인식되지 않음. 그래서 구분할 수가 없음
+      // let thumImg = document.querySelectorAll('.thum_img img');//img를 배열로 인식
+      //구분이 가능한 li로 변수를 잡아야한다. img로 잡으면 브라우저가 인식을 못한다.
+
+
+      //방법01
+      // for(let i = 0; i < thumImg.length; i++) {
+      //   thumImg[i].onclick = mainBox
+      // }
+
+      // function mainBox() {
+      //   let imgSrc = this.children[0].src
+      //   //this는 클릭한 것의 자식의 경로를 넣어준다.
+      //   mainImg.setAttribute('src', imgSrc);
+      // }
+
+      //방법02
+
+      for(let i in thumImg) {
+        thumImg[i].addEventListener('click', function() {
+          mainImg.src = this.children[0].src; //children의 몇번째인지 확실하게 해야 한다. selectAll이라는 배열로 받아왔으므로
+          // mainImg.src = this.src; //img 자기자신을 객체로 잡으면 children[0]를 써줄 필요가 없다.
+
+        });
+      }
+
+    });
+
+
+  </script>
+  <style>
+    * {margin: 0; padding: 0;}
+    li {
+      list-style: none;
+    }
+
+    .thum_img {
+      display: flex;
+    }
+
+    .thum_img li {
+      width: 22%; height: 200px;
+      border: 1px solid black;
+      margin-right: 10px;
+    }
+
+    .thum_img li img {
+      width: 100%; height: 100%;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>썸네일 이미지 변화</h1>
+    <div class="main_img">
+      <img src="./images/bx_img01.jpg" alt="main_img" />
+    </div>
+    
+    
+    <ul class="thum_img">
+      <li><img src="./images/bx_img01.jpg" alt="bx_img01" /></li>
+      <li><img src="./images/bx_img02.jpg" alt="bx_img02" /></li>
+      <li><img src="./images/bx_img03.jpg" alt="bx_img03" /></li>
+    </ul>
+  </div>
+
+  <!-- <div class="thum_img">
+    <img src="./images/bx_img01.jpg" alt="썸네일이미지">
+    <img src="./images/bx_img01.jpg" alt="썸네일이미지">
+    <img src="./images/bx_img01.jpg" alt="썸네일이미지">
+  </div> -->
+
+</body>
+</html>

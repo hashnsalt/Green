@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Function_22-11-29</title>
+  <script>
+    //콜백 함수: 함수의 매개변수를 대신해 사용.
+
+    //가변매개 변수 함수 - 나머지 매개 변수
+    //function name(...변수이름){} //데이터가 배열이 아니라하더라도 데이터가 저절로 배열로 바뀌어 저장이 됨.
+
+    // function func(...items) {//정해져 있지 않은 값들이 들어온다. 2개인지 3개인지 모른다. 라는 뜻
+    //전개 연산자 ...변수
+
+    //   document.write(items, '<br/>')
+    //   console.log(items, '<br/>')
+
+    // }
+
+    // func(1, 2)
+    // func(1, 2, 3)
+    // func(1, 2, 3, 4) //f12 console로 결과 확인 가능
+
+
+
+    //items를 이용한 최소값 구하기
+
+    // function min(...items) {
+    //   let min = items[0]
+
+    //   for( let item of items){
+    //     if( min > item ) {
+    //       min = item
+    //     }
+    //   }
+    //   return min;
+    // }
+
+    // let result = min(45, 6, 83, 62, 5, 59);
+    // document.write(result);
+
+
+    // 예제 1. min과 max값을 입력받아 그 사이의 합을 구하기.
+
+    // let num1 = parseInt(prompt('첫번째 정수를 입력하세요.'));
+    // let num2 = parseInt(prompt('두번째 정수를 입력하세요.'));
+    // let max, min;
+
+    // function sum(n1, n2) {//지역 변수
+    //   let sum = 0;
+
+    //   if(num1 > num2) {
+    //   max = num1;
+    //   min = num2;
+    // } else if(num1 <num2){
+    //   max = num2;
+    //   min = num1;
+    // }
+
+    // document.write(`최대값: ${max}<br /> 최소값: ${min}<br/>`);
+      
+    //   for (let i = min; i<=max; i++){
+    //     sum += i;
+    //   }
+      
+    //   return sum;
+    // }
+
+    // let result = sum(min, max);
+    // document.write(`최대값과 최소값의 합은: ${result}입니다.`);
+
+
+
+
+
+
+
+
+    // function func(a, b, ...items) { // 기본으로 매개변수를 a와 b로 받고 나머지를 items로 받을 수도 있다. 
+    //   document.write(a, b, items, '<br/>');
+    //   console.log(a, b, items, '<br/>');
+    // }
+
+    // func(1, 2);
+    // func(1, 2, 3); // 1과 2는 변수로 들어가고 나머지 3은 배열로 잡힌다.
+    // func(1, 2, 3, 4);
+
+
+
+    // //기본 매개변수 - 디폴트 매개변수
+
+    // function func(a, b=2) { //b에 기본 값으로 넣어두면 b에 값이 없어도 기본값(=2)으로 도출된다. 뒤에서(끝에서)부터 적용해야 한다. 중간이나 처음부터 적용하지 않는다. 처음에 기본값을 적용해 놓는건 소용이 없다. 어차피 호출함수에서 바뀌기 때문에. 중간에 들어오는 것은 맨 마지막 값이 정의 되지 않았다고 에러 메세지가 호출되므로 사용하지 않는다.
+
+    //   document.write(`${a} and ${b} <br />`);
+    // } 
+
+    // func(1, 1);
+    // func(1); //하나만 넣으면 b가 없으면 기본값(=undefined)이 나온다.
+    // func(1, 4);
+
+
+
+    //스터디 시간 구하기
+
+    // function studyTime(name, hours=8, days=5){
+    //   document.write(`${name}님의 주 수업시간 계산 <br/>`);
+    //   document.write(`하루수업 시간: ${hours}<br/>`);
+    //   document.write(`주 수업일수: ${days}<br/>`);
+    //   document.write(`일주일 수업 시수 ${hours * days}<br /> <br />`);
+    // }
+
+    // studyTime('홍길동');
+    // studyTime('이순신', 6);
+    // studyTime('윤동주', 5, 6);
+
+
+
+    // 예제2. 알바생 별 시급 구하기.
+
+
+    // function partTime(name, hours=8, days=5, pay=9620) {
+    //   document.write(`${name}님의 주 시급 계산<br/>`);
+    //   document.write(`하루 일하는 시간: ${hours}<br/>`);
+    //   document.write(`주 일하는 일수: ${days}<br/>`);
+    //   document.write(`주 일하는 시수: ${hours * days}<br/>`);
+    //   document.write(`시급 : ${hours * pay}원<br/>`);
+    //   document.write(`주 시급 : ${hours * days * pay}원<br/><br/>`);
+    // }
+
+    // partTime('홍길동');
+    // partTime('빈센조', 5, 2);
+    // partTime('공유', 3);
+
+
+
+    
+
+    // 비동기 프로그램: 함수의 위치(생성)를 고정할 필요 없이 필요할 때 실행 중간에 만들 수 있는 프로그램 -> ex) 콜백 함수: 필요시 매개 변수로 인해 전달 되는 함수 ex)문자 cf)동기-화상통화
+
+    // function func(callback) {
+    //   for(let i=1; i<=10; i++){
+    //     callback(i);
+    //   }
+    // }
+
+    // function output(index) {// output이 콜백 함수가 된다. func함수의 매개변수인 callback 함수는 output이 된다.
+    //   document.write(`${index} 번째 호출 <br />`) ;
+    // }
+
+    // func(output);
+
+
+    //배열 함수: forEach()//기존 배열을 다룰때, map()//기존 배열에 다른 것을 더할 떄, filter()//선택하는 배열 데이터를 처리하는 기본적인 es6의 배열 함수.
+
+
+    //forEach(value, index, array) {} : 단순한 배열 요소를 사용해서 콜백함수를 호출하는 용도로 사용.
+
+    // const numbers = [23, 5, 42, 67, 92, 16]
+
+    // numbers.forEach(function(value, index, array){ //기본 정의된 인수값을 처리.
+    //   document.write(`${index} = ${value} <br />`);
+    // })
+
+    // // forEach 화살표 함수 ver.
+    // numbers.forEach((number, i) => { //array는 앞의 numbers 어레이를 사용한다고 선언하였으므로 생략가능.
+    //   document.write(`${i} = ${number} <br />`); //인수명은 자유자재료 바꿔줄 수 있음. 위치만 제대로 사용하기.
+    // });
+
+
+
+    // map(value, index, array) : 콜백함수에서 리턴하는 값들을 기반으로 새로운 배열을 만드는 함수.
+
+
+    //방법1
+    // let numbers = [23, 5, 42, 67, 92, 16]; //배열은 기본적으로 파괴적 메서드를 사용. 아래 배열 값에 *2를 해줘서 다시 배열문 안에 덮어서 넣어주므로 const라고 정의 해주면 에러가 난다. 그러므로 새롭게 생성된 배열값을 받아 드릴 수 있게 let으로 선언해준다.
+
+    // numbers = numbers.map((value) => {
+    //   return value * 2;
+    // });
+
+    // for(let value of numbers){
+    //   document.write(`${value} <br/>`);
+    // }
+
+
+    //방법2
+
+    // const numbers = [23, 5, 42, 67, 92, 16]; //기존의 배열을 유지하고 싶다면 const로 유지하고 새로운 배열을 하나 만들어 내면 된다.
+
+    // const numbers_re = numbers.map((value) => { //map은 새로운 배열을 하나 만들어 낸다.
+    //   return value * 2;
+    // });
+
+    // for(let value of numbers_re){
+    //   document.write(`${value} <br/>`);
+    // }
+
+
+    //방법 3
+
+    // const numbers = [23, 5, 42, 67, 92, 16];
+
+    // const numbers_re = numbers.map((value) => { //map은 새로운 배열을 하나 만들어 낸다.
+    //   return value * 2;
+    // });
+
+    // numbers_re.forEach((value) => {    //for문을 대신해 forEach로
+    //   document.write(`${value} <br />`);
+    // });
+
+
+   //방법 4
+
+    
+    // let numbers = [23, 5, 42, 67, 92, 16];
+
+    // numbers = numbers.map((value) => value * 2)
+                        // .forEach((value) => { document.write(`${value} <br/>`); //이건 const를 사용할 수없다. 왜?->계산한 map값을 그대로 받아서 사용하기 때문에
+    // })
+
+    
+
+
+    // filter() : 콜백함수에서 return되는 값이 true인 것들로 새로운 배열을 만드는 함수. return값 중에 true를 찾는 것이므로 조건식을 return에 적어줘야 한다. 
+
+    // const numbers = [23, 5, 42, 67, 92, 16];
+
+    // const evenNums = numbers.filter((value) => {
+    //   return value % 2 === 0; //리턴되는 값이 true인 수가 모여서 배열이 만들어진다. IF문은 쓰면안됨.
+    // }); 
+
+    // evenNums.forEach((value) => {
+    //   document.write(value, '<br/>');
+    // });
+
+
+
+    // 타이머 함수
+    // setInterval(함수, 시간) : 특정 시간마다 함수를 호출한다. clearInterval(변수) : setInterval과 함께 쓰이며 함수를 실행 멈춤.
+    // setTimeout(함수, 시간) : 특정 시간이 지난 후에 함수를 호출.
+
+    // setTimeout(function(){
+    //   document.write('1초 후에 실행 함수', '<br />');
+    // }, 1000); //일정시간(1초)가 지난 후에 딱 한번만 실행.
+
+
+
+    //방법1
+    // let count = 1;
+    // let time = setInterval(() => { //변수로 처리해줘야 
+    //   document.write(`1초 마다 실행 함수 - ${count} <br/>`);
+    //   count++;
+    //   if(count == 11){
+    //     clearInterval(time); // 여기서 멈추게 처리할 수 있다.
+    //   }
+    // }, 1000); //if문을 써도 되고
+
+
+
+    //방법2 공식(***)
+    // let count = 1;
+    // let time = setInterval(() => {
+    //   document.write(`1초 마다 실행 함수 - ${count} <br />`);
+    //   count++;
+    // }, 1000);
+
+    // setTimeout(() => {
+    //   document.write(`타이머 종료`);
+    //   clearInterval(time);
+    // }, 10000); //if문 빼고 setTimeout을 쓸 수 있다.
+
+
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

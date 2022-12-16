@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    * { margin: 0; padding: 0; }
+    a { color: black; text-decoration: none; }
+    li { list-style: none; }
+    img { display: block; }
+    /* 이미지아래 의미 없는 여백이 생길 때 이미지 속성이 인라인 이므로 생기는 여백이다. 전역변수. 일부분 실행시 그부분만 바꿔주면된다. */
+
+    /*--- Header ---*/
+    
+    .header {
+      width: 1000px; height: 200px;
+      background-color: #ccc;
+      text-align: center;
+      line-height: 200px;
+      margin: 0 auto;
+    }
+
+    /*--- wrap ---*/
+
+    .wrap {
+      width: 1000px;
+      margin: 50px auto;
+    }
+
+    .wrap .visual_main {
+      width: 1000px; height: 500px;
+      background-color: bisque;
+      margin-bottom: 50px;
+    }
+
+    .wrap .visual_img {
+      width: 800px;
+      margin: 0 auto;
+    }
+    /* visual_img의 부모 속성을 사용하지 않을 경우 생략해줘도 된다. 콘텐츠가 많이 들어가져 있으면 생략하는 건 좋지 못하다. */
+    
+
+
+    /* 박스와 이미지 사이즈가 정확하지 않을 때. 아래처럼 처리해줘야 한다. */
+
+    .wrap .banner { 
+      overflow: hidden;
+      margin-bottom: 50px;
+    }
+    /* 높이를 잡을 수 없기 때문에 float를 가진 자식이 있으면 부모에 overflow: hidden을 잡아준다. 그래야 banner에 아래 마진이 들어간다.height: auto;*/
+    .wrap .banner div {
+      width: 490px;
+      float: left;
+    }
+
+    .wrap .banner div:first-child {
+      margin-right: 20px;
+    }
+    .wrap .banner div img {
+      /* 부모 사이즈에 맞춰서 img를 맞추겠다. */
+      display: block; 
+      /* 이미지에 의미 없는 여백이 생기면 img_는 인라인 태그 이기 때문에 블록이 생긴다. */
+      width: 100%; height: auto;
+      /* 이미지가 꽉찼을 때(==width가 100% 일때,) height는 모른다. 그럴땐 가로에 맞춰서 height를 auto로 만들어 주면 된다. height: auto; 생략 가능. */
+    }
+    /* 여기 이미지만 display block 되게 따로 잡아줌 */
+    /* 모든게 .wrap 속성이면 빼도 된다. */
+    
+    .wrap .product {
+      overflow: hidden;
+    }
+
+    .wrap .product div {
+      width: 235px; height: 235;
+      float: left;
+      margin-right: 20px;
+    }
+
+    .wrap .product div:last-child {
+      margin: 0;
+    }
+
+    .wrap .product div img {
+      display: block;
+      /* idsplay: block;은 defualt 값으로 넣어놨기 때문에 안에 따로 넣을 필요가 없다. */
+      width: 100%; 
+      /* 박스들은 width 100% 기본 속성을 가지고 있어 생략해도 되지만, img는 인라인태그에서 displayblock으로 바꿔 사이즈를 주고 있기 때문에 width를 생략해서는 안된다. */
+      height: auto;
+      /* height 생략가능. */
+    }
+ 
+    /*--- footer ---*/
+    .footer {
+      width: 1000px; height: 200px;
+      background-color: #ccc;
+      text-align: center;
+      line-height: 200px;
+      margin: 0 auto;
+    }
+
+  </style>
+</head>
+<body>
+  
+  <header class="header">
+    <h1>header</h1>
+  </header>
+
+  <div class="wrap">
+    <section class="visual_main">
+      <div class="visual_img">
+        <img src="./images/sheet_img01.jpg" alt="비주얼 이미지">
+      </div>
+    </section>
+<!-- wrap -->
+
+    <section class="banner">
+      <div class="banner01">
+        <img src="./images/sheet_img02.jpg" alt="배너 이미지01">
+      </div>
+      <div class="banner02">
+        <img src="./images/sheet_img03.jpg" alt="배너 이미지02">
+      </div>
+    </section><!-- banner -->
+
+    <section class="product">
+      
+      <div class="product01">
+        <img src="./images/img01.jpg" alt="상품 이미지01">
+      </div>
+      <div class="product02">
+        <img src="./images/img02.jpg" alt="상품 이미지02">
+      </div>
+      <div class="product03">
+        <img src="./images/img03.jpg" alt="상품 이미지03">
+      </div>
+      <div class="product04">
+        <img src="./images/img04.jpg" alt="상품 이미지04">
+      </div>
+      <!--  -->
+
+    </section>
+
+  </div>
+
+  <footer class="footer">
+    footer
+  </footer>
+</body>
+</html>

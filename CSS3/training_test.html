@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습 예제</title>
+
+  <style>
+    /* default setting */
+* {
+  border-collapse: collapse;
+}
+li {
+  list-style: none;
+}
+/* body setting */
+
+.main a {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .main a:hover {
+      background-image: url(./images/img01.jpg);
+    }
+
+table {
+  border-left: none;
+  border-right: none;
+  width: 720px;
+}
+
+caption h3 {
+  text-align: left;
+  margin: 5px;
+}
+
+.bold {
+  height: 40px;
+  text-align: left;
+  background-color: #B8D7FF;
+}
+
+.bold01 {
+  height: 70px;
+  text-align: left;
+  background-color: #B8D7FF;
+}
+
+.bold02 {
+  height: 100px;
+  text-align: left;
+  background-color: #B8D7FF;
+}
+
+td {
+  align-content: center;
+  border-left: none;
+  border-right: none;
+}
+
+p {
+  font-size: 2px;
+  color: #0080C6;
+}
+textarea {
+  width: 450px;
+  height: 50px;
+  resize: none;
+}
+
+a:link {
+  color: black;
+  text-decoration: none;
+}
+
+.sign {
+  font-size: 5px;
+  font-weight: bold;
+}
+
+.main {
+  width: 50px; height: 20px;
+  font-weight: bold;
+  margin: 0px;
+}
+
+.main:hover {
+  background-image: url(./images/img01.jpg);
+}
+  </style>
+</head>
+<body>
+  <table border="1" align="center">
+    <caption><h3>실습예제</h3></caption>
+    <li class="main"><a href="menu03_test_main.html">HOME</a></li>
+    <tr>
+      <th class="bold">&nbsp;학교</th>
+      <td>
+        &nbsp;<input type="text" size="50">
+      <input type="button" value="학교찾기"></td>
+    </tr>
+    <tr>
+      <th class="bold">&nbsp;담당학년</th>
+      <td>
+        &nbsp;<select>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+        </select>학년
+        <select>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+          <option>11</option>
+          <option>12</option>
+          <option>13</option>
+        </select>반
+      </td>
+    </tr>
+    <tr>
+      <th class="bold">&nbsp;학교전화</th>
+      <td>
+        &nbsp;<select>
+          <option>선택</option>
+          <option>02</option>
+          <option>032</option>
+          <option>051</option>
+        </select>
+        -
+        <input type="tel" name="schTel" size="5">
+        -
+        <input type="tel" name="phoneN" size="5">
+      </td>
+    </tr>
+    <tr>
+      <th class="bold">&nbsp;휴대전화</th>
+      <td>
+        &nbsp;<select required>
+        <option>선택</option>
+        <option>010</option>
+        <option>011</option>
+        <option>014</option>
+        <option>016</option>
+        <option>017</option>
+        <option>019</option>
+      </select>
+      -
+      <input type="tel" name="schTel" size="5" required>
+      -
+      <input type="tel" name="phoneN" size="5" required>
+      <font size="1" color="	#0080C6">*휴대전화번호는 선생님 인증을 위해 반드시 입력해 주셔야 합니다.</font>
+    </td>
+    </tr>
+    <tr>
+      <th class="bold01">&nbsp;교사인증</th>
+        <td>
+          &nbsp;<input type="text" size="50">
+          <input type="button" value="이미지 저장">
+          <p>&nbsp;*교사 인증은 교육 행정 정보시스템(NEIS)로그인 한 다음화면 캡쳐해서 첨부해주시면 됩니다.</p>       
+        <div class="sign">
+          &nbsp;[<a href="#">자세한 방법 보기</a>]
+        </div>
+        </td>
+    </tr>
+    <tr>
+      <th class="bold02">&nbsp;간단한 인사 및 소개</th>
+      <td>
+        &nbsp;<textarea></textarea>
+        <p>&nbsp;*간단한 인사 및 소개를 남겨 주시면 교사 사랑방계시판에 자동 등록되어집니다.</p>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

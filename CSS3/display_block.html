@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    /*--- default setting ---*/
+    * {
+      margin: 0; padding: 0;
+    }
+    a {
+      color: black; text-decoration: none;
+    }
+    li {
+      list-style: none;
+    }
+
+    /*--- Test ---*/
+    div {
+      /* display: inline-block; width와 height를 가질수 있는 block 속성을 포함한다*/
+      /* display: inline;  width와 height의 속성이 올 수 없는 것이 inline_tag의 특징이다. */
+      width: 200px; height: 200px;
+      background-color: #ccc;
+      text-align: center;
+      line-height: 200px;
+      margin: 10px;
+      float: left;
+    }
+
+    span {
+      /* display: block; */
+      width: 200px; height: 200px;
+      background-color: yellow;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="box01">box01</div>
+  <div class="box02">box02</div>
+
+  <span class="span01">span01</span>
+  <span class="span02">span02</span>
+  <!-- span: 나란히 옆에가는 속성을 가지고 있다. inline 속성은 글자간 여백 같은 정해주지 않은 속성을 갖고 있다. -->
+</body>
+</html>

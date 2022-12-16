@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0; padding: 0;
+    }
+    div, p {
+      width: 300px; height: 200px;
+      background-color: #ccc;
+      font-size: 32px;
+      text-align: center;
+      line-height: 200px;
+    }/*line-height를 box 높이와 같이 맞춰주면 세로 정렬을 한것 처럼 보인다. / '.'은 클래스라는 뜻*/
+    /*p {
+      width: 300px; height: 200px;
+      background-color: #999;
+      font-size: 32px;
+      text-align: center;
+      line-height: 200px;
+    }*/
+    /* p{
+      background-color: yellow;
+    }
+
+    div>p{
+      background-color: red;
+    }/*div 자식들 하위 tag의 모든 p 라는 말. / div>p : div의 자식 p라는 말*/
+/* 
+    div p p{
+      background-color: blue;
+    } */
+
+    div.box01 {color: blue;}
+    .box02 {color: red;} /*전역클래스*/
+
+    .box {font-style: italic;}
+    #box {background-color: yellow;}
+
+    input[type=text]{
+      background-color: #ccc; /*input_tag의 기본 style이나 아래와 같이 class를 잡고 쓸 수도 있다.*/
+    }
+    .id{border: 1px solid red;}
+    input:focus {background-color: skyblue;}
+    .box01:hover {background-color: yellow;}
+
+
+</style>
+</head>
+<body>
+  <div class="box01 box" id="header">box01</div>
+  <!--class 이름을 너무 많이 잡지 말기-->
+  <div class="id">box02</div>
+  <div class="box">box03</div>
+  <div id="box">box04</div>
+
+  <div class="box01 box">box01</div>
+  <!--class 이름을 너무 많이 잡지 말기-->
+  <div class="box02">box02</div>
+  <div class="box">box03</div>
+  <div id="box">box04</div>
+  <a href="#header">top</a>
+  <!--id는 특별한 기능들을 주는 것. class는 요즘 현장에서 잘쓴다.-->
+  <br />
+  아이디 : <input type="text" class="id"><br />
+  패스워드 : <input type="password">
+
+</body>
+</html>

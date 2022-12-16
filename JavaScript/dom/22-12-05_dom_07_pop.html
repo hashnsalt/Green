@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>event06_팝업 형식의 열고 닫기</title>
+  <script>
+
+  document.addEventListener('DOMContentLoaded', () => {
+
+    const openBtn = document.querySelector('.open_btn');
+    const closeBtn = document.querySelector('.close_btn');
+
+    openBtn.onclick = showText;
+    closeBtn.onclick = closeText;
+
+    function showText() {
+      document.querySelector('.text').style.display = 'block';
+      openBtn.style.display = 'none'; //text창이 열리면서 open버튼이 사라지게 만들어줌
+    }
+
+    function closeText() {
+      document.querySelector('.text').style.display = 'none';
+      openBtn.style.display = 'block'; //숨겨뒀던 open버튼을 text창이 닫히면서 보이게끔 만들어줌.
+    }
+
+  });
+
+  </script>
+  <style>
+
+    .container {
+      width: 500px;
+    }
+
+    .container img {
+      width: 100%;
+    }
+
+    .text {
+      display: none;
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="./images/bx_img01.jpg" alt="로딩중..." />
+    <button class="open_btn">상세보기 열기</button>
+  
+    <div class="text">
+      <h1>농부의 하루</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <button class="close_btn">상세보기 닫기</button>
+    </div>
+  </div>
+
+</body>
+</html>

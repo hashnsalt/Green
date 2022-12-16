@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM_onclick_inline_event</title>
+  <script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+      
+    });
+
+
+
+        //onclick을 인라인을 쓰면, 미리 로드가 되면 안되고 호출이 되었을 때 불려져 와야 한다. 미리 이벤트를 걸어버리면 안나온다.
+      function showBox() {
+        document.querySelector('.box01').style.display ='block';
+      }
+
+      function hiddenBox() {
+        document.querySelector('.box01').style.display = 'none';
+      }
+
+  </script>
+  <style>
+
+
+
+    .box01 {
+      width: 300px; height: 200px;
+      border: 1px solid black;
+      background-color: #ccc;
+      font-size: 30px;
+      display: none;
+    }
+
+  </style>
+</head>
+<body>
+  
+  <button class="open_btn" onclick="showBox()">Show</button>
+  <button class="hidden_btn" onclick="hiddenBox()">Hidden</button> 
+  <!-- 요즘에는 onclick 인라인으로 잘 쓰지않는다. 요즘에는. -->
+
+  <div class="box01">Text_box01</div>
+
+</body>
+</html>

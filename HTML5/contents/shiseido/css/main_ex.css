@@ -1,0 +1,268 @@
+/* --- default setting --- */
+
+* {margin: 0; padding: 0;}
+a {text-decoration: none; color: black;}
+li {list-style: none;}
+
+/* ------ header ------ */
+
+.gnb_box {
+  width: 100%; height: 20px;
+  background-color: black;
+}
+
+.gnb_box .gnb {
+  width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.gnb_box .gnb ul {
+  float: right;
+}
+
+.gnb_box .gnb ul li {
+  width: 120px;
+  color: #eee;
+
+  font-size: 11px;
+  line-height: 20px;
+  text-align: center;
+  float: left;
+}
+
+/* ------ header ------ */
+
+.header {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.header .logo {
+  width: 300px; height: 84px;
+  margin: 0 auto;
+}
+
+.headr .logo img {
+  display: block;
+  width: 100%; height: auto;
+}
+
+/* ------ header lnb ------ */
+
+.header .lnb_box {
+  height: 20px;
+  overflow: hidden;
+}
+
+.header .lnb_box ul {
+  margin-right: 30px;
+  border-right: 1px solid #666; box-sizing: border-box;
+}
+
+.header .lnb_box ul:last-child {
+  border: none;
+}
+
+.header .lnb_box li {
+  height: 20px;
+  display: inline;
+  line-height: 20px;
+  padding: 0 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.header .lnb_box .lnb {
+  width: 500px;
+  float: left;
+}
+
+
+.header .lnb_box .brand {
+  width: 210px;
+  float: left;
+}
+
+.header .lnb_box .search {
+  width: 200px;
+  float: left;
+}
+
+/* ------ visual_main ------ */
+
+.visual_main {
+  width: 1000px; height: 500px;
+  margin: 10px auto;
+}
+
+
+/* ------ rolling_banner------ */
+
+.rolling_banner {
+  width: 100%;
+  min-width: 1000px;/* 1000px이하로 작아지면 아래에 스크롤이 생긴다. 더이상 작아지면 안되는 컨텐츠들에 사용.
+  max-width: 더이상 커지면 안된다. 모바일은 100%를 웹에서 주로 사용한다.
+  width: 100%와 함께 사용해줘라. */
+}
+
+.rolling_banner img {
+  width: 100%; height: auto;
+}
+
+/* ------ title_box ------ */
+
+.title_box {
+  width: 1000px; height: 60px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.title_box div {
+  width: 350px; height: 60px;
+  float: left;
+}
+
+.title_box .title {
+  width: 300px; height: 60px;
+  text-align: center;
+  line-height: 60px;
+  float: left;
+}
+
+/* ------ EVENT01 ------ */
+.event {
+  width: 920px; height: 220px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.event>div {
+  width: 300px; height: 220px;
+  float:left;
+}
+
+.event .serum {
+  margin: 0 10px;
+}
+
+.envet div p {
+  font-weight: bold;
+}
+
+/* ------ event02------ */
+
+.event02 {
+  width: 750px;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-bottom: 42.5px;
+}
+
+.event02 .ultimune {
+  width: 150px; height: 175px;
+}
+
+.event02 p {
+  width: 150px; height: 50px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.event02 .ulti_btn {
+  width: 150px; height: 25px;
+  display: block;
+  text-align: center;
+  line-height: 25px;
+  font-size: 12px;
+  margin: 5px;
+  background-color: #eee;
+  border: 1px solid black;
+}
+
+
+/* ------ info_banner ------ */
+
+.info_banner {
+  margin: 42.5px auto;
+}
+
+.brand_banner {
+  width: 940px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.brand_banner>div {
+  width: 300px; height: 160px;
+  float: left;
+}
+
+.brand_banner div:nth-child(2) {
+  margin: 0 20px;
+}
+
+.sns_banner {
+  width: 940px;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.sns_banner>div {
+  width: 300px;
+  height: 100px;
+  float: left;
+}
+
+.sns_banner>div:nth-child(2) {
+  margin: 0 20px;
+}
+
+/* ------ footer_box ------ */
+
+.footer_box {
+  width: 100%;
+}
+
+.footer_top_box {
+  background-color: black;
+}
+
+.footer_top {
+  width: 940px; height: 30px;
+  margin: 0 auto;
+  padding: 10px 0; box-sizing: border-box;
+  overflow: hidden;
+  color: #eee;
+  line-height: 13px;
+  font-size: 10px;
+}
+
+.footer_top .top_left {
+  float: left;
+}
+
+.footer_top .top_left li {
+  float: left;
+  padding: 0 15px;
+  display: inline;
+  border-right: 1px solid #eee; box-sizing: border-box;
+  }
+
+.footer_top .top_right {
+  float: right;
+}
+
+.footer_top .top_right li {
+  float: left;
+  padding: 0 20px;
+  display: inline;
+  border-right: 1px solid #eee;
+  box-sizing: border-box;
+}
+
+.footer_top .top_left li:last-child,
+.footer_top .top_right li:last-child {
+  border: none;
+}

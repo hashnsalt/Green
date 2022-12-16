@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    /*--- default setting ---*/
+    * {
+      margin: 0; padding: 0;
+    }
+    a {
+      color: black; text-decoration: none;
+    }
+    li {
+      list-style: none;
+    }
+
+    /*--- lnb01 ---*/
+
+    .lnb01{
+      width: 100%; height: 50px;
+      /* width 100%화면을 꽉채운다. 생략가능. 화면이 조절됨에 따라 크기도 같이 조절됨 */
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      box-sizing: border-box;
+      margin-bottom: 30px;
+    }
+
+    .lnb01 ul {
+      /* list box는 가운데 정렬로 */
+      width: 1000px;
+      /* heigh를 주고 overflow 히든을 없앨수 있지만 권장하지 않음. */
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .lnb01 li {
+      width: 200px; height: 50px;
+      float: left;
+    }
+
+    .lnb01 li a {
+      display: block;
+      /* br을 대신한다. br을 빼기 전까지는 블럭이 전체 이어진다. */
+      background-color: beige;
+      color: black;
+      text-align: center;
+      line-height: 50px;
+      /* line-height를 빼면 높이가 설정되지 않는다. 그냥 height를 쓰면 세로 길이는 조절되나 text의 가운데 정렬이 안된다. */
+    }
+
+    .lnb01 li a:hover {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    /* 이렇게 강조감을 만들 수 있다. 요즘 트렌드. */
+
+    /*--- lnb02 ---*/
+
+    .lnb02>ul {
+      width: 1000px;
+      position: relative;
+    }
+    .lnb02 li {
+      width: 200px; height: 50px;
+      float: left;
+    }
+
+    .lnb02 li a {
+      /* 모든 a라는 뜻 */
+      display: block;
+      background-color: beige;
+      color: black;
+      text-align: center;
+      line-height: 50px;
+    }
+
+    .lnb02 ul ul {
+      width: 800px;
+      /* ul의 사이즈를 고쳐 줘야한다. 그래야 고정된 상위 ul에 물리지 않는다.*/
+      position: absolute;
+    }
+
+    .lnb02 ul li:nth-child(3) ul {
+      left: 100px;
+    }
+
+    .lnb02 ul li:nth-child(4) ul {
+      /* nth-child(): 몇번째 자식이라는 뜻이다. li는 5번째까지 존재한다. li안의 ul은 하나 밖에 없다. 따라서 a_tag 또한 하나 밖에 존재하지 않는다고 생각해야 한다.*/
+      right: 200px;
+    }
+
+    .lnb02 ul .ul05 {
+      right: 0px;
+    }
+
+
+    .lnb02 li li {
+      display: none;
+    }
+
+    .lnb02 li:hover li {
+      /* main li에 올렸을 때 sub li를 떨어뜨려라 */
+      display: block;
+    }
+
+    .lnb02>ul>li>a:hover {
+      background-color: cadetblue;
+      color: blueviolet;
+    }
+    /* main만 적용하고 싶을땐 '>' main 직계 자식으로 경로 설정 해주기.
+    그냥 .lnb02 ul li a:hover로 써주면 서브메뉴에도 해당 되게 되므로.*/
+
+    .lnb02 li li a:hover {
+      background-color: brown;
+      color: black;
+    }
+
+
+  </style>
+</head>
+<body>
+  <nav class="lnb01">
+    <ul>
+      <li><a href="#">menu01</a></li>
+      <li><a href="#">menu02</a></li>
+      <li><a href="#">menu03</a></li>
+      <li><a href="#">menu04</a></li>
+      <li><a href="#">menu05</a></li>
+    </ul>
+  </nav>
+  <!-- 메뉴를 만들 때 nav로 한번 싸고 들어간다. -->
+
+  <nav class="lnb02">
+    <ul>
+      <li><a href="#">menu01</a>
+        <ul>
+          <li><a href="#">menu01-1</a></li>
+          <li><a href="#">menu01-2</a></li>
+          <li><a href="#">menu01-3</a></li>
+          <li><a href="#">menu01-4</a></li>
+        </ul>
+      </li><!--menu01-->
+      <li><a href="#">menu02</a>
+        <ul>
+          <li><a href="#">menu02-1</a></li>
+          <li><a href="#">menu02-2</a></li>
+          <li><a href="#">menu02-3</a></li>
+          <li><a href="#">menu02-4</a></li>
+        </ul>
+      </li><!--menu02-->
+      <li><a href="#">menu03</a>
+        <ul>
+          <li><a href="#">menu03-1</a></li>
+          <li><a href="#">menu03-2</a></li>
+          <li><a href="#">menu03-3</a></li>
+          <li><a href="#">menu03-4</a></li>
+        </ul>
+      </li><!--menu03-->
+      <li><a href="#">menu04</a>
+        <ul>
+          <li><a href="#">menu04-1</a></li>
+          <li><a href="#">menu04-2</a></li>
+          <li><a href="#">menu04-3</a></li>
+          <li><a href="#">menu04-4</a></li>
+        </ul>
+      </li><!--menu04-->
+      <li><a href="#">menu05</a>
+        <ul class="ul05">
+          <li><a href="#">menu05-1</a></li>
+          <li><a href="#">menu05-2</a></li>
+          <li><a href="#">menu05-3</a></li>
+          <li><a href="#">menu05-4</a></li>
+        </ul>
+      </li><!--menu05-->
+    </ul>
+  </nav>
+</body>
+</html>

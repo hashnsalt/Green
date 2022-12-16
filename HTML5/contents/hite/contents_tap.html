@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    * { margin: 0; padding: 0; }
+    a { color: black; text-decoration: none;}
+    li { list-style: none;}
+
+    /*--- notice_box ---*/
+    #rad01, #rad02, #rad03 {
+      display: none;
+    }
+    #rad01:checked ~ .notice_sheet .sheet01 { display: block;}
+    #rad01:checked ~ .notice_sheet .sheet02 { display: none;}
+    #rad01:checked ~ .notice_sheet .sheet03 { display: none;}
+
+    #rad02:checked ~ .notice_sheet .sheet01 { display: none;}
+    #rad02:checked ~ .notice_sheet .sheet02 { display: block;}
+    #rad02:checked ~ .notice_sheet .sheet03 { display: none;}
+
+    #rad03:checked ~ .notice_sheet .sheet01 { display: none;}
+    #rad03:checked ~ .notice_sheet .sheet02 { display: none;}
+    #rad03:checked ~ .notice_sheet .sheet03 { display: block;}
+    /* radio_btn은 check가 안됬을때를 챙길 필요가 없다. 어차피 꼭 하나는 chk가 되어야 하기 때문에 */
+
+    .notice_box {
+      width: 500px; height: 400px;
+    }
+
+    #rad01:checked ~ .notice_label .lab01,
+    #rad02:checked ~ .notice_label .lab02,
+    #rad03:checked ~ .notice_label .lab03 {
+      font-weight: bold;
+      background-color: yellow;
+      color: black;
+    }
+
+    .notice_box .notice_label label {
+      display: block;
+      width: 100px; height: 50px;
+      background-color: #ccc;
+      color: white;
+      text-align: center;
+      line-height: 50px;
+      float: left;
+      border-radius: 20px 20px 0 0;
+      cursor: pointer;
+    }
+
+    .notice_box .notice_label {
+      overflow: hidden;
+      /* 공지사항 시트가 옆에 붙을 때 float를 없애주기 위해 부모에 hidden처리 */
+    }
+
+    .notice_box .notice_sheet div {
+      width: 500px; height: 400px;
+      background-color: yellow;
+      font-weight: bold;
+      font-size: 32px;
+      text-align: center;
+      line-height: 400px;
+    }
+    
+  </style>
+</head>
+<body>
+  <section class="notice_box">
+    <input type="radio" id="rad01" name="tab_btn" checked>
+    <input type="radio" id="rad02" name="tab_btn">
+    <input type="radio" id="rad03" name="tab_btn">
+
+    <!-- input은 절대 div_boxing 해주면 안된다. 같은 부모로 처리되어야 하기 때문에. 구조가 가장 중요. -->
+
+    <div class="notice_label">
+      <label for="rad01" class="lab01">공지사항</label>
+      <label for="rad02" class="lab02">오시는길</label>
+      <label for="rad03" class="lab03">Q&A</label>
+    </div>
+    
+    <div class="notice_sheet">
+      <div class="sheet01">공지사항_sheet</div>
+      <div class="sheet02">오시는길_sheet</div>
+      <div class="sheet03">Q&A_sheet</div>
+    </div>
+  </section>
+</body>
+</html>

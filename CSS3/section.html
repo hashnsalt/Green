@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>section</title>
+  <style>
+
+    * {margin: 0; padding: 0;}
+    a {color: black; text-decoration: none;}
+    li { list-style: none;}
+
+    /* ------ Test ------ */
+    .event {
+      width: 1000px; height: 300px;
+      margin: 0 auto;
+      /* overflow: hidden; */
+      /* overflow: hidden 생략 가능 */
+    }
+    /* 부모에 float가 되어 있으면 overflow가 안먹을 수 있다. */
+
+    .event .eve {
+      width: 300px; height: 300px;
+      border: 1px solid black; box-sizing: border-box;
+      /* border_box가 border 때문에 크기를 오버시킨다면 border-box로 줘서 border을 안에 가둔다*/
+      float: left;
+      margin-right: 50px;
+    }
+
+    .event .eve:last-child {
+      margin: 0;
+    }
+
+    /* .event .eve:nth-child(2) {
+      margin: 0 50px;
+    } */
+    /* 3개이기 때문에 중간에 여백을 주는 것이 가능하지만, box가 4개가 되버리면 위 처럼 통째로 margin-right를 주고 마지막 차일드에 margin을 0로 주면된다. */
+
+/*--- product ---*/
+
+    .product_bg {
+      width: 100%; height: 260px;
+      /* width를 100%를 주면 부모에 꽉 채운다는 말. 여기서 bg의 부모는 모니터 body이다. wide_banner */
+      background-color: beige;
+      padding-top: 30px; box-sizing: border-box;
+      margin: 100px 0;
+    }
+    /* 2중 box를 쳤을 때 overflow가 안먹히면 padding-top을 써서 눌러내린다. 눌러내리면 박스 사이즈가 커지기에 box-sizing을 준다 */
+
+    .product_bg .product {
+      width: 890px; height: 200px;
+      margin: 0px auto;
+    }
+
+    .product_bg .product div {
+      width: 200px; height: 200px;
+      border: 1px solid black; box-sizing: border-box;
+      float: left;
+      margin-right: 30px;
+    }
+
+    .product_bg .product div:last-child { margin: 0; }
+
+    /* --- product01 --- */
+
+    .pro_bg {
+      width: 100%; height: 260px;
+      background-color: salmon;
+      padding-top: 30px; box-sizing: border-box;
+      margin: 100px 0px;
+    }
+
+    .pro_bg .pro_o {
+      width: 890px; height: 200px;
+      margin: 0px auto;
+    }
+
+    .pro_bg .pro_o div {
+      width: 200px; height: 200px;
+      border: 1px solid black; box-sizing: border-box;
+      float: left;
+      margin-right: 30px;
+    }
+
+    .pro_bg .pro_o div:last-child { margin: 0; }
+
+    
+
+    /* --- best_box ---*/
+
+    .best {
+      width: 860px; height: 200px;
+      background: #ccc;
+      margin: 0 auto;
+    }
+    /* section 사이즈를 860으로 잡아 줬기 때문에 자식들은 부모 사이즈에서 벗어나지 못한다. */
+
+    .best div {
+      border: 1px solid black; box-sizing: border-box;
+    }
+    .best div:first-child {
+      width: 400px; height: 200px;
+      float: left;
+    }
+
+    .best .best_sub {
+      width: 200px; height: 200px;
+      float: left;
+    }
+    /* float는 혼자 들어가버리면 안되기 떄문에 형제끼리 다 줘야 한다. */
+    .best div:nth-child(2) {
+      margin: 0 30px;
+    }
+
+  /*--- best_test ---*/
+
+  .top {
+    width: 860px; height: 200px;
+    background: #ccc;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+
+  .top div {
+    border: 1px solid black; box-sizing: border-box;
+  }
+
+  .top div:first-child {
+    width: 400px; height: 200px;
+    float: left;
+  }
+
+  .top div:nth-child(2), .top div:nth-child(3) {
+    width: 200px; height: 200px;
+    float: left; 
+  }
+
+  .top div:nth-child(2) {
+    margin: 0 30px;
+  }
+
+  /*--- banner ---*/
+    .banner {
+      width: 820px; height: 420px;
+      background-color: #ccc;
+      margin: 100px auto;
+    }
+    
+    .banner .ban {
+      width: 400px; height: 420px;
+      background: #999;
+      float: left;
+    }
+
+    .banner .ban01 { margin-right: 20px }
+    .banner .ban02 div {
+      width: 400px; height: 200px;
+      border: 1px solid black; box-sizing: border-box;
+    }
+    
+    .banner .ban02 div:first-child {
+      margin-bottom: 20px;
+    }
+
+                            
+    /*--- banner_test ---*/
+
+    .bt {
+      width: 820px; height: 420px;
+      background-color: thistle;
+      margin: 100px auto;
+    }
+
+    .bt .bt01, .bt .bt02 {
+      width: 400px; height: 420px;
+      background: #999;
+      float: left;
+    }
+
+    .bt .bt01 {
+      margin-right: 20px;
+    }
+
+    .bt .bt02 div {
+      width: 400px; height: 200px;
+      border: 1px solid black; box-sizing: border-box;
+    }
+
+    .bt .bt02 div:first-child {
+      margin-bottom: 20px;
+    }
+
+
+    /*--- recommand ---*/
+
+    .recommand {
+      width: 860px; height: 420px;
+      background: #ccc;
+      margin: 0 auto;
+    }
+
+    .recommand .recom {
+      width: 420px; height: 420px;
+      background-color: #999;
+      border: 1px solid black; box-sizing: border-box;
+      float: left;
+    }
+
+    .recommand .recommand01 {
+      margin-right: 20px;
+    }
+
+    .recommand .recommand02 .recom01,
+    .recommand .recommand02 .recom02 {
+      width: 420px; height: 200px;
+      background-color: aquamarine;
+    }
+    /* 띄어쓰기는 안에 속해있는 것 ','는 앞에것도 쓰고 뒤에것도 쓰고. 현장에서는 이렇게 쓴다.*/
+
+    .recommand .recommand02 .recom01 {
+      margin-bottom: 20px;
+    }
+
+    .recommand .recommand02 .recom01 div,
+    .recommand .recommand02 .recom02 div {
+      width: 200px; height: 200px;
+      border: 1px solid black; box-sizing: border-box;
+      float: left;
+    }
+
+    .recommand .recommand02 .recom01 div:first-child,
+    .recommand .recommand02 .recom02 div:first-child {
+      margin-right: 20px;
+    }
+
+    /*--- reco_test ---*/
+
+    .reco_t {
+      width: 860px; height: 420px;
+      background-color: #ccc;
+      margin: 100px auto;
+    }
+
+    .reco_t .r {
+      width: 420px; height: 420px;
+      background-color: #999;
+      float: left;
+    }
+
+    .reco_t .re01 {
+      margin-right: 20px;
+    }
+
+    .reco_t .re02 .r_t01,
+    .reco_t .re02 .r_t02 {
+      width: 420px; height: 200px;
+      /* border: 1px solid black; box-sizing: border-box; */
+      background-color: #999;
+    } 
+
+    .reco_t .re02 .r_t01 {
+      margin-bottom: 20px;
+    }
+
+    .reco_t .re02 .r_t01 div, 
+    .reco_t .re02 .r_t02 div {
+      width: 200px; height: 200px;
+      border: 1px solid black; box-sizing: border-box;
+      float: left;
+    }
+
+    .reco_t .re02 .r_t01 div:first-child,
+    .reco_t .re02 .r_t02 div:first-child {
+      margin-right: 20px;
+    }
+
+    
+
+    /*--- insta ---*/
+
+    .insta01 {
+      width: 790px; height: 310px;
+      background-color: #ccc;
+      margin: 100px auto;
+    }
+
+    .insta01 ul {
+      width: 790px; height: 150px;
+      background-color: #999;
+
+    }
+
+    .insta01 .top { margin-bottom: 10px;}
+    .insta01 ul li {
+      width: 150px; height: 150px;
+      border: 1px solid black; box-sizing: border-box;
+      float: left;
+      margin-right: 10px;
+    }
+
+    .insta01 ul li:last-child {
+      margin: 0px;
+    }
+
+    .insta02 {
+      width: 1000px; height: 400px;
+      background-color: #ccc;
+      margin: 0 auto;
+    }
+
+    .insta02 li {
+      width: 200px; height: 200px;
+      border: 1px solid black; box-sizing: border-box;
+      float: left;
+    }
+
+    /* 오류를 활용한 것. 여백이 없으면 width가 1000px라서 width=200px;의 li들이 차례로 나열되다가 1000px가 넘어가면 다음 줄로 간다.
+     단, 여백이 있는 건 박스를 따로 잡아줘야 한다. 여백이 있는데 박스를 잡아주지 않으면 다 따로 margin을 줘야하기 때문에 효율성이 없다.  */
+    
+    /* inline-block 복습 */
+
+     .lnb {
+      width: 800px; height: 30px;
+      background-color: #ccc;
+      margin: 0 auto;
+     }
+
+     .lnb ul {
+      font-size: 0;
+      /* inline-block의 자간을 줄여주기위해 1.폰트를 없애준다. */
+     }
+
+     .lnb li {
+      display: inline-block;
+      /* 여백을 전부 같아 보이도록 함. */
+      background-color: antiquewhite;
+      color: blueviolet;
+      font-size: 16px;
+      /* 2.li의 폰트 사이즈를 키워준다.*/
+      height: 30px;
+      line-height: 30px;
+      padding: 0 56.6px;
+      /* 딱맞는 가로 사이즈를 찾아서 줄어준다*/
+    }
+
+    .lnb li:hover {
+      background-color: brown;
+    }
+
+  </style>
+</head>
+<body>
+  <section class="event">
+    <div class="eve01 eve">event01</div>
+    <div class="eve02 eve">event02</div>
+    <div class="eve03 eve">event03</div>
+  </section>
+<div class="product_bg">
+  <!-- 의미 없이 배경 색을 가지는 박스는 div로 주고 실질적인 의미를 가지는 박스는 section을 줘라. -->
+  <section class="product">
+    <div class="pro01">product01</div>
+    <div class="pro02">product02</div>
+    <div class="pro03">product03</div>
+    <div class="pro04">product04</div>
+  </section>
+</div>
+
+<div class="pro_bg">
+  <section class="pro_o">
+    <div class="product01">pro01</div>
+    <div class="product01">pro02</div>
+    <div class="product01">pro03</div>
+    <div class="product01">pro04</div>
+  </section>
+</div>
+
+<section class="best">
+  <div>best01</div>
+  <div class="best_sub">best02</div>
+  <div class="best_sub">best03</div>
+</section>
+
+<section class="top">
+  <div>best01</div>
+  <div>best02</div>
+  <div>best03</div>
+</section>
+
+<section class="banner">
+  <div class="ban01 ban">banner01</div>
+  <div class="ban02 ban">
+    <div class="ban02-1">banner02</div>
+    <div class="ban02-2">banner03</div>
+  </div>
+</section>
+
+<section class="bt">
+  <div class="bt01">bt01</div>
+  <div class="bt02">
+    <div class="bt02-1">bt02-1</div>
+    <div class="bt02-1">bt02-2</div>
+  </div>
+</section>
+
+
+<section class="recommand">
+  <div class="recommand01 recom">banner01</div>
+  <div class="recommand02 recom">
+    <div class="recom01">
+      <div>box01</div>
+      <div>box02</div>
+    </div>
+    <div class="recom02">
+      <div>box03</div>
+      <div>box04</div>
+    </div>
+  </div>
+</section>
+
+<section class="reco_t">
+  <div class="re01 r">ban_t</div>
+  <div class="re02 r">
+    <div class="r_t01">
+      <div>box01</div>
+      <div>box02</div>
+    </div>
+    <div class="r_t02">
+      <div>box03</div>
+      <div>box04</div>
+    </div>
+  </div>
+</section>
+
+<section class="insta01">
+  <ul class="top">
+    <li>insta01</li>
+    <li>insta02</li>
+    <li>insta03</li>
+    <li>insta04</li>
+    <li>insta05</li>
+  </ul>
+  <ul class="bottom">
+    <li>insta06</li>
+    <li>insta07</li>
+    <li>insta08</li>
+    <li>insta09</li>
+    <li>insta10</li>
+  </ul>
+</section>
+
+<section class="insta02">
+  <ul>
+    <li>insta01</li>
+    <li>insta02</li>
+    <li>insta03</li>
+    <li>insta04</li>
+    <li>insta05</li>
+    <li>insta06</li>
+    <li>insta07</li>
+    <li>insta08</li>
+    <li>insta09</li>
+    <li>insta10</li>
+  </ul>
+</section>
+
+<nav class="lnb">
+  <ul>
+    <li>HTML5</li>
+    <li>CSS3</li>
+    <li>jQuery</li>
+    <li>JavaScript</li>
+    <li>Vue</li>
+  </ul>
+</nav>
+
+</body>
+</html>

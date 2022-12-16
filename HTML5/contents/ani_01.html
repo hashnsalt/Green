@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>animation</title>
+  <style>
+    /* ------ default setting ------ */
+
+    * {margin: 0; padding: 0;}
+    a {color: black; text-decoration: none;}
+    li {list-style: none;}
+
+    /* ------ Test ------ */
+
+    .box01 {
+      width: 200px; height: 200px;
+      border: 1px solid black;
+      background-image: url(./images/img02.jpg);
+      animation-name: ani01;
+      /* animation을 넣을때 구분이 필요함. */
+      animation-duration: 5s;
+      /* s초 생략하면 안됨. */
+      animation-iteration-count: infinite;
+      /* 애니메이션 무한 반복. 한번만 하고 싶을 때는 1. */
+    }
+
+    @keyframes ani01 {
+      /* 키프레임에 들어갈 이름이 animation-name: name; / keyframe 이라는 것은 장면이라는 것이다. 변화되는 장면 장면을 배치. 마지막 이미지에 장면이 들어왔을 때 같은 장면으로 줘야 퉁 튕기는 느낌을 안준다. 첫번째 이미지가 마지막에 한번 더 들어와야한다. css 이미지는 반복. 마우스 hover했을 때 애니메이션이 멈추는 효과는 js만 가능. */
+      0% {background-image: url(./images/img02.jpg);}
+      5% {background-image: url(./images/img03.jpg);}
+      50% {background-image: url(./images/img03.jpg);}
+      70% {background-image: url(./images/img02.jpg);}
+      100% {background-image: url(./images/img02.jpg);}
+      /* 이미지를 사이사이에 똑같은 이미지를 넣어주면 이미지가 유지되서 멈춤 효과를 준다. 변화되는 시간 앞에 %를 짧게 주면 빨리빨리 바뀌는 것처럼 깜빡깜빡 한다.       
+      0% {background-image: url(./images/img02.jpg);}
+      1% {background-image: url(./images/img03.jpg);}
+      50% {background-image: url(./images/img03.jpg);}
+      51% {background-image: url(./images/img02.jpg);}
+      100% {background-image: url(./images/img02.jpg);}*/
+    }
+
+
+    .box02 {
+      width: 200px; height: 200px;
+      border: 1px solid black;
+      border-radius: 100px;
+      overflow: hidden;
+
+      position: absolute;
+      top: 200px;
+      left: 500px;
+      /* 팝업창이 둥둥 뜨는 걸 표현할거다. animation이 들어갈 속성 지정. */
+      
+      animation-name: ani02;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes ani02 {
+      0% {top: 200px;}
+      50% {top: 180px;}
+      100% {top: 200px;}
+      /* 모션 트윈 위치가 바뀜. opacity 효과까지 주면 사라지는 효과도 줄 수 있음. 장면을 전환 하거나 모션,위치를 이동하는 기능 두가지 기능이 있다.*/
+    }
+
+    .box03 {
+      width: 200px; height: 200px;
+      background-color: yellow;
+      opacity: 1;
+      animation-name: ani03;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+    }
+      /* 조절하려면 duration의 초를 조절해서 시간에 변환을 줘야한다. 장면 전화만 keyframe 어색하게 돌아오면 안되기 때문에 처음 장면을 마지막에 넣어줘야 한다. */
+
+    /* @keyframes ani03 {
+      0% {opacity: 1;}
+      50% {opacity: 0;}
+      100% {opacity: 1;}
+    } */
+
+
+    @keyframes ani03 {
+      0% {background-color: yellow;}
+      35% {background-color: red;}
+      70% {background-color: blue;}
+      100% {background-color: yellow;}
+    }
+
+  </style>
+</head>
+<body>
+  <div class="box01">box01</div>
+  <div class="box02"><img src="./images/img04.jpg" alt="팝업 아이콘 이미지"></div>
+  <div class="box03">box03</div>
+
+
+</body>
+</html>

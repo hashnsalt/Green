@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM_onclick 변수_event</title>
+  <script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+
+      //1번쨰 방법 인라인 온클릭
+
+      //2번째 방법
+      // document.querySelector('.open_btn').onclick = showBox; // showBox 함수를 호출할거다. 괄호를 넣으면 안된다.
+      // document.querySelector('.hidden_btn').onclick = hiddenBox; //클릭 이벤트에 걸어주는 것이기 때문에 괄호를 넣으면 안된다.
+
+      //변수로 바꾸어 써보기
+      //3번쨰 방법
+      const openBtn = document.querySelector('.open_btn');
+      const hiddenBtn = document.querySelector('.hidden_btn');
+
+
+      //2,3번째 방법
+      // openBtn.onclick = showBox;
+      // hiddenBtn.onclick = hiddenBox;
+
+      // function showBox() {
+      //   document.querySelector('.box01').style.display = 'block';
+      // }
+
+      // function hiddenBox() {
+      //   document.querySelector('.box01').style.display = 'none';
+      // }
+
+      //4번째 방법
+      openBtn.onclick = function(){
+        document.querySelector('.box01').style.display  = 'block';
+      }
+
+      hiddenBtn.onclick = function(){
+        document.querySelector('.box01').style.display = 'none';
+      }
+
+    });
+
+  </script>
+  <style>
+
+
+
+    .box01 {
+      width: 300px; height: 200px;
+      border: 1px solid black;
+      background-color: #ccc;
+      font-size: 30px;
+      display: none;
+    }
+
+  </style>
+</head>
+<body>
+  
+  <button class="open_btn">Show</button>
+  <button class="hidden_btn">Hidden</button> 
+  <!-- 요즘에는 onclick 인라인으로 잘 쓰지않는다. 요즘에는. -->
+
+  <div class="box01">Text_box01</div>
+
+</body>
+</html>

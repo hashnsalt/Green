@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ani_02</title>
+
+  <style>
+
+    /* ------ default setting ------ */
+
+    * {margin: 0; padding: 0;}
+    li {list-style: none;}
+    img {display: block;}
+
+    /* ------ Test ------ */
+
+    .frame {
+      width: 800px; height: 500px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .frame ul {
+      width: 4800px; height: 500px;
+      position: absolute;
+      top: 0; left: 0;
+      animation-name: banner;
+      animation-duration: 8s;
+      animation-iteration-count: infinite;
+    } 
+    /* li을 싸고 있는 부모 박스 ul에 걸어줘야 슬라이더가 하나 나가면 li가 따라온다. */
+    
+    @keyframes banner {
+      0% {left: 0;}
+      5% {left: -800px;}
+      /* 멈춤 효과를 넣어서 멈춤. */
+      20% {left: -800px;}
+      25% {left: -1600px;}
+      40% {left: -1600px;}
+      45% {left: -2400px;}
+      60% {left: -2400px;}
+      65% {left: -3200px;}
+      80% {left: -3200px;}
+      85% {left: -4000px;}
+      100% {left: -4000px;}
+    }
+
+    .frame li {
+      width: 800px; height: 500px;
+      float: left;
+    }
+    /* 이미지 사이즈는 li가 해준다. */
+
+    /* ------ default setting ------ */
+
+  </style>
+</head>
+<body>
+
+  <div class="frame">
+    <ul>
+      <li><img src="./images/sheet_img01.jpg" alt="비주얼이미지1"></li>
+      <li><img src="./images/sheet_img02.jpg" alt="비주얼이미지2"></li>
+      <li><img src="./images/sheet_img03.jpg" alt="비주얼이미지3"></li>
+      <li><img src="./images/sheet_img04.jpg" alt="비주얼이미지4"></li>
+      <li><img src="./images/sheet_img05.jpg" alt="비주얼이미지5"></li>
+      <li><img src="./images/sheet_img01.jpg" alt="비주얼이미지1"></li>
+      <!-- 1번이미지의 빈 공간이 나타나는 걸 지워주기 위해서 첫번째 이미지를 다시 마지막으로 넣어준다. -->
+    </ul>
+  </div>
+
+</body>
+</html>

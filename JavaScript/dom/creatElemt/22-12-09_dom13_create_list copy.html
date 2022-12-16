@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Element LIST</title>
+  <script>
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelector('.btn').addEventListener('click', () => {
+        
+        let colorName = document.querySelector('.color_name');
+        let newP = document.createElement('p');
+        let newList = document.querySelector('.color_list');
+        let newText = document.createTextNode(colorName.value);
+        //컬러 네임( input) 박스에 입력한 값을 텍스트 노드로 생성한다.
+        
+        newP.appendChild(newText); //부모 p박스와 자식 text를 연결한다.
+        // newList.appendChild(newP); //맨밑에 document.body.appendChild()가 실행되도록 미리 변수 설정
+        // document.body.appendChild();
+
+        let newSpan = document.createElement('span')
+        let spanText = document.createTextNode('X');
+
+        newSpan.appendChild(spanText);
+        newSpan.setAttribute('class','delete'); //클래스를 줘서 나중에 이벤트를 설정하기 쉽게 만들어줌.
+        newP.appendChild(newSpan);
+        // document.body.appendChild(newP);
+
+        // document.body.appendChild(); //맨밑에 이것만 작성해도 f12번 element에 들어감.
+
+        // newList.appendChild(newP); //이렇게해도 들어감
+
+        newList.insertBefore(newP, newList.childNodes[0]); // 추가한 값을 컬러리스트 자식들 맨앞에다가 삽입하겠다.
+
+
+
+        //input에 값을 추가하면 그후 input박스 초기화하며 커서가 그안에 들어가져 있음 다른 값을 적기 편하게 (리뷰 작성시 편함)
+        // colorName.value = ''
+        // colorNmae.focus();
+
+        //블럭을 잡아놓아서 적으면 사라지게 되어 있음 (값을 넣을떄 이전에 넣은 값이 뭔지 알아보기 쉬움)
+        colorName.select();
+
+        let delBtn = document.querySelectorAll('.delete'); //delete클래스를 가진 span태그는 갯수가 늘어나면서 배열로 잡음.
+        
+        for (let i=0; i<delBtn.length; i++) { //만들어진 span의 갯수만큼 길이를 잡고 for을 돌림
+          delBtn[i].addEventListener('click', function() {
+            if(this.parentNode.parentNode) { //colorList 라면 this: span, parents: p, parentNod: colorList, this.parentNode 누른 값의 부모 p박스 //니가 누른 버튼의 부모의 부모가 존재한다면
+              this.parentNode.parentNode.removeChild(this.parentNode);
+              // p박스를 제거해 주겠다.
+            }
+          });
+
+        }
+
+        // document.body.appendChild(); //맨밑에 이것만 작성해도 f12번 element에 들어감. 이건 정석이 아님. 설정을 위에서(p랑 span을 전부 colorList안에 설정해주겠다는 이야기를 했기 때문에) 다 해주었기 때문에 appendChild가 f12번을 눌러도 div 태그 안에 들어감.
+
+      }); //click_event
+    });
+
+  </script>
+  <style>
+    .delete {
+      margin-left: 100px;
+      cursor: pointer;
+      opacity: 0.5;
+    }
+
+    .delete:hover {
+      opacity: 1;
+      font-weight: bold;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>컬러 리스트</h1>
+    
+    <form action="">
+      <input type="text" class="color_name" placeholder="컬러이름" autofocus>
+      <button type="button" class="btn">추가</button>
+      <!-- button 타입 button을 해주지 않으면 추가한 값이 바로 사라짐. -->
+    </form>
+
+    <hr>
+
+    <div class="color_list"></div>
+  </div>
+</body>
+</html>

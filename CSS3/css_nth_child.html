@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    /*--- default setting ---*/
+    * {
+      margin: 0; padding: 0;
+    }
+    a {
+      color: black; text-decoration: none;
+    }
+    li {
+      list-style: none;
+    }
+
+    /*--- Test ---*/
+
+    .lnb li {
+      width: 200px;
+      height: 100px;
+      background-color: beige;
+      color:  brown;
+      text-align: center;
+      line-height: 100px;
+      font-size: 20px;
+      float: left;
+    }
+    .lnb .first {
+      background-color: rosybrown;
+    }
+
+    .lnb li:first-child {
+      color: orange;
+    }
+
+    .lnb li:last-child {
+      background-color: darkorange;
+    }
+    .lnb li:nth-child(5) {
+      color: yellowgreen;
+    }
+
+    /* 마지막 자식을 last-child로 잡을 수도 있지만, nth-child()로도 잡을 수 있다. */
+    .lnb li:nth-child(3) {
+      background-color: cadetblue;
+    }
+    
+    .lnb li:nth-child(1) {
+      border-radius: 20px 0px 0px 20px;
+    }
+
+    .lnb li:nth-child(5) {
+      border-radius: 0px 20px 20px 0px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav class="lnb">
+    <ul>
+      <li class="first">menu01</li>
+      <li>menu02</li>
+      <li>menu03</li>
+      <li>menu04</li>
+      <li>menu05</li>
+    </ul>
+  </nav>
+</body>
+</html>

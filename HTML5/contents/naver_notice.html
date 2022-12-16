@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    * { margin: 0; padding: 0; }
+    a { color: black; text-decoration: none;}
+    li { list-style: none;}
+
+    /*--- Test ---*/
+
+    .frame {
+      width: 500px; height: 20px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid #eee;
+    }
+    .frame li {
+      width: 500px; height: 20px;
+    }
+
+    .frame ul {
+      width: 500px; height: 180px;
+      position: absolute;
+      top: 0; left: 100px;
+      animation-name: rolling_notice;
+      animation-duration: 8s;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes rolling_notice {
+      0% {top: 0;}
+      10%{top: -20px;}
+      20% {top: -20px;}
+      30% {top: -40px;}
+      40% {top: -40px;}
+      50% {top: -60px;}
+      60% {top: -60px;}
+      70% {top: -80px;}
+      80% {top: -80px;}
+      90% {top: -100px;}
+      100% {top: -100px;}
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="frame">
+    <h4>연합뉴스></h4>
+    <ul>
+      <li>대전 현대 아울렛 화제 참사로...</li>
+      <li>대우조선, 한화에 팔린다. 2조원 유상증자 방식</li>
+      <li>한은 총재 "통화스와프 관련 미국 연준과 정보 교환"</li>
+      <li>정기석 "실내마스크는 다음 유행 지난 후 모두 다같이 벗어야"</li>
+      <li>검찰, '성남FC 의혹' 수사 확대...네이버·차병원 등 압수수색</li>
+      <li>대전 현대 아울렛 화제 참사로...</li>
+      <li>대우조선, 한화에 팔린다. 2조원 유상증자 방식</li>
+      <li>한은 총재 "통화스와프 관련 미국 연준과 정보 교환"</li>
+      <li>정기석 "실내마스크는 다음 유행 지난 후 모두 다같이 벗어야"</li>
+    </ul>
+  </div>
+
+</body>
+</html>

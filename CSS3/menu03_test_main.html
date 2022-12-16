@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>menu03</title>
+  <style>
+    /*--- font ---*/
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+    /*--- default setting ---*/
+    * {
+      margin: 0; padding: 0;
+    }
+    
+    a {
+      color: black; text-decoration: none;
+    }
+
+    li {
+      list-style: none;
+    }
+  
+    /*--- lnb ---*/
+
+    .header {
+      width: 1024px;
+      margin: 0 auto;
+    }
+    
+    .header .nav_gnb {
+      overflow: hidden;
+    }
+
+    .header .nav_gnb .gnb{
+      float: right;
+    }
+    /* 오른쪽으로 모았다가 */
+
+  
+    .header .nav_gnb .gnb li{
+      /* width: 100px; height: 20px; */
+      /* 여기서 size를 잡아주면 밑과 옆에 border줄이 잘려서 나옴 */
+      float: left;
+    }
+
+    /* 오름 차순으로 정렬. 안써주면 거꾸로 나열 됨. */
+
+    .header .nav_gnb .gnb li a {
+      display: block;
+      width: 100px; height: 20px;
+      border: 1px solid black;
+      background-color: #ccc;
+      font-size: 11px;
+      font-weight: bold;
+      text-align: center;
+    }
+    /* --- gnb --- */
+
+    .header .logo a {
+      width: 1000px; height: 100px;
+      border: 0px solid black;
+      /* background-color: bisque; */
+      display: block;
+      text-align: center;
+      font-size: 50px;
+      line-height: 100px;
+      /* background-image: url(./images/img05.jpg); */
+      font-family: 'Noto Sans KR';
+      background-repeat: no-repeat;
+      
+    }
+    /* --- logo --- */
+
+    .lnb01 {
+      width: 1000px;
+      margin: 0px auto;
+    }
+    
+    .lnb01 {
+      position: sticky;
+      top: 0;
+    }
+
+     .lnb01 li {
+      width: 200px; height: 50px;
+      /* background-color: salmon;
+      color: brown;
+      font-weight: bold;
+      text-align: center;
+      line-height: 50px; */
+      float: left;
+    } 
+
+    .lnb01 li a {
+      width: 200px; height: 50px;
+      background-color: salmon;
+      color: brown;
+      font-weight: bold;
+      text-align: center;
+      line-height: 50px;
+      float: left;
+    }
+
+    .lnb01 li li {
+      display: none;
+    }
+
+    .lnb01 a:hover {
+      background-color: seashell;
+      color: salmon;
+    }
+
+  .lnb01 li:hover li {
+      display: block;
+    }
+
+  .lnb01 li:hover {
+      background-color: seashell;
+      color: salmon;
+    }
+    /* section {
+      width: 1000px;
+      height: 5000px;
+      margin: 0 auto;
+    } */
+    /* --- lnb --- */
+  </style>
+</head>
+<body>
+  <header class="header">
+  <nav class="nav_gnb">
+    <ul class="gnb">
+      <li><a href="#">Login</a></li>
+      <li><a href="#">Join</a></li>
+      <li><a href="#">Site_map</a></li>
+      <li><a href="#">Search</a></li>
+    </ul>
+  </nav>
+  <div class="logo"><a href="./menu03_test_main.html">HELLO SITE</a></div>
+
+
+  <ul class="lnb01">
+    <li><a href="#">menu01</a>
+      <ul>
+        <li><a href="./training_test.html">menu01-1</a></li>
+        <li><a href="./css_font_test.html">menu01-2</a></li>
+        <li><a href="./overflow.html">menu01-3</a></li>
+        <li><a href="css_background_box.html">menu01-4</a></li>
+      </ul>
+    </li><!-- menu01 -->
+    <li><a href="#">menu02</a>
+      <ul>
+        <li><a href="#">menu02-1</a></li>
+        <li><a href="#">menu02-2</a></li>
+        <li><a href="#">menu02-3</a></li>
+        <li><a href="#">menu02-4</a></li>
+      </ul>
+    </li><!-- menu02 -->
+    <li><a href="#">menu03</a>
+      <ul>
+        <li><a href="#">menu03-1</a></li>
+        <li><a href="#">menu03-2</a></li>
+        <li><a href="#">menu03-3</a></li>
+        <li><a href="#">menu03-4</a></li>
+      </ul>
+    </li><!-- menu03 -->
+    <li><a href="#">menu04</a>
+      <ul>
+        <li><a href="#">menu04-1</a></li>
+        <li><a href="#">menu04-2</a></li>
+        <li><a href="#">menu04-3</a></li>
+        <li><a href="#">menu04-4</a></li>
+      </ul>
+    </li><!-- menu04 -->
+    <li><a href="#">menu05</a>
+      <ul>
+        <li><a href="#">menu05-1</a></li>
+        <li><a href="#">menu05-2</a></li>
+        <li><a href="#">menu05-3</a></li>
+        <li><a href="#">menu05-4</a></li>
+      </ul>
+    </li><!-- menu05 -->
+  </ul>
+</header><!-- header -->
+<!-- <section>
+  <div class="box01">box01</div>
+</section> -->
+</body>
+</html>

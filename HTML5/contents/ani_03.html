@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    * { margin: 0; padding: 0; }
+    a { color: black; text-decoration: none;}
+    li { list-style: none;}
+    img {display: block;}
+
+    /*--- Test ---*/
+
+    .frame {
+      width: 600px; height: 200px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid black;
+    }
+
+    .frame ul {
+      width: 1400px; height: 300px;
+      position: absolute;
+      top: 0; left: 0;
+      animation-name: rolling_banner;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes rolling_banner {
+      0% {left: 0;}
+      25% {left: -200px}
+      50% {left: -400px}
+      75% {left: -600px}
+      100% {left: -800px}
+    }
+
+    .frame li {
+      width: 200px; height: 200px;
+      float: left;
+    }
+
+
+
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <ul>
+      <li><img src="./images/img01.jpg" alt="롤링배너1"></li>
+      <li><img src="./images/img02.jpg" alt="롤링배너2"></li>
+      <li><img src="./images/img03.jpg" alt="롤링배너3"></li>
+      <li><img src="./images/img04.jpg" alt="롤링배너4"></li>
+      <li><img src="./images/img01.jpg" alt="롤링배너1"></li>
+      <li><img src="./images/img02.jpg" alt="롤링배너2"></li>
+      <li><img src="./images/img03.jpg" alt="롤링배너3"></li>
+    </ul>
+    <!-- 3개의 이미지가 보여지기 때문에 맨 밑에 사진을 가져다 부이면 된다. -->
+  </div>
+</body>
+</html>

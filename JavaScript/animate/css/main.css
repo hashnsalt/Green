@@ -1,0 +1,105 @@
+*{margin: 0; padding: 0;}
+
+  body{ height: 2000px;}
+
+    .top_btn {
+      width: 50px;
+      height: 50px;
+      background-color: beige;
+      border-radius: 50px;
+      text-align: center;
+      line-height: 50px;
+      position: fixed;
+      bottom: 100px;
+      right: 20px;
+      cursor: pointer;
+      opacity: 0;
+    }
+
+
+  .img_box,
+  .txt_box,
+  .notice_box {
+    width: 940px; height: 300px;
+    margin: 200px auto;
+    display: flex;
+  }
+
+  .img_box div,
+  .txt_box div,
+  .notice_box div {
+    width: 300px; height: 300px;
+    border: 1px solid black; box-sizing: border-box;
+    opacity: 0;
+  }
+
+  .img_box div:nth-child(2),
+  .txt_box div:nth-child(2),
+  .notice_box div:nth-child(2) {
+    margin: 0 20px;
+  }
+
+
+  /* ------ scroll-magic ------ */
+
+  /* origin은 처음에 적용되지 않는다. show라는 클래스는 없음. 나중에 동작이 되면 notice박스에 show라는 클래스가 적용이 되고, 그들의 요소인 noticeEl 들에게 origin이 적용 된다. */
+
+  .show .origin {
+    opacity: 1;
+    transition: all 1s;
+
+  }
+
+  .show .notice01 {
+    transition-delay: 0s;
+  }
+  /* notice1번이 opacity가 1로 나타나는 동안에 딜레이가 없다라는 말 */
+
+  .show .notice02 {
+    transition-delay: 0.5s;
+  }
+
+  .show .notice03 {
+    transition-delay: 1s;
+  }
+
+
+  /* ------ swiper ------- */
+
+  .visual_swiper {
+    /* width: 1000%; */
+    height: 400px;
+  }
+
+
+  .visual_swiper .swiper .swiper-wrapper {
+    width: 100%;
+  }
+
+  .visual_swiper .swiper-wrapper .swiper-slide{
+    opacity: 0.5;
+    width: 100%;
+    height: 200px;
+  }
+
+  .visual_swiper .swiper-wrapper .swiper-slide-active{
+    opacity: 1;
+    height: 300px;
+  }
+
+  .visual_swiper .swiper-wrapper .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .visual_swiper .swiper .swiper-pagination-bullet {
+    width: 20px; height: 20px;
+    background-color: antiquewhite;
+  }
+
+
+  .visual_swiper .swiper .swiper-pagination-progressbar {
+    position: absolute;
+    top: 50%;
+  }

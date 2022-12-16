@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Margin_밖의 여백</title>
+  <style>
+    * {  margin: 0; padding: 0; }
+        /*margin: 밖의 여백 padding: 안쪽 여백*/
+    a{color: black; text-decoration: none;}
+    
+    a{
+      background-color: #ccc;
+      width: 100px;
+    }/* a_tag는 자기의 글자가 있는 만큼만 색이 들어옴./ inline_tag는 width,height 같은 걸 적용할 수가 없다. */
+    
+    div {
+      width: 200px;
+      height: 100px;
+      background-color: #ccc;
+      margin: 10px;
+    }
+
+    .box01 {
+      margin: 10px;
+    }
+    /*밖 전체 여백*/
+
+    .box02 {
+      margin: 30px 10px;
+    }
+        /* 밖의 여백- margin : 위 아래 : 30, 왼 오 : 10 */
+
+    /* .box03 {margin: 10px 20px 30px;} */
+
+    .box03 {margin: 20px 30px 40px 50px;}
+    /* 밖의 여백- margin : 위 오른 아래 왼 시계방향 */
+    
+    /* .box04 {margin: 50px 0 0 0;} */
+    .box04 {
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    .box05 {
+      width: 80%;
+      /* %: 이것이 반응형 / height는 잘안줌! / 박스 가운데 정렬을 하기 위해서는 박스의 width가 존재해야한다. (800-x)/2로 계산이 되기 때문에. width가 100%일 때도 안된다. */
+      text-align: center;
+      line-height: 100px; /* 박스 크기와 같은 높이로 정렬하면 됨 가운데 정렬 */
+      margin: 20px auto;
+      /* 창이 꺼져도 작아져도 자동으로 가운데 정렬
+      auto: 양쪽 여백에 똑같이 margin을 남겨라. 박스 좌우에 동일한 마진을 제공, 가운데 정렬처럼 보이게 하는 결과 */
+    }
+  </style>
+</head>
+<body>
+  <a href="#">인라인 태그</a>
+  <!-- <div class="box01">box01</div> -->
+  <div class="box01">box01</div>
+  <div class="box02">box02</div>
+  <div class="box03">box03</div>
+  <div class="box04">box04</div>
+  <div class="box05">박스 가운데 정렬</div>
+</body>
+</html>

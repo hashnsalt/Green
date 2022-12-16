@@ -1,0 +1,13 @@
+/* default setting */
+* {
+  padding: 0; margin: 0;
+}
+/* '*' 모든태그 기본값*/
+li {
+  list-style: none;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+/* 링크 표시시 색 표현*/

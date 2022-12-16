@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wing_banner</title>
+  <link rel="stylesheet" href="./fontawesome-free-6.2.0-web/css/all.css">
+  <style>
+    /*--- default setting ---*/
+    * {
+      margin: 0; padding: 0;
+    }
+    a {
+      color: black; text-decoration: none;
+    }
+    li {
+      list-style: none;
+    }
+
+    /*--- wing_banner ---*/
+    /*--- wing_banner ---*/
+    #chk_wing {
+      display: none;
+    }
+    #chk_wing:checked ~ .wing_banner {
+      width: 150px;
+    }
+    /* #chk_wing ~ .wing_banner {
+      display: none;
+    } */
+
+
+    #chk_wing:checked ~ .wing_btn .wing_open {
+      display: none;
+    }
+    #chk_wing:checked ~ .wing_btn .wing_close {
+      display: block;
+    }
+    #chk_wing ~ .wing_btn .wing_open {
+      display: block;
+    }
+    #chk_wing ~ .wing_btn .wing_close {
+      display: none;
+    }
+
+
+    .wing_box {
+      position: fixed;
+      top: 0px;
+      right: 0px;
+    }
+
+    .wing_box .wing_btn{
+      font-size: 30px;
+      float: left;
+      padding-right: 5px;
+    }
+
+    .wing_box .wing_banner {
+      width: 0; height: 100vh;
+      /* 맨 위의 meta를 보면 viewport를 잡아주고 콘텐츠를 부모의 디바이스를 가지게끔 기본 설정 되어 있고,
+      100vh( vh: 모니터 높이만큼 높이를 꽉 채우겠다는 뜻.) */
+      border: 1px solid black;
+      background-color: white;
+      float: left;
+      transition-property: width;
+      transition-duration: 0.5s;
+    }
+  </style>
+</head>
+<body>
+  <aside class="wing_box">
+    <input type="checkbox" id="chk_wing">
+    <!-- chk_box가 있기 때문에 위치를 잡아주기 위해 wing_box(nav 또는 aside가 필요하다.)/-->
+    <div class="wing_btn">
+      <label for="chk_wing" class="wing_open"><i class="fa-solid fa-angles-left"></i></label>
+      <label for="chk_wing" class="wing_close"><i class="fa-solid fa-xmark"></i></label>
+    </div>
+    <!-- <i class="fa-solid fa-xmark"></i> -->
+   
+    <div class="wing_banner">
+      wing_banner
+    </div>
+  </aside>
+</body>
+</html>

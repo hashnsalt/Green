@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Border_radius</title>
+  <style>
+    /* default setting */
+    * { margin: 0; padding: 0;}
+
+    /* body setting */
+    div {
+      width: 100px; height: 100px;
+      background-color: yellow;
+      border: 1px solid black; box-sizing: border-box;
+      text-align: center;
+      line-height: 100px;
+      font-size: 12px;
+      margin: 10px;
+      float: left; 
+      /* 앞에것의 옆으로 가겠다는 느낌/ float와 flex의 차이점 알아두기/ */
+    }
+
+      .box01 {
+        border-radius: 10px;
+      }
+
+      .box02 {
+        border-radius: 30px;
+      }
+
+      .box03 {
+        border-radius: 50px;
+        /* width를 100으로 줬고 지름을 50으로 줬기에 반만큼 둥글어짐/이미지를 자르는게 아니라 box안에 담기도록 만들어 주는 것임. */
+      }
+      
+      .box04 {
+        border-radius: 10px 20px 30px 40px;
+        /* border-radius: 왼 오 오아 왼아 */
+      }
+
+      .box05 {
+        border-radius: 20px 0 20px 0;
+      }
+      /* 프로 모션 사이트 만들때 주로 사용 */
+
+      .box06 {
+        border-radius: 20px 20px 0 0;
+      }
+
+      .box07:hover {
+        border-radius: 50px;
+        background-color: red;
+        color: white;
+        border: none;
+        /* nomal == none 보통 기본 아무것도 없는 속성 */
+      }
+      /* Code로 만들어주는 Style 이므로 기억하기. */
+
+      .box08 {
+        width: 100px;
+        height: 100px;
+        font-size: 6px;
+        line-height: 100px;
+        box-shadow: 10px -10px 0 beige;
+        /* box-shadow: 가로(x) 세로(y) 흐림정도(blur) 컬러/ 그림자 방향을 바꾸고 싶으면 '-'사용. css는 지구 중력방향을 따라 세로(y)_offset은 중력 방향이 + 반대가 - / blur(흐림 정도)는 많이 사용하지 않음. /마우스 오버로 꾸밀 수 있음 */
+        text-shadow: 1px 1px 0 #ccc; 
+        /* Tip.글자를 강조하고 싶을때 weidth를 더 주는것 보다 shadow를 살짝 주면 또렷하게 할수 있음. */
+      }
+      /* float기능은 box하나를 따로 밑으로 내리지 못한다. */
+      
+      .box09 {
+        width: 300px;
+        height: 300px;
+        font-size: 45px;
+        box-shadow: 15px -15px 10px yellowgreen;
+        text-shadow: 2px 2px 10px violet;
+        color: blueviolet;
+      }
+  </style>
+</head>
+<body>
+  <div class="box01">border_box01</div>
+  <div class="box02">border_box02</div>
+  <div class="box03">border_box03</div>
+  <div class="box04">border_box04</div>
+  <div class="box05">border_box05</div>
+  <div class="box06">border_box06</div>
+  <div class="box07">border_box07</div>
+  <div class="box08">border_box08</div>
+  <div class="box09">border_box09</div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>form코드</title>
+  <script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+
+      //console 확인
+      // document.selectForm.fruits
+      // document.selectForm.fruits.options
+      // document.selectForm.fruits.options[index]
+      // document.selectForm.fruits.options[3].innerText
+      // document.selectForm.fruits.options[3].value
+
+      // document.selectForm.fruits.options[000.selectedIndex]
+      // // user가 선택한 값이 나타남. 000: 변수로 등록한 index값.
+      // document.selectForm.fruits.options[000.selectedIndex].innerText
+      // document.selectForm.fruits.options[000.selectedIndex].value
+
+
+      const fruits = document.selectForm.fruits
+
+      fruits.addEventListener('change', () => {
+        let fruitsName = fruits.options[fruits.selectedIndex].textContent
+
+        alert(fruitsName + '를 선택했습니다~');
+        // 확인용 alert
+      })
+
+      const family = document.getElementById('family');
+
+      // family.addEventListener('change', function() { //포털사이트라는 글자에서 다른 이름을 가지고 있는 사이트로 바뀌었을 때,
+      //   let options = this.options; //니가 선택한 그값을 option으로 받겠다.
+
+      family.addEventListener('change', (event) => { //change된 그 값을 this로 받을 수 없기 때문에 매개변수 event로 받음
+
+        let options = event.currentTarget.options // 매개변수 이벤트가 선택되어 있는 옵션이 가지고 있는 현제 값을 option에 넣어주겠다. 기억해 놓아야함.
+        let index = options.selectedIndex //내가선택한 옵션의 인덱스 번호
+
+        location.href = options[index].value //내가 선태한 옵션의 인덱스 받아서 그 옵션의 value값을 가져옴.
+
+      });
+      });
+     
+  </script>
+  <style>
+
+   
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>프로필</h2>
+    <form action="" name="selectForm">
+
+      <fieldset>
+        <legend>좋아하는 것들</legend>
+        <li>
+          <label for="user_name">이름</label>
+          <input type="text" name="user_name" id="user_name">
+        </li>
+        <li>
+          <label for="fruits">과일</label>
+          <select name="fruits" id="fruits">
+            <option value="">---선택---</option>
+            <option value="apple">사과</option>
+            <option value="strawberry">딸기</option>
+            <option value="kiwi">키위</option>
+            <option value="mango">망고</option>
+            <option value="melon">멜론</option>
+            <option value="watermelon">수박</option>
+          </select>
+        </li>
+      
+        <br />
+        <li>
+          <label for="family">사이트</label>
+          <select name="family" id="family">
+            <option value="">---포털사이트---</option>
+            <option value="http://www.naver.com">naver</option>
+            <option value="http://www.daum.net">daum</option>
+            <option value="http://www.nate.com">nate</option>
+            <option value="http://www.google.co.kr">google</option>
+          </select>
+        </li>
+      
+      </fieldset>
+    </form>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,238 @@
+/* --- defualt setting --- */
+
+* {margin:0; padding: 0;}
+li {list-style: none;}
+a {color: black; text-decoration: none;}
+img { display: block; }
+
+/* --- header --- */
+
+.header {
+  width: 100%;
+  height: 20px;
+  padding: 10px;
+  text-align: center;
+  line-height: 20px;
+  background-color: #f4f4f4;
+}
+
+
+.gnb {
+  width: 1000px; height: 50px;
+  text-align: center;
+  line-height: 50px;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.gnb .gnb_left_menu {
+  float: left;
+}
+
+.gnb .gnb_left_menu li {
+  float: left;
+  display: block;
+  font-size: 15px;
+  font-weight: bold;
+  color: darkslategrey;
+  margin: 0 30px;
+}
+
+.gnb .gnb_left_menu li:hover {
+  text-decoration: underline;
+  color: midnightblue;
+  cursor: pointer;
+}
+
+.gnb .gnb_left_menu li:first-child {
+  margin-left: 0px;
+}
+
+.gnb .gnb_right_menu {
+  float: right;
+}
+
+.gnb .gnb_right_menu li {
+  float: left;
+  font-size: 11px;
+  margin: 0 10px;
+}
+
+.gnb .gnb_right_menu li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+/* --- visual_box --- */
+
+.visual_box {
+  width: 100%;
+  background-color: blanchedalmond;
+  overflow: hidden;
+}
+
+.visual_box .visual_main {
+  display: block;
+  width: 1000px; height: 300px;
+  border: 1px solid black; box-sizing: border-box;
+  margin: 0 auto;
+}
+
+/* --- container float--- */
+
+.conainer .float {
+  float: left;
+}
+
+
+/* --- container top --- */
+
+.container {
+  background-color: #f4f4f4;
+  padding: 50px 0;
+}
+
+.container .title {
+  width: 1070px;
+  font-size: 20px;
+  margin: 10px auto;
+}
+
+.container .main_contents {
+  width: 1070px; height: 800px;
+  background-color: blueviolet;
+  margin: 0 auto;
+}
+
+.container .main_top {
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+/* --- top_left --- */
+
+.container .main_top .top_left {
+  float: left;
+}
+
+.container .main_top .top_left01 {
+  margin-bottom: 10px
+}
+
+/* --- top_midd --- */
+
+.container .main_top .top_mid {
+  margin: 0 10px;
+  float: left;
+}
+
+/* --- top_right --- */
+
+.container .main_top .top_right34 {
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.container .main_top .top_right3 {
+  float: left;
+  margin-right: 10px;
+}
+
+.container .main_top .top_right4 {
+  float: left;
+}
+
+/* --- top_bottom ---  */
+
+.container .main_bottom .bottom07 {
+  float: left;
+}
+
+.container .main_bottom .bottom08 {
+  float: left;
+  margin: 0 10px;
+}
+
+/* --- container01  --- */
+
+
+#sns_rad01, #sns_rad02, #sns_rad03 {display: none;}
+
+#sns_rad01:checked ~ .sns_contents_01 {display: block;}
+#sns_rad01:checked ~ .sns_contents_02 {display: none;}
+#sns_rad01:checked ~ .sns_contents_03 {display: none;}
+
+#sns_rad02:checked ~ .sns_contents_01 {display: none;}
+#sns_rad02:checked ~ .sns_contents_02 {display: block;}
+#sns_rad02:checked ~ .sns_contents_03 {display: none;}
+
+#sns_rad03:checked ~ .sns_contents_01 {display: none;}
+#sns_rad03:checked ~ .sns_contents_02 {display: none;}
+#sns_rad03:checked ~ .sns_contents_03 {display: block;}
+
+#sns_rad01:checked ~ .sns_label .sns_label01_open {display: block;}
+#sns_rad01:checked ~ .sns_label .sns_label01_close {display: none;}
+#sns_rad01 ~ .sns_label .sns_label01_open {display: none;}
+#sns_rad01 ~ .sns_label .sns_label01_close {display: block;}
+
+#sns_rad02:checked ~ .sns_label .sns_label02_open {display: block;}
+#sns_rad02:checked ~ .sns_label .sns_label02_close {display: none;}
+#sns_rad02 ~ .sns_label .sns_label02_open {display: none;}
+#sns_rad02 ~ .sns_label .sns_label02_close {display: block;}
+
+#sns_rad03:checked ~ .sns_label .sns_label03_open {display: block;}
+#sns_rad03:checked ~ .sns_label .sns_label03_close {display: none;}
+#sns_rad03 ~ .sns_label .sns_label03_open {display: none;}
+#sns_rad03 ~ .sns_label .sns_label03_close {display: block;}
+
+.container01 {
+  padding: 20px;
+  position: relative;
+}
+
+.container01 .title01 {
+  width: 1070px;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0px auto;
+}
+
+
+.container01 .sns_label {
+  position: absolute;
+  bottom: 45px;
+  right: 900px;
+}
+
+.container01 .sns_label label {
+  margin-right: 10px;
+  float: left;
+}
+
+.container01 .sns_contents_01,
+.container01 .sns_contents_02,
+.container01 .sns_contents_03 {
+  width: 1070px;
+  height: 200px;
+  background-color: #ccc;
+  margin: 10px auto;
+  overflow: hidden;
+}
+
+.container01 div .face_box,
+.container01 div .insta_box,
+.container01 div .Blog_box {
+  width: 350px; height: 150px;
+  border: 1px solid black; box-sizing: border-box;
+  float: left;
+}
+
+.container01 div div:nth-child(2) {
+  margin: 0 10px;
+}
+
+/* --- top_btn --- */
+
+
+

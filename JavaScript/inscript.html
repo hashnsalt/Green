@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>inscript</title>
+  <script>
+
+    const str = '123456-1';
+    // const str = new String('GreenComputer'); 
+    // const num = new Number(3);
+
+    //문자와 숫자객체 new 생략 가능.
+
+    const str1 = str.substr(7,1); //외부 스크립트 파일에서 지원하지 않음. 웹 표준에서는 지원하지 않음.
+    const str2 = str.slice(7,8); //str.substr을 대신해 str.slice(start_index, end-index + 1)를 이용해서 중간의 문자열을 뽑아 내겠다.
+    //  문자열은 마지막에 이스케이프 문자(null) 문자가 들어가므로 end-index의 +1(이스케이프 값)을 해준다.
+
+    document.write(str1 + '<br />');
+    document.write(str2);
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

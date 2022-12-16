@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array_22-11-28</title>
+  <script>
+    //배열 생성 방법 01
+
+    // const array = new Array(4); //4를 생략해도 되지만, 브라우저별 생략하면 안될 수도 있다.
+    
+    // array[0] = 236;
+    // array[1] = 45;
+    // array[2] = 78;
+    // array[3] = 93;
+
+    // for(let i= 0; i<4; i++){ //i<=3 이렇게 쓰는게 틀린건 아니나, 4개의 메모리를 가지고 있으므로 나중에 length로 바꿔 쓸 때 알아보기 쉽도록 제한을 4개로 잡아주는게 났다.
+    //   document.write(array[i], '&nbsp');
+    // }
+
+    
+    // //배열 생성 방법02
+    // const array = new Array(237, 45, 77, 93)
+
+    // for(let i = 0; i<array.length; i++) {
+    //   document.write(array[i], '&nbsp');
+    // }
+
+
+
+
+
+
+    // //배열 생성 방법03
+
+    // const array = [237, 45, 80, 93];
+
+    // ////for in 사용법
+
+    // for(let i in array) { // array 안의 인덱스 값(i)를 사용함.
+    //   document.write(array[i], '&nbsp');
+    // }
+
+    // ////for of 사용법(이걸 많이 쓸거임)
+
+    // for (let value of array) { //array안의 값(237, 45, 80, 93)을 직접 가져옴.
+    //   document.write(value, '&nbsp');
+    // }
+
+
+
+
+
+    // //배열의 삽입, 삭제 추가. 데이터 조작 함수.
+
+    // const fruits = ['사과', '딸기', '메론', '망고'];
+
+    // for(let fruit of fruits) { //어떤 특정을 지을 수 없을 때(ex]array)는 value 나 item으로 쓰지만, 특정의미를 부여 할 수 있는 경우는 변수 뒤의 's'를 뺴고 사용한다. 
+    //   document.write(fruit, '&nbsp');
+    // }
+    // document.write('<br />');
+
+    // fruits[0] = '오렌지' //파괴성 저장 기법. 덮어쓰는 처리 기법.
+    // fruits.unshift('오렌지'); //기존의 데이터는 그대로 두고 배열 데이터 처음에 삽입하는 기법. shift 왼쪽으로 밈. unshift 오른쪽으로 밈
+    // fruits[fruits.length] = '키위'; //배열의 제일 마지막 데이터[fruits.lenght]에 집어 넣어주겠다는 뜻임. (실제 인덱스 값은 배열 4개를 가진 [fruits.lenght-1]임(==3))
+    // fruits.push('키위'); //배열 데이터 마지막에 삽입.
+    
+    // fruits.shift(); //제일 앞의 데이터 삭제
+    // fruits.pop(); //제일 뒤의 데이터 삭제
+
+
+    // fruits.splice(2, 1) //2번 인덱스 부터 하나를 삭제하겠다. '인덱스 기반 삭제'라고 부름.
+
+    // const index = fruits.indexOf('메론'); // 배열 길이를 모를 떄, 원하는 데이터를 삭제하고 싶을 때 데이터의 인덱스를 찾아서 인덱스를 불러와 splice로 삭제하는 방법.
+    // // indexOf값으로 -1이 나온다면, 값이 없다는 말이다. 메모리에 저장되지 않는 다른 값을 넣었을 때, -1이 나오는데 이건 데이터가 존재하지 않는다는 뜻.
+    // // indexOf -1 활용 방법은 검색의 내부 처리기능을 부여하고 싶을때, 데이터가 있으면 데이터를 출력하지만, if(데이터~==-1) or else if 등 if문을 써서 -1일때 데이터를 출력하지 않겠습니다 라는 알림 문구를 띄울 수 있다.
+    // document.write(index); 
+    // fruits.splice(index, 1) // 값 기반 삭제. 인덱스 값 부터 하나의 데이터 삭제
+
+    // fruits.splice(1, 0, '키위'); //중간에 값을 추가 시키고 싶을 때 사용. (1: 1번 인덱스)1번 인덱스 값에 아무것도 삭제하지말고(0: 삭제 개수) 키위를 넣어라.
+
+    // for(let fruit of fruits) { 
+    //   document.write(fruit, '&nbsp');
+    // } //처리결과
+
+
+
+    //배열 참조
+
+    // const str = 'Hello, JavaScript'; //이렇게 문자열을 선언하지 않고
+    const str = new String('Hello, JavaScript'); //이렇게 선언함.
+
+    document.write(str, '<br />');
+    document.write(str[7], '<br />');
+    document.write(str[str.length-1], '<br />'); //마지막 글자를 찾겠다.
+
+    const index = str.indexOf('Java');
+    document.write(index, '<br />');
+
+    str.push('~~~'); //배열 함수에 ~~~을 넣을 수 없다. 문자열은 실질적인 배열 값으로 취급하지않으므로 인덱스 값을 통해서 넣어준다.
+    document.write(str);
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

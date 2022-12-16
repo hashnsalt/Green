@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    /*--- default setting ---*/
+    * {
+      margin: 0; padding: 0;
+    }
+    a {
+      color: black; text-decoration: none;
+    }
+    li {
+      list-style: none;
+    }
+
+    /*--- header ---*/
+
+    .header {
+      width: 1000px;
+      /* 굳이 줄 필요 없다. */
+      margin: 0 auto;
+    }
+    .header .gnb {
+      overflow: hidden;
+    }
+    .header .gnb ul {
+      /* overflow: hidden; */
+      /* float의 자식을 가지는 부모는 overflow를 쳐준다 그런데 전체에 overflow가 쳐져 있으면 이중적으로 overflow를 쳐줄 필요가 없다. */
+      float: right;
+    }
+    .gnb li {
+      width: 50px; height: 20px;
+      float: left;
+      text-align: center;
+      line-height: 20px;
+      font-size: 11px;
+    }
+
+    .header .logo {
+      width: 200px; height: 200px;
+      margin: 0 auto;
+    }
+
+    .header .lnb{
+      width: 1000px; 
+    }
+    .header .lnb ul {
+      width: 1000px;
+    }
+    .header .lnb li {
+      width: 200px; height: 30px;
+      float: left;
+    }
+
+    .header .lnb li a {
+      display: block;
+      background-color: burlywood;
+      color: brown;
+      text-align: center;
+      line-height: 30px;
+    }
+
+    .header .lnb li li {
+      display: none;
+    }
+
+     .header .lnb{
+    
+      position: relative;
+    }
+
+    .header .lnb ul .m01 {
+      position: absolute;
+    }
+
+    .header .lnb ul .m02 {
+      position: absolute;
+    }
+
+    .header .lnb ul .m03 {
+      position: absolute;
+      left: 200px;
+    }
+
+    .header .lnb ul .m04 {
+      position: absolute;
+      left: 200px;
+    }
+
+    .header .lnb ul .m05 {
+      position: absolute;
+      left: 200px;
+    } 
+
+
+    .header .lnb li:hover li {
+      display: block;
+    }
+
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="gnb">
+      <ul>
+        <li>Login</li>
+        <li>Join</li>
+        <li>Site_map</li>
+        <li>Search</li>
+      </ul>
+    </nav>
+
+    <div class="logo">
+      <img src="./images/img01.jpg" alt="로고이미지">
+    </div>
+    <nav class="lnb">
+      <ul>
+        <li><a href="#">menu01</a>
+          <ul class="m01">
+            <li><a href="#">menu01-1</a></li>
+            <li><a href="#">menu01-2</a></li>
+            <li><a href="#">menu01-3</a></li>
+            <li><a href="#">menu01-4</a></li>
+          </ul>
+        </li><!--menu01-->
+        <li><a href="#">menu02</a>
+          <ul class="m02">
+            <li><a href="#">menu02-1</a></li>
+            <li><a href="#">menu02-2</a></li>
+            <li><a href="#">menu02-3</a></li>
+            <li><a href="#">menu02-4</a></li>
+          </ul>
+        </li><!--menu01-->
+        <li><a href="#">menu03</a>
+          <ul class="m03">
+            <li><a href="#">menu03-1</a></li>
+            <li><a href="#">menu03-2</a></li>
+            <li><a href="#">menu03-3</a></li>
+            <li><a href="#">menu03-4</a></li>
+          </ul>
+        </li><!--menu01-->
+        <li><a href="#">menu04</a>
+          <ul class="m04">
+            <li><a href="#">menu04-1</a></li>
+            <li><a href="#">menu04-2</a></li>
+            <li><a href="#">menu04-3</a></li>
+            <li><a href="#">menu04-4</a></li>
+          </ul>
+        </li><!--menu01-->
+        <li><a href="#">menu05</a>
+          <ul class="m05">
+            <li><a href="#">menu05-1</a></li>
+            <li><a href="#">menu05-2</a></li>
+            <li><a href="#">menu05-3</a></li>
+            <li><a href="#">menu05-4</a></li>
+          </ul>
+        </li><!--menu01-->
+      </ul>
+    </nav>
+  </header>
+</body>
+</html>

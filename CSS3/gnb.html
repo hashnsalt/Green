@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    /*--- default setting ---*/
+    * {
+      margin: 0; padding: 0;
+    }
+    a {
+      color: black; text-decoration: none;
+    }
+    li {
+      list-style: none;
+    }
+
+    /*--- gnb ---*/
+    .gnb ul {
+      font-size: 0;
+      /* 1. 자간의 여백을 없애기 위해 size를 없애준 후 */
+    }
+
+    .gnb li {
+      font-size: 11px;
+      /* 2. gnb list에 다시 글자 폰트를 넣어준다. */
+      display: inline-block;
+      /* display: inline-blcok은 float을 줄필요가 없고, 글자 사이즈 만큼 버튼 사이즈를 가지기 때문에 width없이 사이사이 여백을 균등하게 줄 수 있다. but, inline-block은 자간(글자간 여백)을 가져 올 수 있기 때문에 없앨 수 있는 방법은
+      부모에게 font-size: 0;를 주므로써 자식들은 font-size를 주면 된다.
+      구분선은 글자 크기 만큼 길이가 설정 되는데 그건 line-height로 설정할 수 있다. */
+      padding: 0px 10px;
+      /* 3.글자사이에 여백을 없애 주었기 때문에 균일한 여백을 만들기 위해 padding을 사용. */
+      margin: 10px 0;
+      /* 4.margin은 다시 길어진 선길이를 조절해주는 역할. */
+      /* 현장 공식 */
+      border-right: 1px solid #999;
+      line-height: 10px;
+      /* border line의 크기를 조절한다. */
+      /* background-color: yellow; */
+      color: #999;
+    }
+
+    .gnb li:hover {
+      color: black;
+
+    }
+
+    .gnb .search {
+      border: none;
+    }
+    /* search의 맨 끝에 있는 선을 지워준다. 다른 방법도 있음. 그건 나중에 */
+
+  </style>
+</head>
+<body>
+  <nav class="gnb">
+    <ul>
+      <li>Login</li>
+      <li>Join</li>
+      <li>Site_map</li>
+      <li class="search">Search</li>
+    </ul>
+  </nav>
+</body>
+</html>

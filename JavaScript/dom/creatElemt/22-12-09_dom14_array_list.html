@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Element array_LIST</title>
+  <script>
+
+//////////////배열로 생성////////////////////
+
+//////////만들고 호출해줄 함수를 먼저 생각해라. 버튼을 누르면 입력 값을 리스트 형식으로 출력해 내고, 출력한 값들을 삭제할 수도 있어야 하기 때문에 -> 추가함수, 보여주는 함수, 삭제함수 총 3개의 함수가 있어야 한다.
+
+    document.addEventListener('DOMContentLoaded', () => {
+      let itemList = [];
+      let addBtn = document.querySelector('.add_btn');
+
+      addBtn.addEventListener('click', addList);//버튼 클릭시 addList 호출
+
+      function addList() { //추가하는 이벤트 함수
+        let item = document.querySelector('.item');
+
+        if(item.value != null) { // 값을넣지도 않고 추가 됬을 수도 있기 때문에
+          itemList.push(item.value); //값을 넣어주겠다. 맨 앞에 넣고 싶으면 push 대신에 unshift 사용하면 된다.
+          item.value = ''; //추가 한 후에 값 초기화 
+          item.focus(); //마우스 포커스 
+        }
+        showList()
+
+      }//addList()
+
+      function showList() {
+        let list = '<ul>';
+        
+        for (let i = 0; i<itemList.length; i++){
+          list += '<li>' + itemList[i] + '<span class="close" id = ' + i + '>X</span></li>' //복합 대행 연산자로 처리 //close버튼이 몇번째 버튼이라 칭해야 할지 모르겠다 그래서 id값을 for문의 i(key)로 받았다. 어떤 값으로 들어올지 모르기 때문에 초반에 let itemList = [];로 변수를 잡아줌.
+        }
+
+        list += '</ul>';
+
+        document.querySelector('.item_list').innerHTML = list //내가 임력한 ul부터의 값이 전부 등록됨.
+
+        let remove = document.querySelectorAll('.close'); //nodelist로 생성
+
+        for (let i = 0; i<remove.length; i++) { //어떤걸 누른지 모르니까 for을 돌림. 눌러진 remove버튼을 클릭 이벤트로 불러들임.
+          remove[i].addEventListener('click', removeList); //i값을 가진 remove버튼을 눌렀을 때 removeList 함수 호출
+        }
+
+      } //showList()
+
+      function removeList() {
+        let id = this.getAttribute('id'); //지금 내가 눌러진 id값
+        itemList.splice(id, 1); //누른 id값의 아이디 리스트 값을 하나를 삭제
+        showList();
+
+      }//removeList
+
+    }); //document_loaded_event
+
+
+  </script>
+  <style>
+
+    .close {
+      margin-left: 100px;
+      cursor: pointer;
+      opacity: 0.5;
+    }
+    
+    .close:hover {
+      opacity: 1;
+      font-weight: bold;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>프론트엔드 과목 리스트</h1>
+    
+    <form action="">
+      <input type="text" class="item" autofocus>
+      <button type="button" class="add_btn">추가</button>
+    </form>
+
+    <hr>
+
+    <div class="item_list"></div>
+  </div>
+</body>
+</html>

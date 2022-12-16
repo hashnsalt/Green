@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <table border="1" width="300" height="200" align="center" bgcolor="yellow" cellspacing="0" cellpadding="0" bordercolor="#999">
+     <!--마크업태그에는 px생략 가능/ 80%:창의 80% 늘려도 80%만큼 자동 설정됨(반응형,모바일 경우 %로 잡아줌)align:정렬 옵션 table/tr에 옮길 수 있음 /cellsapcing: 표 선 모양 /cellpadding: 글자와 표 사이 간격 줄어줌 cellsp와 cellpad는 기본 "0"로 잡아줌 / bordercolor : 선 색(ccc,999를 많이씀)-->
+     <caption>표 연습1</caption><!--table_tag바로 밑에 작성-->
+    <tr bgcolor="#ccc"> <!--th,td는 높이를 가질 수 없음 tr만 가질 수 있음/ th는 넓이는 가능(td는 x) / 원래 #cccccc지만 16진수 2자리 똑같은 것은 생략 가능-->
+      <th width="100">제목1</th><!--th: 테이블 헤더, 기본적 가운데 정렬-->
+      <th>제목2</th>
+    </tr>
+    <tr align="center">
+      <td>1행1열</td>
+      <td>1행2열</td>
+    </tr>
+    <tr align="right">
+      <td>2행1열</td>
+      <td>2행2열</td>
+    </tr>
+    <tr>
+      <td>3행1열</td>
+      <td>3행2열</td>
+    </tr>
+  </table>
+  <table border="1" width="500">
+    <tr>
+      <th>title1</th>
+      <th>title2</th>
+      <th>title3</th>
+    </tr>
+    <tr>
+      <td>1,1</td>
+      <td>1,2</td>
+      <td>1,3</td>
+    </tr>
+    <tr>
+      <td>2,1</td>
+      <td>2,2</td>
+      <td>2,3</td>
+    </tr>
+  </table>
+</body>
+</html>

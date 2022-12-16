@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM_addEventListener_box_stlye_event</title>
+  <script>
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const welcomeBtn = document.querySelector('.welcome');
+      const byeBtn = document.querySelector('.bye');
+      const textBox = document.querySelector('.text');
+
+      welcomeBtn.addEventListener('click', () => {
+        textBox.style.color = 'red';
+        textBox.innerText = '방문을 환영합니다~';
+      });
+
+      byeBtn.addEventListener('click', () => {
+        textBox.style.color = 'blue';
+        // textBox.innerHTML = '다음에 또 오세요~'; 
+        // textBox.innerHTML = '<p>다음에 또오세요~</p>'; //innerText를 쓰면 글자만 가능하고 태그를 사용하면 태그도 글자 취급하여 나온다. 반면에 innerHTML은 태그를 사용할 수 있다.
+      });
+
+    });
+
+  </script>
+  <style>
+
+
+
+    .text {
+      width: 300px; height: 200px;
+      border: 1px solid black;
+      background-color: #ccc;
+      line-height: 200px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+
+  <button class="welcome">welcome</button>
+  <button class="bye">Bye</button>
+
+  <div class="text">버튼을 눌러주세요!</div>
+
+</body>
+</html>

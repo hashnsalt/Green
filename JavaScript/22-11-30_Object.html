@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>object</title>
+  <script>
+
+    //////////// 객체 생성 ////////////
+
+    // 예제 1.
+
+    //   function Jumsu(st_name, kor, eng, mat) { //Jumsu라는 객체의 틀을 생성한다. (객체를 생성한다.) 생성자 함수 생성-`객체 구조` 생성
+    //   this.name = st_name; //불러올 값의 변수 선언 this.name이라고 쓰면 해당 메모리 위치에 저장된 매개변수 st_name을 불러오겠다. 속성 정의
+    //   this.kor = kor;
+    //   this.eng = eng;
+    //   this.mat = mat;
+    // }
+
+    // hong = new Jumsu("홍영희", 90, 99, 90); //여기서 hong이 인스턴스이다. 인스턴스(=객체 변수)의 Jumsu 객체에 값을 넣어준다. new Jumsu(매개변수들=인수들). //객체 데이터
+    // kim = new Jumsu("김영수", 100, 91, 100);
+
+    // // 만약 넣어야할 인스턴스가 많다면 [{}, {}, {}] 이런 식의 객체 배열을 만들어 준다.
+
+
+
+    // document.write("이름: " + hong.name + "<br />"); //넣어준 값을 인스턴스.해당값변수로 불러온다.
+    // document.write("국어 점수: " + hong.kor + "점<br />");
+    // document.write("영어 점수: " + hong.eng + "점<br />");
+    // document.write("수학 점수: " + hong.mat + "점<br /><br />");
+
+    // document.write("이름: " + kim.name + "<br />");
+    // document.write("국어 점수: " + kim.kor + "<br />");
+    // document.write("영어 점수: " + kim.eng + "<br />");
+    // document.write("수학 점수: " + kim.mat + "<br />");
+
+  
+    //예제 2.
+
+    // function Print() {//print함수를 불러오면 만들어준 TV객체의 값을 전부다 도출하게끔 만들어 줌.
+    //   document.write("제조사: " + this.brand + ", ");
+    //   document.write("제품명: " + this.name + ", ");
+    //   document.write("가격: " + this.price + "<br />"); //<p> 태그는 굳이 넣어줄 이유가 없는 것 같다. 지워도 값 도출에 아무런 문제가 없음.
+    // }
+
+    // function TV(brand, name, price) {
+    //   this.brand = brand;
+    //   this.name = name;
+    //   this.price = price;
+    //   this.Print = Print; //tv의 print객체를 호출했을 때 생성된 print 객체가 불려오도록 설정.
+    //   //this.Print = function Print();
+    // }
+    //화살표함수는 자기자신을 this로 받는다.****이거 에러나는거 보기
+
+
+    // function Private(name, height, weight, age) {
+    //   this.name = name;
+    //   this.height = height;
+    //   this.weight = weight;
+    //   this.age = age;
+    //   this.properWeight = properWeight;
+    //   this.Print = Print;
+    // }
+    
+    // function Print() {
+    //   document.write("이름: " + this.name + "<br />");
+    //   document.write("키: " + this.height + "<br />");
+    //   document.write("몸무게: " + this.weight + "<br />");
+    //   document.write("나이: " + this.age + "<br />");
+    //   // document.write("적정 체중: " + this.properWeight + "<br /><br />");
+    // }
+
+    // function properWeight() {
+    //   let properKg = (this.height - 100) * 0.9
+    //   if(properKg == this.weight) {
+    //     document.write(`${this.weight} (적정체중) </br> 적정 체중: ${properKg} <br /><br/>`);
+    //   } else if (properKg <= this.weight) {
+    //     document.write(`${this.weight} (과체중) </br> 적정 체중: ${properKg} <br /><br/>`);
+    //   } else if (properKg >= this.weight) {
+    //     document.write(`${this.weight} (저체중) </br> 적정 체중: ${properKg} <br /><br/>`);
+    //   }
+    // }
+
+
+  </script>
+</head>
+<body>
+  <!-- <h3>개인신상</h3>
+  <script>
+    hong = new Private("홍길동", 180, 65, 25);
+    lee = new Private("이강인", 173, 63, 21);
+    son = new Private("손흥민", 183, 78, 30);
+
+    hong.Print();
+    hong.properWeight();
+    lee.Print();
+    lee.properWeight();
+    son.Print();
+    son.properWeight();
+  </script> -->
+
+  <!-- <h3>객체 만들기(메소드 정의)</h3>
+  <script>
+    TV1 = new TV("삼성","PAVV","990,000만원");
+    TV2 = new TV("LG","액스캔버스","900,000만원");
+    document.write("<h2>TV1</h2>");
+    TV1.Print();
+    document.write("<h2>TV2</h2>");
+    TV2.Print();
+
+    //타이틀 아래 값이 나올 수 있도록 script문을 아래에 깔아줌. 그렇지 않고 head에 스크립트를 넣어주면 타이틀이 맨 밑에 깔려버림. 
+  </script> -->
+
+</body>
+</html>

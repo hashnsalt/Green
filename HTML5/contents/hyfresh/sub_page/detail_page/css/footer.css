@@ -1,0 +1,289 @@
+/* ------ footer_top ------ */
+
+.footer {
+  width: 100%;
+  border-top: #ccc;
+}
+
+.footer .info {
+  width: 1070px;
+  margin: 40px auto;
+  overflow: hidden;
+}
+
+.footer .info .customer_center_tel {
+  width: 200px;
+  float: left;
+  margin-right: 20px;
+}
+
+.info .question {
+  width: 200px; height: 80px;
+  padding-left: 20px;
+  margin-top: 30px;
+  float: left;
+  border-left: 1px solid #ccc; box-sizing: border-box;
+}
+
+.info .app_ad {
+  width: 200px;
+  float: left;
+  padding: 0 40px 0 40px;
+  border-left: 1px solid #ccc;
+}
+
+.info .app_ad div:first-child,
+.info .app_ad div:nth-child(2) {
+  float: left;
+}
+
+
+.info .notice {
+  float: left;
+  width: 300px; height: 110px;
+  border-left: 1px solid #ccc;
+}
+
+.info .notice ul {
+  margin-left: 40px;
+}
+
+.info .notice ul li:first-child {
+  font-weight: bold;
+  list-style: none;
+  font-size: 15px;
+  padding-bottom: 15px;
+}
+
+.info .notice ul li {
+  font-size: 11px;
+  list-style: disc;
+  padding-bottom: 5px;
+}
+
+.info .notice ul li button {
+  background: white;
+  width: 50px; height: 20px;
+  border: 1px solid #ccc;
+  font-size: 10px;
+}
+
+
+
+/* ------ footer_mid ------ */
+.info02 {
+  width: 100%; height: 50px;
+  background-color: #323232;
+}
+
+.foot_menu {
+  width: 1070px;
+  margin: 0 auto;
+}
+
+.foot_menu ul {
+  float: left;
+}
+
+.foot_menu ul>li {
+  float: left;
+  line-height: 50px;
+}
+
+.foot_menu ul>li a {
+  font-size: 12px;
+  color: #ccc;
+  padding-right: 20px;
+}
+
+
+/* ------ family_site ------ */
+
+.family_site {
+  float: left;
+  position: relative;
+}
+
+.family_dropup {
+  width: 180px; height: 50px;
+  background: none;
+  border: 1px solid #666;box-sizing: border-box;
+  border-bottom: none;
+  border-right: none;
+  color: #ccc;
+  margin-left: 40px;
+}
+
+.family_menu {
+  /* display: none; 조심. trasition 안걸림. */
+  position: absolute;
+  bottom: 50px;
+  left: 40px;
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.family_menu ul li {
+  width: 180px; height: 30px;
+  border: 1px solid #666; box-sizing: border-box;
+  background-color: #323232;
+}
+
+.family_menu ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  line-height: 30px;
+}
+
+.family_site:hover .family_menu {
+  opacity: 1;
+}
+
+
+/* ------ all_menu ------ */
+
+.nav_all {
+  height: 50px;
+  float: left;
+  position: relative;
+}
+
+
+#menu_all_btn {display: none;}
+#menu_all_btn:checked ~ .sheet {
+  height: 300px;
+}
+
+
+.nav_all .all_lab_open {
+  display: block;
+  width: 180px; height: 50px;
+  font-size: 12px;
+  color: #ccc;
+  text-align: center;
+  line-height: 50px;
+  border: 1px solid #666; box-sizing: border-box;
+  border-bottom: none;
+  cursor: pointer;
+}
+
+
+.nav_all .sheet {
+  width: 1070px; height: 0;
+  background-color: #323232;
+  color: white;
+  overflow: hidden;
+  position: absolute;
+  bottom: 50px;
+  left: -890px;
+  transition: all 0.2s;
+}
+
+.all_lab_close {
+  font-size: 30px;
+  float: right;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+/* ------ footer_bottom_first------ */
+
+.info03 {
+  width: 100%;
+  background-color: #4d4d4d;
+  border-top: 1px solid #666; box-sizing: border-box;
+  padding-top: 50px;
+}
+
+.info03 .info03_intro {
+  width: 1070px; height: 150px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-bottom: 1px solid #666;
+}
+
+.info03 .info03_intro .float {
+  float: left;
+}
+
+.info03 .info03_intro ul li {
+  color: #999;
+  font-size: 11px;
+  padding-right: 50px;
+  line-height: 20px;
+}
+
+.info03 .info03_intro ul:nth-child(2) li {
+  color: #eee;
+  font-size: 11px;
+  padding-right: 50px;
+}
+
+.info03 .info03_intro li span {
+  color: #eee;
+  font-size: 11px;
+  padding-left: 20px;
+}
+
+.info03 .info03_intro ul li>button {
+  width: 100px; height: 20px;
+  background: none;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.info03 .info03_intro ul li a {
+  color: #999;
+  font-size: 11px;
+}
+
+
+.insurance {
+  width: 360px; height: 200px;
+  margin-left: 20px;
+}
+
+.insurance li>p{
+  float: left;
+  padding-right: 10px;
+}
+
+.insurance li>div {
+  padding-top: 5px;
+}
+
+.insurance li:nth-child(1) {
+  margin-bottom: 20px;
+}
+
+
+/* ------ footer_bottom_last ------ */
+
+.footer_logo {
+  width: 1070px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+.footer_logo .float {
+  width: 250px;
+  float: left;
+}
+
+.footer_logo div {
+  float: left;
+  padding-right: 10px;
+}
+
+.footer_logo div p{
+  color: #999;
+  font-size: 11px;
+  line-height: 15px;
+}
+
+.footer_logo .sns_logo {
+  float: right;
+}

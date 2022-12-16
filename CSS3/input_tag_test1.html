@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원가입</title>
+  <style>
+    /* --- default setting --- */
+    * {
+      margin: 0; padding: 0;
+    }
+    
+    a {
+      color: black;
+      text-decoration: none;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    /* --- body setting --- */
+    .main a {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .main a:hover {
+      background-image: url(./images/img01.jpg);
+    }
+
+    .header {
+      width: 720px;
+      margin: 0 auto;
+    }
+
+    hd {
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    hr {
+      width: 100%;
+      color: gray;
+    }
+
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
+    caption {
+      text-align: left;
+    }
+
+    .btn {
+      text-align: center;
+    }
+
+    .btn01 {
+      display: inline-block;
+    }
+
+  </style>
+</head>
+  <body>
+    <ul class="main">
+      <li><a href="./menu03_test_main.html">HOME</a></li>
+    </ul>
+  <header class="header">
+  <hd class>회원 가입</hd>
+  <hr noshade />
+  <table width="720" height="720">
+    <caption><font color="red" size="1">*필수입력</font></caption>
+    <tr>
+      <td>&nbsp;아이디<font color="red">*</font></td>
+      <td>&nbsp;&nbsp;<input type="text" name="id" size="20" maxlength="10" required>
+      <input type="button" value="아이디 중복체크"></td>
+    </tr>
+    <tr>
+      <td>&nbsp;별명<font color="red">*</font></td>
+      <td>&nbsp;&nbsp;<input type="text" name="nickname" size="20" maxlength="10" required>
+        <input type="button" value="닉네임 중복체크"></td>
+    </tr>
+    <tr>
+      <td>&nbsp;비밀번호<font color="red">*</font></td>
+      <td>&nbsp;&nbsp;<input type="text" name="password" size="10" maxlength="24" required>확인 <input type="text" name="password" size="10" maxlength="24" required></td>
+    </tr>
+    <tr>
+      <td>&nbsp;성명<font color="red">*</font></td>
+      <td>&nbsp;&nbsp;<input type="text" name="realname" size="20" maxlength="10" required></td>
+    </tr>
+    <tr>
+      <td>&nbsp;전자우편<font color="red">*</font></td>
+      <td>&nbsp;&nbsp;<input type="text" name="realname" size="20" maxlength="10" required>@ <input type="text" name="realname" size="20" maxlength="10" required>
+      <select>
+        <option>직접입력</option>
+        <option>naver.com</option>
+        <option>daum.net</option>
+        <option>gmail.com</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td>&nbsp;주소<font color="red">*</font></td>
+      <td>&nbsp;&nbsp;<input type="text" name="address" placeholder="000-000" size="10" maxlength="10" required>
+        <input type="button" value="우편번호 찾기">
+        <br />
+        &nbsp;&nbsp;<input type="text" name="address" size="25" maxlength="10" required> <input type="text" name="realname" placeholder="상세주소를 입력해주세요" size="25" maxlength="10">
+        </td>
+    </tr>
+    <tr>
+      <td>&nbsp;전화번호<font color="red">*</font></td>
+      <td>&nbsp;
+        <select>
+          <option>선택</option>
+          <option>010</option>
+          <option>016</option>
+          <option>019</option>
+          <option>014</option>
+          <option>02</option>
+          <option>051</option>
+          <option>053</option>
+          <option>031</option>
+        </select>
+        -
+        <input type="text" name="callN" size="10">
+        -
+        <input type="text" name="callN" size="10">
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;휴대전화<font color="red">*</font></td>
+      <td>&nbsp;
+        <select>
+          <option>선택</option>
+          <option>010</option>
+          <option>016</option>
+          <option>019</option>
+          <option>014</option>
+        </select>
+        -
+        <input type="tel" name="phoneN" size="10" required>
+        -
+        <input type="tel" name="phoneN" size="10" required>
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;생년월일</td>
+      <td>&nbsp;<input type="radio" name="birth" value="solar" checked>양력
+      <input type="radio" name="birth" value="lunar">음력
+      <select>
+        <option>선택</option>
+        <option>2015</option>
+        <option>2014</option>
+        <option>2013</option>
+        <option>2012</option>
+        <option>2011</option>
+        <option>2010</option>
+        <option>2009</option>
+        <option>2008</option>
+        <option>2007</option>
+        <option>2006</option>
+        <option>2005</option>
+        <option>2004</option>
+        <option>2003</option>
+        <option>2002</option>
+        <option>2001</option>
+        <option>2000</option>
+        <option>1999</option>
+        <option>1998</option>
+        <option>1997</option>
+        <option>1996</option>
+        <option>1995</option>
+        <option>1994</option>
+        <option>1993</option>
+        <option>1992</option>
+        <option>1991</option>
+        <option>1990</option>
+        <option>1989</option>
+        <option>1988</option>
+        <option>1987</option>
+        <option>1986</option>
+        <option>1985</option>
+        <option>1984</option>
+        <option>1983</option>
+        <option>1982</option>
+        <option>1981</option>
+        <option>1980</option>
+        <option>1979</option>
+        <option>1978</option>
+        <option>1977</option>
+        <option>1976</option>
+        <option>1975</option>
+        <option>1974</option>
+        <option>1973</option>
+      </select>년
+      <select>
+        <option>선택</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>월
+      <select>
+        <option>선택</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+        <option>13</option>
+        <option>14</option>
+        <option>15</option>
+        <option>16</option>
+        <option>17</option>
+        <option>18</option>
+        <option>19</option>
+        <option>20</option>
+        <option>21</option>
+        <option>22</option>
+        <option>23</option>
+        <option>24</option>
+        <option>25</option>
+        <option>26</option>
+        <option>27</option>
+        <option>28</option>
+        <option>29</option>
+        <option>30</option>
+        <option>31</option>
+      </select>일
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;결혼</td>
+      <td>&nbsp;<input type="radio" name="marriage" value="single" checked>미혼
+        <input type="radio" name="marriage" value="couple">기혼</td>
+    </tr>
+    <tr>
+      <td>&nbsp;추천인 아이디></td>
+      <td>&nbsp;&nbsp;<input type="text" name="reco_id" size="20" maxlength="10"></td>
+    </tr>
+  </table>
+  <br />
+</header>
+<div class="btn">
+  <input type="button" name="btn01" value="가입하기">
+  <input type="button" name="btn01" value="취소하기">
+</div>
+</body>
+</html>

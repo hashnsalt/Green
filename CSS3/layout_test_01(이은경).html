@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>menu03</title>
+  <style>
+    /*--- font ---*/
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+    /*--- default setting ---*/
+    * {
+      margin: 0; padding: 0;
+    }
+    
+    a {
+      color: black; text-decoration: none;
+    }
+
+    li {
+      list-style: none;
+    }
+  
+    /*--- header ---*/
+
+    .header {
+      width: 1024px;
+      margin: 0 auto;
+    }
+
+    .header .logo a {
+      height: 200px;
+      background-color: #ccc;
+      text-align: center;
+      line-height: 200px;
+      font-size: 50px;
+      font-weight: bold;
+      display: block;
+
+    }
+
+    /*--- gnb ---*/
+    
+    .header .gnb {
+      overflow: hidden;
+    }
+
+    .header .gnb ul {
+      font-size: 0;
+      float: right;
+    }
+  
+    .header .gnb li {
+      font-size: 11px;
+      display: inline-block;
+      padding: 0px 10px;
+      margin: 10px 0;
+      border-right: 1px solid #999;
+      line-height: 10px;
+      color: #999;
+    }
+
+    .header .gnb li:last-child {
+      border: none;
+    }
+
+    /* --- lnb --- */
+    .nav_lnb {
+      width: 100%; height: 30px;
+      background-color: #999;
+      margin-bottom: 10px;
+    }
+
+    .lnb {
+      width: 1024px; height: 30px;
+      border: 1px solid black;
+      box-sizing: border-box;
+      margin: 0px auto;
+      padding: 0px 10px;
+    }
+
+    .lnb li {
+      width: 200px;
+      height: 30px;
+      float: left;
+    }
+
+    .lnb li a {
+      display: block;
+      line-height: 30px;
+      color: black;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .lnb li li {
+      display: none;
+      background-color: seashell;
+    }
+
+    .lnb:hover li li {
+      display: block;
+    }
+
+    /* --- wrap --- */
+
+    .wrap {
+      width: 1024px;
+      border: 1px solid black;
+      margin: 0 auto;
+      margin-bottom: 10px;
+    }
+
+    /* --- Visual_main --- */
+   
+    .visual_main {
+      height: 300px;
+      background-color: #ccc;
+      text-align: center;
+      line-height: 300px;
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    /* --- event --- */
+
+    .event {
+      height: 200px;
+      background-color: #ccc;
+      text-align: center;
+      line-height: 200px;
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .event .event01,
+    .event .event02 {
+      width: 507px; height: 200px;
+      border: 1px solid black; box-sizing: border-box;
+      float: left;
+    }
+    
+    .event .event01 {
+      margin-right: 10px;
+    }
+
+    
+    /* --- product --- */
+
+    .product{
+      height: 610px;
+      background-color: #ccc;
+      margin-bottom: 10px;
+    }
+
+    .product div {
+      width: 334.666666px; height: 300px;
+      border: 1px solid black; box-sizing: border-box;
+      text-align: center;
+      line-height: 300px;
+      float: left;
+      margin-bottom: 10px;
+    }
+
+    .product div:nth-child(2),
+    .product div:nth-child(5) {
+      margin: 0 10px;
+    }
+
+    /* --- Rolling_Banner --- */
+
+    .rolling_ban {
+      height: 100px;
+      border: 1px solid black; box-sizing: border-box;
+      text-align: center;
+      line-height: 100px;
+      font-weight: bold;
+    }
+
+    /* --- Footer --- */
+
+    .footer_bg {
+      width: 100%; height: 200px;
+      background-color: #999;
+    }
+
+    .footer_bg .footer {
+      width: 1024px; height: 200px;
+      background-color: #ccc;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 200px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+  </style>
+</head>
+<body>
+  <header class="header">
+  <nav class="gnb">
+    <ul>
+      <li><a href="#">Login</a></li>
+      <li><a href="#">Join</a></li>
+      <li><a href="#">Site_map</a></li>
+      <li><a href="#">Search</a></li>
+    </ul>
+  </nav>
+  <div class="logo"><a href="#">HEADER</a></div>
+</header>
+
+  <!-- lnb -->
+<nav class="nav_lnb">
+  <ul class="lnb">
+    <li><a href="#">menu01</a>
+      <ul>
+        <li><a href="#">menu01-1</a></li>
+        <li><a href="#">menu01-2</a></li>
+        <li><a href="#">menu01-3</a></li>
+        <li><a href="#">menu01-4</a></li>
+      </ul>
+    </li><!-- menu01 -->
+    <li><a href="#">menu02</a>
+      <ul>
+        <li><a href="#">menu02-1</a></li>
+        <li><a href="#">menu02-2</a></li>
+        <li><a href="#">menu02-3</a></li>
+        <li><a href="#">menu02-4</a></li>
+      </ul>
+    </li><!-- menu02 -->
+    <li><a href="#">menu03</a>
+      <ul>
+        <li><a href="#">menu03-1</a></li>
+        <li><a href="#">menu03-2</a></li>
+        <li><a href="#">menu03-3</a></li>
+        <li><a href="#">menu03-4</a></li>
+      </ul>
+    </li><!-- menu03 -->
+    <li><a href="#">menu04</a>
+      <ul>
+        <li><a href="#">menu04-1</a></li>
+        <li><a href="#">menu04-2</a></li>
+        <li><a href="#">menu04-3</a></li>
+        <li><a href="#">menu04-4</a></li>
+      </ul>
+    </li><!-- menu04 -->
+    <li><a href="#">menu05</a>
+      <ul>
+        <li><a href="#">menu05-1</a></li>
+        <li><a href="#">menu05-2</a></li>
+        <li><a href="#">menu05-3</a></li>
+        <li><a href="#">menu05-4</a></li>
+      </ul>
+    </li><!-- menu05 -->
+  </ul>
+</nav><!-- header -->
+
+<div class="wrap">
+
+  <section class="visual_main">
+    visual_main
+  </section> <!-- visual_main -->
+
+  <section class="event">
+    <div class="event01">event01</div>
+    <div class="event02">event02</div>
+  </section><!-- event -->
+  
+  <section class="product">
+    <div class="product01">product01</div>
+    <div class="product02">product02</div>
+    <div class="product03">product03</div>
+    <div class="product04">product04</div>
+    <div class="product05">product05</div>
+    <div class="product06">product06</div>
+  </section>
+  
+  <section class="rolling_ban">Rolling_Banner</section>
+</div>
+
+<div class="footer_bg">
+  <footer class="footer">Footer</footer>
+</div>
+
+</body>
+</html>

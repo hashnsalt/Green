@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>object_22-12-01</title>
+  <script>
+    ///////////// 객체 생성02 /////////////////
+
+    // 객체: 데이터를 다루는 방법
+    // 키 : 키값 / 메서드
+    // 객체명['키'], 객체명.키
+    // 메서드: 자료의 속성이 함수인 것으로 화살표 함수는 사용하지 않음.
+
+    // const students = { //==new Object(); 와 같은 사용법. 이것을 대신해 '{}'를 써줌.
+    //   name: '홍길동', //animate{속성==객체{키값}로 들어갔음}
+    //   class: '3-1',
+    //   kor: 100,
+    //   eng: 95
+    // }
+
+    // document.write(students['name'], '<br />');
+    // document.write(students.class, '<br />');
+
+    // students.mat = 100; //student 안에 추가하지 않고 밖에 추가해야함
+    
+    // let sum = students.kor + students.eng + students.mat;
+
+    // document.write(sum, '<br />');
+
+    // document.write(students, '<br />'); //객체라는 데이터들이 나오는게 아니라 student가 객체라고 출력됨.
+
+    // document.write(JSON.stringify(students), '<br />'); //JSON은 자바스크립트를 객체 형식으로 가져올 수 있는 데이터베이스(객체들)를 다룰 수 있는 파일.
+
+    // document.write(JSON.stringify(students, null, 2));
+    // console.log(JSON.stringify(students, null, 2)); //console에서 우리가 작성한 객체 형식대로 2간 들여써서 출력됨.
+
+    // delete students.kor;
+    // console.log(JSON.stringify(students, null, 2));
+
+
+    // const product = {
+    //   name: 'book',
+    //   price: 32000,
+    //   pages: 359,
+    //   info: function(){ //info라는 키값을 가지고 function을 만든다.
+    //     document.write(`${this.name}은 ${this.pages}페이지이고 가격은 ${this.price} 입니다.`);
+    //   } //화살표 함수를 쓰지 말고 익명함수를 써야한다. 화살표 함수를 쓰면 info가 this로 받아지기 때문에. product를 this로 받으려면 화살표 함수를 사용하면 안된다.
+    // }
+
+    // product.info();
+
+
+
+    
+
+    // const tv = {
+    //   name: 'samsung',
+    //   width: '30cm',
+    //   height: '25cm',
+    //   weight: '20kg',
+    //   color: 'white',
+
+    //   on: function(start) {
+    //     document.write(`${this.name} tv를 ${start} 합니다.`); //매개변수로 받아오는 것은 this를 사용하면안된다.
+    //   },
+
+    //   off: function(time, end) {
+    //     document.write(`컬러가 ${this.color}인 tv는 ${time}에 자동으로 ${end} 됩니다.`);
+    //   },
+
+    //   use: function(time) {
+    //     document.write(`현재 시간은 ${time} 입니다. <br />`);
+    //   }
+    // }
+
+    // tv.on('시작'); //매개변수로 받아오는 것은 this를 사용하면안된다.
+
+    // setTimeout(()=> {
+    //   tv.off('오후 9시', 'off');
+    //   clearInterval(useTime);
+    // }, 5000); //5초가 지나면 멈춤. //동적인 웹사이트 제작 ex] 5초뒤에 팝업이 닫힙니다.
+
+    // let count = 6;
+
+    // let useTime = setInterval(() => {
+    //   tv.use(count);
+    //   count++;
+    // }, 1000); //1초마다 카운트 갱신
+
+
+
+    // 객체의 키값이 정해져 있지 않고 넣어줄 때 사용 하는 법
+
+    function books(title, author, price, pages) {
+      this.title = title,
+      this.author = author,
+      this.price = price,
+      this.pages = pages,
+      this.info = function() {
+        document.write(`${this.title}은(는) ${this.pages}페이지이고, 가격은 ${this.price}원 입니다. <br />`);
+      }
+    }
+
+    const html = new books('HTML', '이순신', 2800, 200);
+    const js = new books('JavaScript', '홍길동', 35000, 500);
+    const react = new books('React', '유관순', 32000, 300);
+
+    console.log(JSON.stringify(html, null, 2));
+
+    const bookList = [html, js, react]
+
+    for(let i = 0; i<bookList.length; i++) {
+      document.write(`${bookList[i].info()} <br />`);
+    }
+    
+  </script>
+</head>
+<body>
+
+</body>
+</html>

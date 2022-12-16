@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>yes24_Event</title>
+  <style>
+    /*--- default setting ---*/
+    * {
+      margin: 0; padding: 0;
+    }
+    a {
+      color: black; text-decoration: none;
+    }
+    li {
+      list-style: none;
+    }
+    img {
+      width: 1440px; height: 200px;
+    }
+
+    /*--- gnb ---*/
+
+    .header {
+      width: 1440px;
+      margin: 0 auto;
+    }
+
+    .header .gnb {
+      height: 30px;
+      line-height: 30px;
+    }
+
+    .header .gnb .gnb01 li {
+      float: left;
+      display: block;
+      padding: 0;
+      margin: 0px 5px;
+      font-size: 9px;
+    }
+
+    .header .gnb .gnb01 li:nth-child(6),
+    .header .gnb .gnb01 li:nth-child(7),
+    .header .gnb .gnb01 li:nth-child(8) {
+      color: #3a79cd;
+    }
+
+    .header .gnb .gnb02 {
+      font-size: 0;
+      float: right;
+    }
+
+    .header .gnb .gnb02 li {
+      font-size: 11px;
+      margin-left: 10px;
+      display: block;
+      display: inline-block;
+      padding: 0px 10px;
+      margin: 10px 0px;
+      border-right: 1px solid #999;
+      text-align: center;
+      line-height: 10px;
+    }
+    
+    .header .gnb .gnb02 li:last-child {
+      border: 0;
+    }
+
+    /*--- tab_menu ---*/
+
+    .tab {
+      width: 1440px;
+      background-color: #3a79cd;
+      margin: 0 auto;
+    }
+    .tab .tab_menu01,
+    .tab .tab_menu02 {
+      width: 750px; height: 30px;
+      text-align: center;
+      padding: 10px 0;
+      margin: 0 auto;
+      line-height: 30px;
+    }
+
+    .tab .tab_menu01 li,
+    .tab .tab_menu02 li {
+      width: 150px;
+      /* padding: 0px 0px; */
+      border-radius: 50px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 12px;
+      float: left;
+    }
+
+    .tab .tab_menu01 li:hover,
+    .tab .tab_menu02 li:hover {
+      color: black;
+      background-color: yellow;
+    }
+
+    /* --- visual_main --- */
+
+    .visual_main {
+      width: 1440px; height: 180px;
+      background-color: #c4f1f8;
+      margin: 0 auto;
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    /* --- event01 --- */
+    .event01 {
+      width: 1440px; height: 500px;
+      background-color: #ffb6c1;
+      margin: 0 auto;
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    .event01 .time {
+      width: 630px; height: 150px;
+      margin: 30px auto;
+    }
+
+    .event01 .time div {
+      width: 150px; height: 150px;
+      background-color: white;
+      padding: 30px 0; box-sizing: border-box;
+      float: left;
+    }
+
+    .event01 .time div:nth-child(1),
+    .event01 .time div:nth-child(2),
+    .event01 .time div:nth-child(3) {
+      margin-right: 10px;
+    }
+
+    /* --- event02 --- */
+  
+    .event02 {
+      width: 1440px; height: 200px;
+      background-color: #fff;
+      text-align: center;
+      margin: 20px auto;
+    }
+
+    .event02 .event02-wrap {
+      width: 610px;
+      height: 150px;
+      margin: 20px auto;
+    }
+
+    .event02 .event02-wrap .event02-left,
+    .event02 .event02-wrap .event02-right {
+      width: 300px;
+      height: 150px;
+      float: left;
+    }
+
+    .event02 .event02-wrap .event02-left {
+      background-color: burlywood;
+    }
+
+    .event02 .event02-wrap .event02-left {
+      margin-right: 10px;
+    }
+
+    .event02 .event02-wrap .event02-right .event02-top,
+    .event02 .event02-wrap .event02-right .event02-bottom {
+      width: 300px;
+      height: 70px;
+    }
+
+    .event02 .event02-wrap .event02-right .event02-bottom {
+      margin-top: 10px;
+    }
+
+    .event02 .event02-wrap .event02-right .event02-top div,
+    .event02 .event02-wrap .event02-right .event02-bottom div {
+      width: 145px;
+      height: 70px;
+      background-color: beige;
+      float: left;
+    }
+
+    .event02 .event02-wrap .event02-right div:first-child {
+      margin: 0 10px 0 0;
+    }
+
+    /* --- event03 --- */
+
+    .event03 {
+      width: 1440px;
+      height: 770px;
+      background-color: #6ac9d7;
+      text-align: center;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+
+    .event03 .event03-01 {
+      width: 630px; height: 150px;
+      background-color: #fff;
+      margin: 10px auto;
+    }
+
+    .event03 .event03-01 .event03-01-left,
+    .event03 .event03-01 .event03-01-right {
+      width: 310px; height: 150px;
+      background-color: antiquewhite;
+      float: left;
+    }
+
+    .event03 .event03-01 .event03-01-left {
+      padding-top: 10px;
+      box-sizing: border-box;
+      margin-right: 10px;
+    }/* event03-01 */
+
+
+    .event03 .event03-02 {
+      width: 630px; height: 220px;
+      background-color: #fff;
+      margin: 0 auto;
+      margin-bottom: 10px;
+      padding: 10px 0;
+      box-sizing: border-box;
+    }
+
+    .event03 .event03-02 .event03-02-left,
+    .event03 .event03-02 .event03-02-right {
+      width: 280px; height: 150px;
+      border: 1px solid black; box-sizing: border-box;
+      float: left;
+    }
+
+    .event03 .event03-02 .event03-02-middle {
+      width: 50px; height: 150px;
+      background-color: #e0213d;
+      margin: 0 10px;
+      float: left;
+    }/* event03-02 */
+
+    .event03 .event03-03,
+    .event03 .event03-04 {
+      width: 630px; height: 160px;
+      margin: 0 auto;
+    }
+
+    .event03 .event03-03 div,
+    .event03 .event03-04 div {
+      width: 203.333333px; height: 160px;
+      background-color: #fff;
+      border: 1px solid black; box-sizing: border-box;
+      float: left;
+    }
+
+    .event03 .event03-03 {
+      margin-bottom: 10px;
+    }
+
+    .event03 .event03-03 div:nth-child(2),
+    .event03 .event03-04 div:nth-child(2) {
+      margin: 0 10px;
+    }/* event03, event04 */
+
+    /* --- event05 --- */
+
+    .event05 {
+      width: 1440px; height: 200px;
+      background-color: #f3f3f3;
+      margin: 0 auto;
+      padding: 20px 0 20px; box-sizing: border-box;
+    }
+
+    .event05 .event05-wrap {
+      width: 650px; height: 150px;
+      margin: 0 auto;
+    }
+
+    .event05 .event05-wrap .text {
+      width: 340px; height: 150px;
+      float: left;
+      /* padding: 20px 0 0 0;
+      box-sizing: border-box; */
+      margin-right: 10px;
+    }
+
+    .event05 .event05-wrap .event05-01 {
+      width: 300px; height: 150px;
+      border: 1px solid black; box-sizing: border-box;
+      float: left;
+    }
+
+    /* --- event06 --- */
+
+    .span_font {
+      font-weight: bold;
+    }
+
+    .event06 {
+      width: 1440px; height: 500px;
+      background-color: #ffdd57;
+      padding: 25px;
+      box-sizing: border-box;
+      margin: 0 auto;
+    }
+
+    .event06 .event06-wrap {
+      width: 630px; height: 450px;
+      margin: auto;
+    }
+
+    .event06 .event06-wrap .event06-left,
+    .event06 .event06-wrap .event06-right {
+      width: 310px; height: 450px;
+      float: left;
+    }
+
+    .event06 .event06-wrap .event06-left {
+      margin-right: 10px;
+    }
+
+    .event06 .event06-wrap .event06-left div,
+    .event06 .event06-wrap .event06-right div {
+      width: 310px; height: 143.333333px;
+      line-height: 143px;
+      text-align: center;
+    }
+
+    .event06 .event06-wrap .event06-left div:nth-child(1) {
+      background-color: #00cb33;
+    }
+    .event06 .event06-wrap .event06-left div:nth-child(2) {
+      margin: 10px 0;
+      background-color: #ade4ff;
+    }
+    .event06 .event06-wrap .event06-left div:nth-child(3) {
+      background-color: #ffcfcf;
+    }
+
+
+    .event06 .event06-wrap .event06-right div:nth-child(1) {
+      background-color: #fc1013;}
+    .event06 .event06-wrap .event06-right div:nth-child(2) {
+      margin: 10px 0;
+      background-color: #ffd2d2;
+    }
+    .event06 .event06-wrap .event06-right div:nth-child(3) {
+      background-color: #d9fbd4;
+    }
+
+    /* --- img_banner --- */
+
+    .img_banner {
+      width: 1440px; height: 200px;
+      background-color: #ccc;
+      margin: 0 auto;
+    }
+
+  </style>
+</head>
+<body>
+
+<header class="header">
+<nav class="gnb">
+
+  <ul class="gnb01">
+    <li>통합검색</li>
+    <li>예스24분야</li>
+    <li>영화·공연</li>
+    <li>채널예스</li>
+    <li>YES블로그</li>
+    <li>베스트셀러</li>
+    <li>신상품</li>
+    <li>YES캘린더</li>
+  </ul>
+  <ul class="gnb02">
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">마이페이지</a></li>
+    <li><a href="#">카트</a></li>
+    <li><a href="#">주문배송</a></li>
+    <li><a href="#">고객센터</a></li>
+  </ul>
+
+</nav>
+</header> <!-- header, gnb -->
+
+<nav class="tab">
+  <ul class="tab_menu01">
+    <li>상품권 최대 12,000원</li>
+    <li>앱에서는 최대 2천원</li>
+    <li>라인프렌즈 필기구세트</li>
+    <li>요네스뵈 리커버 에디션</li>
+    <li>참고서 X 스터디플래너</li>
+  </ul>
+  <hr size="0px" noshade />
+  <ul class="tab_menu02">
+    <li>네이버페이 2% 추가적립</li>
+    <li>캠패인 참여 1천원</li>
+    <li>어린왕자 젤리케이스</li>
+    <li>굴리굴리 틴케이스 증정</li>
+    <li>패션키즈 최대 5천원 쿠폰</li>
+  </ul>
+</nav><!-- tab -->
+
+<div class="visual_main">
+  <h3>새학기 준비도 예스24에서 <span style="color: red;">올킬 ,</span></h3>
+  <h1>최대 <span style="color: #3a79cd; ">12,000원+결제할인</span></h1>
+</div>
+
+<nav class="event01">
+  <h1 style="color: #e0213d;">· 퀴즈 한번 더 참여하면 1천원 또 증정 (3/16~) ·</h1>
+  <br />
+  <p style="font-size: 20px; font-weight: bold;">Q.YES24 당일배송 마감 시간은 언제일까요? <span><button style="background-color: black; color: darkgray; font-size: 15px; padding: 2px 20px;">자세히보기 <span style="color: white; font-size: 20px;">></span></button></span></p>
+  <div class="time">
+    <div><input type="radio" name="rad" id="rad" style="width: 30px; height: 30px;"> <h3>서울 오전 9시</h3><h3>대구 오전 10시</h3></div>
+    <div>time02</div>
+    <div>time03</div>
+    <div>time04</div>
+  </div>
+  <button style="background-color: black; color: #e0213d; border-radius: 50px; padding: 20px 50px"><h3>정답 제출하면 1천원</h3><h1 style="color: white;">투표하기</h1></button>
+</nav>
+
+<div class="event02">
+
+    <h2>지금 회원가입하면, 상품권 1천원 + 쿠폰 4종 증정 <span><button style="background-color: black; color: darkgray; font-size: 15px; padding: 2px 20px;">자세히보기 <span style="color: white; font-size: 20px;">></span></button></span></h2>
+
+    <div class="event02-wrap">
+      <div class="event02-left">1,000</div>
+      <div class="event02-right">
+        <div class="event02-top">
+          <div class="event02-top-01">20%</div>
+          <div class="event02-top-02">3,000</div>
+        </div>
+        <div class="event02-bottom">
+          <div class="event02-bottom-01">1,000</div>
+          <div class="event02-bottom-02">30%</div>
+        </div>
+      </div>
+    </div>
+
+</div><!-- event02 -->
+
+<div class="event03">
+
+  <h3>상품권 모두 받기</h3>
+
+  <section class="event03-01">
+    <div class="event03-01-left"><button style="background-color: #fff; border: 1px solid #1769b2; color: #1769b2; font-weight: bold; padding: 10px 20px; margin: 10px;">도서앱</button>
+      <h3>설치 후 로그인하면 2천원</h3></div>
+  
+    <div class="event03-01-right">2,000</div>
+  </section>
+
+  <section class="event03-02">
+    <h3>소식 수신동의, 정보 보관기간 연장하면 <span style="color:#3a79cd;">+1천원</span></h3>
+    <br />
+    <div class="event03-02-left">process</div>
+    <div class="event03-02-middle">arrow</div>
+    <div class="event03-02-right">1,000</div>
+  </section>
+
+  <section class="event03-03">
+    <div>1,000</div>
+    <div>1,000</div>
+    <div>1,000</div>
+  </section>
+
+  <section class="event03-04">
+    <div>1,000</div>
+    <div>1,000</div>
+    <div>1,000</div>
+  </section>
+
+</div>
+<!-- event03 -->
+
+<div class="event05">
+  <div class="event05-wrap">
+  <div class="text">
+  <h4>YES24와 한세예스24문화재단이 함께합니다.</h4>
+  <h2>학교 응원하고 1천원 받자!</h2>
+  <p style="line-height: 35px;">응원을 가장 많이 받은 학교에는</p>
+  <p style="color: red">책 5천권을 기부합니다!</p>
+</div>
+
+  <div class="event05-01">1,000</div>
+</div>
+</div><!-- event05 -->
+
+<div class="event06">
+
+  <div class="event06-wrap">
+    <section class="event06-left">
+      <div>
+        <p style="color: #fff; font-size: 20px;">네이버페이 <span class="span_font">최대 2% 추가적립</span></p>
+      </div>
+      <div>
+        <p>GS&포인트 <span class="span_font">6% + 2천 포인트</span></p>
+      </div>
+      <div>
+        <p>예스24 신한카드 <span class="span_font">무조건 40% 할인</span></p>
+      </div>
+    </section>
+
+    <section class="event06-right">
+      <div>
+        <p style="font-size: 15px;">페이코 5,000원 할인 <span class="span_font">+ 최대 2만 포인트 적립</span></p>
+      </div>
+      <div>
+        <p>바로가기 아이콘 <span class="span_font">3% 추가적립</span></p>
+      </div>
+      <div>
+        <p>5만원 이상 결제시 <span class="span_font">5개월 무이자할부</span></p>
+      </div>
+    </section>
+  
+  </div>
+</div>
+
+<div class="img_banner"><img src="./images/beauty&beast.png" alt="Banner"></div>
+
+</body>
+</html>

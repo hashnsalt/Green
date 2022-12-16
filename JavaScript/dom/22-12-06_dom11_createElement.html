@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>createElement</title>
+  <script>
+
+    //동적 문서 객체: JS로 HTML문서에 없던 문서 객체를 생성
+
+    //<div class='greet'>Good Morning</div>
+    
+    
+    document.addEventListener('DOMContentLoaded', () => {
+
+      let newDiv = document.createElement('div'); //추가할 요소(태그) 생성
+      let newText = document.createTextNode('Good Morning~'); //그안에 들어갈 택스트
+
+      newDiv.appendChild(newText); //택스트를 부모_div에 넣어줌
+
+      document.body.appendChild(newDiv); //body안에 생성해준 요소가 들어간다. <'body'><'div'><'/div'><'/body'>의 개념 댓글, 리뷰 이런걸로 만듬.
+
+
+      //태그에 속성을 주고 싶음
+      // let attr = document.createAttribute('class'); // 1. 클래스의 속성을 생성
+      // attr.value = 'greet'; // 2. class이름은 greet
+
+      // newDiv.setAttributeNode(attr);  // 3. 클래스를 적용시킨다.
+
+      newDiv.setAttribute('class', 'greet'); //1,2,3 합친것
+
+      document.querySelector('.greet').style.fontSize = '50px';//div의 greet클래스를 가진 요소의 폰트 크기를 바꾼다.
+
+    });
+
+
+  </script>
+  <style>
+    .greet {
+      color: red;
+    }
+    /* 생성 될 요소의 속성을 미리 정해둔다. */
+
+  </style>
+</head>
+<body>
+
+</body>
+</html>

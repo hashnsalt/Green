@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM_img_change_event</title>
+  <script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+      let img = document.querySelector('.img > img');
+      
+      //방법01
+      // img.onmouseover = over;
+      // img.onmouseout = out;
+
+
+      //방법02
+      // img.addEventListener('mouseover', over);
+      // img.addEventListener('mouseout', out);
+
+      //방법01,02
+      // function over() {
+      //   img.src = './images/new01_on.jpg';
+      // }
+
+      // function out() {
+      //   img.src = './images/new01_off.jpg';
+      // }
+
+
+
+      //방법03
+      // img.addEventListener('mouseover', () => {
+      //   img.src = './images/new01_on.jpg'
+      // });
+
+      // img.addEventListener('mouseout', () => {
+      //   img.src = './images/new01_off.jpg'
+      // });
+
+      //방법04 setAttribute('속성', '');
+
+      img.addEventListener('mouseover', () => {
+        img.setAttribute ('src', './images/new01_on.jpg');     // setAttribute는 하나의 함수이기 = 를 쓰면 안됨
+      });
+
+      img.addEventListener('mouseout', () => {
+        img.setAttribute ('src', './images/new01_off.jpg');
+      });
+
+
+      //방법05
+
+      // img.addEventListener('mouseover', function() {
+      //   this.setAttribute ('src', './images/new01_on.jpg');
+      // });
+      // //화살표 함수안에서는 this를 쓰면 안된다. 왜냐면 화살표 함수의 '()'안에서의 객체를 찾기 때문이다. function을 사용했을 경우엔 function을 매개변수로 인식을 하고 실제 객체를 찾아 가기 때문에 img를 this로 받아 올 수 있다.
+
+      // img.addEventListener('mouseout', () => {
+      //   img.setAttribute ('src', './images/new01_off.jpg');
+      // });
+
+    
+      
+    
+    });
+    
+
+
+  </script>
+</head>
+<body>
+
+  <div class="img">
+    <img src="./images/new01_off.jpg" alt="마우스 오버이벤트" />
+  </div>
+
+</body>
+</html>

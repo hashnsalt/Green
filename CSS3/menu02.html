@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>menu02</title>
+  <style>
+    /*--- default setting ---*/
+    * {
+      margin: 0; padding: 0;
+    }
+    a {
+      color: black; text-decoration: none;
+    }
+    li {
+      list-style: none;
+    }
+    /* li를 none으로 잡아 놨기 때문에 앞의 기호는 표시되지 않는다. */
+    body {
+      height: 3000px;
+    }
+
+    /*--- lnb ---*/
+    .lnb01 {
+      /* width: 1000px; height: 50px;
+      margin: 0 auto; */
+      overflow: hidden;
+    }
+    /* float을 가진 콘텐츠는 기본적으로 이웃하는 코넨츠의 아래에 깔리거나 또는 옆으로 올라오게 된다.
+     문제해결: 1. float를 가진 자식 부모에 width, height를 반드시 정해준다.
+     2. float를 가진 자식의 부모에 overflow:hidden 속성을 부여한다.
+      **float를 사용할 시엔 부모에 width와 height를 생략하지 않아야 한다. 생략하면 float는 자동으로 layout을 무너 뜨린다.
+      해결방안: 부모에 overflow: hidden을 적용해준다. */
+
+    .lnb01 li {
+      width: 200px; height: 50px;
+      background-color: beige;
+      text-align: center;
+      line-height: 50px;
+      float: left;
+      cursor: pointer;
+    }
+
+    .lnb01 li:hover {
+      background-color: chocolate;
+      color: black;
+    }
+
+    .lnb02 {
+      width: 1000px; height: 50px;
+      margin: 0 auto;
+      position: sticky;
+      top: 0;
+      /* position_tag의 fixed와 sticky 둘다 고정이지만, 차이점은 sticky는 scroll이 되면 고정이 된다.
+      만약 naver 처럼 일정 높이만큼 스크롤을 내렸을 때 검색창이 뜨는 event는 js를 써서 알고리즘을 짜줘야한다.
+      ex) height: 300px 이상 일때 검색창 띄우기 같은 알고리즘 사용.*/
+    }
+
+    .lnb02 li {
+      width: 200px; height: 50px;
+      /* background-color: yellow;
+      font-weight: bold;
+      text-align: center;
+      line-height: 50px; */
+      float: left;
+    } 
+    /* 배치만 적용 a는 style */
+
+    .lnb02 li a {
+      display: block;
+      /* a는 inline_tag이기 때문에 block을 써줘야 style이 block으로 적용 된다. */
+      background-color: yellow;
+      font-weight: bold;
+      text-align: center;
+      line-height: 50px;
+    }
+
+    .lnb02 a:hover {
+      background-color: black;
+      color: yellow;
+    }
+
+    /*--- lnb03 ---*/
+
+    /* .lnb03::after {
+      content: '';
+      display: block;
+      clear: both;
+    } */
+    
+    .lnb03 li {
+      width: 200px; height: 50px;
+      background-color: salmon;
+      color: black;
+      text-align: center;
+      line-height: 50px;
+      float: left;
+    }
+
+    .lnb03 li li {
+     /* 두번째 li의 style == .lnb03 li ul li{} */
+     display: none; 
+    }
+
+    .lnb03 li:hover li {
+      display: block;
+    }
+    /* 마우스 hover했을 시 sub메뉴가 떨어지게 끔.*/
+
+    .lnb03 li:hover {
+      background-color: seashell;
+    }
+    
+    /* .visual_main {
+      width: 800px; height: 300px;
+      background-color: yellow;
+      margin: 0 auto;
+
+    } */
+
+    /* .lnb03>li 의 '>'는 바로 밑의 자식을 뜻한다. */
+
+    /* .lnb03 li li:hover {
+      background-color: seashell;
+    } */
+
+    /* .lnb03:hover li li {
+      display: block;
+    } */
+    /* full down hover */
+
+  </style>
+</head>
+<body>
+  <ul class="lnb01">
+    <!-- lnb: local navigation bar 고유의 메뉴-->
+    <li>menu01</li>
+    <li>menu02</li>
+    <li>menu03</li>
+    <li>menu04</li>
+    <li>menu05</li>
+  </ul>
+  <ul class="lnb02">
+    <li><a href="./css_background_img.html">menu01</a></li>
+    <li><a href="./css_background_img.html">menu02</a></li>
+    <li><a href="./css_background_img.html">menu03</a></li>
+    <li><a href="./css_background_img.html">menu04</a></li>
+    <li><a href="./css_background_img.html">menu05</a></li>
+  </ul>
+
+  <ul class="lnb03">
+    <li>menu01
+      <ul>
+        <li>menu01-1</li>
+        <li>menu01-2</li>
+        <li>menu01-3</li>
+        <li>menu01-4</li>
+      </ul>
+    </li><!--menu01-->
+    <li>menu02
+      <ul>
+        <li>menu02-1</li>
+        <li>menu02-2</li>
+        <li>menu02-3</li>
+        <li>menu02-4></li>
+      </ul>
+    </li><!--menu02-->
+    <li>menu03
+      <ul>
+        <li>menu03-1</li>
+        <li>menu03-2</li>
+        <li>menu03-3</li>
+        <li>menu03-4</li>
+      </ul>
+    </li><!--menu03-->
+    <li>menu04
+      <ul>
+        <li>menu04-1</li>
+        <li>menu04-2</li>
+        <li>menu04-3</li>
+        <li>menu04-4</li>
+      </ul>
+    </li><!--menu04-->
+    <li>menu05
+      <ul>
+        <li>menu05-1</li>
+        <li>menu05-2</li>
+        <li>menu05-3</li>
+        <li>menu05-4</li>
+      </ul>
+
+      <!-- <div class="visual_main">
+        visual_main
+      </div> -->
+    </li><!--menu05-->
+  </ul>
+</body>
+</html>

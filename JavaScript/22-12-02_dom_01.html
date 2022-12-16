@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>documentObject</title>
+  <script src="./js/22-12-02_dom_01.js" defer>//defer(먼저 dom이 사전 로드 된후)라는 예약어를 넣어준 상태에서 위에 넣어주면 외부 스크립트가 적용 된다.</script>
+  <script>
+    //내부 스크립트를 처리하는 방법01.
+    // window.onload = function(){
+    //   document.getElementById('box01').style.color = 'blue'
+    // } //옛날 스타일
+
+
+    //내부 스크립트를 처리하는 방법02.
+    //Listner 이벤트를 사용.
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('box01').style.fontSize = '50px';
+      document.getElementsByClassName('box02')[0].style.color = 'red';
+
+      document.getElementsByTagName('li')[1].style.color = 'blue';
+      //getElemnets에서 's'가 붙으면 배열 객체라는 말임.
+
+
+
+      //요즘의 트랜드는 querySelector을 쓴다.******
+      document.querySelector('#box01').style.color = 'green';
+      document.querySelector('.box02').style.fontSize = '24px';
+      document.querySelectorAll('.box03 li')[2].style.backgroundColor = 'gray'; //배열 객체
+
+      let li = document.querySelectorAll('.box03 li')
+
+      // for (let i = 0; i<= li.length; i++){
+      //   li[i].style.backgroundColor = 'yellow';
+      // }
+
+      li.forEach((value) => {
+        value.style.fontSize = '50px'
+      });
+
+    
+    });
+  </script>
+
+</head>
+<body>
+  <div id="box01">Text_box01</div>
+  <!-- 요소 == 객체들이 된다. -->
+
+  <p class="box02">Text_box02</p>
+
+  <ul class="box03">
+    <li>Text_box03-1</li>
+    <li>Text_box03-2</li>
+    <li>Text_box03-3</li>
+  </ul>
+
+  <!-- <script>
+    ////domOnject
+    document.getElementById('box01').style.color = 'red';
+  </script>  아래쪽에 넣는건 불편하기 때문에 우리나라에서는 위쪽에 넣는다. -->
+<!-- <script src="./js/22-12-02_dom_01.js"></script> 위에 넣으면 안먹는다.-->
+</body>
+</html>

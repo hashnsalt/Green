@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>통합모듈</title>
+  <script language="javascript">
+    function addAll(x, y) {
+    // let add = 0;
+
+    return(x * y);
+
+    }
+  </script>
+</head>
+<body>
+  <!-- 문제 01. 제품명, 가격, 수량을 입력 받고, 총 구입가격을 제품명과 함께 출력 -->
+  <script language="javascript">
+    let proName, proPrice, proNum, productAll;
+    proName = prompt('제품명을 입력하세요');    
+    proPrice = parseInt(prompt('가격을 입력하세요'));    
+    proNum = parseInt(prompt('수량을 입력하세요'));
+    productAll = addAll(proPrice, proNum);
+
+    document.write('제품명: ' + proName + '<br/> 총 구입가격: ' + productAll);
+  </script>
+</body>
+</html>

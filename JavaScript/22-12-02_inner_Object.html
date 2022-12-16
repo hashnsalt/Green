@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>object_22-12-01</title>
+  <script>
+    ///////////// 객체 생성02 /////////////////
+
+    //// innerObject_Date();
+
+    // //예제 1. 
+
+    // //// if문으로 만든 요일 뽑아내기 
+    
+    // let today = new Date();
+
+    // let year = today.getFullYear();
+    // let month = today.getMonth() + 1;
+    // let date = today.getDate();
+    // let day = today.getDay()
+    // let dayS = '';
+
+    //   if(day == 0) {
+    //     dayS = '일';
+    //   } else if(day == 1) {
+    //     dayS = '월';
+    //   } else if (day == 2) {
+    //     dayS = '화';
+    //   } else if (day == 3) {
+    //     dayS = '수';
+    //   } else if (day == 4) {
+    //     dayS = '목';
+    //   } else if (day == 5) {
+    //     dayS = '금';
+    //   } else if (day == 6) {
+    //     dayS = '토';
+    //   }
+
+    // document.write(`${year}년 ${month}월 ${date}일 ${dayS}요일 입니다.`);
+
+
+    //예제 2.
+
+    // const today = new Date();
+    // const startDay = new Date('2022-08-29');
+
+    // document.write(today, startDay, '<br />');
+
+    // const passDay = today - startDay
+
+    // document.write(passDay, '<br />'); //유니코드로 나와짐. 밀리초 까지의 결과물을 나타냄.
+
+    // const day = Math.floor(passDay / (1000 * 60 * 60 * 24));
+    // // (24시간 60분 60초 1000밀리초)를 해야 밀리초가 우리가 아는 시간 값으로 나온다.
+    // // //Math.floor() 버림 수학 함수.
+
+    // document.write(day);
+
+
+    // // 예제 3.오늘 날짜에서 100일을 더한 일수구하기 
+
+    // const today = new Date();
+    // const hundredDay = today.getTime() + (100*24*60*60*1000); //today이라는 날짜 객체 데이터를 유니코드 데이터(숫자)로 바꿔서(getTime) +100일을 더해줘야함 (24시간 60분 60초 1000밀리초).
+    // const someDay = new Date(hundredDay)
+
+    // document.write(someDay, '<br />');
+
+    // const someYear = someDay.getFullYear();
+    // const someMonth = someDay.getMonth();
+    // const someDate = someDay.getDate();
+    // const day = someDay.getDay();
+    // let dayName = ''
+
+    // // swich-case문으로 만든 요일 뽑아내기
+    // switch(day) {
+    //   case 0: dayName = '일요일'; break;
+    //   case 1: dayName = '월요일'; break;
+    //   case 2: dayName = '화요일'; break;
+    //   case 3: dayName = '수요일'; break;
+    //   case 4: dayName = '목요일'; break;
+    //   case 5: dayName = '금요일'; break;
+    //   case 6: dayName = '토요일'; break;
+    // }
+
+
+    // document.write(`${someYear}년 ${someMonth}월 ${someDay}일 ${dayName} 입니다.`);
+    
+    
+
+    // innerObject_Number(); 숫자 객체
+    // Math.random() * (최대 - 최소) + 최소
+    // Math.random() * (45 - 1) + 1; //1에서 45까지의 무작위의 수 만들기
+
+    // 예제1. 1에서 Max까지의 무작위 수 만들기
+
+
+    // let num1 = 0;
+    // for(let i = 1; i <= 6; i++) {
+    //   num1 = Math.random() * (60 - 1) + 1;
+    //   num1 = Math.ceil(num1); //파괴적 메소드 덮어쓰기. Math.ceil 올림 함수
+    //   document.write(`${num1} &nbsp`);
+    // }
+
+
+    // let num1 = 0;
+    // for(let i = 1; i <= 6; i++) {
+    //   num1 = Math.random() * (10 - 1) + 1;
+
+    //   for(let j=0; j<i ;j++) {
+    //     if(num1 == num1){
+    //       i--;
+    //       break;
+    //     }
+    //   }//중복 제거
+
+    //   num1 = Math.ceil(num1); //파괴적 메소드 덮어쓰기. Math.ceil 올림 함수
+    //   document.write(`${num1} &nbsp`);
+    // }
+
+    
+    //toString(); ::숫자를 문자열로
+
+    // let num1 = 5;
+
+    // num1 = num1.toString();
+
+    // document.write(`문자값 : ${num1}<br />`);
+    // document.write(typeof(num1)); //문자열 숫자열 확인
+
+
+    
+
+    //Math.abs(숫자); :: 절대값 && Math.PI :: 원주율
+
+    // let num01 = Math.abs(-3);
+    
+    // let num02 = -5;
+    // num02 = Math.abs(num02);
+    
+    // let numPi = Math.PI 
+    
+    // // let numArray = [2, 34, 56, 23, 6, 1]; Math.max(numArray) 안됨.
+
+
+    // document.write(`-3의 절대값 : ${num01} <br/>`);
+    
+    // document.write(`-5의 절대값 : ${num02} <br/>`);
+
+    // document.write(`Pi == ${numPi}`);
+
+
+
+
+    // // 방법 01. classical 최소값 최대값 구하기
+
+    // document.write(`<h4>방법01_Math.max(숫자), Math.min(숫자)</h4>`)
+    // document.write(`최대값: ${Math.max(5, 4, 36, 24, 68)} <br />`);
+    // document.write(`최소값: ${Math.min(5, 4, 36, 24, 68)} <br /><br/>`);
+
+
+    // //방법02 apply()함수 사용
+    // //apply(함수에서 사용할 객체, 함수에서 값을 전달할 배열)
+
+    // const arr = [5, 4, 36, 24, 68]
+    
+    // const max = Math.max.apply(null, arr);
+    // const min = Math.min.apply(null, arr);
+
+    // document.write(`<h4>방법02_array()</h4>${arr}의 최대값: ${max} <br > ${arr}의 최소값: ${min}`);
+
+    
+
+    // //방법03 ...item사용 ES6문법 Spread Operator(전개 연산자)
+
+    // const max01 = Math.max(...arr);
+    // const min01 = Math.min(...arr);
+
+    // document.write(`<h4>방법05_Spread Operator(...item)</h4>${arr}의 최대값01_ver: ${max01} <br /> ${arr}의 최소값01_ver: ${min01}`);
+
+
+
+    document.write(`3^2의 제곱근: ${Math.pow(3,2)}<br />`); //제곱근
+
+
+
+    let numPi = Math.PI; 
+    document.write(`PI값의 반올림: ${Math.round(numPi)}<br />`); //반올림
+
+    document.write(`PI값의 올림: ${Math.ceil(numPi)}<br />`);
+    document.write(`PI값의 내림: ${Math.floor(numPi)}<br />`);
+    document.write(`4의 제곱근: ${Math.sqrt(4)}<br />`);
+
+
+
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>
