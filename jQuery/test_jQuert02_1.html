@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+  <script>
+
+  //2. 수치 조작 메서드
+
+  //2-2. 요소 위치 메서드
+
+  // $(function(){
+  //   var top1=$('#box').position().top;
+  //   $('#t1').text(top1);
+    
+  //   var top2=$('#box').offset().top;
+  //   $('#t2').text(top2);//#box의 위치값을 top2의 변수로 받아서 #t2에 출력
+  // });
+
+
+  //2-3. 스크롤바 위치 메서드
+
+  // $(function(){
+  //   var s=$(window).scrollTop();
+  //   alert($(window).scrollTop());
+  // });
+  //스크롤 된 위치값을 받아서 변수 s에 넣어주고 출력
+
+
+
+  //3.객체 편집 메서드
+
+  //3-1. before() / after() 메서드
+
+  // $(function(){
+  //   $('#myList').before("<li>새 내용 추가1</li>");
+  //   $('#myList').after("<li>새 내용 추가2</li>");
+  // });
+
+
+  //3-2. append() / appendTo() 메서드
+  //     prepend() / prependTo() 메서드
+
+  // $(function(){
+  //   $('#listZone').append("<li>새 내용 추가2</li>");
+  //   $("<li>새 내용 추가<li>").prependTo("#listZone");
+  // });
+
+
+
+  //3-3. insertBefore() / insertAfter() / clone 메서드
+
+  // $(function(){
+  //   $('<li>새 내용 추가1</li>').insertBefore('#myList');
+  //   var copy_obj=$('#myList').clone();
+  //   $(copy_obj).insertAfter('#myList');
+  // });
+
+
+
+  //3-4. empty() / remove() 메서드
+
+  // $(function(){
+  //   $("#line_1").empty(); //text를 없앰. 내용을 비움
+  //   $('#line_2').remove(); //속성 값과 함께 제거
+  // });
+
+
+  //3-5. replaceAll() / replaceAll() 메서드
+
+  // $(function(){
+  //   $('h2').replaceWith('<h3>replace method</h3>');
+  //   $('<h4>내용3</h4>').replaceAll('p');
+  // });
+  
+  
+
+
+  //3-6. unwrap() / wrap() 메서드
+  //wrapAll() / wrapInner() 메서드
+
+
+  // $(function(){
+  //   $('strong').unwrap();//선택요소의 부모요소 삭제
+  //   $('.ct1').wrap('<div />');//선택요소를 새요소로 각각 감쌈.
+  //   $('.ct2').wrapAll('<div />');//선택요소를 새요소로 한꺼번에 감쌈.
+  //   $('li').wrapInner('<h3 />');//선택요소의 내용을 새요소로 감쌈.
+  // });
+
+  </script>
+</head>
+
+<body>
+
+
+  <!-- 2. 수치 조작 메서드 -->
+
+
+  <!-- 2-1. 요소 위치 메서드 -->
+
+  <!-- <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  
+    #wrap {
+      width: 300px;
+      height: 200px;
+      background-color: #ccc;
+      position: relative;
+      top: 50px;
+      margin: 0 auto;
+    }
+  
+    #box {
+      width: 50px;
+      height: 50px;
+      background-color: aqua;
+      position: absolute;
+      top: 50px;
+      left: 100px;
+    }
+  </style>
+
+  <body>
+    <p id="t1"></p>
+    <p id="t2"></p>
+    <div id="wrap">
+      <p id="box">박스1</p>
+    </div>
+  </body>  -->
+
+
+
+  <!-- 2-3. 스크롤바 위치 메서드 -->
+
+  <!-- <style type="text/css">
+    body {
+      height: 4000px;
+    }
+  </style>
+  
+  <body>
+  </body> -->
+
+
+
+  <!-- 3. 객체 편집 메서드 -->
+
+  <!-- 3-1. before() / after() 메서드 -->
+
+  <!-- <ul>
+    <li id="myList">내용</li>
+  </ul> -->
+
+
+  <!-- 3-2. append() / appendTo() -->
+  <!--      prepend() / prependTo() -->
+
+  
+  <!-- <ul id="listZone">
+    <li>내용</li>
+  </ul> -->
+
+
+
+  <!-- 3-3. insertBefore() / insertAfter() / clone 메서드 -->
+  
+  <!-- <ul>
+    <li id="myList">내용</li>
+  </ul> -->
+
+
+
+
+  <!-- 3-4. empty() / remove() 메서드  -->
+
+  <!-- <style type="text/css">
+    #line_1 {
+      background-color: yellow;
+    }
+  
+    #line_2 {
+      background-color: orange;
+    }
+  </style>
+  
+  <body>
+    <ul>
+      <li id="line_1">내용1</li>
+      <li id="line_2">내용2</li>
+    </ul>
+  </body> -->
+
+
+
+  <!-- 3-5. replaceAll() / replaceWith() 메서드 -->
+  
+
+  <!-- <h2>교체 메서드</h2>
+  <p>내용1</p>
+  <p>내용2</p> -->
+
+
+
+  <!-- 3-6. unwrap() / wrap() 메서드 -->
+  <!--      wrapAll() / wrapInner() 메서드 -->
+
+<!-- 
+  <style type="text/css">
+    div {
+      background-color: aqua;
+    }
+  </style>
+  
+  <body>
+    <h1 id="tit_1"><strong>객체</strong></h1>
+    <p class="ct1">내용1</p>
+    <p class="ct1">내용2</p>
+    <p class="ct2">내용3</p>
+    <p class="ct2">내용4</p>
+    <ul>
+      <li>내용3</li>
+      <li>내용4</li>
+    </ul>
+  </body> -->
+
+</body>
+</html>

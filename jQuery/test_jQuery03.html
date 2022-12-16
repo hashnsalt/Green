@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQUERY 이벤트</title>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script>
+
+    // jQUERY 이벤트
+
+    // 1. 로딩 이벤트 메서드
+    
+    
+    // 1-1. click() / dblclick()
+    
+    // $(function(){
+    //   $('#btn1').click(function(){
+    //     $('p').css("background-color","yellow");
+    //   });
+    //   $('#btn2').dblclick(function(){
+    //     $('p').css("background-color","purple");
+    //   });
+    //   // $('#btn2').dblclick(); //처음부터 아무런 값도 주고 싶지 않으면 안써도 됨 초기화 화면이 더블클릭 된 상태로 주고 싶을 때 쓰는 것.
+    // });
+
+
+    // 2. 마우스 이벤트 메서드
+
+
+    // 2-1. click() / dblclick() 이벤트 메서드와 <a>태그
+    // return false; e.preventDefault(); // 걸려 있는 <a>태그를 제거.
+
+    // $(function(){
+    //   $('#btn1').click(function(){
+    //     $('p').css("background-color","purple");
+    //     return false; //#btn1에 적용 되어 있는 a href를 제거
+    //   });
+    //   $('#btn2').click(function(e){
+    //     e.preventDefault();//#btn2에 적용되어 있던 a href를 제거
+    //     $('p').css("background-color","yellow"); //바탕 색이 바뀌는 이벤트로 교체
+    //   });
+    //   $('#btn3').click(function(){
+    //     $('p').css("background-color","aqua"); //아쿠아로 색이 바뀌지만, a href를 지워주지 않았기에 색이 바뀌면서 해당 페이지로 넘어감.
+    //   });
+    // });
+
+
+    //2-2. mouseover() / mouseout() / hover();
+
+    // $(function(){
+    //   $('#btn1').mouseover(function(){
+    //     $('p').css("background-color","yellow"); //마우스가 버튼에 올라갔을 때 함수 실행
+    //   });
+    //   $('#btn1').mouseout(function(){
+    //     $('p').css("background-color","purple"); //마우스가 버튼 밖으로 나갔을 때 함수 실행
+    //   });
+
+    //   $('#btn2').hover(function(){
+    //     $('p').css("background-color","yellow");
+    //   }, function(){ //callback함수로 ','로 fuction 함수를 이어서 사용한다.
+    //     $('p').css("background-color","purple");
+    //   });
+    // });
+
+
+    //2-3. mouseenter() / mouseleave()
+
+    // $(function(){
+    //   $('#wrap').mouseout(function(){
+    //     $('p').css("border","2px solid red");
+    //   });
+      
+    //   $('#wrap').mouseleave(function(){
+    //     $('p').css("border","2px dashed red"); //#wrap에서 벗어났을 때 이벤트 발생
+    //   });
+
+    // });
+    
+
+
+    //2-4. mousemove()
+
+    // $(function(){
+    //   $(document).mousemove(function(e){
+    //     var x = e.pageX;
+    //     var y = e.pageY;
+    //     $('p').text('x: '+ x + 'y:' + y );
+    //   });
+    // });
+
+
+    //3. 포커스 이벤트
+
+    //3-1. focus() / focusin() / blur() / focusout()
+
+    // $(function(){
+    //   $('#user_name').focus();
+    //   $('#user_id').focus(function(){
+    //     $(this).val();
+    //   });
+    //   $('#user_id').blur(function(){
+    //     $(this).val("아이디 입력");
+    //   });
+    // });
+    
+
+    // ** 키보드 접근성을 위한 이벤트 등록법
+
+    // $(function(){
+    //   $('#btn1').mouseover(function(){
+    //     alert("good");
+    //   });
+    //   $('#btn2').on("mouseover focus",function(){
+    //     //선택 요소에 한개 이상의 이벤트 등록
+    //     alert("hello");//이벤트 연결하여 쓸때 띄워쓰기 사용. 
+    //   });
+    // });
+
+
+
+    // 4. 키본트 이벤트 메서드
+
+
+    // 4-1. keydown() / keyup() / keypress()
+
+    // $(function(){
+
+    //   $('#user_id').keydown(function(e){ //event매개변수 실행
+    //     $(this).css("background-color","purple");
+    //     //this는 이벤트를 발생시키는 객체와 이벤트가 발생하는 객체가 똑같을 때 사용.
+    //     //#user_id라는 id를 가진 객체에 문자를 입력하면 입력창이 보라색으로 바뀜.
+    //     $('#txt1').text(e.keyCode);
+    //   });
+
+    //   $('#user_id').keypress(function(e){
+    //     $('#txt2').text(e.keyCode);
+    //   });
+
+    //   $('#user_id').keyup(function(){
+    //     $(this).css("background-color","yellow");
+    //   });
+
+    // });
+
+
+
+    // 5. 기타 이벤트 메서드
+
+    // 5-1. change()
+
+    // $(function(){
+    //   $('#rel_site').change(function(){
+    //     $('#e_mail').val($(this).val());
+    //   });
+    // });
+
+
+
+    // 5-2. scroll()
+
+    // $(window).scroll(function(){
+    //   $('#txt').text($(this).scrollTop());
+    // });
+
+
+
+    // 5-3. index()
+
+    $(function(){
+      $('#menu a').mouseover(function(){
+        $('#menu a').css("background-color","none");
+
+        $(this).css("background","yellow");
+
+        var num=$("#menu a").index(this);
+        $('.txt').text(num);
+      });
+    });
+  </script>
+</head>
+<body>
+  <!-- jQUERY 이벤트 -->
+
+  <!-- 1. 로딩 이벤트 메서드 -->
+
+  <!-- 1-1. click() / dblclick() -->
+
+  <!-- <button id="btn1">click</button>
+  <button id="btn2">dblclick</button>
+  <p>내용</p> -->
+
+
+  <!-- 2. 마우스 이벤트 메서드 -->
+
+  <!-- 2-1. click() / dblclick() 이벤트 메서드와 <a>태그  -->
+    <!-- return false; e.preventDefault(); -->
+
+  <!-- <a href="http://w3.org/" id="btn1">버튼1</a>
+  <a href="http://w3.org/" id="btn2">버튼2</a>
+  <a href="http://w3.org/" id="btn3">버튼3</a>
+  <p>내용</p> -->
+
+
+
+  <!-- 2-2. mouseover() / mouseout() / hover() -->
+
+  <!-- <button id="btn1">mouseover/out</button>
+  <button id="btn2">hover</button>
+  <p>내용</p> -->
+
+
+  <!-- 2-3. mouseenter / mouseleave -->
+
+  <!-- <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  
+    body {
+      margin: 20px;
+    }
+  
+    #wrap {
+      background-color: #ccc;
+      padding: 10px;
+    }
+  
+    p {
+      background-color: #999;
+    }
+  </style> -->
+
+  <!-- <div id="wrap">
+    <p>내용</p>
+  </div> -->
+
+
+
+  <!-- 2-4. mousemove()  -->
+
+<!--   
+    <p></p>
+  -->
+
+
+
+  <!-- 3. 포커스 이벤트 메서드 -->
+
+  
+  <!-- 3-1. focus() / focusin / blur() / focusout -->
+
+  <!-- <p>
+    <input type="text" name="user_name" id="user_name" />
+  </p>
+  <p>
+    <input type="text" name="user_id" id="user_id" value="아이디 입력" />
+  </p> -->
+
+
+  <!-- ** 키보드 접근성을 위한 이벤트 등록법 -->
+
+  <!-- <p><a href="#!" id="btn1">버튼1</a></p>
+  <p><a href="#!" id="btn2">버튼2</a></p> -->
+
+
+
+
+  <!-- 4. 키보드 이벤트 메서드 -->
+  
+
+  <!-- 4-1. keydown() / keyup() / keypress() -->
+
+  <!-- <style type="text/css">
+    #user_id {
+      ime-mode: disabled;
+    }
+  </style>
+  
+    <p>
+      <input type="text" name="user_id" id="user_id" />
+    </p>
+    <p id="txt1"></p>
+    <p id="txt2"></p> -->
+
+
+
+    <!-- 5. 기타 이벤트 메서드 -->
+
+    <!-- 5-1. change() -->
+
+    <!-- <p id="txt">이메일을 입력하세요.</p>
+    <input type="text" style="width: 150px;"> @ <input type="text" id="e_mail">
+    <select id="rel_site">
+      <option value="">사이트 선택</option>
+      <option value="naver.com">네이버</option>
+      <option value="nate.com">네이트</option>
+      <option value="daum.net">다음</option>
+    </select> -->
+
+
+    <!-- 5-2. scroll() -->
+    <!-- <style type="text/css">
+      body {
+        height: 3000px;
+      }
+    
+      #txt {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+      }
+    </style>
+    
+      <p id="txt">0</p> -->
+
+
+    <!-- 5-3. index() -->
+
+    <ul id="menu">
+      <li><a href="#">내용1</a></li>
+      <li><a href="#">내용2</a></li>
+      <li><a href="#">내용3</a></li>
+      <li><a href="#">내용4</a></li>
+    </ul>
+    <p class="txt"></p>
+
+
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQUERY_기본선택자</title>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+  <script>
+    // 1. 직접선택자
+
+    // 1-1.전체 선택자
+    // $(function(){
+    //   $("*").css("border","1px solid blue");
+    // });
+
+    // 1-2.아이디 선택자
+
+    // $(function(){
+    //   $("#tit").css("background-color","yellow").css("border", "2px solid red");
+    // });
+
+
+    // 1-3.클래스 선택자
+
+    // $(function(){
+    //   $(".direct").css("background-color", "yellow");
+    // });
+
+
+
+    // 1-4.요소명 선택자
+
+    // $(function(){
+    //   $("h3").css("background-color","yellow");
+    // });
+
+
+    // 1-5.그룹 선택자
+
+    // $(function(){
+    //   $("h1, h3").css("background-color","yellow");
+    // }); // ','로 선택자 지정.
+
+
+    ////////////////////////////////////////////
+
+    // 2. 인접 관계 선택자
+
+
+    // 2-1. 부모요소 선택자
+
+    // $(function(){
+    //   $(".second").parent().css("border", "1px solid red");
+    // });
+
+
+    // 2-2. 하위요소 선택자
+
+    // $(function(){
+    //   $("#wrap li").css("border","1px solid red");
+    // });
+
+
+    // 2-3. 자식요소 선택자
+
+    // $(function(){
+    //   $("#wrap > li").css("border","1px solid red");
+    // });
+
+
+    // 2-4. 자식요소들 선택자
+
+    // $(function(){
+    //   $("body").children().css("border","1px solid red");
+    // });
+
+
+    // 2-5.형요소 선택자
+
+    // $(function(){
+    //   $("#second").prev().css("border","1px solid red");
+    // });
+
+    
+
+    // 2-6. 동생요소 선택자
+
+    // $(function(){
+    //   // $("#second").next().css("border","1px solid red");
+    //   $("#second + li").css("border", "1px solid red");
+    // });
+
+
+    // 2-7.형제 요소들 선택자
+
+    // $(function(){
+    //   $("#second").siblings().css("border","1px solid red");
+    // });
+    
+  </script>
+
+</head>
+<body>
+
+  <!-- 기본선택자 -->
+
+  <!-- 1.직접선택자 -->
+
+
+  <!-- 1-1.전체 선택자 -->
+  <!-- <h1>제이쿼리</h1>
+  <h2>직접 선택자및 관계 선택자</h2>
+  <h3>직접 선택자</h3>
+  <h3>관계 선택자</h3> -->
+
+  <!-- 1-2.아이디 선택자 -->
+  <!-- <h1>제이쿼리</h1>
+  <h2 id="tit">직접 선택자 및 관계 선택자</h2>
+  <h3>직접 선택자</h3>
+  <h3>관계 선택자</h3> -->
+
+  <!-- 1-3. 클래스 선택자 -->
+<!-- 
+  <h1>제이쿼리</h1>
+  <h2>직접 선택자및 관계 선택자</h2>
+  <h3 class="direct">직접 선택자</h3>
+  <h3>관계 선택자</h3> -->
+
+  <!-- 1-4. 요소명 선택자 -->
+
+  <!-- <h1>제이쿼리</h1>
+  <h2>직접 선택자및 관계 선택자</h2>
+  <h3>직접 선택자</h3>
+  <h3>관계 선택자</h3> -->
+
+  <!-- 1-5. 그룹 선택자 -->
+
+  <!-- <h1>제이쿼리</h1>
+  <h2>직접 선택자및 관계 선택자</h2>
+  <h3>직접 선택자</h3>
+  <h3>관계 선택자</h3> -->
+
+
+  <!-- -------- -->
+
+
+  <!-- 2. 인접 관계 선택자 -->
+
+
+
+  <!-- 2-1. 부모요소 선택자 -->
+
+  <!-- <h1>인접 관계 선택자</h1>
+  <ul>
+    <li>내용1
+      <ul>
+        <li>내용2</li>
+        <li class="second">내용3</li>
+      </ul>
+    </li>
+  </ul> -->
+
+  <!-- 2-2. 하위요소 선택자 -->
+
+  <!-- <h1>인접 관계 선택자</h1>
+  <ul id="wrap">
+    <li>내용1
+      <ul>
+        <li>내용2</li>
+      </ul>
+    </li>
+  </ul> -->
+
+
+  <!-- 2-3. 자식요소 선택자 -->
+
+  <!-- <h1>인접 관계 선택자</h1>
+  <ul id="wrap">
+    <li>내용1
+      <ul>
+        <li>내용2</li>
+      </ul>
+    </li>
+  </ul> -->
+
+  <!-- 2-4. 자식요소들 선택자 -->
+
+  <!-- <h1>인접 관계 선택자</h1>
+  <ul>
+    <li>내용1
+      <ul>
+        <li>내용2</li>
+      </ul>
+    </li>
+  </ul> -->
+
+
+  <!-- 2-5. 형요소 선택자-->
+
+  <!-- <h1>인접 관계 선택자</h1>
+  <ul>
+    <li>내용1</li>
+    <li id="second">내용2</li>
+    <li>내용3</li>
+  </ul> -->
+
+
+  <!-- 2-6.동생요소 선택자 -->
+
+  <!-- <h1>인접 관계 선택자</h1>
+  <ul>
+    <li>내용1</li>
+    <li id="second">내용2</li>
+    <li>내용3</li>
+  </ul> -->
+
+
+  <!-- 2-7. 형제 요소들 선택자 -->
+
+  <!-- <h1>인접 관계 선택자</h1>
+  <ul>
+    <li>내용1</li>
+    <li id="second">내용2</li>
+    <li>내용3</li>
+  </ul> -->
+
+
+</body>
+</html>

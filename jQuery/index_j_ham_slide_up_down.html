@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>효과</title>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script>
+    $(function(){
+      // $('.btn_menu').mouseover(function(){
+      //   $('.list_menu').stop().slideDown(300);
+      //   //stop()을 넣어줘야 lock이 안걸린다.
+      // }).mouseout(function(){
+      //   $('.list_menu').stop().slideUp(300);
+      // });//체이닝 기법(연속기법)
+
+
+      // $('.btn_menu').mouseout(function(){
+      //   $('.list_menu').stop().slideUp(300);
+      // });
+
+      $('.btn_menu').hover(function(){
+        $('.list_menu').stop().slideToggle(300);
+        //0.3초
+      });
+    });
+  </script>
+
+  <style>
+    *{margin: 0; padding: 0;}
+    li{list-style: none;}
+
+    .lnb {
+      width: 1050px; height: 50px;
+      color: white;
+      background-color: black;
+    }
+
+    .lnb .btn_menu {
+      width: 50px; height: 50px;
+      text-align: center;
+      line-height: 50px;
+      float: left;
+    }
+
+    .lnb ul {overflow: hidden;}
+
+    .lnb li {
+      width: 200px; height: 50px;
+      text-align: center;
+      line-height: 50px;
+      float: left;
+    }
+
+    .lnb .list_menu {
+      width: 1050px; height: 300px;
+      border: 1px solid black; box-sizing: border-box;
+      color: black;
+      font-size: 50px;
+      text-align: center;
+      line-height: 300px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  
+  <nav class="lnb">
+    <div class="btn_menu">메뉴</div>
+    <ul>
+      <li>menu01</li>
+      <li>menu02</li>
+      <li>menu03</li>
+      <li>menu04</li>
+      <li>menu05</li>
+    </ul>
+    <div class="list_menu">
+      Full_Down_Menu
+    </div>
+  </nav>
+
+</body>
+</html>

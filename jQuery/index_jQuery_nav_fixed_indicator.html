@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQUERY_scroll_event</title>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script src="./js/plugin/jquery.scrollTo.min.js"></script>
+  <script>
+
+    $(function(){
+
+      $('.lnb a').click(function(e){
+        e.preventDefault(); //a가 가진 기본 기능 삭제
+        
+        $(window).scrollTo(this.hash || 0, 1000); //네가 가르키는 해쉬 태그(a가 4개라서 몇번째 a인지는 모르기 때문에 this.hash를 써줌) 가르키는 hash태그가 없으면 0으로 가라./초단위 1000이나 1500을 걸어줌.
+
+      });
+
+    });
+    
+  </script>
+
+  <style>
+   
+    * {margin: 0; padding: 0;}
+    li {list-style: none;}
+
+    .lnb {
+      width: 100%; height: 30px;
+      background-color: black;
+      position: fixed;
+      top: 0; right: 0;
+    }
+
+    .lnb ul {
+      width: 1000px;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+
+    .lnb li {
+      width: 25%; height: 30px;
+      float: left;
+    }
+
+    .lnb li a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      text-align: center;
+      line-height: 30px;
+    }
+
+    .lnb li a:active {color: red;}
+
+    /* ------ contents ------ */
+
+    .contents section {
+      width: 100%; height: 100vh;
+      border: 1px solid black;
+      font-size: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* 높이를 알 수 없으므로 풀페이지를 상용할때 가운데 정렬하는 방법이다. justify-contents / align-items */
+    }
+
+  </style>
+</head>
+<body>
+  <nav class="lnb">
+    <ul>
+      <li><a href="#page01">menu01</a></li>
+      <li><a href="#page02">menu02</a></li>
+      <li><a href="#page03">menu03</a></li>
+      <li><a href="#page04">menu04</a></li>
+    </ul>
+  </nav>
+
+  <div class="contents">
+    <section id="page01">page01</section>
+    <section id="page02">page02</section>
+    <section id="page03">page03</section>
+    <section id="page04">page04</section>
+  </div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tab_sheet</title>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script>
+
+    $(function(){
+      const tab = $('.notice .tab li');
+      const sheet = $('.notice .sheet div');
+
+      tab.click(function(){
+        let target = $(this); //내가 누른 것이 target이 된다.
+        let i = target.index(); //target이 가진 index번호가 필요
+        //let i = $(this).index() 로 써도 됨.
+
+        tab.removeClass('on'); //지금 현제 눌러진 class 온을 지움.
+        tab.eq(i).addClass('on'); //인덱스 값에 일치하는 탭에 클래스 on을 줘라.
+
+        sheet.removeClass('on_sheet');
+        sheet.eq(i).addClass('on_sheet');
+
+      }); //tab_click_event
+    });
+
+  </script>
+
+  <style>
+    * {margin: 0; padding: 0}
+    li {list-style: none;}
+
+    .tab {
+      width: 500px; height: 30px;
+      overflow: hidden;
+    }
+
+    .tab li {
+      width: 100px; height: 30px;
+      border: 1px solid black; box-sizing: border-box;
+      text-align: center;
+      line-height: 30px;
+      border-radius: 10px 10px 0 0;
+      float: left;
+      cursor: pointer;
+    }
+
+    /* li 공통 속성 */
+
+    .tab li.on {
+      background-color: yellow;
+      border-bottom: none;
+    }
+
+    /* 특정 클래스('on')이 걸린 탭의 속성. 눌러진 값. */
+
+    .sheet div {
+      width: 500px; height: 500px;
+      border: 1px solid black; box-sizing: border-box;
+      border-top: none;
+      text-align: center;
+      line-height: 500px;
+      font-size: 50px;
+      display: none;
+    }
+    /* 시트들 공통 속성. */
+    
+    .sheet div.on_sheet {
+      display: block;
+      background-color: yellow;
+    }
+
+    /* 'on_sheet' 클래스를 가진 시트 속성 */
+    
+  </style>
+</head>
+<body>
+  
+  <section class="notice">
+    <ul class="tab">
+      <li class="on">tab01</li>
+      <li>tab02</li>
+      <li>tab03</li>
+      <li>tab04</li>
+      <li>tab05</li>
+    </ul>
+    <!-- tab은 목록이라 ul로 묶어도 되지만, sheet는 목록이 아니기 때문에 sheet는 ul로 써주면 안된다. -->
+
+    <div class="sheet">
+      <div class="sheet01 on_sheet">sheet01</div>
+      <div class="sheet02">sheet02</div>
+      <div class="sheet03">sheet03</div>
+      <div class="sheet04">sheet04</div>
+      <div class="sheet05">sheet05</div>
+    </div>
+
+  </section>
+
+</body>
+</html>

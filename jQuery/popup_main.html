@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>js_새창띄우기</title>
+  <script>
+
+    function openWindow(){
+      let newWin = window.open('popup.html','_blank', 'width=400, height=600, top=100, left=1000'); //width부터 ''안에 있는 건 순서가 바뀌어도 된다.
+      //window.open 윈도우 객체 명령어.
+
+      if(newWin == null){//창이 뜨지 않았다면.
+        alert('팝업이 차단 됐습니다. 팝업 차단을 해제하고 싶으시면 새로고침을 해주세요.');
+      }
+    }
+
+  </script>
+  <style>
+
+
+  </style>
+</head>
+<body>
+<!-- <body onload="openWindow()"> -->
+  <!-- 자바스크립트로 스타일시트로 띄워주는게 기본이지만, 자동으로 띄워주게 해주기 위해서는 body에 onload로 openWindow()함수를 실행시켜준다. -->
+  <!-- <button onclick="openWindow()">회원가입</button> -->
+  <a href="javascript:openWindow()">a태그 회원가입</a>
+</body>
+</html>

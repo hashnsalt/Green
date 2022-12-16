@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery_객체조작 method</title>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+  <script>
+
+    // 1. 속성 조작 메서드
+
+
+
+    // 1-1. html() 메서드
+
+    // $(function(){
+    //   $('h2').html('<a href="#!">HTML 메서드</a>');
+    //   alert($('h1').html()); //선택 요소의 하위요소 반환
+    // });
+
+
+
+
+    // 1-2. text() 메서드
+    
+    // $(function(){
+    //   $('h2').text("텍스트 메서드");
+    //   alert($('h1').text());
+    // });
+
+
+
+
+    // 1-3. css() 메서드
+    
+    // $(function(){
+    //   $('p').text( $('h1').css("color"));
+    //   //p태그 안에 h1의 color 속성이 무엇인지 반환.
+    //   $('h2').css("color","red");
+    // });
+
+
+
+
+    //1-4. attr() / removeAttr() 메서드
+
+    // $(function(){
+    //   $('#txt').text($("#wrap img").attr("src"));
+    //   //#txt아이디에 #wrap img의 src 속성을 텍스트로 반환
+    //   $('#wrap img').attr("width","200");
+    //   $('#box img').removeAttr("border");
+    // });
+    
+
+
+
+    // 1-5. addClass() / removeClass() 메서드
+    //     toggleClass() / hasClass() 메서드
+
+    $(function(){
+      $('#p1').addClass("aqua");
+      $('#p2').removeClass("red");
+      $('#p3').toggleClass("green");
+      $('#p4').toggleClass("green");//없는건 있게, 있는건 없게
+      $('#p6').text($('#p5').hasClass("yellow"));
+      //yellow속성을 가지고 있는 #p5인지 true/false로 검사한 값 반환
+    });
+
+
+
+    //1-6. val() 메서드 !!!중요!!!!
+
+    // $(function(){
+    //   $('#my_name').val($('#user_name').val());
+    // }); //#user_name의 값을 #my_name에 반환시킨다.
+
+
+    //1-7. prop() 메서드
+
+    // $(function(){
+    //   $('#st_1').prop("title","단락 태그");//title의 속성을 변경해주지만, 화면에 나타나지는 않음.
+    //   $('#txt1').text($('#st_1').prop("title"));
+    //   //#st_1의 title에 잡혀있는 속성값을 text로 나타내줌
+    //   $('#txt2').text($('#st_1').prop("tagName"));
+    //   //#st_1의 tagName의 속성값을 나타내줌
+    //   $('#txt3').text($('#sel').prop('selectedIndex'));
+    // });
+
+
+
+    //2. 수치 조작 메서드
+
+    //2-1. 요소 높이 / 너비 메서드
+
+
+    //margin 값은 안넣음.
+
+    // $(function(){
+    //   var w1=$('#box1').width();
+    //   $('#t1').text("너비: " + w1);
+      
+    //   var w2=$('#box1').innerWidth();
+    //   $('#t2').text("너비: " + w2); //padding값 넣어서 값 출력
+
+    //   var w3=$('#box2').outerWidth();
+    //   $('#t3').text("너비: " + w3);//border값 넣어서 값 출력
+
+    //   $("#box2").width("200").height("50").css("border","3px solid blue");
+
+    // });
+
+
+
+    //2-2. 요소 위치 메서드
+
+    // $(function(){
+
+    //   var top1=$('#box').position().top;
+    //   $('#t1').text(top1);
+      
+    // });
+
+  </script>
+</head>
+<body>
+  
+  <!-- 1. 속성 조작 메서드 -->
+
+  
+  <!-- 1-1. html() 메서드 -->
+
+  <h1><strong>객체 조작 및 생성</strong></h1>
+  <h2><em>html()</em></h2>
+
+  
+  
+  <!-- 1-2. text() 메서드 -->
+
+  <!-- <h1>객체 조작 및 생성</h1>
+  <h2>text()</h2> -->
+
+
+  
+  <!-- 1-3. css() 메서드 -->
+
+  <!-- <h1 style="color:blue">객체 조작 및 생성</h1>
+  <p></p>
+  <h2>CSS 메서드</h2> -->
+
+
+  
+  <!-- 1-4. attr() / removeAttr() 메서드 -->
+
+  <!-- <h1>객체 조작 및 생성</h1>
+  <p id="wrap">
+    <img src="images/img_1.jpg" alt="img1" width="100" />
+  </p>
+  <p id="txt"></p>
+  <p id="box">
+    <img src="images/img_2.jpg" alt="img2" width="100" border="2" />
+  </p> -->
+
+
+
+  <!-- 1-5. addClass() / removeClass() 메서드
+            toggleClass() / hasClass() 메서드 -->
+
+  <!-- <style type="text/css">
+    .aqua {
+      background-color: aqua;
+    }
+  
+    .red {
+      background-color: red;
+    }
+  
+    .green {
+      background-color: green;
+    }
+  
+    .yellow {
+      background-color: yellow;
+    }
+  </style>
+  
+  <body>
+    <p id="p1">내용1</p>
+    <p id="p2" class="red">내용2</p>
+    <p id="p3">내용3</p>
+    <p id="p4" class="green">내용4</p>
+    <p id="p5" class="yellow">내용5</p>
+    <p id="p6"></p>
+  </body> -->
+
+
+  <!-- 1-6. val() 메서드 !!!!!중요!!!!! -->
+
+  <!-- <p>
+    <input type="text" name="user_name" id="user_name" value="홍길동" />
+  </p>
+  <p>
+    <input type="text" name="my_name" id="my_name" />
+  </p> -->
+
+
+  <!-- 1-7. prop() 메서드 -->
+
+  <!-- <p id="st_1">내용1</p>
+  <p id="txt1"></p>
+  <p id="txt2"></p>
+  <select id="sel">
+    <option value="naver">네이버</option>
+    <option value="nate" selected="selected">네이트</option>
+    <option value="daum">다음</option>
+  </select>
+  <p id="txt3"></p> -->
+
+
+
+
+  <!-- 2. 수치 조작 메서드 -->
+
+  <!-- 2-1. 요소 높이/너비 메서드 -->
+
+  <!-- <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  
+    body {
+      margin: 20px;
+    }
+  
+    #box1 {
+      width: 200px;
+      height: 100px;
+      padding: 5px;
+      border: 10px solid red;
+      margin: 10px;
+    }
+  </style>
+  
+  <body>
+    <p id="box1">박스1</p>
+    <p id="t1"></p>
+    <p id="t2"></p>
+    <p id="t3"></p>
+    <p id="box2">박스2</p>
+  </body> -->
+
+
+  <!-- 2-2. 요소 위치 메서드 -->
+
+
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  
+    #wrap {
+      width: 300px;
+      height: 200px;
+      background-color: #ccc;
+      position: relative;
+      top: 50px;
+      margin: 0 auto;
+    }
+  
+    #box {
+      width: 50px;
+      height: 50px;
+      background-color: aqua;
+      position: absolute;
+      top: 50px;
+      left: 100px;
+    }
+  </style>
+
+  <body>
+    <p id="t1"></p>
+    <p id="t2"></p>
+    <div id="wrap">
+      <p id="box">박스1</p>
+    </div>
+  </body>
+
+</body>
+</html>

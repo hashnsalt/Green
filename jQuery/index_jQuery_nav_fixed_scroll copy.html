@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQUERY_scroll_event</title>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script src="./js/plugin/jquery.scrollTo.min.js"></script>
+  <script>
+
+    $(function(){
+      $(window).scroll(function(){
+
+        if($(window).scrollTop() >= 200) {
+          $('.lnb').addClass('fixed');
+          $('.btn_top').stop().fadeIn(300);
+        } else {
+          $('.lnb').removeClass('fixed');
+          $('.btn_top').stop().fadeOut(300);
+        }
+      });
+
+      $('.btn_top').click(function(e){
+        e.preventDefault();
+
+        // $('html, body').stop().animate({
+        //   scrollTop: 0
+        // }, 1000);
+
+        // $(window).scrollTo({top:0, left:0}, 500);
+
+        // $(window).scrollTo(this.hash || 0, 500);
+      })
+
+    });
+    
+  </script>
+
+  <style>
+    /* ------ default setting ------ */
+    * {margin: 0; padding: 0;}
+    a {text-decoration: none;}
+
+    body {height: 3000px;}
+
+    .header {
+      width: 100%; height: 200px;
+      background-color: yellow;
+      text-align: center;
+      line-height: 200px;
+    }
+
+    .lnb {
+      width: 1000px; height: 50px;
+      margin: 0 auto;
+      background-color: black;
+      color: wheat;
+      text-align: center;
+      line-height: 50px;
+    }
+
+    .fixed {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      margin-left: -500px;
+
+    }
+
+    .btn_top {
+      display: block;
+      width: 30px; height: 30px;
+      background-color: red;
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 30px;
+      position: fixed;
+      bottom: 20px;
+      right: 50px;
+      display: none;
+    }
+
+  </style>
+</head>
+<body>
+  <header class="header" id="header">
+    <h1>header</h1>
+  </header>
+
+  <nav class="lnb">
+    <h1>nav_lnb</h1>
+  </nav>
+
+  <a href="#header" class="btn_top">TOP</a>
+</body>
+</html>

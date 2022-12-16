@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQUERY_scroll_event</title>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script src="./js/plugin/jquery.scrollTo.min.js"></script>
+  <script>
+
+    $(function(){
+      
+      $(window).scroll(function(){
+        if($(window).scrollTop() >= 200) {
+          $('.lnb').addClass('fixed');
+          $('.btn_top').stop().fadeIn(300);//display:none으로 잡아둔 탑버튼이 스르륵 나타나도록 정의
+        } else {
+          $('.lnb').removeClass('fixed'); //class로 정의 된 것은 ''.'' 찍어주지 않아야 한다.
+          $('.btn_top').stop().fadeOut(300);
+        }
+      }); //scroll_event
+      //scroll을 받는 객체는 window임
+
+      $('.btn_top').click(function(e){
+        //화면 스크롤을 부드럽게 사용 가능.
+        e.preventDefault();//일일히 #! 안해도 일괄 a 속성 제거 처리됨.
+        //a에는 이걸 써야함 기본 링크로 가는 속성을 제거
+        // $('html, body').stop().animate({ //transition같은 스르륵 이벤ㄴ트를 주기 위해 사용.
+        //   //도큐먼트 전체에서
+        //   scrollTop: 0 //scrollTop을 제일 위로 맞춰라.
+        // }, 1000);
+        
+        // $(window).scrollTo({top: 0, left: 0}, 500); //pluging 방법 1
+        $(window).scrollTo(this.hash || 0, 500); //hash(#)태그 있는 곳으로 또는 0px까지 이동.
+
+      });//btn_top_click_event
+
+    });
+  </script>
+
+  <style>
+    /* ------ default setting ------ */
+    * {margin: 0; padding: 0;}
+    a {text-decoration: none;}
+
+    body {height: 3000px;}
+
+    .header {
+      width: 100%; height: 200px;
+      background-color: yellow;
+      text-align: center;
+      line-height: 200px;
+    }
+
+    .lnb {
+      width: 1000px; height: 50px;
+      margin: 0 auto;
+      background-color: black;
+      color: wheat;
+      text-align: center;
+      line-height: 50px;
+    }
+
+    .fixed {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      margin-left: -500px;
+      /* margin이 들어간 lnb 중앙 정렬. */
+    }
+
+    .btn_top {
+      display: block;
+      width: 30px; height: 30px;
+      background-color: red;
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 30px;
+      position: fixed;
+      bottom: 20px;
+      right: 50px;
+      display: none;
+      /* js로 일정 범위에 오면 나타나게 해주기 위해 display:none 정의 */
+    }
+
+  </style>
+</head>
+<body>
+  <header class="header" id="header">
+    <h1>header</h1>
+  </header>
+
+  <nav class="lnb">
+    <h1>nav_lnb</h1>
+  </nav>
+
+  <a href="#header" class="btn_top">TOP</a>
+</body>
+</html>

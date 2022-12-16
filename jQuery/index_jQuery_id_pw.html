@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery_이벤트 조작</title>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script>
+    $(function(){
+
+      $('#user_id').focus();
+
+      let id = 'green';//값(데이터)이 들어가 있음.
+      //값을 받는 변수는 한단어 형식으로. ex) id, count, rank 등
+      let userId; //프로그램에서 사용하는 변수. 형태는 다르지만 html_body_id 형태와 같은 이름으로 쓰기.
+
+      $('#user_id').change(function(){//데이터가 들어왔는지 안왔는지 판별. 데이터가 바뀐걸 판별
+        userId = $('#user_id').val(); //박스 안에 값을 받아오기 위해 val()을 씀. 숫자 데이터는 못받으니 숫자는 x 문자로만 받기.
+
+        // alert(userId);
+        $('.btn').click(function(){//버튼을 누르면 함수 실행.    
+          
+          if(id === userId) {
+            $('p').text(userId + '님 방문을 환영합니다.');
+          }
+          else {
+            $('p').text('없는 정보 입니다. 다시 시도하여 주십시오.');
+          }
+          //if(아이디가 같으면~..) 버튼 이벤트 함수가 실행 될때 데이터에 들어있는 id와 직접 입력한 id가 같은지 다른지 함수 씀.
+          // alert(userId + '님 방문을 환영합니다.');
+        });
+      });
+    });
+
+
+  </script>
+</head>
+<body>
+  
+  ID <input type="text" id="user_id"> <button class="btn">로그인</button>
+  <p></p>
+
+
+
+</body>
+</html>

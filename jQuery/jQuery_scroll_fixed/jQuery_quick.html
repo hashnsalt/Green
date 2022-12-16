@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQUERY_scroll_event</title>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script src="../js/plugin/jquery.scrollTo.min.js"></script>
+  <script>
+
+   $(function(){
+    const btn = $('.quick li');
+    const section = $('.contents section');
+
+    $('.quick').css('top', ($(window).height()/2) - ($('.quick').height()/2)); //처음 접속했을 때 화면 사이즈-초기 접속 값
+
+    $(window).scroll(function(){ //widow에 scroll이벤트가 일어났을 떄.
+      let point = $(this).scrollTop() + ($(this).height()/2) - ($('.quick').height()/2);
+
+      $('.quick').stop().animate({top: point}, 500); //따라 오도록
+
+      //메모리가 비워지고 다시 시작하고 할 수 있도록 무한 루프 for을 사용해서 오류를 방지하는 함수 설정.
+      section.each(function(){//객체가 사용할 수 있는 for문 == each()
+        let sectionPoint = $(window).scrollTop(); //내가 보고 있는 곳이 어딘지 찾는 것. 몇번쨰 섹션인지 찾음.
+
+        let target = $(this);
+        let i = target.index();
+
+        if(sectionPoint>= target.offset().top) {
+          //내 전체 사이트의 높이에서의 화면상의 페이지 높이 == offset() 불변
+          //어느 페이지가 보였을 때 값이 변화하는 걸 쓰고 싶으면
+          //sectionPoint + 300~400 >= target.offset().top을 사용해주면 된다.
+          btn.removeClass('on');
+          btn.eq(i).addClass('on');
+        }
+
+      }); //인디케이터의 색을 교체하는 효과를 주는 함수.
+
+
+    });//widow_scroll_event
+    
+    btn.click(function(){
+      let target = $(this);
+      let i = target.index();
+      //let i = $(this).index();
+
+      let targetSection = section.eq(i);
+      let point = targetSection.offset().top;
+      //let point = section.eq(i).offset().top;
+
+      $('html, body').stop().animate({scrollTop: point}, 1000)
+
+    });//quick_scroll_event;
+   });
+
+  </script>
+
+  <style>
+
+    * {margin: 0; padding: 0;}
+    li {list-style: none;}
+    a {text-decoration: none;}
+
+    .quick {
+      position: absolute;
+      right: 0;
+      /* top은 모르기 때문에 지정해주지 않는다. js에서 계산해서 위치시킬거니까.*/
+    }
+
+    .quick li {
+      width: 150px; height: 50px;
+      border: 1px solid black;
+      border-bottom: none;
+    }
+
+    .quick li:last-child {
+      border-bottom: 1px solid black;
+    }
+    
+    .quick li a {
+      display: block;
+      color: black;
+      text-align: center;
+      line-height: 50px;
+      background-color: #fff;
+    }
+
+    .quick li.on a {
+      color: red;
+    }
+
+    .contents section {
+      width: 100%; height: 100vh;
+      font-size: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .contents #page01 {background-color: yellow;}
+    .contents #page02 {background-color: orange;}
+    .contents #page03 {background-color: skyblue;}
+    .contents #page04 {background-color: blueviolet;}
+
+
+   
+
+  </style>
+</head>
+<body>
+
+  <ul class="quick">
+    <li class="on"><a href="#page01">menu01</a></li>
+    <li><a href="#page02">menu02</a></li>
+    <li><a href="#page03">menu03</a></li>
+    <li><a href="#page04">menu04</a></li>
+  </ul>
+
+  <div class="contents">
+    <section id="page01">page01</section>
+    <section id="page02">page02</section>
+    <section id="page03">page03</section>
+    <section id="page04">page04</section>
+  </div>
+
+</body>
+</html>

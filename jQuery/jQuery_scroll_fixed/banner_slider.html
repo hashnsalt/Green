@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>효과</title>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script src="./js/banner_slider.js"></script>
+  
+  <style>
+    /* ------ defualt setting ------ */
+    * {margin: 0; padding: 0;}
+    li {list-style: none;}
+    a {text-decoration: none;}
+
+    /* ------ banner slider ------ */
+
+    .banner_box {
+      width: 730px;
+      position: relative;
+      background-color: #ccc;
+    }
+
+    .banner {
+      padding: 8px 35px;
+      border: 1px solid black;
+    }
+
+    .frame {
+      width: 650px; height: 200px;
+      /* overflow: hidden; */
+      position: relative;
+    }
+
+    .frame ul {
+      width: 900px; 
+       /* width는 계산할 필요 없다. 어림잡아도 된다.*/
+       background-color: aquamarine;
+
+       position: absolute;
+       top: 0; left: 0;
+    }
+
+    .frame li {
+      width: 200px; height: 200px;
+      float: left;
+      padding: 0 8px;
+    }
+
+    .ctr_btn {
+      position: absolute;
+      right: 10px;
+      top: 5px;
+    }
+
+    .left {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      margin-top: -15px;
+    }
+
+    .right {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      margin-top: -15px;
+    }
+
+
+
+  </style>
+</head>
+<body>
+  <section class="banner_box">
+
+    <div class="banner">
+      <div class="frame">
+        <ul>
+          <li><a href="http://www.naver.com"><img src="./images/spring_01.jpg" alt="spring"></a></li>
+          <li><a href="http://www.nate.com"><img src="./images/summer_01.jpg" alt="summer"></a></li>
+          <li><a href="http://www.daum.com"><img src="./images/autumn_01.jpg" alt="autumn"></a></li>
+          <li><a href="http://www.naver.com"><img src="./images/winter_01.jpg" alt="winter"></a></li>
+        </ul>
+      </div><!-- frame -->
+    </div><!-- banner -->
+
+    <div class="ctr_btn">
+      <a href="!#" class="play"><img src="./images/play.jpg" alt="play_btn"></a>
+      <a href="!#" class="stop"><img src="./images/stop.jpg" alt="stop_btn"></a>
+    </div>
+
+    <div class="btn">
+      <a href="!#" class="left"><img src="./images/prev.jpg" alt="left_btn"></a>
+      <a href="!#" class="right"><img src="./images/next.jpg" alt="right_btn"></a>
+    </div>
+
+  </section>
+</body>
+</html>

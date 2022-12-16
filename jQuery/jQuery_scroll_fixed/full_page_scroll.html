@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fullpage==onepage scroll</title>
+  <script src="./js/jquery-3.6.1.min.js"></script>
+  <script src="./js/jquery.easing.min.js"></script>
+  <script src="./js/jquery.mousewheel.min.js"></script>
+
+  <script>
+    $(function(){
+
+      $('section').mousewheel(function(e, delta){//delta는 변수
+        if(delta > 0) { //mousewheel up
+          let prev = $(this).prev().offset().top; //내 형의(prev) 탑 좌표를 찾는다.
+          $('html, body').stop().animate({scrollTop: prev}, 1500, 'easeOutBounce');
+        }else if(delta < 0) {
+          let next = $(this).next().offset().top; //내 바로 밑의 동생(next)의 좌표를 찾는다.
+          $('html, body').stop().animate({scrollTop: next}, 1500, 'easeOutBounce');
+        }
+      }); //mousewheel_evet
+
+    });
+  </script>
+
+  <style>
+
+    *{margin: 0; padding: 0;}
+
+    .wrap section {
+      width: 100%; height: 100vh;
+      border: 1px solid black; box-sizing: border-box;
+      font-size: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <div class="wrap">
+    <section class="page01">page01</section>
+    <section class="page02">page02</section>
+    <section class="page03">page03</section>
+    <section class="page04">page04</section>
+  </div>
+  
+</body>
+</html>
