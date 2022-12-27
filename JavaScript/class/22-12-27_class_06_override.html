@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Override</title>
+  <script>
+    //override: 부모클래스가 가지고 있는 함수를 자식 클래스에서 다시 선언하여 덮어쓰는 것.
+
+    class Information {
+      constructor(name) {
+        this.name = name;
+      }
+
+      myHobby() {
+        document.write(`나 ${this.name}의 취미는 영화감상입니다.<br />`);
+      }
+
+      myHealth() {
+        document.write(`나 ${this.name}은 매우 건강합니다.`);
+      }
+    }
+
+    const info = new Information('홍길동');
+    info.myHobby();
+    info.myHealth();
+
+    class Child extends Information {
+      constructor(name, weight) {
+        super(name); //name의 속성을 상속받았다.
+        this.weight = weight;
+      }
+
+      myHealth() {
+        document.write(`나 ${this.name}의 몸무게는 ${this.weight} 입니다.`);
+        //부모가 쓰는 함수의 속성을 자식이 이어받아서 새롭게 사용하는 것, 덮어쓰는 것을 오버라이드라고 한다.
+      }
+    }
+
+    const child = new Child('윤동주', 45);
+    child.myHobby();
+    child.myHealth();
+  </script>
+</head>
+<body>
+</body>
+</html>

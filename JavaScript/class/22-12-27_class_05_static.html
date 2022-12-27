@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    //static_인스턴스를 만들지 않고도 사용할 수 있는 속성(변수)과 메소드 선언 할 때 static 키워드를 사용해서 속성을 부여한다.
+
+    class Square {
+      #length;
+
+      static #counter = 0;
+      static get counter() { //인스턴스가 몇개가 만들었는지 세는 카운터.
+        return Square.#counter; //counter는 내부 인스턴세에서 만들어진 class의 속성 static으로 선언된 것은 this로 받을 수 없고 클래스 이름으로 받아야 한다.
+      }
+
+      constructor(length) {
+        this.#length = length;
+        Square.#counter += 1;
+      }
+
+      static perimeterOf(length) {
+        return length * 4;
+      }
+
+      static areaOf(length) {
+        return length * length;
+      }
+
+      // get length() {
+      //   return this.#length;
+      // }
+
+      // get perimeter() {
+      //   return this.#length * 4;
+      // }
+
+      // get area() {
+      //   return this.#length * this.#length;
+      // }
+
+      // set length(length) {
+      //   if(length <= 0 ){
+      //     throw '길이는 0보다 커야 함.';
+      //   }
+      //   this.#length = length; //#을 생략해도 됨.
+      // }
+
+    }
+
+    const square01 = new Square(10);
+    const square02 = new Square(20);
+    const square03 = new Square(40); //직접 class 생성자 안에 넣을 때는 데이터가 저장 되지만,
+    const square04 = new Square(40); //직접 class 생성자 안에 넣을 때는 데이터가 저장 되지만,
+
+    document.write(`생성 인스턴스 개수: ${Square.counter} <br />`);
+
+    document.write(`한변의 길이가 30인 사각형 둘레: ${Square.perimeterOf(30)}<br />`); //이렇게 매개변수식으로 쓰이는 건 한번 쓰이고 저장되지 않는다.
+    document.write(`한변의 길이가 30인 사각형 넓이: ${Square.areaOf(30)}<br />`);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

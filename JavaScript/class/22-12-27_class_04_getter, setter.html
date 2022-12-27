@@ -7,7 +7,7 @@
   <title>Document</title>
   <script>
     // getter, setter 메소드는 private로 선언된 속성과 메서드는 외부에서 확인 및 수정이 불가능하며 이를 가능하게 하는 것. getter:외부에서 값을 확인, setter:외부에서 값을 수정할 때
-
+    // 값을 계산하는 것은 클래스 내부의 함수들 안에서 처리된다. getter은 그저 값이 무엇인지 확인하는 역할을 한다.
 
     // class Square {
     //   #length;
@@ -23,7 +23,7 @@
     //     this.#length = value; //value 값으로 수정할 수 있음.
     //   }
 
-    //   getLength(value) { //지금 현제 내가 가지고 있는 값을 알고 싶을 때.
+    //   getLength(value) { //지금 현제 내가 가지고 있는 값을 알고 싶을 때. 파라미터 안에 값이 들어가지 않아도 되고, 값이 들어가도 됨.
     //     return this.#length;
     //   }
 
