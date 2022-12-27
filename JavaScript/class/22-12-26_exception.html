@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exception</title>
+
+  <script>
+    //runtime error(런타임오류) vs syntex error(문법오류)
+
+    //기본 예외 처리
+
+    // document.addEventListener('DOMContentLoaded', () => {
+
+      //돔이 업을 때 어떤 결과를 보여줄까.
+
+      // const h1 = document.querySelector('h1');
+
+      // // h1.textContent = 'Hello, JavaScript~'; // 이렇게 바로 넣어주면 콘솔에 h1번이 없다고 에러가 뜸. 그렇기 때문에 기본적인 처리를 해줘야 함.
+
+      // if(h1) {
+      //   h1.textContent = 'Hello, JavaScript';
+      // } else {
+      //   console.log('h1이 존재하지 않음.');
+      // }
+      //예외로 이렇게 당연한 프로그램 처리 외에도 존재하지 않는 것을 처리하는 것이 예외 처리. 기본적으로 if-else문으로 예외처리를 하지만, 예외처리 구문으로 try-catch문을 쓴다.
+
+    // });
+
+
+
+
+      //고급 예외 처리
+
+      // try {
+      //   // 예외가 발생할 가능성이 있는 코드. 실행 구문
+      // } catch {
+      //   //예외가 발생 했을 때 실행할 코드. 실행 구문이 실행 했을 때 오류가 발생할 경우 처리하는 코드.
+      // } finally {
+      //   //예외와 관계없이 무조건 실행할 코드(생략가능)
+      // }
+
+      // try{
+      //   students.getSum();
+      //   console.log('try구문');
+      // } catch {
+      //   console.log('catch 구문'); //문법적으로 틀린 것이 없으나 students의 객체도 getSum도 동작 되지 않기 때문에 예외가 발생하여 catch가 발생됨.
+      // } finally {
+      //   console.log('finally 구문'); //예외가 처리되든 처리되지 않든 finally 구문 발생됨.
+      // }
+
+
+      // try {
+      //   let a = 1;
+      //   let n = 2;
+      //   let c = a + b;
+        
+      //   console.log('sum = ', c);
+      //   console.log('try 구문');
+      // } catch{
+      //   console.log('catch 구문');
+      // } finally { //예외 안에 return문이 존재할 때 발생 되는 함수.
+      //   console.log('finally 구문');
+      // }
+
+      function test() {
+        try { //1번 try-catch 구문은 예외처리를 해야하는 문장에서 사용.
+          console.log('try 구문'); // 
+          throw '강제 예외 처리 발생'; //구문에 문제가 없고 강제로 catch문을 발생시킬 떄 사용. 문제가 생겼을 때는 try구문은 실행시키지 않고 catch구문을 실행한다. 문제가 없을 때는 try구문을 실행시킨 후 바로 catch 구문의 return문으로 넘어가기 위해 사용한다. 
+        } catch (xception) {
+          console.log('catch 구문');
+          return //return문이 있기 때문에 반드시 catch 구문은 실행이 된다. 하지만, try가 문제가 없을 때는 catch 구문을 작동시키지 않고 그냥 넘어가게 되는데, 그럴 때 try의 throw를 사용하여 강제로 catch구문을 발생시켜 return문을 실행 시키게 끔 만든다.
+        } finally { //일반 처리문에서는 사용할 수 없다. return, break, continue구문과 같이 사용할 수 있다. 흐름상 사용아 되지 않는 문장들을 넣어서 사용.
+          console.log('text() 마지막 실행문'); //return문 아래의 문장은 처리가 되지 않는다. 하지만 무조건 실행이 되야 할 경우가 있다. 그럴 경우 finally 구문을 사용한다.
+        }
+
+
+        // console.log('text() 마지막 실행문'); //2번 예외처리를 하지 않아도 되는 문장에서 사용한다. return문 아래의 문장은 처리가 되지 않는다. 하지만 무조건 실행이 되야 할 경우가 있다. 그럴 경우 finally 구문을 사용한다.
+      }
+
+      test();
+
+  </script>
+
+</head>
+<body>
+  
+</body>
+</html>

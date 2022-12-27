@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class</title>
+
+  <script>
+
+    //클래스 : 객체를 효율적으로 다루기 위한 문법(방법)
+    //객체의 추상화 :많은 객체들 중에서 필요한 객체를 만드는 것을 객체의 추상화.
+
+
+    // const students = []; //객체 데이터. 데이터를 구축한 후 push로 데이터 추가.
+    // students.push({name: 'kim', kor: 100, eng: 100, mat: 100}); //student[0] ex) student[0].name = 'kim'
+    // students.push({name: 'lee', kor: 95, eng: 95, mat: 95}); //student[1]
+    // students.push({name: 'woo', kor: 90, eng: 90, mat: 90}); //student[2]
+
+
+    // console.log(JSON.stringify(students, null, 2)); // 객체 데이터를 가시성을 높히기 위해 console로 배열 요소로 JSON 데이터 형식 출력. document는 가로로 나열 됨.
+
+    // let output = 'name\t total\t average\n' // \t: tab으로 띄움. \n:줄바꿈. \기호 는 이스케이프 문자라고 함. 이스케이프 문자는 document에서는 먹히지 않음. 그렇기 때문에 console로 테스트 하겠음. //테이블 형식의 필드 설정.
+
+
+    // // for(let i = 0; i < students.length; i++) {} // 방법 1. 이렇게 배열을 처리해줘도 됨.
+
+    // for(const student of students) { //student의 값을 직접 요소로 사용할 수도 있음. of 는 값을 가지기 때문에.
+    //   let sum = student.kor + student.eng + student.mat;
+    //   let average = sum / 3;
+    //   output += `${student.name}\t\t ${sum}점\t ${average}점\n`; //테이블 형식의 데이터 형식으로 만들어 주기 위해 표현.
+    // }
+
+    // console.log(output);
+
+
+
+
+    //객체 처리 함수_함수 분리_객체 외부에서 함수 사용.(객체 외부 함수로 처리된 함수-어떤 객체에서든지 불러서 사용할 수 있음.)-그러나 외부로 만들어 놓으면 필요 없는 함수도 만들어 놓을 수 있기 때문에, 수정 보완 유지보수가 힘들 수도 있음.
+
+    // function getSum(student) {
+    //   return student.kor + student.eng + student.mat;
+    // } 
+
+    // function getAverage(student) {
+    //   return getSum(student) / 3;
+    // }
+
+    // let output = 'name\t sum\t average\n';
+
+    // for(const student of students) { //배열 안에 정해진 값을 쓰므로 const로 처리.
+    //   output += `${student.name}\t\t ${getSum(student)}점\t ${getAverage(student)}점\n`; 
+    // }
+
+    // console.log(output);
+
+    
+
+
+    //객체 처리 함수_객체 내부에서 함수 사용. -객체를 처리할 때 사용해야 하므로 외부가 아닌 내부에 구현. 그러므로 privacy 가 가능.
+
+    // for(const student of students) {
+    //   student.getSum = function() {
+    //     return this.kor + this.eng + this.mat; //화살표 함수 사용 x
+    //   }
+
+    //   student.getAverage = function() {
+    //     return this.getSum() / 3;
+    //   }
+    // }
+
+    // let output = 'name\t sum\t average\n';
+    // for(const student of students) {
+    //   output += `${student.name}\t\t ${student.getSum()}점\t ${student.getAverage()}점\n`;
+    // }
+
+    // console.log(output);
+
+
+
+
+    /////////////////////////////////////////////
+
+
+    //처음부터 데이터를 생성한 후 필요할 때마다 사용. 객체 생성자 함수.
+    //객체 생성자 함수_객체 데이터의 속성, 메서드, 객체 선언 후 사용.
+    //데이터가 생성 될 때마다 데이터를 가져오겠다.
+
+    // function createStudent(name, kor, eng, mat) {
+    //   return {
+    //     name: name,
+    //     kor: kor,
+    //     eng: eng,
+    //     mat: mat,
+
+
+    //     getSum() {
+    //       return this.kor + this.eng + this.mat
+    //     },
+
+    //     getAverage() {
+    //       return this.getSum() / 3
+    //     },
+
+    //     toString() {
+    //       return `${this.name}\t\t ${this.getSum()}점\t ${this.getAverage()}점\n`;
+    //     }
+
+
+
+    //   } //return
+    // } //creatStudent()
+
+    // const students = [];
+    // students.push(createStudent('kim', 100, 100, 100));
+    // students.push(createStudent('lee', 95, 95, 95));
+    // students.push(createStudent('woo', 90, 90, 90));
+
+    // let output = `name\t sum\t average\n`;
+
+    // for(const student of students) {
+    //   output += student.toString();
+    // }
+
+    // console.log(output);
+
+
+
+
+    //class에 생성자 함수 생성한 후 속성을 씀.
+    class Student { //클래스 생성자 안에서 속성과 메소드를 정의. 첫번쨰 글자만 대문자 사용.
+      //객체와 클래스 차이 : 속성을 표현하는 차이.
+      constructor(name, kor, eng, math) { //속성을 constructor에 넣어 줘야함.
+        this.name = name;
+        this.kor = kor;
+        this.eng = eng;
+        this.math = math; 
+      }// ',' 로 구분하지 않는다. 클래스 안에서 생성하는 속성이므로.
+      
+      getSum() {
+        return this.kor + this.eng + this.math;
+      }
+
+      getAverage() {
+        return this.getSum() / 3;
+      }
+
+      toString() {
+        return `${this.name}\t\t ${this.getSum()}점\t ${this.getAverage()}점\n`
+      }
+    }
+
+
+    const students = [];
+    students.push(new Student('kim', 100, 100, 100));//new라는 키워드를 붙여서 클래스 생성자를 불러옴.
+    students.push(new Student('lee', 95, 95, 95));
+    students.push(new Student('woo', 90, 90, 90));
+
+    let output = 'name\t sum\t average\n';
+    for(const student of students) {
+      output += student.toString()
+    }
+
+    console.log(output);
+
+  </script>
+
+</head>
+<body>
+  
+</body>
+</html>

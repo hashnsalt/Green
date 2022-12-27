@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>22-12-26_class03</title>
+
+  <script>
+    //private 속성 : 사용자가 클래스 속성 또는 메소드를 의도하지 않은 방향으로 사용하는 것을 알아 클래스의 안정성을 확보하기 위해 만든 문법.
+
+    // class Square {
+    //   constructor(length) {
+    //     if(length <= 0) { //예외 발생
+    //       throw '길이는 0보다 커야 합니다.'; //-10값이라는 엉터리 구문을 불러오면 아예 if문 자체가 시도가 되지 않는다. 외부에는 적용 됨.
+    //     } 
+    //     this.length = length;
+    //   }
+
+    //   getPerimeter() {
+    //     return this.length * 4;
+    //   }
+
+    //   getArea() {
+    //     return this.length * this.length;
+    //   }
+
+    // }
+
+    // const square = new Square(10); //사용자가 잘못된 사용을 할경우 if문으로 예외 처리.
+    // square.length = -10; //클래스 내부에서 정의 된 값은 외부에서 수정할 수도 확인할 수도 없음.(규칙) 그러나, 값을 수정할 떄 정의된 인스턴스(변수)로 잘못된 수정을 하려고 한다. 하지만 에러는 생기지 않는다. 그렇기 때문에 if문, try-catch문과 같이 예외처리를 함.
+    // // //외부에서 length 속성을 변경해도 막을 수 없다. => private(#) 속성을 선언하여 사용한다. 외부에서 사용하려고 하더라도 사용할 수 없게 끔 적용하기 위해서.
+    // document.write(`정사각형의 둘레: ${square.getPerimeter()}<br />`);
+    // document.write(`정사각형의 넓이: ${square.getArea()}<br />`);
+
+
+
+
+    class Square {
+      #length // 외부에서 사용할 수 없게   끔 제어를 하겠다는 말임.
+
+      constructor(length) {
+        if(length <= 0) {
+          throw '길이는 0보다 커야 함.';
+        }
+        this.#length = length;
+      }
+
+      getPerimeter() {
+        return this.#length * 4;
+      }
+
+      getArea() {
+        return this.#length * this.#length;
+      }
+    }
+
+    const square = new Square(10);
+    square.length = -10; //외부에서 값을 시도 할 때, if를 적용시키지 못한다. 여기서 private(#)을 사용하여 아예 외부에서도 사용 하지 못하게 만든다. private(#)을 사용할 수 있게 만드는 것이 getter,setter라는 메소드를 이다.
+    document.write(`정사각형의 둘레: ${square.getPerimeter()}<br />`);
+    document.write(`정사각형의 넓이: ${square.getArea()}<br />`);
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
