@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // getter, setter 메소드는 private로 선언된 속성과 메서드는 외부에서 확인 및 수정이 불가능하며 이를 가능하게 하는 것. getter:외부에서 값을 확인, setter:외부에서 값을 수정할 때
+
+
+    // class Square {
+    //   #length;
+
+    //   constructor(length) {
+    //     this.setLength(length) //setter함수를 부르겠다. setLength를 직접 불러줌.
+    //   }
+
+    //   setLength(value) { //다른 값이 들어왔다는 의미에서 value로 설정.
+    //     if(value <= 0) {
+    //       throw '길이는 0보다 커야 함.';
+    //     }
+    //     this.#length = value; //value 값으로 수정할 수 있음.
+    //   }
+
+    //   getLength(value) { //지금 현제 내가 가지고 있는 값을 알고 싶을 때.
+    //     return this.#length;
+    //   }
+
+    //   getPerimeter() {
+    //     return this.#length * 4;
+    //   }
+
+    //   getArea() {
+    //     return this.#length * this.#length;
+    //   }
+
+    // }
+
+    // const square = new Square(10);
+    // document.write(`한변의 길이는 ${square.getLength()}`); // 원래 private(#)는 외부에서 사용할 수 없음. 그러나, getter을 만들어서 가지고 있는 값을 알 수 있음.
+
+    // square.setLength(20);
+    // //square.length = 20; -> 이렇게 수정할 수는 없다. 왜냐하면 length가 private(#)으로 설정되어 있기 때문이다. private는 내부에서만 사용 가능하며, 외부에서는 사용할 수 없다. 그렇기 떄문에 외부에서 사용, 수정하고 싶을 때는 getter, setter로 접근하여 값을 확인하고 수정할 수 있다.
+    // //getter: 값이 무엇인지 외부에서 알 수 있음. setter: 값을 외부에서 수정할 수 있음.
+
+
+    class Square {
+      #length;
+
+      constructor(length) {
+        this.length = length; // #을 붙여도 되고 안해도 된다. private로 지정되어 있는 속성을 불러 들이려고 한다면(length를 length 값으로 불러들이려고 한다면), setter함수를 자동으로 불러 들인다.
+      }
+
+
+      set length(length) {
+        if(length <= 0) {
+          throw '길이는 0보다 커야 함.';
+        }
+        this.#length = length; 
+      }
+
+      get length() {
+        return this.#length;
+      }
+
+      get perimeter() {
+        return this.#length * 4;
+      }
+
+      get area() {
+        return this.#length * this.#length;
+      }
+
+    }
+
+    const square = new Square(10)
+    document.write(`한 변의 길이는 : ${square.length}<br />`); //함수 호출 방법을 쓰면 안됨(맨 뒤에 괄호X). 예약어처럼 사용되기 때문에 일반 속성을 호출하듯이 사용 한다. getter을 불러옴. 괄호x. 일반 예약어처럼 사용한다.
+
+    document.write(`사각형의 둘레 : ${square.perimeter}<br />`);
+    document.write(`사각형의 넓이 : ${square.area}<br />`);
+
+    // square.length(-10); //getter일때는 괄호 생략. setter일때는 괄호를 넣어서 수정할 수있음. 직접 쓰면 안됨. 값으로써 불러줘야함.
+
+    square.length = -10; //이렇게 값으로써 불러서 수정을 해야함. 현제는 예외처리를 해줘서 -10을 쓰면 예외처리 함수 if 구문을 불러온다. 0보다 큰 값을 사용하면 수정한 값을 아래 console.log 처리로 확인 할 수 있음.
+
+    console.log(square.length);
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
