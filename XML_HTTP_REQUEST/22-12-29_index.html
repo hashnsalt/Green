@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XMLHttpRequest</title>
+  <script>
+
+
+    //구현해 놓은 data파일에서 data를 불러와 사용하는 방법.
+
+    let xhr = new XMLHttpRequest() //생성자를 통한 xhr 인스턴스 
+
+    xhr.open("GET", "https://jsonplaceholder.typicode.com/users")
+    // xhr.open("GET", "student.json")
+    xhr.send() //요청정보를 보내줌.
+
+    xhr.onreadystatechange = function(){
+
+      if(xhr.readyState == 4 && xhr.status == 200) {
+        let students = JSON.parse(xhr.responseText)// responseText로 온 xhr 인스턴스를 parsing 해줌.
+
+        renderHTML(students); //rendering 메서드 render는 화면상에 보여줄 때 사용
+      }
+
+    }
+
+    function renderHTML(contents) {
+      let output = '<table class="client_table" border="1" cellspacing="0" cellpadding="10"><td width="100" colspan="6" class="title"><h2>Client Information List</h2><tr class="feild_record"><td>name</td><td>Id</td><td>email</td><td>address</td><td>website</tr>';
+      for(let content of contents) {
+        output += `
+          <tr>
+            <td>${content.name}</td>
+            <td>${content.username}</td>
+            <td>${content.email}</td>
+            <td>${content.address.city}</td>
+            <td><a href="${content.website}">${content.website}</a></td>
+          <tr>
+        `
+      }
+      output += '</table>';
+
+      document.getElementById('root').innerHTML = output;
+    }
+
+
+  </script>
+
+  <style>
+    a{ text-decoration: none; color:violet}
+    .client_table {
+      margin: 50px auto;
+      border-radius: 20px 20px 0 0;
+    }
+    .client_table .feild_record>td {
+      text-align: center;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .client_table .title {
+      text-align: center;
+      border-radius: 20px 20px 0 0;
+    }
+
+    .client_table .client_name {
+      font-weight: bold;
+    }
+
+  </style>
+
+</head>
+<body>
+  <div class="client_container">
+    <div id="root">
+    </div>
+  </div>
+
+</body>
+</html>

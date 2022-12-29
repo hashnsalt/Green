@@ -1,0 +1,20 @@
+[
+  {
+    "name": "홍길동",
+    "img": "./images/best_01.png",
+    "major": "컴퓨터 공학",
+    "grade": 2
+  },
+  {
+    "name": "유관순",
+    "img": "./images/best_02.png",
+    "major": "디지털 디자인",
+    "grade": 3
+  },
+  {
+    "name": "이순신",
+    "img": "./images/best_03.png",
+    "major": "체육학과",
+    "grade": 4
+  }
+]
