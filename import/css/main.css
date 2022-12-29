@@ -1,0 +1,23 @@
+* {margin: 0; padding: 0;}
+
+.container h2 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.container .product_best {
+  display: flex;
+  width: 1024px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.container .product_best .best_box {
+  width: 300px;
+  margin: 5px;
+}
+
+.container .product_best .best_box img {
+  display: block;
+  width: 280px; height: 280px;
+}
