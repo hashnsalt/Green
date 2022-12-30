@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fatch</title>
+  <style>
+    .root_sub {
+      /* sub는 root에 연결되어있는 클래스라는 뜻 */
+      font-size: 12px;
+      color: #999;
+      text-decoration: line-through;
+    }
+
+    .end_sub {
+      width: 300px; height: 50px;
+      background-color: black;
+      color: white;
+      text-align: center;
+      font-weight: bold;
+      line-height: 50px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="root"></div>
+  <div class="end"></div>
+
+  <script>
+    //실행할때 인식을 못하는 부분이 있기 때문에 dom 아래에 잡음. defer을 이용해서 외부함수로 끌어 들여도 됨.
+
+    //처리 되는 순서에 대한 것을 확인.
+
+    // function funcA() {
+    //   console.log('A');
+    // }
+
+    // function funcB() {
+    //   console.log('B');
+    // }
+
+    // function funcC() {
+    //   console.log('C');
+    // }
+
+    // funcA();
+    // funcB();
+    // funcC();
+
+    // 결과 -> 작업 시간이 똑같아서 A,B,C 똑같이 나옴.
+
+
+    // function funcA() {
+    //   console.log('A');
+    // }
+
+    // function funcB() {
+    //   setTimeout(() => {
+    //     console.log('B');
+    //   }, 3000);
+    // }
+
+    // function funcC() {
+    //   console.log('C');
+    // }
+
+    // funcA();
+    // funcB();
+    // funcC();
+
+    // 결과 -> A C B : A와C가 먼저 실행 되고 B가 3초의 작업시간을 가지므로 C가먼저 실행이 된 후 B로 돌아가서 작업함.
+
+
+    /////////////////////////////// callback 함수로 순서 제어 ////////////////////////////////////////////////
+
+
+    // function funcA() {
+    //   console.log('A');
+    // }
+
+    // function funcB(callback) {
+    //   setTimeout(() => {
+    //     console.log('B'); //callback함수는 callback 함수를 부른 함수를 먼저 처리 한후 callback이 처리 됨. 그러므로 callback함수를 부른 B를 먼저 실행한 후 C를 실행함.
+    //     callback();
+    //   }, 3000);
+    // }
+
+    // function funcC() {
+    //   console.log('C');
+    // }
+
+    // funcA();
+    // funcB(funcC);
+
+    //순서대로 처리해야 하면 작업 처리를 먼저 해야하는 순서대로 callback함수를 넣어줌. 본래 JavaScript는 비동기식처리를 따라서 작업 대기 시간 순으로 작업이 처리 되는데, 작업 대기 순이 많이 걸리더라도 순서대로 처리해야한다면 callback, promise, Async, awaite와 같은 함수로 순서를 제어해준다.
+
+    // function order(coffee, callback) {
+    //   console.log(`${coffee} 주문 접수`);
+    //   setTimeout(() => {
+    //     callback(coffee);
+    //   }, 3000); // 3초가 지난 다음에 callback 호출
+    // }
+
+    // function display(result) { //밀크티를 받을 것임.
+    //   console.log(`${result} 주문 완료`);
+    // }
+
+    // order('밀크티', display);
+
+    //결과 ->  본래 비동기식 처리라면 작업 대기시간이 짧은 display가 먼저 실행이 되지만, callback함수로 순서를 제어해줌. 
+    //oder('밀크티', display(callback함수)); callback 처리가 되어 있기 때문에 callback을 품은 order 함수가 먼저 처리가 되어서 주문 접수가 먼저 처리가 되고, 그 다음 주문이 완료되엇다는 callback함수인 display가 접수가된다.
+
+    // /////callback hell//////////////
+
+    // /아무리 작업 대기 시간이 길더라도 callback함수로 순서가 제어 되었기 때문에 작업 순서대로 출력 된다.
+
+    // function funcA(){
+    //   console.log('A');
+
+    //   setTimeout(() => {
+    //     console.log('B');
+
+    //     setTimeout(() => {
+    //       console.log('C');
+          
+    //       setTimeout(() => {
+    //         console.log('D')
+            
+    //         setTimeout(() => {
+    //           console.log('The End!');
+    //         }, 1000); //end
+
+    //       }, 1000); // D
+
+    //     }, 3000); // C
+
+    //   }, 1000); // B
+    // } // A
+
+    // funcA();
+
+    // 결과 값 => A B C D The End!
+    
+
+
+
+    // // //////////////////////////////////////////// promise 함수로 순서 제어 //////////////////////////////////////////////////
+
+    // // ES 2015 년도에 callback과 함께 promise 쓰임. 객체를 받아서 사용 됨. const obj = new Promise(resolve:실행할 콜백 함수, reject:성공하지 않았을 떄 실행할 콜백 함수)
+    // //                                                                                             (res, rej) || (success, fail);
+    // // ES 2017 년도에 나온 Async, await와 promise 함께 쓰일 때, promise는 항상 resolve 성공 한다는 전제 하에 사용 됨.
+
+
+    // let orderCoffee = true; //resolve 실행
+    // // let orderCoffee = false; //reject 실행
+
+    // const coffee = new Promise((resolve, reject) => {
+    //   if(orderCoffee) {
+    //     resolve('커피를 주문 했습니다.');
+    //   } else {
+    //     reject('주문을 취소하겠습니다.');
+    //   }
+    // }); // 객체 생성, resolve, reject 정의 ==> 제작 코드(producing code);
+
+    // //coffee().then().catch().finally(); 로 처리가 되지만 then()메서드 안에 실행문이 들어가야 하므로 아래와 같이 써준다.
+
+    // coffee//세미콜론 조심. 찍으면 안됨.
+    // .then(
+    //   result => console.log(result)
+    // )
+    // .catch(
+    //   err => console.log(err)
+    // )
+    // .finally( //필요에 따라 써주면 됨.
+    //   () => console.log('완료')
+    // )
+
+
+    ///////////////////// Coffee order promise ////////////////////////////
+
+    const order = new Promise((resolve, reject) => {
+      let coffee = prompt('어떤 커피를 주문하시겠습니까?', '아메리카노');
+      if(coffee != null && coffee != '') { // null: 주문이 들어오지 않았다. '':빈 문자열이 들어옴.
+        document.getElementById('root').innerText = `${coffee} 주문 접수`;
+        setTimeout(() => {
+          resolve(coffee);
+
+        }, 3000);
+      } else {
+        reject('커피를 주문하지 않았습니다.');
+      }
+    });
+
+    function display(result) { //coffee를 받을 수 있는 매개변수=result
+      document.querySelector('.end').innerHTML = `${result} 제조 완료`
+      document.querySelector('.end').classList.add('end_sub'); //기존에 있는 end클래스에 클래스를 하나 더 주겠다라는 뜻. 없는 것을 만들어주는 것=> 동적 데이터 생성.
+      document.querySelector('#root').classList.add('root_sub');
+    }
+
+    function showErr(err) { //reject의 값을 매개변수로 받아 올 수 있음.
+      console.log(err); //받아온 배개변수 '커피를 주문하지 않았습니다.' 출력.
+    }
+
+    order //호출문 위에 실행문을 두는 것이 묵시적인 규칙
+    .then(display) //resolve가 coffee를 받았으므로 display에서 매개변수로 받아 올 수 있음.
+    .catch(showErr) //reject 값을 품은 showErr 함수처리.
+    .finally();
+
+    
+
+
+  </script>
+  
+</body>
+</html>
