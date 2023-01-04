@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ES6</title>
+</head>
+<body>
+  
+  <div id="root"></div>
+  <div class="end"></div>
+
+
+  <script>
+
+    ///////////////////// Coffee order promise ////////////////////////////
+
+    // const order = new Promise((resolve, reject) => {
+    //   let coffee = prompt('어떤 커피를 주문하시겠습니까?', '아메리카노'); *********************************************** coffee 인스턴스(객체 변수)는 딱히 필요 없음.
+    //   if(coffee != null && coffee != '') { // null: 주문이 들어오지 않았다. 메모리가 지정되지 않음. /  '':빈 문자열이 들어옴. 메모리가 지정됬으나 빈 문자가 들어옴.
+    //     document.getElementById('root').innerText = `${coffee} 주문 접수`;
+    //     setTimeout(() => {
+    //       resolve(coffee); // ********************************************'아메리카노'라는 값을 직접 받으면 coffee 인스턴스가 필요 없음. 그럼 if문도 필요 없음. 값이 정확히 들어왔기 때문에.
+
+    //     }, 3000);
+    //   } else {
+    //     reject('커피를 주문하지 않았습니다.');
+    //   }
+    // });
+
+    // function display(result) { //coffee를 받을 수 있는 매개변수=result
+    //   document.querySelector('.end').innerHTML = `${result} 제조 완료`
+    //   document.querySelector('.end').classList.add('end_sub'); //기존에 있는 end클래스에 클래스를 하나 더 주겠다라는 뜻. 없는 것을 만들어주는 것=> 동적 데이터 생성.
+    //   document.querySelector('#root').classList.add('root_sub');
+    // }
+
+    // function showErr(err) { //reject의 값을 매개변수로 받아 올 수 있음.
+    //   console.log(err); //받아온 배개변수 '커피를 주문하지 않았습니다.' 출력.
+    // }
+
+    // order //호출문 위에 실행문을 두는 것이 묵시적인 규칙
+    // .then(display) //resolve-then  resolve가 coffee를 받았으므로 display에서 매개변수로 받아 올 수 있음.
+    // .catch(showErr) //resolve-catch  reject 값을 품은 showErr 함수처리.
+    // .finally();
+
+
+
+    ////////////////////////// coffee order if 문없이 promise ////////////////////////////
+
+    // const coffee = () => {
+    //   return new Promise((resolve, reject) => { //리턴은 한번만 돌릴 수 있으므로 resolve문(커피가 성공했을때 불러지는)만 부르고 reject는 부르지 않음.
+    //     resolve('커피를 주문합니다.');
+
+    //   });
+    // }
+
+    // const display = (message) =>{
+
+    //   //실행처리가 가능한 실행문이 여기 들어가서
+    //   console.log(message);// 처리가 완료 되면 console문 띄워주는 형식.
+    // }
+
+    // coffee()
+    // .then(
+    //   result => display(result) //실행처리가 가능한 display 메서드로 가서
+    // )
+
+    
+    //////////////////////// coffee order steper _promise channing 기법 ////////////////////////
+    
+    const coffee = () => { //메인 메서드
+      return new Promise((resolve, reject) => {
+        resolve('커피를 주문합니다.'); // then을 찾아감. 
+      })
+    }
+
+    const step1 = (message) => {
+      console.log(message);
+      return new Promise((resolve, reject) => {
+        setTimeout(() => { //커피가루 준비.
+          resolve('커피 가루 준비'); //두번째 then을 찾아감.
+        }, 2000)
+      })
+    }
+
+    const step2 = (message) => {
+      console.log(message);
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve('커피 내리기 완료');
+        }, 1000);
+      })
+    }
+
+    const step3 = (message) => {
+      console.log(message);
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve('컵에 담기 완료');
+        }, 3000)
+      })
+    }
+
+    ///promise channing 기법
+
+    // coffee() //커피 함수를 부르고
+    // .then(result => step1(result)) // 커피준비 resolve가 부른 then은 커피가루 준비의 resolve를 부르고 
+    // .then(result => step2(result)) // 커피가루 준비의 resolve는 step2의 resolve를 부르고
+    // .then(result => step3(result)) // 커피내리기 완료 resolve는 step3의 resolve를 부르고
+    // .then(result => console.log(result)) // 컵에 담기 완료 메세지를 출력.
+    // .then(() => { //컵에 담기 완료 메세지를 띄운 후 step3의 resolve가 찾은 then 실행
+    //   console.log('커피가 준비되었습니다.');
+    // })
+
+
+    //실행문 합축적 사용법
+
+    coffee()
+    .then(step1) //then자체가 요청이 성공해서 데이터를 가지고 있는 것이므로 위의 처럼 기게 적을 필요 없음.
+    .then(step2)
+    .then(step3)
+    .then(console.log) //step3의 값이 불러오고 난 다음에 then을 부를 resolve 문이 남아 있지 않아도,
+    .then(() => { //연쇄적으로 console.log를 부른 then이 처리가 되었다면 그다음 then도 연쇄적으로 처리되게 하는 것이 chaining기법임.
+      console.log('커비가 준비 되었습니다.');
+    })
+
+
+  </script>
+</body>
+</html>

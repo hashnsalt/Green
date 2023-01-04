@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetch_API</title>
+</head>
+<body>
+  <div id="root"></div>
+  <!-- 다 만든 정적 dom안에 javascript에서 만들어진 동적 dom을 넣어 rendering(화면상에 띄워줌) 해줌. -->
+  <script>
+    ///세미콜론 조심
+
+
+    fetch('student.json')// addeventlistner 안에서 console창에 띄우면 fetch api는 console에러가 나므로 안됨.
+    //fetch를 날리면 pormise를 반환한다 promise를 반환한다는 자체가 작업이 정상적이라는 뜻이므로 then을 호출함. 
+    .then(response => response.json()) //response는 다른 걸로 바꿔서 써줘도 됨. promise의 결과가 정상적이면 바로 then으로 받아오면 됨. 받은 response 데이터가 response.json() 객체 형식의 데이터로 변형되엇다라는 구문.
+    .then(json => { //함수의 매개변수 json을 처리
+      let output = ''
+      json.forEach(student => {
+        output += `
+          <h2>${student.name}</h2>
+          <ul>
+            <li>전공: ${student.major}</li>
+            <li>학년: ${student.grade}</li>
+          </ul>
+          <hr/>
+        `
+      });
+
+      document.getElementById('root').innerHTML = output;
+    })
+    .catch(error => console.log(error))
+
+
+  </script>
+</body>
+</html>

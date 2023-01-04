@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ES6</title>
+</head>
+<body>
+  
+  <div id="root"></div>
+  <div class="end"></div>
+
+
+  <script>
+    /////////////////// 커피를 주문하는 과정 callback hell ////////////////
+
+
+    const step1 = (callback) => { // step1. 커피가루를 준비하는 단계.
+
+      setTimeout(() => {
+
+        console.log('커피 가루 준비');
+        callback(); //커피가루 준비가 되면 callback을 호출 //step2
+
+      }, 2000)
+    }
+
+    const step2 = (callback) => { //step2. 커피 내리는 단계.
+
+      setTimeout(() => {
+
+        console.log('커피 내리기 완료');
+        callback(); //step3호출
+
+      }, 1000);
+    }
+
+
+    const step3 = (callback) => { //step3. 커피 담기 완료
+      setTimeout(() => {
+
+        console.log('커피담기 완료');
+        callback(); //console 문 띄움.
+
+      }, 3000);
+    }
+
+    console.log('커피를 주문합니다.');
+    step1(function () { //step2를 콜백함수로 불러옴.
+      step2(function () { //step3를 콜백함수로 불러옴.
+        step3(function () { //콘솔로그로 불러옴.
+          console.log('커피 준비가 끝났습니다.');
+        })
+
+      })
+    });
+
+
+
+  </script>
+</body>
+</html>
