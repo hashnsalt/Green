@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>header_React_work01</title>
+  <style>
+    *{margin: 0; padding:0;}
+
+    li{list-style: none;}
+    
+  </style>
+</head>
+<body>
+
+  <div id="root"></div>
+
+  <!-- React -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- dom을 다루는 라이브러리  -->
+
+
+  <!-- Load Babel -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+
+  <!-- Your custom script here -->
+  <script type="text/babel">
+    // 실패....
+    // 하나의 element를 만들어서 root에 넣기.
+
+    const rootElement = document.getElementById('root');
+
+    function gnbEls(props) {
+      return (
+        <li>{props.gnbList}</li>
+      )
+    }
+
+    function logoEl(props) {
+      return (
+        <div>{props.logoText}</div>
+      )
+    }
+
+    function lnbEl(props) {
+      return (
+        <div>{props.lnbList}</div>
+      )
+    }
+
+    const element = (
+      <>
+        <nav className="gnb">
+          <ul className="gnb_ul">
+            <gnbEls gnbList = '로그인' />
+            <gnbEls gnbList = '회원가입' />
+            <gnbEls gnbList = '사이트맵' />
+          </ul>
+        </nav>
+        <div className="logo">
+          <logoEl logoText = 'Front-End' />  
+        </div>
+        <ul className="lnb">
+          <lnbEl lnbList = 'HTML5' />
+          <lnbEl lnbList = 'CSS3' />
+          <lnbEl lnbList = 'jQuery' />
+          <lnbEl lnbList = 'React' />
+        </ul>
+      </>
+    );
+
+    ReactDOM.render(element, rootElement);
+    
+  </script>
+
+</body>
+</html>

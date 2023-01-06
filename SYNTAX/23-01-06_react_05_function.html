@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+
+  <div id="root"></div>
+
+  <!-- React -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- dom을 다루는 라이브러리  -->
+
+
+  <!-- Load Babel -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+
+  <!-- Your custom script here -->
+  <script type="text/babel">
+    
+    //////////////////function Component//////////////////////
+
+    const rootElement = document.getElementById('root');
+
+    // const EnglishWord = function() { //화살표함수를 쓰기 위한 익명함수 연습
+    //   return (
+    //     <>
+    //       <h3>Good</h3>
+    //       <span>좋은</span>
+    //     </>
+    //   )
+    // }
+
+
+    // const element = (
+    //   <>
+    //     {EnglishWord()}
+    //     {EnglishWord()}
+    //     {EnglishWord()}
+    //   </>
+    // )
+
+    //비할당함수의 익명함수로 처리해서 props를 할당하겠다.
+
+    // const EnglishWord = function(word, mean) { //word, mean이 들어간 자리에 뭐가 들어갈지 모르겠으면 props로 받으면 됨. 
+    //   //처음에 할당받지 않고 들어올때 할당받고 싶다면 미리 word와 mean을 정의해두고 사용=> 비할당
+    //   return(
+    //     <>
+    //       <h3>{word}</h3>
+    //       <span>{mean}</span>
+    //     </>
+    //   )
+    // }
+
+
+    //// 화살표 함수로 사용.
+    // const EnglishWord = (word, mean) => {
+    //   return(
+    //     <>
+    //       <h3>{word}</h3>
+    //       <span>{mean}</span>
+    //     </>
+    //   )
+    // }
+
+
+    
+    // const EnglishWord = (word, mean) => (
+        // <>
+        //   <h3>{word}</h3>
+        //   <span>{mean}</span>
+        // </>
+    //   //return은 h3, span을 한묶음으로 잡아 놓은 fragment 하나를 돌리는 것임. 그렇기 떄문에 하나를 돌리는데, 돌려주는 값이 하나라면 return을 없애고 중괄호를 지우고 사용할 수 있음.
+    // )
+
+
+
+    // const element = (
+    //   <>
+    //     {EnglishWord('Good', '좋은')}
+    //     {EnglishWord('Bad', '나쁜')}
+    //     {EnglishWord('endeavor', '진취적인')}
+    //   </>
+    // )
+
+    // 비할당방식의 데이터는 객체 형식의 데이터로 사용할 수 있음.
+    const EnglishWord = ({word, mean}) => (
+      <>
+        <h3>{word}</h3>
+        <h3>{mean}</h3>
+      </>
+    ) //안나옴.
+
+    // const EnglishWord = props => {
+    //   const {word, mean} = props // hook은 처리해야하는 변수처리는 변수명과 매개변수자리가 바뀌어서 정의됨. //props라는 메모리를 미리 정해놓고 word와 mean을 만들어 놓음.
+
+    //   //return을 안들어가도 되지만, return이 들어가는 것이 가독성이 좋을 수가 있음.
+    //   return (
+    //     <>
+    //       <h3>{word}</h3>
+    //       <span>{mean}</span>
+    //     </>
+    //   )
+    // }
+
+    const element = (
+      <>
+        <EnglishWord word= 'Good' mean ='좋은' />
+        <EnglishWord word= 'Bad' mean ='나쁜' />
+        <EnglishWord word= 'endeavor' mean ='진취적인' />
+      </>
+
+    )
+
+    ReactDOM.render(element, rootElement)
+
+  </script>
+
+</body>
+</html>

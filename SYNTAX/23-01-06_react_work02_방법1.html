@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<style>
+
+  *{margin: 0; padding: 0;}
+
+  .list .presen_box {
+    width: 100px;
+    margin: 0 auto;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    padding: 10px 0;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+
+  .list .presen_box h3 {
+    color: blueviolet;
+  }
+
+  .list .presen_box span {
+    color: fuchsia;
+  }
+</style>
+<body>
+
+
+  <div class="title">
+    <!-- 발표회 -->
+  </div>
+
+  <hr />
+
+  <div class="list">
+    <!-- custom function 참가자순서, 주제별-발표 를 만들어서 title안에 rendering-->
+  </div>
+
+  <!-- React -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- dom을 다루는 라이브러리  -->
+
+
+  <!-- Load Babel -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+
+  <!-- Your custom script here -->
+  <script type="text/babel">
+
+    const titleElement = document.querySelector('.title');
+    const listElement = document.querySelector('.list');
+
+
+
+
+    // const titleText = <Presentaition title = '발표회' />
+
+    function Presentaition(props) {
+      return(
+      <>
+        <h2 class='titleText'>{props.title}</h2>
+      </>
+      )
+    };
+
+    function PresentaitionList(props) {
+      return(
+        <div class='presen_box'>
+          <h3>{props.classNick}주제</h3>
+          <span>{props.list}</span>
+        </div>
+      )
+    };
+    function Test(props) {
+      return(
+        <li>{props.tt}</li>
+
+      )
+    }
+
+    const element = (
+      <>
+        <PresentaitionList classNick='햇님반' list='노래 합창' />
+        <PresentaitionList classNick='별님반' list='민속 무용' />
+        <PresentaitionList classNick='달님반' list='에어 로빅' />
+        <PresentaitionList classNick='꽃님반' list='단체 합주' />
+      </>
+    );
+
+    ReactDOM.render(<Presentaition title = '발표회' />, titleElement);
+    ReactDOM.render(element, listElement);
+
+    const titleText = document.querySelector('.titleText')
+    
+    titleText.style.cssText = 'text-align: center; color: violet; margin: 10px 0;';
+
+
+    listElement.style.cssText = 'text-align: center; margin: 10px 0;'
+
+
+    const listBox = document.querySelectorAll('.presen_box');
+    listBox.forEach((boxEl) => {
+      boxEl.addEventListener('mouseover', () => {
+        boxEl.style.cssText = ('transform: translateY(-10px); transition: all 0.3s; cusor: pointer; box-shadow: 10px 10px 5px #ccc');
+      });
+      boxEl.addEventListener('mouseout', () => {
+        boxEl.style.cssText = '';
+      })
+    });
+
+    
+
+  </script>
+
+</body>
+</html>

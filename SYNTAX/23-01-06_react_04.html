@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+
+  <div id="root"></div>
+
+  <!-- React -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- dom을 다루는 라이브러리  -->
+
+
+  <!-- Load Babel -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+
+  <!-- Your custom script here -->
+  <script type="text/babel">
+    
+    //////////////////function Component//////////////////////
+
+    const rootElement = document.getElementById('root');
+
+    
+    /// Component는 내가 만든 태그에 props라는 속성을 가져옴. props라는 속성에 기능까지 넣을 수 있음.
+
+    function MyComponent(props) { //MyComponent라는 태그를 하나 만든것임.
+      return (
+        // <div>
+        //   안녕하세요, <br />
+        //   지금 배우는 과목은 {props.subject} 입니다.
+        // </div>
+        <>
+          <p>안녕하세요</p>
+          <p>그전에 배운 과목은 {props.sub}입니다.</p>
+          <p>지금 배우는 과목은 {props.subject} 입니다.</p>
+        </>
+      )
+    }
+
+    // Return으로 반환하는 하나 뿐이므로 여러개라면 React.Fragment를 사용해 줘야 함.
+
+    // 여러개의 속성을 잡을 땐 Fragment로 묶음.
+    const element = (
+    <>
+      <MyComponent sub= '엑셀' subject = 'React' />
+      <MyComponent subject = 'HTML5' />
+      <MyComponent subject = 'CSS3' />
+      <MyComponent subject = 'JavaScript' />
+    </>
+    )
+
+    // MyComponent.defaultProps = {
+    //   subject: 'HTML5 & CSS3'
+    // }
+    // 값이 들어오지 않으면 기본값으로 들어오기 위해 사용함.
+
+    ReactDOM.render(element, rootElement);
+
+
+    // 여러개가 아닌 하나의 COMPONENT만 돌릴때 이런 식으로 사용.
+    // ReactDOM.render(<MyComponent subject='React' />, rootElement);
+    
+    // ReactDOM.render(<MyComponent />, rootElement);
+
+  </script>
+
+</body>
+</html>

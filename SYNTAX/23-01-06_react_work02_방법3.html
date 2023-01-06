@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+  <style>
+
+    .active {
+      color: blueviolet;
+    }
+
+  </style>
+<body>
+  <div class="title">
+    <!-- 발표회 -->
+  </div>
+
+  <hr />
+
+  <div class="list">
+    <!-- custom function 참가자순서, 주제별-발표 를 만들어서 title안에 rendering-->
+  </div>
+
+  <!-- React -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- dom을 다루는 라이브러리  -->
+
+
+  <!-- Load Babel -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+
+  <!-- Your custom script here -->
+  <script type="text/babel">
+    const titleElement = document.querySelector('.title');
+    const listElement = document.querySelector('.list');
+
+
+
+    const titleText = (
+      <>
+        <h2>발표회</h2>
+      </>
+
+    )
+
+
+    const PresentationList = props => { //hook
+    
+      const {classNick, list} = props
+    
+      return(
+      <>
+        <h3>{classNick} 주제</h3>
+        <span>{list}</span>
+      </>
+      )
+
+    }
+
+    const element = (
+      <>
+        <PresentationList classNick = '햇님반' list = '노래 합창'/>
+        <PresentationList classNick = '별님반' list = '민속 무용' />
+        <PresentationList classNick = '달님반' list = '에어 로빅' />
+        <PresentationList classNick = '꽃님반' list = '단체 합주' />
+      </>
+    )
+
+    ReactDOM.render(titleText, titleElement);
+    ReactDOM.render(element, listElement);
+
+    titleElement.style.cssText = 'text-align:center;'
+
+    listElement.style.cssText = 'text-align: center;'
+    
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React_EX</title>
+</head>
+<body>
+
+  <!-- 주석 달아놓은 dom은 React로 동적 처리를 해줌. -->
+  <div id="root"></div>
+
+
+  <nav class="gnb">
+    <!-- <ul class="gnb_ul">
+      <li>로그인</li>
+      <li>회원가입</li>
+      <li>사이트맵</li>
+    </ul> -->
+    <!-- React로 동적 처리 -->
+  </nav>
+
+  <div class="logo">
+    <!-- <div class="logo_txt">Front_End</div> -->
+  </div>
+
+  <ul class="lnb">
+    <!-- <li class="html">HTML5</li>
+    <li>CSS3</li>
+    <li>jQuery</li>
+    <li>JavaScript</li>
+    <li>React</li> -->
+  </ul>
+
+  <!-- React -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- dom을 다루는 라이브러리  -->
+
+
+  <!-- Load Babel -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+
+  <!-- Your custom script here -->
+  <script type="text/babel">
+    const rootGnb = document.querySelector('.gnb');
+    const rootLogo = document.querySelector('.logo');
+    const rootLnb = document.querySelector('.lnb');
+
+    const gnbElement = (
+      <ul
+        className = 'gnb_ul'
+        children = {[
+          <li>로그인</li>,
+          <li>회원가입</li>,
+          <li>사이트맵</li>
+        ]} 
+      />
+    )
+
+    const logoElement = <div className = 'logo_txt' children ={'Front_End'} />
+    // 하나의 태그만 가지고 있을때는 이렇게 간단하게 처리해주면 됨.
+
+    const lnbElement = (
+      <>
+          <li className = 'html'>HTML5</li>
+          <li>CSS3</li>
+          <li>jQuery</li>
+          <li>JavaScript</li>
+          <li>React</li>
+      </>
+    )
+    //동등한 위치의 태그는 React.Fragment로 처리.
+
+    ReactDOM.render(gnbElement, rootGnb);
+    ReactDOM.render(logoElement, rootLogo);
+    ReactDOM.render(lnbElement, rootLnb);
+
+
+    /// 과제_element 변수 하나로 잡아서 구조는 root 안에 넣기
+  </script>
+
+</body>
+</html>
