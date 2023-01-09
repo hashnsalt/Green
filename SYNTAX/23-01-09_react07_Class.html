@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+
+  <div id="root"></div>
+
+  <!-- React -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- dom을 다루는 라이브러리  -->
+
+
+  <!-- Load Babel -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+
+  <!-- Your custom script here -->
+  <script type="text/babel">
+    
+    const rootElement = document.getElementById('root');
+
+    // function MyComponent(props) {  } //이렇게 해줘도 됨.
+
+    //기본 function component만들기
+    
+    // const MyComponent = (props) => {
+    //   return (
+    //     <div>
+    //       지금 배우는 과목은 {props.subject} 입니다.  
+    //     </div>
+    //     )
+    // }//비구조 할당문법 화살표 함수로 시작    
+
+    // const element = (
+
+    //   <MyComponent subject = 'React' />
+    // )
+
+    // ReactDOM.render(<MyComponent subject = 'React' />, rootElement);
+
+    // //외부에서 값이 들어오지 않을 때도 있음.
+
+    // MyComponent.defaultProps = {
+    //   subject: 'React'
+    // }
+
+
+    // ReactDOM.render(<MyComponent />, rootElement);
+    // ReactDOM.render(element, rootElement);
+
+    
+
+
+    //비구조 할당 문법1
+
+    // const MyComponent = (props) => {
+    //   // const myClass = props.myClass
+    //   // const subject = props.subject
+    //   //위의 정의는 아래와 같이 정의할 수 있다. 비구조화 할당 문법.
+    //   //객체와 그 객체의 맴버변수(인스턴스)를 위와 같이 정의해 줄 수 있지만 비구조화 할당문법을 사용하기 위해서(props를 때고 사용하기 위해서) 아래와 같이 정의해 줌.
+    //   const {myClass, subject} = props //비구조화 할당 문법.
+    //   return (
+    //     <div>
+    //       지금 배우는 과정은 {myClass}이고,
+    //       과목은 {subject} 입니다.
+    //     </div>
+    //   )
+    // } 
+
+    //방법 2 이렇게 정의 해줘도 됨.
+
+    const MyComponent = ({myClass, subject}) => {
+      return (
+        <div>
+          지금 배우는 과정은 {myClass}이고,
+          과목은 {subject} 입니다.
+        </div>
+      )
+    }
+
+    MyComponent.defaultProps = {
+      myClass: 'Front-end',
+      subject: 'React'
+    }
+
+    ReactDOM.render(<MyComponent />, rootElement); //Default 값을 사용할 경우
+    // ReactDOM.render(<MyComponent myClass='Web_Dev' subject='React'/>, rootElement);
+
+
+
+  </script>
+
+</body>
+</html>

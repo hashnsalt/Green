@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+
+  <div id="root"></div>
+
+  <!-- React -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- dom을 다루는 라이브러리  -->
+
+
+  <!-- Load Babel -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+
+  <!-- Your custom script here -->
+  <script type="text/babel">
+    const rootElement = document.getElementById('root');
+
+
+    //방법 1.
+    // const element = (
+
+    //   <button 
+    //     onMouseOver= {() => alert('Hi~~')}
+    //     onMouseOut= {() => alert('bye~~~')}>button</button>
+
+    // )
+
+
+    // 방법2. handler사용
+
+    const handleMouseOver = () => alert('Hi~')
+    const handleMouseOut = () => alert('Hello~')
+
+    const element = (
+      <button
+        onMouseOver = {handleMouseOver}
+        onMouseOut = {handleMouseOut}
+      >
+      button  
+      </button>
+    )
+
+
+    //우리가 쓰는 일반적인 이벤트일 경우에는 이벤트를 변수로 받을 경우에는 앞에 handle이라고 붙여준다. 묵시적 약속.
+    //상태관리를 위해 쓰일 때는 Onclick 이벤트처럼 내부에서 사용함.
+
+    ReactDOM.render(element, rootElement);
+  </script>
+
+</body>
+</html>

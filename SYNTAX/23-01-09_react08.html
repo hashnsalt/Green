@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>myComponent 비구조화 할당 문법</title>
+</head>
+<body>
+
+  <div id="root"></div>
+
+  <!-- React -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- dom을 다루는 라이브러리  -->
+
+
+  <!-- Load Babel -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+
+  <!-- Your custom script here -->
+  <script type="text/babel">
+
+    const rootElement = document.getElementById('root');
+
+    // const MyComponent = () => {
+    //   return(
+    //     <h1>
+    //       Hello, React~
+    //     </h1>
+    //   )
+    // }
+
+    // 이것을 클래스로
+
+    // class MyComponent extends React.Component {
+    //   render() { //클래스 컴포넌트는 랜더라는 함수를 통해서 리턴값을 돌려야함
+    //     return (
+    //       <h1>hello, JS~</h1>
+    //     )
+    //   }
+    // }
+
+    // ReactDOM.render(<MyComponent />, rootElement);
+    
+    // function Greet(props) {
+    //   return (
+    //     <h1>{props.greet} React</h1>
+    //   )
+    // }
+
+    // Greet.defaultProps = {
+    //   greet: 'Hello'
+    // }
+
+    // ReactDOM.render(<Greet />, rootElement);
+
+    //방법 1
+    // class Greet extends React.Component {
+    //   render() { //클래스로 상속받을 시 반드시 return값을 돌릴 때는 render라는 메소드를 통해서 돌린다.
+    //     return (
+    //     <h1>{this.props.greet} React</h1> //클래스 내부에서 클래스가 가지고 있는 속성들을 사용해 주기 위해서는 this를 붙여줘야 함. 값을 유지하고 싶다면 this.props를 적어줘야함.
+    //     )
+    //   }
+
+    //   static defaultProps = {
+    //     greet: 'Hello'
+    //   }
+
+    // }
+
+    // Greet.defaultProps = {
+    //   greet: 'HELLO!'
+    // } // 결과값은 나오지만 보통은 클래스 밖에서 이렇게 기본 값을 정의 하지 않는다. //랜더 함수 다음에 static으로 정의 해줌.
+
+    // ReactDOM.render(<Greet />, rootElement);
+    // ReactDOM.render(<Greet greet='Hi~~' />, rootElement);
+
+
+
+
+    // 두개이상의 props가 들어왔을 때 class가 선언하는 법.
+    class Greet extends React.Component {
+      render() {
+        return (
+          <>
+            <h3>{this.props.first}</h3>
+            <span>{this.props.second}</span>
+          </>
+        )
+      }
+
+      static defaultProps = {
+        first: 'Good',
+        second: 'Morning'
+      }
+    }
+
+    ReactDOM.render(<Greet />, rootElement);
+
+    // ReactDOM.render(<Greet first='Happy' second='Afternoon' />, rootElement);
+
+    //props: 컴포넌트 외부에서 컴포넌트를 사용할때 넘겨주는 데이터 => props의 객체로 넘겨줌.
+
+    //static: 컴포넌트 외부에서 변경할 수 있는 컴포넌트 내부의 값. => 새로운 값을 생성. class는 오버라이딩 되지 않는한 부모에서 상속받는 값이기 때문에 내부에서 변경할 수 없지만, static을 사용하면 내부에서 변경 할 수 있음.
+
+
+
+  </script>
+
+</body>
+</html>

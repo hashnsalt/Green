@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+
+  <div id="root"></div>
+
+  <!-- React -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- dom을 다루는 라이브러리  -->
+
+
+  <!-- Load Babel -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+
+  <!-- Your custom script here -->
+  <script type="text/babel">
+
+    // const rootElement = document.getElementById('root');
+
+    //상태 관리: 현제 상태에서 변하는 것을 이야기 함. function에서 hook을 사용하거나 Class를 사용하여 처리. 예를들어 하나의 상품이 있는데 이 상품이 10개가 있을때 누군가 2개를 사간다고 했을 경우 8개가 남는 상태를 관리를 할 수 있음.
+
+
+
+    // function MyComponent() {
+
+    //   const name = 'React'
+    //   return (
+    //     <div className='title'>{name}</div>
+    //   )
+    // }
+
+    // class MyComponent extends React.Component {
+    //   render() {
+    //     //return은 내가 잡은 구조를 돌려주는 것임. 선언을 해줄 수는 없음.
+    //     const name = 'React'
+  
+    //     return (
+    //       <div className = 'title'>{name}</div>
+    //     )
+    //   }
+
+    // }
+
+    // ReactDOM.render(<MyComponent />, rootElement);
+
+
+
+    //방법2
+
+    // class MyComponent extends React.Component {
+    //   render() {
+    //     const {myClass, subject, name} = this.props;
+    //     //클래스 안에서 정의했기 때문에 this를 통해서 props를 정의해 줘야함.
+
+    //     return (
+    //       <div>
+    //         교육과정: {myClass} <br />
+    //         교육과목: {subject} <br />
+    //         학생이름: {name}
+    //       </div>
+    //     )
+    //   }
+
+    // render() {
+    //     //제거하면 -> const {myClass, subject, name} = this.props;
+
+    // this.props을 붙여서 써주면 된다. this.prop를 변수로 잡아서 써주는 방식이 더 간편하다.
+    //     return (
+    //       <div>
+    //         교육과정: {this.props.myClass} <br /> 
+    //         교육과목: {this.props.subject} <br />
+    //         학생이름: {this.props.name}
+    //       </div>
+    //     )
+    //   }
+
+
+    //   static defaultProps = {
+    //     myClass: 'Front-end',
+    //     subject: 'React',
+    //     name: 'Student'
+    //   }
+    // }
+    // ReactDOM.render(<MyComponent />, rootElement);
+    
+
+
+    const rootElement = document.getElementById('root');
+
+    class Counter extends React.Component {
+      constructor(props) {
+        super(props)
+        this.state = { //부모로부터 상속받은 값을 상태 변화 시킬 수 있는 값을 만들어 내기 위해 state를 사용. 상태 관리를 위한 객체.
+          count: 0 //상태관리를 할 변수로 count 변수를 지정. 값을 변경할 수 있는 변수임. state 안에서 객체 형태로 만들어 줘야 함. 초기값을 만들어 줘야 함.
+        }
+      }
+
+ 
+      //위의 것을 간단하게 표현하는 법, React 컴포넌트의 컴포넌트들은 외부 컴포넌트로 부터 상속을 받으면 기본적으로 super로 값이 상속받는다고 여기기 때문에 바로 state를 정의할 수 있음.
+      //state는 static으로 정의할 수 없음. 왜냐하면 외부 컴포넌트로 부터 상속받는 값(state)로 상속받아 정의하기 때문에 static이라고 붙이지 않아도 된다. static을 정의하는 이유는 값을 새롭게 정의하기 위해 쓰이기 때문에 기존에 정의 된 state는 따로 정의하지 않아도 됨.
+      // state = {
+      //   count: 0
+      // }
+
+      render() {
+        const {count} = this.state //this.state 값들(count)을 전개 함.
+        return (
+          <div>
+            <h1>{count}</h1>
+            <button 
+            onClick={() => {
+              // this.setState({count: count + 1}); //불러온 값(count)을 수정해 주겠다고 setter로 불러옴. 상태가 클릭할 때마다 변하게끔. 이벤트를 실행하는 함수(onClick())는 화살표 함수로 처리.
+
+              //this.state 값을 선언 해주지 않으면 this.setState({count: this.state.count+1}) 로 정의 해줘야지 초기화 된 state의 count값을 받아서 사용할 수 있음. 값을 받아오지 못하면 에러가 생김.
+
+
+              this.setState({count: count + 1}, () => {
+                console.log('계산이 끝났습니다.');
+              });
+              //setState 함수는 앞에는 계산식을 넣고 그것이 끝났으면 뒤에는 callback함수를 넣어주면 됨.
+
+            }}
+            >
+            click
+            </button>
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(<Counter />, rootElement);
+
+  </script>
+
+</body>
+</html>
