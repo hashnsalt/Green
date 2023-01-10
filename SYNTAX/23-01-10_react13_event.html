@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+
+  <div id="root"></div>
+
+  <!-- React -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- dom을 다루는 라이브러리  -->
+
+
+  <!-- Load Babel -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+
+  <!-- Your custom script here -->
+  <script type="text/babel">
+    const rootElement = document.getElementById('root');
+
+    class MyEvent extends React.Component {
+      state = {
+        //두개의 input값 받아오기.
+        userid: '',
+        message: ''
+      }
+
+      handleChange = (e) => {
+        this.setState({
+          [e.target.name]: e.target.value //userid과 message를 e.target.value로 받을거라는 것을 의미. [] 대괄호를 치면 실제 값이 들어오게 되는데 대괄호가 값을 지정하게 됨.
+
+          //name 변경 안됨.
+          //하나만 만들어 놓고 여러개의 입력값을 받아오는 것으로 쓰겠다는 말.
+          
+          //정의 ==> []는 반복적으로 state를 정의하는 것이 아니라 속성 값이 속성을 만듬. 입력하는 곳의 값에 따라서 메세지가 정의되는 props가 달라진다.
+
+          //입력값이 여러개일때 setState 값을 여러개 만들어줘야 하는데, 대괄호는 각각의 값이 바뀔때마다 그 안에 자동으로 값이 들어가는 시스템.
+          //const name = 'key'
+          //const object = {
+            // [name] : value   // ==>'key' : value
+          //}
+        })
+      }
+
+      handleClick = () => {
+        alert(this.state.userid + '-' + this.state.message)
+        this.setState({
+          userid: '',
+          message: '' //새로운 값을 받기 위해서 값을 초기화 시킴.
+        })
+      }
+
+
+      render() {
+        return (
+          <div>
+            <h1>Event message</h1>
+            <input
+              type="text"
+              name='userid'
+              placeholder='아이디'
+              value={this.state.userid}
+              onChange={this.handleChange}
+            />
+            <br />
+            <input 
+              type="text"
+              name='message'
+              placeholder='메세지입력'
+              value={this.state.message}
+              onChange={this.handleChange}
+            />
+            
+            <button onClick={this.handleClick}>확인</button>
+          </div>
+        )
+      }
+
+    }// class
+
+
+    ReactDOM.render(<MyEvent />, rootElement);
+    
+  </script>
+
+</body>
+</html>

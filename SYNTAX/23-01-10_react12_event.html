@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+
+  <div id="root"></div>
+
+  <!-- React -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- dom을 다루는 라이브러리  -->
+
+
+  <!-- Load Babel -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+
+  <!-- Your custom script here -->
+  <script type="text/babel">
+
+    //이벤트를 외부에서 호출하여 사용하는 방법.
+
+    const rootElement = document.getElementById('root');
+
+    class MyEvent extends React.Component {
+      state = {
+        message: ''
+      }
+
+      //return안에서 이벤트를 정의하지 않고 render 밖에서 이벤트를 정의해서 사용하는 방법.  
+
+      //return에 정의했던 이벤트를 사용자 정의 함수로 만들어줘서 필요할때 쓸 수 있게 끔 구현.
+
+      handleChange = (e) => {
+        this.setState({
+          message: e.target.value
+        })
+      }
+
+      handleClick = () => {
+        alert(this.state.message)
+        this.setState({
+          message: ''
+        })
+      }
+
+      render() {
+        return (
+          <div>
+            <h1>Event Class 02</h1>
+            <input
+             type="text"
+             name='message'
+             placeholder='메세지 입력'
+             value={this.state.message}
+             onChange={this.handleChange}
+             />
+
+             <button onClick={this.handleClick}>확인</button>
+          
+          </div>
+        )
+      } 
+
+    } //class
+
+
+    ReactDOM.render(<MyEvent />, rootElement);
+    
+  </script>
+
+</body>
+</html>

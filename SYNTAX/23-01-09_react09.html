@@ -98,9 +98,9 @@
 
     class Counter extends React.Component {
       constructor(props) {
-        super(props)
+        super(props) //상속 받는 부분.
         this.state = { //부모로부터 상속받은 값을 상태 변화 시킬 수 있는 값을 만들어 내기 위해 state를 사용. 상태 관리를 위한 객체.
-          count: 0 //상태관리를 할 변수로 count 변수를 지정. 값을 변경할 수 있는 변수임. state 안에서 객체 형태로 만들어 줘야 함. 초기값을 만들어 줘야 함.
+          count: 0 //상태관리를 할 변수로 count 변수를 지정. 값을 변경할 수 있는 변수임. state 안에서 객체 형태로 만들어 줘야 함. 초기값을 만들어 줘야 함. ==> state에 들어가는 것은 초기값을 정의해 주는 객체 변수이다.
         }
       }
 
@@ -109,10 +109,14 @@
       //state는 static으로 정의할 수 없음. 왜냐하면 외부 컴포넌트로 부터 상속받는 값(state)로 상속받아 정의하기 때문에 static이라고 붙이지 않아도 된다. static을 정의하는 이유는 값을 새롭게 정의하기 위해 쓰이기 때문에 기존에 정의 된 state는 따로 정의하지 않아도 됨.
       // state = {
       //   count: 0
-      // }
+      // } //React가 라이브러리 이므로 constructor을 생략 가능하나, 원래 브라우저에서는 생략하면 안되므로 constructor 구문도 알아 두기.
 
       render() {
         const {count} = this.state //this.state 값들(count)을 전개 함.
+        //==> const count = this.state.count  라는 것. 
+        // 값을 두개를 가질떄, const {count, total} = this.state //이것을 비구조화 할당 문법이라고 함.
+        //==> const count == this.state.count
+        //==> const count == this.state.total
         return (
           <div>
             <h1>{count}</h1>
@@ -123,10 +127,13 @@
               //this.state 값을 선언 해주지 않으면 this.setState({count: this.state.count+1}) 로 정의 해줘야지 초기화 된 state의 count값을 받아서 사용할 수 있음. 값을 받아오지 못하면 에러가 생김.
 
 
+              //event 1. 객체 형태로 정의 2.실행문 => 화살표 함수 형태로 정의 3. 카멜 표기법.
+
+
               this.setState({count: count + 1}, () => {
                 console.log('계산이 끝났습니다.');
               });
-              //setState 함수는 앞에는 계산식을 넣고 그것이 끝났으면 뒤에는 callback함수를 넣어주면 됨.
+              //setState 함수는 앞에는 계산식을 넣고 그것이 끝났으면 뒤에는 callback함수를 넣어줄 수 있음. 상태를 변화시킨 다음에 실행문을 넣어 줄 수도 있음. 잘 안씀.
 
             }}
             >

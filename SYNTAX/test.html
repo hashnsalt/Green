@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+
+  <div id="root"></div>
+
+  <!-- React -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- dom을 다루는 라이브러리  -->
+
+
+  <!-- Load Babel -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+
+  <!-- Your custom script here -->
+  <script type="text/babel">
+    const rootElement = document.getElementById('root');
+    
+    class Schedule extends React.Component {
+      render(){
+        return(
+          <div>
+            <span>{this.props.message}</span>
+          </div>
+        )
+      }
+    }
+
+
+    const Messages = [
+      {id: 1, message: '오늘의 일과'},
+      {id: 2, message: '오늘의 일과2'},
+      {id: 3, message: '오늘의 일과3'},
+      {id: 4, message: '오늘의 일과4'}
+    ]
+
+    let timer;
+
+    class ListSchedule extends React.Component {
+      state = {
+        messages: []
+      }
+
+      componentDidMount() {
+        const {messages} = this.state
+        timer = setInterval(() => {
+          if(messages.length < Messages.length) {
+            const index = messages.length
+            messages.push(Messages[index])
+            this.setState({
+              messages: messages
+            })
+          } else {
+            clearInterval(timer)
+          }
+        }, 1000)
+      }
+
+      render() {
+        return(
+          <div>
+            {this.state.messages.map((message) => {
+              return(
+                <Schedule key = {message.id} message={message.message} />
+              )
+            })}
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(<ListSchedule />, rootElement)
+
+
+  </script>
+
+</body>
+</html>
