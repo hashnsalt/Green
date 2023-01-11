@@ -24,63 +24,50 @@
   <!-- Your custom script here -->
   <script type="text/babel">
     const rootElement = document.getElementById('root');
-    
-    class Schedule extends React.Component {
-      render(){
-        return(
-          <div>
-            <span>{this.props.message}</span>
-          </div>
-        )
-      }
-    }
 
+    const Season = () => {
+      const [names, setNames] = React.useState([
+        {id: 1, season: 'Spring'},
+        {id: 2, season: 'Spring1'},
+        {id: 3, season: 'Spring2'},
+        {id: 4, season: 'Spring3'},
+      ])
 
-    const Messages = [
-      {id: 1, message: '오늘의 일과'},
-      {id: 2, message: '오늘의 일과2'},
-      {id: 3, message: '오늘의 일과3'},
-      {id: 4, message: '오늘의 일과4'}
-    ]
+      const [input, setInput] = React.useState('')
+      const [nextid, setNextid] = React.useState(5)
 
-    let timer;
+      const handleChange = (e) => setInput(e.target.value)
 
-    class ListSchedule extends React.Component {
-      state = {
-        messages: []
-      }
-
-      componentDidMount() {
-        const {messages} = this.state
-        timer = setInterval(() => {
-          if(messages.length < Messages.length) {
-            const index = messages.length
-            messages.push(Messages[index])
-            this.setState({
-              messages: messages
-            })
-          } else {
-            clearInterval(timer)
-          }
-        }, 1000)
+      const handleClick = () => {
+        const nextNames = names.concat({
+          id: nextid,
+          season: input
+        })
+        
+        setNextid(nextid + 1);
+        setNames(nextNames);
+        setInput('');
       }
 
-      render() {
-        return(
-          <div>
-            {this.state.messages.map((message) => {
-              return(
-                <Schedule key = {message.id} message={message.message} />
-              )
-            })}
-          </div>
-        )
+      const handleRemove = (id) => {
+        const nextNames = names.filter(name => name.id !== id)
+        setNames(nextNames)
       }
-    }
 
-    ReactDOM.render(<ListSchedule />, rootElement)
+      const nameList = names.map(name => <li key={name.id} onDoubleClick={() => handleRemove(name.id)}>{name.season}</li>)
 
+      return (
+        <>
+          <input type="text" value={input} onChange={handleChange} />
+          <button onClick={handleClick}>추가</button>
 
+          <ul>{nameList}</ul>
+        </>
+
+      )
+    }//Season
+
+    ReactDOM.render(<Season />, rootElement);
   </script>
 
 </body>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+
+  <div id="root"></div>
+
+  <!-- React -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- dom을 다루는 라이브러리  -->
+
+
+  <!-- Load Babel -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+
+  <!-- Your custom script here -->
+  <script type="text/babel">
+    const rootElement = document.getElementById('root')
+
+    // const Info = () => {
+    //   const [name, setName] = React.useState('') //이름을 받는 hook
+    //   const [age, setAge] = React.useState('') //나이를 받는 hook
+
+    //   const handleChangeName = (e) => {//3단어 이상 붙여서 쓰지 말기. 이건 그냥 알아보기 쉽게 하기 위해 쓴것.
+    //     setName(e.target.value) //외부에서 입력받는 것을 target으로 사용하지 않으면 이벤트가 끝난 후 초기화됨.
+    //   }
+
+    //   const handleChangeAge = (e) => {
+    //     setAge(e.target.value)
+    //   }
+
+    //   return(
+    //     <>
+    //       <div>
+    //         <input type="text" value={name} onChange={handleChangeName} />
+    //         <input type="text" value={age} onChange={handleChangeAge} /> 
+    //       </div>
+
+    //       <h1>Name: {name}</h1>
+    //       <h2>Age: {age}</h2>
+    //     </>
+    //   )
+    // }
+
+    const Info = () => {
+
+      const [state, setState] = React.useState({name: '', age: 0}) //[현제상태, 현제상태를 바꿀 메서드] sate, setState는 이름을 바꿔줘도 됨. //useSate({여러개 바꿔줄 초기값을 객체 형태로 넣어줌})
+
+      return(
+        <>
+          <div>
+            <input type="text" value={state.name} onChange={
+              (e) => setState({...state, name: e.target.value})
+            } />
+            <input type="text" value={state.age} onChange={
+              (e) => setState({...state, age: e.target.value})
+            } />
+          </div>
+
+          <h1>Name: {state.name}</h1>
+          <h2>Age: {state.age}</h2>
+        </>
+      )
+      //stat값이 여러개이기 때문에 스프레드 연산자를 받아서 (...state), name,age 값을 처리.
+
+    }
+
+    ReactDOM.render(<Info />, rootElement)
+  </script>
+
+</body>
+</html>

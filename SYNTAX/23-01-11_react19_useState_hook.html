@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+
+  <div id="root"></div>
+
+  <!-- React -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- dom을 다루는 라이브러리  -->
+
+
+  <!-- Load Babel -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+
+  <!-- Your custom script here -->
+  <script type="text/babel">
+    const rootElement = document.getElementById('root')
+
+    //Intro function componenet 정리
+
+    const Intro = () => {
+      const [message, setMessage] = React.useState('홍길동의 웹사이트 입니다.')
+      const handleEnter = () => setMessage('방문을 환영합니다.')
+      const handleLeave = () => setMessage('다음에 또 오세요')
+
+      return (
+        <div>
+          <button onClick={handleEnter}>Enter</button>
+          <button onClick={handleLeave}>Leave</button>
+          <h1 style={{color: 'brown'}}>{message}</h1>
+        </div>
+      )
+
+      //인라인 형식의 스타일은 중괄호 2번 들어감 jsx가 아닌 수식을 쓰기 때문에.
+    }
+
+
+
+    ReactDOM.render(<Intro />, rootElement)
+  </script>
+
+</body>
+</html>

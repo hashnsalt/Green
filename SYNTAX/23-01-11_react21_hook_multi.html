@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+
+  <div id="root"></div>
+
+  <!-- React -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- dom을 다루는 라이브러리  -->
+
+
+  <!-- Load Babel -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+
+  <!-- Your custom script here -->
+  <script type="text/babel">
+    const rootElement = document.getElementById('root');
+
+    const Season = () => { //시즌 컴포넌트 ==> 리뷰, todo리스트 이걸 응용해서 만들면 됨. 기존에 데이터가 들어가 있고, 여기서 추가하고 삭제할 거임.
+      const [names, setNames] = React.useState([
+        {id: 1, season: 'spring'},
+        {id: 2, season: 'summer'},
+        {id: 3, season: 'autumn'},
+        {id: 4, season: 'winter'},
+      ])//초기값 생성. id를 꼭 만들기. 그래야 조건을 달때 제어할 수 있음. //초기 배열을 useState([]) 이렇게 해주기
+
+      //리스트 목록 추가, 필요없는 데이터 삭제
+
+      //계절을 입력 추가 이벤트+++
+      const [input, setInput] = React.useState('')
+      const [nextid, setNextid] = React.useState(5) //이미 4개까지는 만들어 졌기 때문에 5번부터 추가 될거기 때문에 자동으로 초기값을 5를 받음
+
+      const handleChange = (e) => {setInput(e.target.value)} //setInput 중괄호 넣어도 되고 안넣어도 됨 //input에 입력된 값을 받음.
+
+      const handleClick = () => {
+        const nextNames = names.concat({ //concat은 push와 같은 기능을 함. 기존에 rendering 되어 있던 것 뒤에 추가된 것만 rendering시킴. push는 기존의 배열을 다시 처음 부터 추가된 것과 함께 rendering하여 나타낸다.
+          id: nextid, //버튼을 클릭하면 초기값으로 설정해준 5가 들어가고
+          season: input //input에 등록하는 값이 들어간다.
+        })
+
+
+        //다음 상태
+        setNextid(nextid + 1) //다음상태의 id생성 // id : 5 다음에 들어갈 데이터는 id값을 6을 가짐
+        setNames(nextNames) //이름도 적음
+        setInput('') //다음 값을 입력할 수 있도록 input 초기화
+      }
+
+        //삭제 이벤트
+        const handleRemove = (id) => {
+          const nextNames = names.filter(name => name.id !== id) //같지 않은걸 nexNames로 넣고
+          setNames(nextNames) //클릭한 id값과 같지 않은 다른 값들을 setNames로 넣음.
+       }
+
+      // const nameList = names.map(name => <li key={name.id}>{name.season}</li>)
+      const nameList = names.map(name => <li key={name.id} onDoubleClick = {
+        () => handleRemove(name.id)}>{name.id}-{name.season}</li>) //더블클릭을 해서 handleRemove를 불러옴. handleRemove에서 구현한 id가 같지 않은 값(더블클릭을 하지 않는 다른 값들)이 nextNames에 들어가서 setNames안에서 갱신됨. 그 id값의 name.season 을 불러옴.
+        //기존에 있는 배열 데이터를 가져와서 조건에 해당하는 데이터로 갱신해서 넣음.
+      
+      
+      return (
+        <>
+          <input type="text" value={input} onChange={handleChange} />
+          <button onClick={handleClick}>추가</button>
+          
+          <ul>{nameList}</ul>
+        </>
+      )
+    }
+
+    ReactDOM.render(<Season />, rootElement)
+  </script>
+
+</body>
+</html>

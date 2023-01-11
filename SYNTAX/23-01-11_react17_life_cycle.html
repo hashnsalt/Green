@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+
+  <div id="root"></div>
+
+  <!-- React -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- dom을 다루는 라이브러리  -->
+
+
+  <!-- Load Babel -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+
+  <!-- Your custom script here -->
+  <script type="text/babel">
+    
+    const rootElement = document.getElementById('root');
+
+    //lifeCycle셍성이벤트=>갱신이벤트=>소멸
+    class MyComponent extends React.Component {
+      constructor(props) {
+        super(props)
+        this.launchClock()//시간으로 나올 라이프사이클 확인 안써주고 바로 setInterval로 들어가도 되지만, 구조를 깔끔하게 하기 위해 써줌.
+        this.state = {
+          count: 0,
+          currentTime: (new Date()).toLocaleString()
+        }
+      }
+
+      launchClock(){
+        setInterval(() => {
+        this.setState({
+          count: this.state.count + 1,
+          currentTime: (new Date()).toLocaleString()
+        })
+        },1000)
+      }
+
+      render() {
+        if(this.state.count > 2) return //if조건에 만족하면 return해서 끝날 거다. 두번 라이프 사이클이 돌면 umount되어서 라이프 사이클 삭제.
+        return <Lifecycle count={this.state.count} time={this.state.currentTime} />//if문을 만족한다면 출력되는 화면
+      }
+
+    }//class
+
+    class Lifecycle extends React.Component {
+      constructor(props){
+        super(props)
+        console.log('constructor') //1.제일 먼저 실행.
+      }
+
+      //생성 이벤트(마운트 이벤트)_컴포넌트가 실행될 단계별로 제어가 필요할 경우 사용함.
+
+      componentWillMount(){ //2.다음 실행 Mount 화면에 보여지는 것. dom으로 생성 되기 전//컴포넌트가 DOM에 곧 추가 될 것을 알려주는 역할. 초기 랜더링 직전에 단 한번만 실행함.
+        console.log('componentWillMount 실행')
+      }
+
+      componentDidMount(){ //컴포넌트를 실제 DOM에 추가한 시점(브라우저에 개시) 
+        console.log('componentDidMount 실행')        
+        console.log('DOM node: ', ReactDOM.findDOMNode(this))        
+      }
+      
+
+      //갱신이벤트(update 이벤트)
+      componentWillReceiveProps(newProps) { //컴포넌트가 새로운 속성을 전달 받을 때 실행
+        console.log('componentWillReceiveProps 실행')
+        console.log('새로운 속성: ', newProps)
+      }
+
+      shouldComponentUpdate(newProps, newState) { //업데이트를 할거냐 말거냐로 진행. true면 업데이트 진행 false는 업데이트 진행 x
+        //이벤트 랜더링 직전에 실행- true or false
+        console.log('shouldComponent 실행')
+        console.log('새로운 속성: ', newProps)
+        console.log('새로운 상태: ', newState)
+        return true //true이기 때문에 업데이트 진행
+      }
+
+      componentWillUpdate(newProps, newState) { //업데이트가 일어나기 전
+        //새로운 속성이나 상태를 받고 업데이트 랜더링 직전에 호출 -초기 랜더링에서는 호출 되지 않음.
+        console.log('componentWillUpdate 실행')
+        console.log('새로운 속성: ', newProps)
+        console.log('새로운 상태: ', newState)
+      }
+
+      componentDidUpdate(oldProps, oldState) {//업데이트가 된 후엔 이전 값이 옛날 값이 되므로 new가 아닌 old 
+        //컴포넌트의 갱신 결과가 실제 DOM에 반영된 직후 실행 됨. - 초기 랜더링에서는 호출되지 않음.
+        console.log('componentDidUpdate 실행')
+        console.log('이전 속성: ', oldProps)
+        console.log('이전 상태: ', oldState)
+      }
+
+
+      componentWillUnmount() { //컴포넌트가 죽기 전.
+        console.log('componentWillUnmount 실행')
+      }
+
+
+      render(){
+        return(
+          <>  
+            <div>{this.props.count}</div>
+            <div>{this.props.time}</div>
+          </> 
+        )
+      }//MyComponent에서 props로 받아온 count와 time을 출력 최종 render()
+    }
+
+    ReactDOM.render(<MyComponent />, rootElement);
+
+  </script>
+
+</body>
+</html>
