@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+
+  <div id="root"></div>
+
+  <!-- React -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- dom을 다루는 라이브러리  -->
+
+
+  <!-- Load Babel -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+
+  <!-- Your custom script here -->
+  <script type="text/babel">
+    const rootElement = document.getElementById('root')
+
+    // useReducer : useState보다 다양한 상태(갯수가 많은 상태)를 관리해주는 hook
+
+    function reducer(state, action) {//현제 상태(state), 업데이트가 필요한 정보(action) //reducer(현제상태, 업데이트에 필요한 정보)
+      switch(action.type) {
+        case '+':
+          return {value: state.value + 1}
+        case '-':
+          return {value: state.value - 1}
+        default:
+          return state
+      }
+    }
+
+    const Counter = () => {
+      const [state, dispatch] = React.useReducer(reducer, {value: 0}) // [현제상태, 액션을 발생시키는 함수] = React.useReducer(실행할 메서드=리듀서 함수(상태변화를 시킬 수 있는 실행문을 가지고 있는 함수), {초기값})  
+      //리듀서 함수: 실제 useState가 하는 상태관리 여러개를 리듀서가 해줌. 액션을 실행해주고, 그 액션을 가져와서 dispatch가 실행해줌
+    
+    
+      return(
+      <div>
+        <h2>count: {state.value}</h2>
+        <button onClick={() => dispatch({type: '+'})}>+1</button>  
+        <button onClick={() => dispatch({type: '-'})}>-1</button>  
+      </div>
+      )//dispatch 메서드: action을 만들어내는 메소드. 여기서 액션 타입은 '+'이고 +를 가지고 action을 실행 시킴. 다음 버튼은 '-'를 받아서 -.type으로 액션을 실행 시킴
+    
+    
+    }
+    
+    ReactDOM.render(<Counter />, rootElement)
+  </script>
+
+</body>
+</html>

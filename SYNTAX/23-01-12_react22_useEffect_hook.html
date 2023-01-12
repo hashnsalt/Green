@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+
+  <div id="root"></div>
+
+  <!-- React -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- dom을 다루는 라이브러리  -->
+
+
+  <!-- Load Babel -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+
+  <!-- Your custom script here -->
+  <script type="text/babel">
+
+    const rootElement = document.getElementById('root');
+
+    // hook_useEffect: 컴포넌트가 랜더링 될 때마다 특정 작업을 수행하도록 설정하는 훅 =>
+    //1. 매번-가만히 놔두면 계속 상태를 변경시킴
+    //2. 초기 한번만-옵션을 통해서 상태변경을 할 수 있음.
+    //3. 특정값이 변경될 때 이펙트를 걸 수 있음.
+    //=> useState는 한 종목만 제어가 가능하나, useEffect는 여러개의 상태 관리를 할 수 있음.
+    // componentDidMount(), componentDidUpdate() 두가지 역할을 함.
+    
+
+    // const MyComponent = () => {
+    //   const [count, setCount] = React.useState(0)
+
+    //   React.useEffect(() => { //내가 만들어놓은 컴포넌트에서 랜더링이 얼마나 일어나는지 카운트를 세겠다는 말. 특정 작업(count)가 변경될 떄 이팪트를 검
+    //     //어떤 특정한 작업이 랜더링 됬을때 나타나야하는 이펙트를 useEffect에 넣어줌.
+    //   document.title = `업데이트 횟수 : ${count}`
+    // })
+    
+    //   return (
+    //     <>
+    //       <h2>{count}</h2>
+    //       <button onClick={
+    //         () => setCount(count+1)
+    //       }>click</button>
+    //     </>
+    //   )
+    // }
+
+    // ReactDOM.render(<MyComponent />, rootElement)
+
+
+
+    //////
+
+
+    const Info = () => {
+      //useEffect는 혼자 쓸수 없음. 상태변경이 된 후 사용하기 때문에 상태관리를 하는 함수와 함께 사용함.
+      const [name, setName] = React.useState('')
+      const [age, setAge] = React.useState(0)
+
+      //상태 관리한거를 useEffect로 한번더 제어(관리) 해줌.
+
+      React.useEffect(() => {
+        console.log('랜더링 완료')
+        console.log({
+          name,
+          age
+        })
+      }, [age])
+      //[]를 넣어주면 useEffect의 2번째 옵션으로 DidMount만 됨. 초기 랜더링만 관리하게 된다.
+
+
+      const handleChangeName = (e) => {
+        setName(e.target.value)
+      }
+
+      const handleChangeAge = (e) =>{
+        setAge(e.target.value)
+      }
+
+      return(
+        <>
+          <div>
+            <input type="text" value={name} onChange={handleChangeName} />
+            <input type="text" value={age} onChange={handleChangeAge} />
+          </div>
+
+          <h1>Name: {name}</h1>
+          <h2>Age: {age}</h2>
+        </>
+      )
+    }
+
+    ReactDOM.render(<Info />, rootElement)
+  </script>
+
+</body>
+</html>
