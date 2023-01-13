@@ -1,0 +1,5 @@
+/* ------- scss와 css 혼용에서 사용할 수 있음. 자주 수정해줘야 하는 콘텐츠는 style로 빼주면 됨. 10개의 component 중에서 매번 스타일이 바껴야하는 것에 css 사용해 줌. ------ */
+
+.wrap .scss_ul_01 .scss02 {
+  font-weight: bold;
+}

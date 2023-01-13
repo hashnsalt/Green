@@ -1,0 +1,73 @@
+@import './SassStyle.scss';
+
+.wrap{
+  width: 500px;
+  height: 800px;
+  background-color: #ccc;
+  margin: 0 auto;
+  padding: 30px;
+  box-sizing: border-box;
+
+  >h1 {
+    color: $color;
+    text-decoration: underline;
+  }
+
+  ul.scss_ul {
+    h2{
+      font-size: 20px;
+      color: $color;
+      margin: 10px 0;
+    }
+    li {
+      @include size(100px, 30px);
+      @include style;
+      
+      // &.scss_first {
+      //   margin: 5px 0;
+      // }
+      &:nth-child(3) {
+        margin: 5px 0;
+      }
+      &.scss_first{
+        color:$color;
+      }
+    }
+  }
+
+  ul.scss_ul_01 {
+    margin-top: 20px;
+    li {
+      @include size(100px, 30px);
+      @include style;
+      &:nth-child(2){
+        margin: 5px 0;
+      }
+    }
+  }
+
+  .box{
+    display: flex;
+    margin-top: 20px;
+  
+    div {
+      @include size(150px, 150px);
+      border: 1px solid black;
+      &:nth-child(2) {
+        margin: 0 10px;
+      }
+
+
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+          background-image: url(./images/new0#{$i}_off.jpg);
+          background-size: cover;
+        }
+        &:nth-child(#{$i}):hover {
+          background-image: url(./images/new0#{$i}_on.jpg);
+          background-size: cover;
+        }
+      }
+    }
+  }
+}

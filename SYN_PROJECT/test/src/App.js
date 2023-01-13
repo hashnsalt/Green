@@ -1,13 +1,15 @@
 // import logo from './logo.svg';
 import './App.css';
-import MyComponent from './Component/MyComponent';
-import MyComponent2 from './Component/MyComponent2';
+import StyledComponent from './Component/StyleComponent';
+import SassComponent from './Component/SassComponent';
+// import MyComponent from './Component/MyComponent';
+// import MyComponent2 from './Component/MyComponent2';
 
 function App() {
   return (
     <>
-      <MyComponent />
-      <MyComponent2 />
+      <SassComponent />
+      <StyledComponent />
     </>
   );
 }
