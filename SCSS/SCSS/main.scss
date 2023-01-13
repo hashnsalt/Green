@@ -1,0 +1,80 @@
+* {margin: 0; padding: 0;}
+li{list-style: none;}
+
+// scss 기본적 사용법.
+
+
+@mixin test {
+  border: 1px solid black; box-sizing: border-box;
+  background-color: #ccc;
+}
+
+@mixin size($width, $height) {
+  width: $width; height: $height;
+}
+
+// $width: 800px;
+// $height: 300px; 따로 변수로 잡아서 변수로 사용할 수도 있음. --1
+
+// @function center($width) {
+//   @return calc(($width / 2) * -1);
+// }
+
+// .container {
+//   // width: $width; height: $height; --1
+//   @include size(620px, 300px);
+//   @include test;
+//   display: flex;
+//   position: fixed;
+//   top: 100px; //사칙연산을 사용해서 표기해줄 수 있음. ex) top: 50px + 50px;
+//   left: 50%;
+//   margin-left: center(620px); //가운데로 보내기 위한 계산식 함수 호출
+  
+//   div {
+//     @include test;
+//     @include size(200px, 200px);
+
+//     &:nth-child(2) {
+//       margin: 0 10px;
+//     }
+//   }
+// }
+
+@function center($width) {
+  @return calc(($width / 2) * -1);
+}
+
+.container {
+  @include test;
+  @include size(620px, 200px);
+
+  display: flex;
+
+  position: absolute;
+  top: 100px;
+  right: 50%;
+  margin-left: center(620px);
+
+  .box {
+    @include test;
+    @include size(200px, 200px);
+
+    &.box02 {margin: 0 10px};
+
+    transition: all 0.3s;
+
+    @for $i from 1 through 3 {
+      //변수 i는 1부터 3까지 돌아간다.
+
+      &:nth-child(#{$i}) {
+        //nth-child괄호 안의 값은 문자형이 들어가야 한다. 그러므로 자바스크립트에서 사용하던 백틱 기호 대신 '#'을 이용한다.
+        background-image: url(./images/new0#{$i}_off.jpg);
+        background-size: cover;
+      }
+      &:nth-child(#{$i}):hover{
+        background-image: url(./images/new0#{$i}_on.jpg);
+        background-size: cover;
+      }
+    }
+  }
+}

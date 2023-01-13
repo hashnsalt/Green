@@ -1,0 +1,127 @@
+ * {margin: 0; padding: 0;}
+ li {list-style: none;}
+
+ $color_p: #8869ed; //전역변수
+
+// .container {
+//   //자식 표기
+//   width: 500px;
+//   height: 300px;
+//   background-color: #ccc;
+//   margin: 0 auto;
+
+
+//   > h1 {  //자식 표기 '>' 콘테이너 바로 밑에 있는 h1번에 적용이 된다. '>'써주지 않으면 콘테이너 밑의 모든 h1번에 적용이 된다.
+//     color: blue;
+//   }
+
+//   ul {
+//     > h1 {
+//       font-size: 20px;
+//     }
+//     li {  //자식 표기
+//       width: 100px;
+//       height: 50px;
+//       border: 1px solid black;
+//       text-align: center;
+//       line-height: 50px;
+//       &:nth-child(2) {
+//         // '&' 블럭의 주인을 가르킴 li들 중에서 2번째.
+//         margin: 5px 0;
+//       }
+//       &.first {
+//         // 블럭의 주인중에서 first를 가지고 있는 블럭에 스타일 설정.
+//         color: red;
+//       }
+//       // font-size: 14px;
+//       // font-weight: bold; //대신에
+//       font: {
+//         // 속성: 이렇게 쓰는걸 네임스페이스(namespace)라고 부름. 사용범위 적용 범위. font- size, weight 괄호 닫은 후 세미콜론(;) 생략하면 안됨.
+//         size: 14px;
+//         weight: bold;
+//       };
+
+//     }
+//   }
+// }
+
+@mixin test {
+  //@mixin: 스타일을 미리 정의해 놓는 쿼리.
+  border: 1px solid black; box-sizing: border-box;
+  background-color: #ccc;
+}
+
+// $width: 800px;
+// $height: 300px;
+// 변수를 사용. 변수 앞에는 반드시 '&'를 붙여 줘야함.
+// $color-Point, $color-sub, $color-main 처럼 많이 사용하는 컬러들을 변수로 지정해 사용할 수도 있음.
+
+@mixin size($width, $height) {
+  // 미리 스타일을 정의해 놓은 mixin 쿼리를 변수로 쓸수도 있음. 
+  width: $width; height: $height;
+}
+
+// @function center($width) {
+//   // fixed후 left 시킨 것을 가운데 정렬시키기 위한 함수처리.
+//   // @return ($width / 2) * -1 //이렇게 쓰고 저장하면 calc를 쓰라고 권고문이 뜸. 
+//   @return calc($width / 2 * -1); //refactoring 리펙토링이라고 부름. 결과는 변화는 없지만 코드자체가 변경이 됨(여기서는 calc를 써주는걸로 변경).
+// }
+
+
+// .container {
+//   // $color_p : #8869ed; //지역 변수가 됨.
+//   // width: 800px; height: 500px;
+//   // width: $width; height: $height; 
+//   // 변수로 지정해 놓은 값을 불러올 수도 있음.
+//   position: fixed;
+//   // top: 100px + 50px; //사칙 연산 가능. 하지만 나누기는 스타일 시트 옵션에서 사용하는 기호이므로 오류가발생 한다. 하지만 단위는 같아야함. 예시) 100px - 50% 이렇게 쓰면 안됨.
+//   // background: color url position /size repeat attachmenet 로 한번에 쓸 수 있음. 하지만 비추. 여기서쓰는 /때문에 function문에 사칙연산 중 /를 쓰면 command 권고문이 뜨는 것임.
+//   top: 100px;
+//   left: 50%;
+//   margin-left: center(620px);
+//   //함수 호출.
+//   @include size(620px, 300px);
+//   //지정해 놓은 변수의 사이즈명을 넣는 매개변수 스타일로 적용할 수 있음.
+//   @include test;
+//     //@include 먼저 만들어놓은 mixin을 가져옴.
+//   background-color: $color_p;
+//   display: flex;
+
+//   div {
+//     @include size(200px, 200px);
+//     @include test;
+
+//     &:nth-child(2) {
+//       // &.box02 로 줘도 됨.
+//       margin: 0 10px;
+//     }
+//   }
+// }
+
+.container {
+  @include test;
+  @include size(620px, 200px);
+
+  display: flex;
+  
+  .box {
+    @include test;
+    @include size(200px, 200px);
+    &.box02 {margin: 0 10px;};
+    transition: all 0.3s;
+
+    @for $i from 1 through 3 {
+      //for는 i라는 변수를 이용해서 1부터 3까지 돌아가겠다.
+      &:nth-child(#{$i}) {
+        //nth-child 아래는 문자열이 들어가야함. 자바스크립트에서는 문자열을 써주기 위해 q백틱기호를 써줘야 하지만, 여기서는 백틱 기호 대신 #을 써줌.
+        background-image: url(./images/new0#{$i}_off.jpg);
+        background-size: cover;
+      }
+      &:nth-child(#{$i}):hover {
+        background-image: url(./images/new0#{$i}_on.jpg);
+        background-size: cover;
+      }
+    }
+  }
+
+}
