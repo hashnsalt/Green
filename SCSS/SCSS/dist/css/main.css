@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  border: 1px solid black;
+  box-sizing: border-box;
+  background-color: #ccc;
+  width: 620px;
+  height: 200px;
+  display: flex;
+  position: absolute;
+  top: 100px;
+  right: 50%;
+  margin-left: -310px;
+}
+.container .box {
+  border: 1px solid black;
+  box-sizing: border-box;
+  background-color: #ccc;
+  width: 200px;
+  height: 200px;
+  transition: all 0.3s;
+}
+.container .box.box02 {
+  margin: 0 10px;
+}
+.container .box:nth-child(1) {
+  background-image: url(./images/new01_off.jpg);
+  background-size: cover;
+}
+.container .box:nth-child(1):hover {
+  background-image: url(./images/new01_on.jpg);
+  background-size: cover;
+}
+.container .box:nth-child(2) {
+  background-image: url(./images/new02_off.jpg);
+  background-size: cover;
+}
+.container .box:nth-child(2):hover {
+  background-image: url(./images/new02_on.jpg);
+  background-size: cover;
+}
+.container .box:nth-child(3) {
+  background-image: url(./images/new03_off.jpg);
+  background-size: cover;
+}
+.container .box:nth-child(3):hover {
+  background-image: url(./images/new03_on.jpg);
+  background-size: cover;
+}/*# sourceMappingURL=main.css.map */
