@@ -7,7 +7,7 @@ const SassComponent = () => {
       <div className='wrap'>
         <h1>Hello, Sass</h1>
         <ul className='scss_ul'>
-          <h2>Scss is...</h2>
+          <h2>Scss is....</h2>
           <li>Scss01</li>
           <li className='scss_first'>Scss02</li>
           <li>Scss03</li>
